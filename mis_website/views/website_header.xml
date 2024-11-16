@@ -241,25 +241,25 @@
                                               data-oe-type="char" data-oe-expression="submenu.name">Prospectus</span>
                                     </a>
                                 </li>
-                                <li role="presentation" class="nav-item">
-                                    <a role="menuitem" href="/mis_academics" class="nav-link ">
-                                        <span data-oe-model="website.menu" data-oe-id="20" data-oe-field="name" class="header-button-aca"
-                                              data-oe-type="char" data-oe-expression="submenu.name">Academics</span>
-                                    </a>
-                                </li>
-                                <li role="presentation" class="nav-item">
-                                    <a role="menuitem" href="/school_commitee" class="nav-link ">
-                                        <span data-oe-model="website.menu" data-oe-id="21" data-oe-field="name" class="header-button-sc"
-                                              data-oe-type="char" data-oe-expression="submenu.name">School Committee</span>
-                                    </a>
-                                </li>
+<!--                                <li role="presentation" class="nav-item">-->
+<!--                                    <a role="menuitem" href="/mis_academics" class="nav-link ">-->
+<!--                                        <span data-oe-model="website.menu" data-oe-id="20" data-oe-field="name" class="header-button-aca"-->
+<!--                                              data-oe-type="char" data-oe-expression="submenu.name">Academics</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li role="presentation" class="nav-item">-->
+<!--                                    <a role="menuitem" href="/school_commitee" class="nav-link ">-->
+<!--                                        <span data-oe-model="website.menu" data-oe-id="21" data-oe-field="name" class="header-button-sc"-->
+<!--                                              data-oe-type="char" data-oe-expression="submenu.name">School Committee</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
 
-                                <li role="presentation" class="nav-item">
-                                    <a role="menuitem" href="/library" class="nav-link ">
-                                        <span data-oe-model="website.menu" data-oe-id="23" data-oe-field="name" data-oe-type="char"  class="header-button-lib"
-                                              data-oe-expression="submenu.name">Library</span>
-                                    </a>
-                                </li>
+<!--                                <li role="presentation" class="nav-item">-->
+<!--                                    <a role="menuitem" href="/library" class="nav-link ">-->
+<!--                                        <span data-oe-model="website.menu" data-oe-id="23" data-oe-field="name" data-oe-type="char"  class="header-button-lib"-->
+<!--                                              data-oe-expression="submenu.name">Library</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
                                 <li role="presentation" class="nav-item">
                                     <a role="menuitem" href="/program_events_gallery" class="nav-link ">
                                         <span data-oe-model="website.menu" data-oe-id="24" data-oe-field="name" data-oe-type="char" class="header-button-eve"
@@ -278,12 +278,12 @@
                                               data-oe-expression="submenu.name">Contact us</span>
                                     </a>
                                 </li>
-                                <li role="presentation" class="nav-item">
-                                    <a role="menuitem" href="/contactus" class="nav-link ">
-                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"
-                                               data-oe-expression="submenu.name">Pay Online</span>
-                                    </a>
-                                </li>
+<!--                                <li role="presentation" class="nav-item">-->
+<!--                                    <a role="menuitem" href="/contactus" class="nav-link ">-->
+<!--                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"-->
+<!--                                               data-oe-expression="submenu.name">Pay Online</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
                                 <ul class="navbar-nav"></ul>
                             </ul>
 

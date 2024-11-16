@@ -487,6 +487,17 @@ aa:hover span:nth-child(6)
                     </div>
                 </section>
 <!--                Features-->
+                <style>
+                    .animated-image img {
+                        width: 400px;
+                        height: 400px;
+                        transition: transform 0.5s ease-in-out;
+                    }
+
+                    .animated-image img:hover {
+                        transform: scale(1.2); /* Zoom effect */
+                    }
+                </style>
 
                 <section class="s_three_columns o_colored_level pt16 pb16" data-vcss="001" data-snippet="s_three_columns">
                     <div class="container">
@@ -504,9 +515,9 @@ aa:hover span:nth-child(6)
                                                 Using technology to optimize water usage can be a water-saving measure.
                                             </body>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#" class="card-link">Read more</a>
-                                        </div>
+<!--                                        <div class="card-footer">-->
+<!--                                            <a href="#" class="card-link">Read more</a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
@@ -520,9 +531,9 @@ aa:hover span:nth-child(6)
                                                  Creating sustainable solutions that have a positive impact on the planet and the local community.
                                             </p>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#" class="card-link">Read more</a>
-                                        </div>
+<!--                                        <div class="card-footer">-->
+<!--                                            <a href="#" class="card-link">Read more</a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
@@ -536,9 +547,9 @@ aa:hover span:nth-child(6)
                                                 Learn how to use technology to optimize your garden and grow fresh produce all year round.
                                             </p>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#" class="card-link">Read more</a>
-                                        </div>
+<!--                                        <div class="card-footer">-->
+<!--                                            <a href="#" class="card-link">Read more</a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
@@ -552,9 +563,9 @@ aa:hover span:nth-child(6)
                                                 Learn how to use technology to optimize your garden and grow fresh produce all year round.
                                             </p>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#" class="card-link">Read more</a>
-                                        </div>
+<!--                                        <div class="card-footer">-->
+<!--                                            <a href="#" class="card-link">Read more</a>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -611,80 +622,80 @@ aa:hover span:nth-child(6)
 <!--                        </div>-->
 <!--                    </section>-->
 
-                    <section class="s_company_team pt120 pb120 o_cc3 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[&quot;x&quot;]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">
-                        <div class="o_we_shape o_web_editor_Origins_02_001 o_we_flip_x o_third_extra_shape_mapping"></div>
-                        <div class="container">
-                            <div class="row s_nb_column_fixed">
-                                <div class="col-lg-6 pt24 pb24 o_colored_level">
-                                    <div class="row s_col_no_resize s_col_no_bgcolor">
-                                        <div class="col-lg-4 pb16 o_not_editable">
-                                            <img alt="" src="/mis_website/image/mis_website.Admit" class="img-fluid rounded-circle mx-auto"
-                                                 loading="lazy" data-original-id="86" data-original-src="/mis_website/static/src/img/Admit.jpg" data-mimetype="image/png" style=""></img>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <h4 class="o_default_snippet_text">Tony Fred, CEO</h4>
-                                            <p class="o_default_snippet_text">
-                                                Founder and chief visionary, Tony is the driving force behind the company. He loves
-                                                to keep his hands full by participating in the development of the software,
-                                                marketing, and customer experience strategies.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 pt24 pb24 o_colored_level">
-                                    <div class="row s_col_no_resize s_col_no_bgcolor">
-                                        <div class="col-lg-4 pb16 o_not_editable">
-                                            <img alt="" src="/web/image/website.s_company_team_image_2" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="87" data-original-src="/website/static/src/img/snippets_demo/s_team_member_2.png" data-mimetype="image/png" style=""></img>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <h4 class="o_default_snippet_text">Mich Stark, COO</h4>
-                                            <p class="o_default_snippet_text">Mich loves taking on challenges. With his multi-year experience as Commercial Director in the software industry, Mich has helped the company to get where it is today. Mich is among the best minds.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 pt24 pb24 o_colored_level">
-                                    <div class="row s_col_no_resize s_col_no_bgcolor">
-                                        <div class="col-lg-4 pb16 o_not_editable">
-                                            <img alt="" src="/web/image/website.s_company_team_image_3" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="88" data-original-src="/website/static/src/img/snippets_demo/s_team_member_3.png" data-mimetype="image/png" style=""></img>
-                                        </div>
-                                        <div class="col-lg-8">
-                                          <h4 class="o_default_snippet_text">Aline Turner, CTO</h4>
-                                          <p class="o_default_snippet_text">Aline is one of the iconic people in life who can say they love what they do. She mentors 100+ in-house developers and looks after the community of thousands of developers.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 pt24 pb24 o_colored_level">
-                                    <div class="row s_col_no_resize s_col_no_bgcolor">
-                                        <div class="col-lg-4 pb16 o_not_editable">
-                                            <img alt="" src="/web/image/website.s_company_team_image_4" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="89" data-original-src="/website/static/src/img/snippets_demo/s_team_member_4.png" data-mimetype="image/png" style=""></img>
-                                        </div>
-                                        <div class="col-lg-8">
-                                              <h4 class="o_default_snippet_text">Iris Joe, CFO</h4>
-                                              <p class="o_default_snippet_text">Iris, with her international experience, helps us easily understand the numbers and improves them. She is determined to drive success and delivers her professional acumen to bring the company to the next level.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+<!--                    <section class="s_company_team pt120 pb120 o_cc3 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[&quot;x&quot;]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">-->
+<!--                        <div class="o_we_shape o_web_editor_Origins_02_001 o_we_flip_x o_third_extra_shape_mapping"></div>-->
+<!--                        <div class="container">-->
+<!--                            <div class="row s_nb_column_fixed">-->
+<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
+<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
+<!--                                            <img alt="" src="/mis_website/image/mis_website.Admit" class="img-fluid rounded-circle mx-auto"-->
+<!--                                                 loading="lazy" data-original-id="86" data-original-src="/mis_website/static/src/img/Admit.jpg" data-mimetype="image/png" style=""></img>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-8">-->
+<!--                                            <h4 class="o_default_snippet_text">Tony Fred, CEO</h4>-->
+<!--                                            <p class="o_default_snippet_text">-->
+<!--                                                Founder and chief visionary, Tony is the driving force behind the company. He loves-->
+<!--                                                to keep his hands full by participating in the development of the software,-->
+<!--                                                marketing, and customer experience strategies.-->
+<!--                                            </p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
+<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
+<!--                                            <img alt="" src="/web/image/website.s_company_team_image_2" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="87" data-original-src="/website/static/src/img/snippets_demo/s_team_member_2.png" data-mimetype="image/png" style=""></img>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-8">-->
+<!--                                            <h4 class="o_default_snippet_text">Mich Stark, COO</h4>-->
+<!--                                            <p class="o_default_snippet_text">Mich loves taking on challenges. With his multi-year experience as Commercial Director in the software industry, Mich has helped the company to get where it is today. Mich is among the best minds.</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
+<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
+<!--                                            <img alt="" src="/web/image/website.s_company_team_image_3" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="88" data-original-src="/website/static/src/img/snippets_demo/s_team_member_3.png" data-mimetype="image/png" style=""></img>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-8">-->
+<!--                                          <h4 class="o_default_snippet_text">Aline Turner, CTO</h4>-->
+<!--                                          <p class="o_default_snippet_text">Aline is one of the iconic people in life who can say they love what they do. She mentors 100+ in-house developers and looks after the community of thousands of developers.</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
+<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
+<!--                                            <img alt="" src="/web/image/website.s_company_team_image_4" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="89" data-original-src="/website/static/src/img/snippets_demo/s_team_member_4.png" data-mimetype="image/png" style=""></img>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-8">-->
+<!--                                              <h4 class="o_default_snippet_text">Iris Joe, CFO</h4>-->
+<!--                                              <p class="o_default_snippet_text">Iris, with her international experience, helps us easily understand the numbers and improves them. She is determined to drive success and delivers her professional acumen to bring the company to the next level.</p>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </section>-->
 <!--Final-->
-                    <section class="s_call_to_action o_cc o_cc3" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Rainy/08_001&quot;}" data-snippet="s_call_to_action">
-                        <div class="o_we_shape o_web_editor_Rainy_08_001 o_footer_extra_shape_mapping"></div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="pb16 col-lg-12">
-                                    <h3 style="text-align: center;">Help us revolutionize the world with technology</h3>
-                                    <p class="lead" style="text-align: center;">Join us and be part of a team that is changing the world.</p>
-                                </div>
-                                <div class="pt8 col-lg-12">
-                                    <p style="text-align: center;">
-                                        <a class="btn btn-primary btn-glow-effect" href="/contactus">Contact MIS</a>
-                                        <a class="btn btn-primary btn-glow-effect" href="/applyonline">Addmissions</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+<!--                    <section class="s_call_to_action o_cc o_cc3" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Rainy/08_001&quot;}" data-snippet="s_call_to_action">-->
+<!--                        <div class="o_we_shape o_web_editor_Rainy_08_001 o_footer_extra_shape_mapping"></div>-->
+<!--                        <div class="container">-->
+<!--                            <div class="row">-->
+<!--                                <div class="pb16 col-lg-12">-->
+<!--                                    <h3 style="text-align: center;">Help us revolutionize the world with technology</h3>-->
+<!--                                    <p class="lead" style="text-align: center;">Join us and be part of a team that is changing the world.</p>-->
+<!--                                </div>-->
+<!--                                <div class="pt8 col-lg-12">-->
+<!--                                    <p style="text-align: center;">-->
+<!--                                        <a class="btn btn-primary btn-glow-effect" href="/contactus">Contact MIS</a>-->
+<!--                                        <a class="btn btn-primary btn-glow-effect" href="/applyonline">Addmissions</a>-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </section>-->
             </div>
         </t>
     </template>
