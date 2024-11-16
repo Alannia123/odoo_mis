@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="website_announcements_form" model="ir.ui.view">
+			<field name="name">web.info.form</field>
+			<field name="model">web.info</field>
+			<field name="arch" type="xml">
+				<form string="Announcements">
+					<sheet>
+						<h1>
+							<field name="name" readonly="1" />
+						</h1>
+						<group>
+							<group>
+								<field name="date"/>
+							</group>
+							<group>
+								<field name="enable" widget="boolean_toggle"/>
+							</group>
+						</group>
+                        <group>
+                            <field name="anounce"/>
+                        </group>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids"/>
+						<field name="activity_ids"/>
+						<field name="message_ids"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="website_announcements_tree" model="ir.ui.view">
+			<field name="name">web.info.tree</field>
+			<field name="model">web.info</field>
+			<field name="arch" type="xml">
+				<tree string="Announcements" >
+					<field name="name" />
+					<field name="date" />
+					<field name="anounce" />
+                    <field name="enable" widget="boolean_toggle"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="website_announcements_action" model="ir.actions.act_window">
+			<field name="name">Announcements</field>
+			<field name="res_model">web.info</field>
+<!--			<field name="context">{'search_default_state':1}</field>-->
+			<field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No data yet!
+                </p><p>
+                    Start scheduling activities on your opportunities
+                </p>
+            </field>
+		</record>
+
+
+        <record id="website_banner_announcements_tree" model="ir.ui.view">
+			<field name="name">banner.info.tree</field>
+			<field name="model">banner.info</field>
+			<field name="arch" type="xml">
+				<tree string="Banner" editable="top">
+					<field name="name" />
+					<field name="date" />
+					<field name="info" />
+                    <field name="enable" widget="boolean_toggle"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="website_banner_announcements_action" model="ir.actions.act_window">
+			<field name="name">Banner</field>
+			<field name="res_model">banner.info</field>
+			<field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No data yet!
+                </p><p>
+                    Start scheduling activities on your opportunities
+                </p>
+            </field>
+		</record>
+
+
+
+
+	</data>
+</odoo>

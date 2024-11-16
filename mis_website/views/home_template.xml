@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="mis_home_test_page" name="MIS Website Page">
+        <t t-call="website.layout">
+    <div id="wrap" class="oe_structure oe_empty">
+        <div style="padding-left: 50px; padding-right : 100px ; height : 20%">
+            <section class="s_three_columns o_cc o_cc3 pt0 pb72 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns" style="background-image: none;">
+        <div class="container">
+          <div class="row d-flex align-items-stretch">
+            <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+              <div class="card bg-white h-100">
+                  <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_1" alt="" loading="lazy" data-original-id="71" data-original-src="/web/image/website.library_image_11" data-mimetype="image/jpeg" style=""></img>
+                <div class="card-body">
+                  <span class="text-600 font-weight-bold o_default_snippet_text">$295,000</span>
+                  <h3 class="card-title o_default_snippet_text">
+        House On The Hill
+    </h3>
+                  <p class="card-text o_default_snippet_text">
+        Waste no time in viewing this truly stunning property. The property's surroundings really set it apart, offering idyllic sea views overlooking a park.
+    </p>
+                  <a href="#" class="btn btn-primary mb-0 o_default_snippet_text">View details</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+              <div class="card bg-white h-100">
+                  <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_2" alt="" loading="lazy" data-original-id="72" data-original-src="/web/image/website.library_image_13" data-mimetype="image/jpeg" style=""></img>
+                <div class="card-body">
+                  <span class="text-600 font-weight-bold o_default_snippet_text">$1,295,000,000</span>
+                  <h3 class="card-title o_default_snippet_text">
+        Moutain View
+    </h3>
+                  <p class="card-text o_default_snippet_text">
+        The house is surrounded by garden terraces that create unique spaces and an intimate ambience. With no overlooking neighbours, the garden offers real privacy.
+    </p>
+                  <a href="#" class="btn btn-primary mb-0 o_default_snippet_text">View details</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+              <div class="card bg-white h-100">
+                  <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_3" alt="" loading="lazy" data-original-id="73" data-original-src="/web/image/website.library_image_07" data-mimetype="image/jpeg" style=""></img>
+                <div class="card-body">
+                  <span class="text-600 font-weight-bold o_default_snippet_text">$455,000</span>
+                  <h3 class="card-title o_default_snippet_text">
+        Paradise Residence
+    </h3>
+                  <p class="card-text o_default_snippet_text">
+        Elegant, modern sophisticated architecture with an impressive in large scale home designed with the finest imported finishes. Pyrgon, marble and wood floors...
+    </p>
+                  <a href="#" class="btn btn-primary mb-0 o_default_snippet_text">View details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!--      <section class="s_cover parallax s_parallax_is_fixed bg-black-50 pt96 pb96 o_colored_level" data-scroll-background-ratio="1" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Wavy/24&quot;,&quot;flip&quot;:[],&quot;showOnMobile&quot;:false,&quot;animated&quot;:&quot;true&quot;}" data-snippet="s_cover" data-name="Cover" style="background-image: none;">-->
+<!--        <span class="s_parallax_bg oe_img_bg" style="background-image: url('/web/image/website.s_cover_default_image'); background-position: 50% 0;"></span>-->
+<!--        <div class="o_we_bg_filter bg-black-50"></div>-->
+<!--        <div class="o_we_shape o_web_editor_Origins_02_001"></div>-->
+<!--        <div class="s_allow_columns o_container_small">-->
+<!--          <h1 style="text-align: center;">-->
+<!--              We care <br>about results</br>-->
+<!--    </h1>-->
+<!--          <p class="lead o_default_snippet_text" style="text-align: center;"><br></br>-->
+<!--        Guided by expertise gained over 20 years of achieving success for clients, we practice with passion and strategic focus on the future.-->
+<!--    </p>-->
+<!--          <p style="text-align: center;">-->
+<!--            <a class="btn btn-primary mb-2 o_default_snippet_text" href="/contactus">-->
+<!--        Discover More-->
+<!--    </a>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </section>-->
+            </div>
+      <section class="s_text_image pt184 pb64 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/08&quot;,&quot;flip&quot;:[]}" data-snippet="s_image_text" data-name="Image - Text" style="background-image: none;">
+        <div class="o_we_shape o_web_editor_Origins_08"></div>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="pt16 pb16 col-lg-8 o_colored_level">
+                <img src="/web_editor/shape/theme_odoo_experts/s_image_text.svg?c1=%23278F84" class="img img-fluid mx-auto" alt="" style="padding: 32px !important;" loading="lazy"></img>
+            </div>
+            <div class="pt16 pb16 col-lg-4 o_colored_level">
+              <h2 class="o_default_snippet_text">
+        Our vision
+    </h2>
+              <p>
+                <br></br>
+              </p>
+              <p class="o_default_snippet_text">
+        We see our role as that of a legal partner responsible for constantly finding practical and pragmatic solutions that are adapted to our clients' needs.
+    </p>
+              <p>
+                <a href="#" class="btn btn-primary mb-2 flat o_default_snippet_text">Discover more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="s_media_list o_cc pt120 pb120 o_cc4 o_colored_level" data-vcss="001" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" data-snippet="s_media_list" data-name="Media List" style="background-image: none;">
+        <div class="o_we_shape o_web_editor_Origins_09_001"></div>
+        <div class="container">
+          <div class="row s_nb_column_fixed s_col_no_bgcolor">
+            <div class="s_media_list_item pt16 pb16 col-lg-8" data-name="Media item">
+              <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_cc o_cc1 flex-row-reverse shadow rounded o_colored_level">
+                <div class="col-lg-4 align-self-stretch s_media_list_img_wrapper">
+                    <img src="/web/image/website.s_media_list_default_image_1" class="s_media_list_img h-100 w-100" alt="" loading="lazy" data-original-id="1113" data-original-src="/theme_odoo_experts/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/jpeg" style=""></img>
+                </div>
+                <div class="col-lg-8 s_media_list_body">
+                  <h3 class="o_default_snippet_text"><span class="text-o-color-1 o_default_snippet_text">1.</span> Litigation
+    </h3>
+                  <p class="o_default_snippet_text">
+        Litigation is our core-business. Our lawyers have been involved in many high-profile cases for 20 years.
+    </p>
+                </div>
+              </div>
+            </div>
+            <div class="s_media_list_item pt24 pb24 col-lg-8 offset-lg-2" data-name="Media item">
+              <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_cc flex-row-reverse shadow rounded o_cc5 o_colored_level">
+                <div class="col-lg-4 align-self-stretch s_media_list_img_wrapper">
+                    <img src="/web/image/website.s_media_list_default_image_2" class="s_media_list_img h-100 w-100" alt="" loading="lazy" data-original-id="1114" data-original-src="/theme_odoo_experts/static/src/img/snippets/s_media_list_2.jpg" data-mimetype="image/jpeg" style=""></img>
+                </div>
+                <div class="col-lg-8 s_media_list_body">
+                  <h3 class="o_default_snippet_text"><span class="text-o-color-1 o_default_snippet_text">2.</span> Arbitration
+    </h3>
+                  <p class="o_default_snippet_text">
+        Over the past years, our lawyers have gained significant experience in arbitration, both as counsel as well as arbitrators.
+    </p>
+                </div>
+              </div>
+            </div>
+            <div class="s_media_list_item pt16 pb16 col-lg-8 offset-lg-4" data-name="Media item">
+              <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_cc o_cc1 flex-row-reverse shadow rounded o_colored_level">
+                <div class="col-lg-4 align-self-stretch s_media_list_img_wrapper">
+                    <img src="/web/image/website.s_media_list_default_image_3" class="s_media_list_img h-100 w-100" alt="" loading="lazy" data-original-id="1115" data-original-src="/theme_odoo_experts/static/src/img/snippets/s_media_list_3.jpg" data-mimetype="image/jpeg" style=""></img>
+                </div>
+                <div class="col-lg-8 s_media_list_body">
+                  <h3 class="o_default_snippet_text"><span class="text-o-color-1 o_default_snippet_text">3.</span> Mediation
+    </h3>
+                  <p class="o_default_snippet_text">
+        In mediation, the parties find a solution for their conflict, with the assistance of a mediator who has no decision-making power.
+    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_company_team pt120 pb120 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[&quot;x&quot;]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">
+        <div class="o_we_shape o_web_editor_Origins_02_001 o_we_flip_x o_third_extra_shape_mapping"></div>
+        <div class="container">
+          <div class="row s_nb_column_fixed">
+            <div class="col-lg-6 pt24 pb24 o_colored_level">
+              <div class="row s_col_no_resize s_col_no_bgcolor">
+                <div class="col-lg-4 pb16 o_not_editable">
+                    <img alt="" src="/web/image/website.s_company_team_image_1" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="86" data-original-src="/website/static/src/img/snippets_demo/s_team_member_1.png" data-mimetype="image/png" style=""></img>
+                </div>
+                <div class="col-lg-8">
+                  <h4 class="o_default_snippet_text">Tony Fred, CEO</h4>
+                  <p class="o_default_snippet_text">
+                                Founder and chief visionary, Tony is the driving force behind the company. He loves
+                                to keep his hands full by participating in the development of the software,
+                                marketing, and customer experience strategies.
+                            </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pt24 pb24 o_colored_level">
+              <div class="row s_col_no_resize s_col_no_bgcolor">
+                <div class="col-lg-4 pb16 o_not_editable">
+                    <img alt="" src="/web/image/website.s_company_team_image_2" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="87" data-original-src="/website/static/src/img/snippets_demo/s_team_member_2.png" data-mimetype="image/png" style=""></img>
+                </div>
+                <div class="col-lg-8">
+                  <h4 class="o_default_snippet_text">Mich Stark, COO</h4>
+                  <p class="o_default_snippet_text">Mich loves taking on challenges. With his multi-year experience as Commercial Director in the software industry, Mich has helped the company to get where it is today. Mich is among the best minds.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pt24 pb24 o_colored_level">
+              <div class="row s_col_no_resize s_col_no_bgcolor">
+                <div class="col-lg-4 pb16 o_not_editable">
+                    <img alt="" src="/web/image/website.s_company_team_image_3" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="88" data-original-src="/website/static/src/img/snippets_demo/s_team_member_3.png" data-mimetype="image/png" style=""></img>
+                </div>
+                <div class="col-lg-8">
+                  <h4 class="o_default_snippet_text">Aline Turner, CTO</h4>
+                  <p class="o_default_snippet_text">Aline is one of the iconic people in life who can say they love what they do. She mentors 100+ in-house developers and looks after the community of thousands of developers.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pt24 pb24 o_colored_level">
+              <div class="row s_col_no_resize s_col_no_bgcolor">
+                <div class="col-lg-4 pb16 o_not_editable">
+                    <img alt="" src="/web/image/website.s_company_team_image_4" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="89" data-original-src="/website/static/src/img/snippets_demo/s_team_member_4.png" data-mimetype="image/png" style=""></img>
+                </div>
+                <div class="col-lg-8">
+                  <h4 class="o_default_snippet_text">Iris Joe, CFO</h4>
+                  <p class="o_default_snippet_text">Iris, with her international experience, helps us easily understand the numbers and improves them. She is determined to drive success and delivers her professional acumen to bring the company to the next level.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_references pb240 pt120 o_cc o_cc2 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[]}" data-snippet="s_references" data-name="References" style="background-image: none;">
+        <div class="o_we_shape o_web_editor_Origins_02_001 o_second_extra_shape_mapping"></div>
+        <div class="container">
+          <h2 style="text-align: center;" class="o_default_snippet_text">Our References</h2>
+          <p style="text-align: center;" class="o_default_snippet_text">We are in good company.</p>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+                <img src="/web/image/website.s_reference_demo_image_1" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="80" data-original-src="/website/static/src/img/snippets_demo/s_references_1.png" data-mimetype="image/png" style=""></img>
+            </div>
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+                <img src="/web/image/website.s_reference_demo_image_2" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="81" data-original-src="/website/static/src/img/snippets_demo/s_references_2.png" data-mimetype="image/png" style=""></img>
+            </div>
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+                <img src="/web/image/website.s_reference_demo_image_3" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="82" data-original-src="/website/static/src/img/snippets_demo/s_references_3.png" data-mimetype="image/png" style=""></img>
+            </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+                <img src="/web/image/website.s_reference_demo_image_4" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="83" data-original-src="/website/static/src/img/snippets_demo/s_references_4.png" data-mimetype="image/png" style=""></img>
+            </div>
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+                <img src="/web/image/website.s_reference_demo_image_5" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="84" data-original-src="/website/static/src/img/snippets_demo/s_references_5.png" data-mimetype="image/png" style=""></img>
+            </div>
+            <div class="col-lg-2 pt16 pb16 o_colored_level">
+                <img src="/web/image/website.s_reference_default_image_6" class="img img-fluid mx-auto" alt="" loading="lazy" data-original-id="85" data-original-src="/website/static/src/img/snippets_demo/s_references_6.png" data-mimetype="image/png" style=""></img>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s_call_to_action o_cc o_cc4 pb120 pt120 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Floats/07&quot;,&quot;flip&quot;:[]}" data-snippet="s_call_to_action" data-name="Call to Action" style="background-image: none;">
+        <div class="o_we_shape o_web_editor_Floats_07"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9 pb16">
+              <h3 class="o_default_snippet_text">
+        50,000+ clients trust us <br>to protect their assets</br>
+    </h3>
+              <p class="o_default_snippet_text">
+        Contact us for a personalized meeting
+    </p>
+            </div>
+            <div class="col-lg-3 pt8">
+              <p style="text-align: right;">
+                <a class="btn btn-primary btn-lg mb-2 flat o_default_snippet_text" href="/contactus">Contact us</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+            <div class="container-fluid mt-2">
+                <t t-if="banner">
+                    <div class="row">
+                        <div style="background-color: #8080ff;" class="hov_hi">
+                            <marquee ><t t-out="banner.info"/></marquee>
+                        </div>
+                    </div>
+                </t>
+<!--                <div class="row">-->
+<!--                    <div data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Wavy/24&quot;,&quot;flip&quot;:[],&quot;showOnMobile&quot;:false,&quot;animated&quot;:&quot;true&quot;}"  class="display-2 facility-text hov_hi">-->
+<!--                    <h3 ><span>Craft</span> your Childrens Life Brighter...</h3>-->
+
+<!--                    <div class="col-md-3 p-0 card hov_hi text-dark" style="border-color: blue;">-->
+<!--                        <h5 style="color:#3f4475;"><u>Notice Or Announcement</u></h5>-->
+<!--&lt;!&ndash;                        <t foreach="anouncements" t-as="notice">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <t t-foreach="notices" t-as="notice">&ndash;&gt;-->
+<!--                            <marquee width="100%" class="fixed-marquee2" height="100%" behavior="scroll" direction="down" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">-->
+<!--                                <t t-out="notices"/>-->
+<!--&lt;!&ndash;                                <t t-out="notice.anounce"/>&ndash;&gt;-->
+<!--                            </marquee>-->
+<!--&lt;!&ndash;                        </t>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6 p-0 hov_hi">-->
+<!--                        <div class="x_wd_shape_circle">-->
+<!--                            <video autoplay="autoplay" loop="loop" muted="muted" class="img-thumbnail" id="crm_dashboard">-->
+<!--                                <source src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4" type="video/mp4"></source>-->
+<!--                            </video>-->
+<!--                        </div>-->
+<!--&lt;!&ndash;&lt;!&ndash;                        <video width="100%" controls="" autoplay="" muted="" loop="">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <source src="https://relaxripple.in/storage/videos/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4" type="video/mp4"></source>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </video>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 p-0 card hov_hi text-dark">-->
+<!--					    <div class="row">-->
+<!--                            <img src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" alt="" height="200"></img>-->
+<!--					    </div>-->
+<!--                        <h5 style="color:#3f4475;">Today's <strong>Birthday</strong>-<t t-out="today_date"></t></h5>-->
+<!--                        <marquee width="100%" height="50%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">-->
+<!--                            <b>Today No One's Birthday</b>-->
+<!--                        </marquee>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--        SLide Sectiom-->
+        <div class="row" height="70%">
+            <h3 style="background-color: #00FFFF;" class="display-2 facility-text hov_hi"><span>Craft</span> your Childrens Life Brighter...</h3>
+            <div class="col-md-3 p-0 card hov_hi text-dark" style="border-color: blue;">
+                <h5 style="color:#3f4475;"><u>Notice Or Announcement</u></h5>
+                    <marquee width="100%" class="fixed-marquee2" height="100%" behavior="scroll" direction="down" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                        <t t-out="notices"/>
+                    </marquee>
+            </div>
+            <div class="col-md-6 p-0 hov_hi">
+                <section class="s_carousel_wrapper o_full_screen_height" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+        <div class="s_carousel carousel slide o_background_video s_carousel_default" data-bs-interval="11000"
+             id="myCarousel1726281290346" style="background-color: rgb(239, 198, 49); background-image: none; position: relative;"
+             data-bg-video-src="http://player.vimeo.com/video/430330731?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
+             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Bold/01&quot;,&quot;flip&quot;:[],&quot;showOnMobile&quot;:false}">
+            <div class="o_bg_video_container">
+                <iframe class="o_bg_video_iframe fade show" frameborder="0" aria-label="Background video"
+                          id="o_bg_video_iframe_1" src="http://player.vimeo.com/video/430330731?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
+                                          style="width: 100%; height: 184.926%; inset-inline-start: 0px; inset-block-start: -42.4632%;"></iframe></div>
+            <div class="o_we_shape o_web_editor_Bold_01"></div>
+
+            <ol class="carousel-indicators o_we_no_overlay">
+                <li data-bs-slide-to="0" data-bs-target="#myCarousel1726281290346" class="active" aria-current="true"></li>
+                <li data-bs-slide-to="1" data-bs-target="#myCarousel1726281290346" class=""></li>
+                <li data-bs-slide-to="2" data-bs-target="#myCarousel1726281290346" class=""></li>
+            <li data-bs-target="#myCarousel1726281290346" data-bs-slide-to="3" class=""></li> <li data-bs-target="#myCarousel1726281290346" data-bs-slide-to="4" class=""></li> </ol>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center active"
+                     style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 306px;" data-name="Slide">
+                    <div class="container oe_unremovable"></div>
+                </div>
+
+                <div class="carousel-item pt152 pb152 o_colored_level o_background_video oe_img_bg o_bg_img_center"
+                     style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 306px;" data-name="Slide"
+                           data-bg-video-src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1" >
+                    <div class="o_bg_video_container">
+                        <iframe class="o_bg_video_iframe fade show" frameborder="0" aria-label="Background video" id="o_bg_video_iframe_2"
+                                src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
+                                style="width: 100%; height: 184.926%; inset-inline-start: 0px; inset-block-start: -42.4632%;"></iframe>
+                    </div>
+                    <div class="container oe_unremovable"></div>
+                </div>
+
+                <div class="carousel-item pt152 pb152 o_colored_level o_background_video oe_img_bg o_bg_img_center"
+                     style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 306px;" data-name="Slide"
+                     data-bg-video-src="http://player.vimeo.com/video/499761556?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1">
+                    <div class="o_bg_video_container">
+                        <iframe class="o_bg_video_iframe fade show" frameborder="0" aria-label="Background video" id="o_bg_video_iframe_3"
+                                src="http://player.vimeo.com/video/499761556?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"
+                                style="width: 100%; height: 184.926%; inset-inline-start: 0px; inset-block-start: -42.4632%;"></iframe>
+                    </div>
+                    <div class="container oe_unremovable">
+                    </div>
+                </div>
+
+                <div class="carousel-item pt96 pb96 o_colored_level o_background_video oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); min-height: 306px;" data-name="Slide" data-bg-video-src="http://player.vimeo.com/video/486931161?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"><div class="o_bg_video_container"><iframe class="o_bg_video_iframe fade show" frameborder="0" aria-label="Background video" id="o_bg_video_iframe_4" src="http://player.vimeo.com/video/486931161?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1" style="width: 100%; height: 184.926%; inset-inline-start: 0px; inset-block-start: -42.4632%;"></iframe></div>
+                    <div class="container oe_unremovable">
+
+                    </div>
+                </div>
+
+                <div class="carousel-item pt128 pb128 o_colored_level o_background_video oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_3&quot;); min-height: 306px;" data-name="Slide" data-bg-video-src="http://player.vimeo.com/video/509869821?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1"><div class="o_bg_video_container"><iframe class="o_bg_video_iframe fade show" frameborder="0" aria-label="Background video" id="o_bg_video_iframe_5" src="http://player.vimeo.com/video/509869821?autoplay=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1" style="width: 100%; height: 184.926%; inset-inline-start: 0px; inset-block-start: -42.4632%;"></iframe></div>
+                    <div class="container oe_unremovable">
+                    <div class="row o_grid_mode" data-row-count="1">
+                        <div class="o_grid_item g-col-lg-12 g-height-1 col-lg-12 o_colored_level" style="grid-area: 1 / 1 / 2 / 13; z-index: 1;"></div></div></div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous" href="#myCarousel1726281290346">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden o_default_snippet_text">Previous</span>
+            </a>
+            <a class="carousel-control-next o_not_editable o_we_no_overlay" data-bs-slide="next" role="img" aria-label="Next" title="Next" href="#myCarousel1726281290346">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden o_default_snippet_text">Next</span>
+            </a>
+        </div>
+    </section>
+            </div>
+            <div class="col-md-3 p-0 card hov_hi text-dark">
+                <div class="row">
+                    <img src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" alt="" height="200"></img>
+                </div>
+                <h5 style="color:#3f4475;">Today's <strong>Birthday</strong>-<t t-out="today_date"></t></h5>
+                <marquee width="100%" height="50%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                    <b>Today No One's Birthday</b>
+                </marquee>
+            </div>
+        </div>
+
+
+
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <h1 class="shadow-sm bg-rningwa rounded-1 p-2 m-3">School Facilities</h1>
+                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow o_onboarding_slideInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-primary">
+                                <span class="bg-primary"></span>
+                                <i class="fa fa-bus fa-3x text-primary"></i>
+                                <span class="bg-primary"></span>
+                            </div>
+                            <div class="facility-text bg-primary">
+                                <h3 class="text-primary mb-3">School Bus</h3>
+                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow o_onboarding_slideInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-success">
+                                <span class="bg-success"></span>
+                                <i class="fa fa-futbol fa-3x text-success"></i>
+                                <span class="bg-success"></span>
+                            </div>
+                            <div class="facility-text bg-success">
+                                <h3 class="text-success mb-3">Playground</h3>
+                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow o_onboarding_slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-warning">
+                                <span class="bg-warning"></span>
+                                <i class="fa fa-home fa-3x text-warning"></i>
+                                <span class="bg-warning"></span>
+                            </div>
+                            <div class="facility-text bg-warning">
+                                <h3 class="text-warning mb-3">Healthy Canteen</h3>
+                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-info">
+                                <span class="bg-info"></span>
+                                <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                                <span class="bg-info"></span>
+                            </div>
+                            <div class="facility-text bg-info">
+                                <h3 class="text-info mb-3">Positive Learning</h3>
+                                <p class="mb-0">Eirmod sed ipsum dolor sit rebum magna erat lorem kasd vero ipsum sit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="counts" class="section counts light-background">
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6 shadow-sm bg-rningwa rounded-1 p-2 m-3">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="0" class="purecounter">1232</span>
+              <p>Students</p>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="0" class="purecounter">64</span>
+              <p>Courses</p>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="0" class="purecounter">42</span>
+              <p>Events</p>
+            </div>
+          </div><!-- End Stats Item -->
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="0" class="purecounter">24</span>
+              <p>Trainers</p>
+            </div>
+          </div><!-- End Stats Item -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-2">
+		<div class="row">
+			<div class="col-md-3 p-0">
+				<div class="card hov_hi text-dark bg-primary mb-3" style="height: 150px;">
+					<div class="card header text-center">
+						<h3>Message</h3>
+					</div>
+					<div class="card-body overflow-auto">
+						<div>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 p-0">
+				<div class="card hov_hi text-dark bg-success mb-3" style="height: 150px;">
+					<div class="card header text-center">
+						<h3>Prospectus</h3>
+					</div>
+					<div class="card-body overflow-auto">
+						<div>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 p-0">
+				<div class="card hov_hi text-dark bg-info mb-3" style="height: 150px;">
+					<div class="card header text-center">
+						<h3>Calendar</h3>
+					</div>
+					<div class="card-body overflow-auto">
+						<div>School Calendar...</div>
+                        <div class="mt-3"><a href="https://relaxripple.in/Calendar" class="btn btn-danger">Read More</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 p-0">
+				<div class="card hov_hi text-dark bg-secondary mb-3" style="height: 150px;">
+					<div class="card header text-center">
+						<h3>Admin</h3>
+					</div>
+					<div class="card-body overflow-auto">
+						<div>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+            <div class="container-xxl py-5">
+		<div class="container">
+			<div class="row g-4">
+												<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<svg class="svg-inline--fa fa-graduation-cap fa-w-20 fa-3x text-primary mb-4" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="graduation-cap" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg><!-- <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i> Font Awesome fontawesome.com -->
+							<h5 class="mb-3">Skilled Instructors</h5>
+							<p>hi i am there, can you see me (::)</p>
+						</div>
+					</div>
+				</div>
+								<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<svg class="svg-inline--fa fa-laptop fa-w-20 fa-3x text-primary mb-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="laptop" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg><!-- <i class="fa fa-3x fas fa-laptop text-primary mb-4"></i> Font Awesome fontawesome.com -->
+							<h5 class="mb-3">Bright Education With DIGITAL BOARD</h5>
+							<p>Bright Education With DIGITAL BOARD</p>
+						</div>
+					</div>
+				</div>
+								<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<svg class="svg-inline--fa fa-home fa-w-18 fa-3x text-primary mb-4" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="home" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg><!-- <i class="fa fa-3x fa-home text-primary mb-4"></i> Font Awesome fontawesome.com -->
+							<h5 class="mb-3">Library test</h5>
+							<p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+						</div>
+					</div>
+				</div>
+								<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="service-item text-center pt-3">
+						<div class="p-4">
+							<svg class="svg-inline--fa fa-trophy fa-w-18 fa-3x text-primary mb-4" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trophy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M552 64H448V24c0-13.3-10.7-24-24-24H152c-13.3 0-24 10.7-24 24v40H24C10.7 64 0 74.7 0 88v56c0 35.7 22.5 72.4 61.9 100.7 31.5 22.7 69.8 37.1 110 41.7C203.3 338.5 240 360 240 360v72h-48c-35.3 0-64 20.7-64 56v12c0 6.6 5.4 12 12 12h296c6.6 0 12-5.4 12-12v-12c0-35.3-28.7-56-64-56h-48v-72s36.7-21.5 68.1-73.6c40.3-4.6 78.6-19 110-41.7 39.3-28.3 61.9-65 61.9-100.7V88c0-13.3-10.7-24-24-24zM99.3 192.8C74.9 175.2 64 155.6 64 144v-16h64.2c1 32.6 5.8 61.2 12.8 86.2-15.1-5.2-29.2-12.4-41.7-21.4zM512 144c0 16.1-17.7 36.1-35.3 48.8-12.5 9-26.7 16.2-41.8 21.4 7-25 11.8-53.6 12.8-86.2H512v16z"></path></svg><!-- <i class="fa fa-3x fas fa-trophy text-primary mb-4"></i> Font Awesome fontawesome.com -->
+							<h5 class="mb-3">Play Ground</h5>
+							<p>we have a ground</p>
+						</div>
+					</div>
+				</div>
+
+							</div>
+		</div>
+	</div>
+
+
+            <div class="row g-4">
+
+
+        <div class="col-lg-6 col-xl-4">
+            <div class="x_wd_app_horizontal d-flex position-relative">
+                <a class="stretched-link" href="/app/ecommerce">
+                    <img width="60" height="60" class="bg-white shadow-sm rounded-1 p-2 m-3" src="//download.odoocdn.com/icons/website_sale/static/description/icon.svg" alt="Odoo eCommerce icon" loading="lazy" style=""></img>
+                </a>
+                <div class="my-4 me-4 lh-sm">
+                    <h5 class="mb-0">eCommerce</h5>
+                    <small class="text-muted">Your online store</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-4">
+            <div class="x_wd_app_horizontal d-flex position-relative">
+                <a class="stretched-link" href="/app/events">
+                    <img width="60" height="60" class="bg-white shadow-sm rounded-1 p-2 m-3" src="//download.odoocdn.com/icons/website_event/static/description/icon.svg" alt="Odoo Events icon" loading="lazy" style=""></img>
+                </a>
+                <div class="my-4 me-4 lh-sm">
+                    <h5 class="mb-0">Events</h5>
+                    <small class="text-muted">Sell tickets online</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-4">
+            <div class="x_wd_app_horizontal d-flex position-relative">
+                <a class="stretched-link" href="/app/elearning">
+                    <img width="60" height="60" class="bg-white shadow-sm rounded-1 p-2 m-3" src="//download.odoocdn.com/icons/website_slides/static/description/icon.svg" alt="Odoo eLearning icon" loading="lazy" style=""></img>
+                </a>
+                <div class="my-4 me-4 lh-sm">
+                    <h5 class="mb-0">eLearning</h5>
+                    <small class="text-muted">Share knowledge</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-4">
+            <div class="x_wd_app_horizontal d-flex position-relative">
+                <a class="stretched-link" href="/app/crm">
+                    <img width="60" height="60" class="bg-white shadow-sm rounded-1 p-2 m-3" src="//download.odoocdn.com/icons/crm/static/description/icon.svg" alt="Odoo CRM icon" loading="lazy" style=""></img>
+                </a>
+                <div class="my-4 me-4 lh-sm">
+                    <h5 class="mb-0">CRM</h5>
+                    <small class="text-muted">Generate leads</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-4">
+            <div class="x_wd_app_horizontal d-flex position-relative">
+                <a class="stretched-link" href="/app/appointments">
+                    <img width="60" height="60" class="bg-white shadow-sm rounded-1 p-2 m-3" src="//download.odoocdn.com/icons/appointment/static/description/icon.svg" alt="Odoo Appointments icon" loading="lazy" style=""></img>
+                </a>
+                <div class="my-4 me-4 lh-sm">
+                    <h5 class="mb-0">Appointments</h5>
+                    <small class="text-muted">Self-service booking</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-4">
+            <div class="x_wd_app_horizontal d-flex position-relative">
+                <a class="stretched-link" href="/app/recruitment">
+                    <img width="60" height="60" class="bg-white shadow-sm rounded-1 p-2 m-3" src="//download.odoocdn.com/icons/hr_recruitment/static/description/icon.svg" alt="Odoo Recruitment icon" loading="lazy" style=""></img>
+                </a>
+                <div class="my-4 me-4 lh-sm">
+                    <h5 class="mb-0">Recruitment</h5>
+                    <small class="text-muted">Publish offers and apply online</small>
+                </div>
+            </div>
+        </div>
+
+                </div>
+
+
+        </t>
+
+    </template>
+
+</odoo>

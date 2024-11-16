@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    Template for report-->
+    <template id="report_print_admit_card_document">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    table, th, td {
+                        padding-left:10px;
+                        padding:5px;
+                    }
+                    .br-right {
+                        border-right:1 px solid black;
+                        border-left:none;
+                        border-bottom:none;
+                        border-top:none;
+                        padding:5px;
+                    }
+                    .no-border {
+                        border-right:none;
+                        border-left:none;
+                        border-bottom:none;
+                        border-top:none;
+                    }
+                    .text-right {
+                        text-align: end;
+                    }
+                    .br-bottom {
+                        border-bottom:1px solid black;
+                        padding:5px;
+                    }
+                    .tbl_border table, .tbl_border th, .tbl_border td {
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        empty-cells:show;
+                    }
+                    .tbl_noborder table, .tbl_noborder th, .tbl_noborder td {
+                        border-collapse: collapse;
+                        empty-cells:show;
+                    }
+                </style>
+
+                        <div class="page" style="page-break-after:always !important;">
+                            <t t-set="classe_divs" t-value="doc.get_all_class_divs()"/>
+                <t t-foreach="classe_divs" t-as="div">
+                    <t t-foreach="div.student_ids" t-as="student">
+                            <div id="header">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <span class="text-center"><h2>MARY IMMACULATE ENGLISH MEDIUM SCHOOL</h2></span><br/>
+                                            <span class="text-center"><h4>Vill.Patilachandra,P.O.-Paschim Madhyapur, P.S.-Basirhat, Dist.-North 24 Parganas, PIN-743429</h4></span><br/>
+                                            <span class="text-center"><h3>ADMIT CARD</h3></span><br/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table width="100%"  class="no-border" style="padding-top:10px;border-color : #ffffff;">
+                                    <tr >
+                                        <td colspan="4"><span class="text-center"><b>MIS <t t-esc="doc.name">Examination, Sept- 2024</t> </b></span></td>
+                                    </tr>
+                                    <tr class="no-border">
+                                        <td class="no-border" width="25%"><span>Student Name</span></td>
+                                        <td class="no-border" width="25%"><t t-esc="student.name"/> </td>
+                                        <td colspan="4" class="no-border" width="35%"></td>
+                                        <td colspan="4" class="no-border" width="15%">
+                                            <img t-if="student.image_1920" t-att-src="image_data_uri(student.image_1920)" style="height: 110px; width: 160px;padding-top:40px" alt="Logo"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-border" width="25%"><span>Student ID</span></td>
+                                        <td class="no-border" width="25%"><t t-esc="student.register_no"/> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-border" width="25%"><span>Class</span></td>
+                                        <td class="no-border" width="25%"><t t-esc="div.class_id.name"/> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-border" width="25%"><span>Section</span></td>
+                                        <td class="no-border" width="25%"><t t-esc="div.division_id.name"/> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="no-border" width="25%"><span>Roll No.</span></td>
+                                        <td class="no-border" width="25%"><t t-esc="student.roll_no"/> </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <table>
+                                <h4 class="text-center">Class- I Half Yearly Exam Time Table</h4>
+                            </table>
+                            <table width="100%"  class="no-border" style="padding-top:10px;" name="gate_pass_lines">
+                                <thead >
+                                    <tr style="border-top: 1px solid black;border-bottom: 1px solid black;border-left: none;border-right: none;width:100%;">
+                                        <th name="sr_no" width="7%" class="br-right text-center"><span>Subject</span></th>
+                                        <th name="th_quantity" width="23%" class="br-right text-center"><span>Date</span></th>
+                                        <th name="tax" width="8%" class="br-right text-center"><span>Time</span></th>
+                                        <th name="tax" width="8%" class="br-right text-center"><span>Students's Signature</span></th>
+                                        <th name="tax" width="8%" class="br-right text-center"><span>Invigilator's Signature</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <t t-foreach="doc.subject_line_ids" t-as="line">
+                                        <tr class="br-right">
+                                            <td name="td_produc_code" class="br-right text-left"><span t-field="line.subject_id.name"></span></td>
+                                            <td name="desc" class="br-right text-center"><span t-field="line.date"></span></td>
+                                            <td name="desc" class="br-right text-center"><span t-field="line.time_from">-</span><span t-field="line.time_to"></span></td>
+                                            <td name="td_qty" class="br-right text-center"></td>
+                                            <td name="td_qty" class="br-right text-center"></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <table width="100%">
+                                <tr>
+                                    <td width="34%">
+                                        <span class="text-center"><b>Administrator cum Manager</b></span>
+                                    </td>
+                                    <td width="34%">
+                                        <span class="text-center"><b>Controller of Examination</b></span>
+                                    </td>
+                                    <td width="34%">
+                                        <span class="text-center"><b>Principal</b></span>
+                                    </td>
+                                </tr>
+                            </table>
+                             </t>
+                </t>
+                        </div>
+
+            </t>
+        </t>
+    </template>
+
+
+    <template id="report_print_admit_card_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+<!--                <t t-call="mis_education_exam.report_print_admit_card_document" t-lang="doc.partner_id.lang"/>-->
+                <t t-call="mis_education_exam.report_print_admit_card_document" />
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--This template for taking online admission from website-->
+    <template id="online_admission" name="Online Admission">
+        <t t-call="website.layout">
+<!--            <t t-if="classes"-->
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <style>
+                        .text-times {
+                            font-family: "Times New Roman", Times, serif;
+                            font-size: 24px;
+                        }
+                </style>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container glow-background">
+                    <h4 class="text-center" style="text-decoration: underline;color :blue;"><strong>GENERAL INSTRUCTIONS</strong></h4>
+                    <h3 class="text-center text-times" style="color: #333; text-shadow: 2px 2px 4px #888;"><strong>ADMISSION FOR LKG To Class I  2025 – 2026</strong></h3>
+                    <p><b>Mary Immaculate School</b> is glad to inform you that the admission procedure for L.K.G  to Class: I  (2025-2026) is available through school Website.</p>
+
+                    <p><b>Mary Immaculate School</b> is a Christian Minority Institution and as such the norms of minority institutions are applicable in the admission process.</p>
+                    <br></br>
+                    <h4  style="text-decoration: underline;">You are requested to follow the information that is given below.</h4>
+                    <div style="padding-left: 18px">1. Application form should be submitted on or before 31st December 2024.</div>
+                    <div style="padding-left: 18px">2. The date of the interview will be informed duly through massage, while submitting the form in the school office.</div>
+                    <div style="padding-left: 18px">3. At the time of interview with the child, only the parents must accompany the child. The following document must be  attached with the  online  form. </div>
+                    <div style="padding-left: 28px">⇒ Birth certificate ( Issued by Municipal Corporation/ Baptism certificate for catholics only.</div>
+                    <div style="padding-left: 28px">⇒ Aadhar  card of child and parents.</div>
+                    <div style="padding-left: 28px">⇒ Transfer certificate with mark sheet  if any.</div>
+                    <div style="padding-left: 18px">4. At the time of interview, the parents are requested to produce the original documents.</div>
+                    <div style="padding-left: 18px">5. The interview is designed to be child-friendly. </div>
+                    <div style="padding-left: 18px">6. Age criteria for the Academic session: LKG : <span style="color: red;"><strong>Girls / Boys born in the year 1st April 2020 to 31st March 2021 are eligible for admission to LOWER K.G.  (age 4+)</strong></span></div>
+                    <br></br>
+                    <p style="color: blue;padding-left: 35px">Note: <b>Down load the form and submit in the school office.</b></p>
+                </div>
+            </section>
+
+            <div id="wrap" class="wrap student-booking-widget">
+                <div class="container glow-background" id="online_appl_form" >
+                    <form action="/admission/submit" method="POST"
+                          enctype="multipart/form-data">
+                        <input type="hidden" name="csrf_token"
+                               t-att-value="request.csrf_token()"/>
+                        <style>
+                                          /* Container to hide overflow */
+                                          .typing-text {
+                                            font-family: monospace;
+                                            font-size: 24px;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            border-right: 3px solid black; /* Cursor effect */
+                                            width: 41ch; /* Adjust to the length of the text */
+                                            animation: typing 3s steps(15), blink 0.5s step-end infinite;
+                                          }
+
+                                          /* Typing animation */
+                                          @keyframes typing {
+                                            from { width: 0; }
+                                            to { width: 41ch; } /* Matches container width */
+                                          }
+
+                                          /* Blinking cursor animation */
+                                          @keyframes blink {
+                                            50% { border-color: transparent; }
+                                          }
+                                        </style>
+                        <div class="card" style="width:100%;border:none;" id="application_form">
+                                <h3 class="typing-text" style="color: #333; text-shadow: 2px 2px 4px #888;text-align: center">ONLINE APPLICATION FORM FILLING ==>></h3>
+                            <div width="60%" class="text-center">
+                                <div class="col">
+                                    <label for="class_of_addmision">
+                                        <span class="s_website_form_label_content">
+                                            <span style="color: blue">Class Of Addmission </span> <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <select name="class_of_addmision" data-init="1" required="1">
+                                            <option value="">Select Class...</option>
+                                            <t t-foreach="classes" t-as="class">
+                                                <option t-att-value="class.id">
+                                                    <t t-esc="class.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="studio1">
+                                        <span class="s_website_form_label_content">
+                                            First Name  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="first_name" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="first_name"
+                                               required="1"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="studio1">
+                                        <span class="s_website_form_label_content">
+                                            Last Name  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="last_name" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="last_name"
+                                               required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="studio1">
+                                        <span class="s_website_form_label_content">
+                                            Date of Birth  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="date" name="date"
+                                               type="date"
+                                               class="form-control s_website_form_input"
+                                               required="1"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="religion">
+                                        <span class="s_website_form_label_content">
+                                            Religion  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="religion" name="religion"
+                                               type="text"
+                                               class="form-control s_website_form_input"
+                                               required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="exact_age">
+                                        <span class="s_website_form_label_content">
+                                            Exact Age(as on April 1st)  <span style="color:red;font-size: 13px">  * Enter Numbers Only</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="exact_age" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="exact_age" required="1" maxlength="2" size="2"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="caste">
+                                        <span class="s_website_form_label_content">
+                                            Caste  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="caste" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="caste" required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="gender">
+                                        <span class="s_website_form_label_content">
+                                            Gender  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <select name="gender" id="gender" required="1">
+                                            <option value="empty"></option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="mother_tongue">
+                                        <span class="s_website_form_label_content">
+                                            Mother Tongue  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="mother_tongue" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="mother_tongue" required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br></br>
+
+                            <br/>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="studio1">
+                                        <span class="s_website_form_label_content">
+                                            Father's Name <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="father" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="father" required="1"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="studio1">
+                                        <span class="s_website_form_label_content">
+                                            Mother's Name  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="mother" type="text"
+                                           class="form-control s_website_form_input"
+                                               name="mother" required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="father_qualify">
+                                        <span class="s_website_form_label_content">
+                                            Father's Qualification  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="father_qualify" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="father_qualify" required="1"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="mother_qualify">
+                                        <span class="s_website_form_label_content">
+                                            Mother's Qualification  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="mother_qualify" type="text"
+                                           class="form-control s_website_form_input"
+                                               name="mother_qualify" required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="father_occupation">
+                                        <span class="s_website_form_label_content">
+                                            Father's Occupation  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="father_occupation" type="text"
+                                               class="form-control s_website_form_input"
+                                               name="father_occupation" required="1"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="mother_occupation">
+                                        <span class="s_website_form_label_content">
+                                            Mother's Occupation  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="mother_occupation" type="text"
+                                           class="form-control s_website_form_input"
+                                               name="mother_occupation" required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row" style="width:60%">
+                                <div class="col">
+                                    <label for="studio1">
+                                        <span class="s_website_form_label_content">
+                                            Address (With PIN Code)  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input
+                                                id="street_1"
+                                                type="text"
+                                                placeholder="Enter your Street........"
+                                                class="form-control s_website_form_input"
+                                                name="street_1"
+                                                required="1"/>
+                                    </div>
+                                    <div class="col">
+                                        <input
+                                                id="street_2"
+                                                type="text"
+                                                class="form-control s_website_form_input"
+                                                placeholder="Enter your Street 2........"
+                                                name="street_2"
+                                                required="0"/>
+                                    </div>
+                                    <div class="col">
+                                        <input
+                                                id="street_city"
+                                                type="text"
+                                                class="form-control s_website_form_input"
+                                                name="street_city"
+                                                placeholder="Enter Your City........"
+                                                required="1"/>
+                                    </div>
+                                    <div class="col">
+                                        <input
+                                                id="street_zip"
+                                                type="text"
+                                                class="form-control s_website_form_input"
+                                                placeholder="Enter Your Zip........"
+                                                name="street_zip"
+                                                required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="mobile_whats">
+                                        <span class="s_website_form_label_content">
+                                            Phone with WhatsApp  <span style="color:red;font-size: 13px">  *  Enter without Country Code</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="mobile_whats" type="text" placeholder="Please Enter 10 Digits Only"
+                                           class="form-control s_website_form_input"
+                                               name="mobile_whats" required="1" maxlength="10" size="10"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="alternate_phone">
+                                        <span class="s_website_form_label_content">
+                                            Alternate Phone Number  <span style="color:red;font-size: 13px">  * Enter without Country Code</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="alternate_phone" type="text" placeholder="Please Enter 10 Digits Only"
+                                           class="form-control s_website_form_input"
+                                               name="alternate_phone" required="1" maxlength="10" size="10"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br></br>
+                            <script>
+                                function callJavascriptFunction() {
+                                var name_ss = 0;
+                                var ss_no = document.getElementById("aahar_no").value;
+                                var ss_no_update = document.getElementById("aahar_no");
+
+                                if(ss_no.length == 4 || ss_no.length == 9){
+                                ss_no_update.value = ss_no + ' '
+                                }
+                                }
+                            </script>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="aahar_no">
+                                        <span class="s_website_form_label_content">
+                                            Aadhar Number  <span style="color:red;font-size: 13px">  * Enter Numbers Only</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="aahar_no" type="text"
+                                           class="form-control s_website_form_input" placeholder="1234 4567 8912"
+                                               name="aahar_no" required="1" maxlength="12" size="12"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="blood_group">
+                                        <span class="s_website_form_label_content">
+                                            Blood Group <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <select name="blood_group" id="blood_group" required="1">
+                                            <option value="empty"></option>
+                                            <option value="a+">A+</option>
+                                            <option value="a-">A-</option>
+                                            <option value="b+">B+</option>
+                                            <option value="o+">O+</option>
+                                            <option value="o-">O-</option>
+                                            <option value="ab+">AB+</option>
+                                            <option value="ab-">AB-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            <script>-->
+<!--                                function myFunction() {-->
+<!--                                var get_option = document.getElementById("student_have_brother_sister").value;-->
+<!--                                var show_div = document.getElementById('show_name_cals_section');-->
+<!--                                if (get_option === 'yes') {-->
+<!--                                        show_div.style.display = 'block';  // Show div-->
+<!--                                    } else {-->
+<!--                                        show_div.style.display = 'none';   // Hide div-->
+<!--                                    }-->
+<!--                                }-->
+<!--                            </script>-->
+                            <br></br>
+<!--                            <div class="row">-->
+<!--                                <div class="col">-->
+<!--                                    <label for="student_have_brother_sister">-->
+<!--                                        <span class="s_website_form_label_content">-->
+<!--                                            If the Student Have a Sister/Brother in this school (not cousin/relatives)-->
+<!--                                        </span>-->
+<!--                                    </label>-->
+<!--                                </div>-->
+<!--                                <div class="col">-->
+<!--                                    <select name="student_have_brother_sister" id="student_have_brother_sister" onchange="myFunction()" required="0">-->
+<!--                                        <option value="no">NO</option>-->
+<!--                                        <option value="yes">YES</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="row" id="show_name_cals_section" style="display : none;">-->
+<!--&lt;!&ndash;                            <div class="row" >&ndash;&gt;-->
+<!--                                <div class="col">-->
+<!--                                    <label for="already_student_name">-->
+<!--                                        <span class="s_website_form_label_content">-->
+<!--                                            Student Name-->
+<!--                                        </span>-->
+<!--                                    </label>-->
+<!--                                    <div class="col">-->
+<!--                                        <input id="already_student_name" type="text"-->
+<!--                                               class="form-control s_website_form_input"-->
+<!--                                               name="already_student_name" required="0"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col">-->
+<!--                                    <label for="already_student_class">-->
+<!--                                        <span class="s_website_form_label_content">-->
+<!--                                            Class-->
+<!--                                        </span>-->
+<!--                                    </label>-->
+<!--                                    <div class="col">-->
+<!--                                        <select name="already_student_class" data-init="1" required="0">-->
+<!--                                            <option value="">Select Class...</option>-->
+<!--                                            <t t-foreach="exist_classes" t-as="exist_class">-->
+<!--                                                <option t-att-value="exist_class.id">-->
+<!--                                                    <t t-esc="exist_class.name"/>-->
+<!--                                                </option>-->
+<!--                                            </t>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="col">-->
+<!--                                    <label for="already_student_section">-->
+<!--                                        <span class="s_website_form_label_content">-->
+<!--                                            Section-->
+<!--                                        </span>-->
+<!--                                    </label>-->
+<!--                                    <div class="col">-->
+<!--                                        <select name="already_student_section" data-init="1" required="0">-->
+<!--                                            <option value="">Select Section...</option>-->
+<!--                                            <t t-foreach="sections" t-as="section">-->
+<!--                                                <option t-att-value="section.id">-->
+<!--                                                    <t t-esc="section.name"/>-->
+<!--                                                </option>-->
+<!--                                            </t>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+                            <br></br>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="special_concern">
+                                        <span class="s_website_form_label_content">
+                                            Special Concern regarding Child:  <span style="color:red;">  *</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input id="special_concern" type="text"
+                                           class="form-control s_website_form_input"
+                                               name="special_concern" required="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col">
+                                    <label for="photo">
+                                        <span class="s_website_form_label_content">
+                                            Upload Student Photo<span style="color:blue;font-size: 13px">(Passport Size Photo)</span><span style="color:red;font-size: 12px">  * within 1 MB</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input type="file" name="photo" required="1"
+                                               accept="image/*,application/pdf"/>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="col">
+                                    <label for="birth_certi">
+                                        <span class="s_website_form_label_content">
+                                            Upload Birth Certificate<span style="color:blue;font-size: 13px">(PDF or Photo)</span><span style="color:red;font-size: 12px">  * within 2 MB</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input type="file" name="birth_certi"
+                                               accept="image/*,application/pdf" required="1"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="col">
+                                    <label for="adhar">
+                                        <span class="s_website_form_label_content">
+                                            Upload Aadhar<span style="color:blue;font-size: 13px">(PDF or Photo)</span><span style="color:red;font-size: 12px">  * within 2 MB</span>
+                                        </span>
+                                    </label>
+                                    <div class="col">
+                                        <input type="file" name="adhar" required="1"
+                                               accept="image/*,application/pdf"/>
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div class="form-error-message"/>
+                            <div class="text-center">
+                                <div style="width: 400px;"
+                                     class="s_website_form_label"/>
+                                <button type="submit"
+                                        class="btn btn-primary"
+                                        style="width:150px;height:50px; text-align: center;">
+                                    Submit
+                                </button>
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+    <!--Successes template after submitting registration form-->
+    <template id="submit_admission" name="Admission Submit">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_website_form" data-vcss="001"
+                         data-snippet="s_website_form">
+                    <div class="container">
+                        <center>
+                            <br/>
+                            <br/>
+                            <div class="col-12 ">
+                                <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>
+                                <br/>
+                                <h1 class="text-center">Thank You for Choosing Our School</h1>
+                                <div class="pb16 pt16 s_hr" data-snippet="s_hr"
+                                     data-name="Separator">
+                                    <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                </div>
+                                <h5 class="text-center">
+                                    <span class="fa fa-check-circle"/>
+                                    <span>
+                                        Your admission registered
+                                        <b>successfully</b> and your Register Number is <b><t t-esc="application.name"/> </b>
+                                    </span>
+                                </h5>
+                                <p class="text-center">Please Download your Application Here</p>
+                                <a t-attf-href="/report/pdf/#{application.id}" class="btn btn-primary">Download Application</a>
+
+                            </div>
+                        </center>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

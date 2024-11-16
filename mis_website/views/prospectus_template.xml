@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--    About MIS-->
+    <template id="mis_propectus_page" name="Prospectus">
+        <t t-call="website.layout">
+            <div class="container-fluid mt-2" >
+                <section class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"  data-vcss="001" data-snippet="s_title" data-scroll-background-ratio="1">
+                    <span class="s_parallax_bg oe_img_bg" style="background-position: 50% 0;">
+                        <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                    </span>
+                    <div class="o_we_bg_filter bg-black-50"/>
+                    <div class="container">
+                        <h1>PROPECTUS</h1>
+                    </div>
+                </section>
+<!--                tabs-->
+                <section class="s_tabs pt48 pb48 o_colored_level" data-vcss="001" data-snippet="s_tabs" data-name="Tabs" style="background-image: none;">
+                    <div class="container glow-background">
+                        <div class="s_tabs_main">
+                            <div class="s_tabs_nav mb-3">
+                                <ul class="nav nav-pills" role="tablist">
+            <!--                        Menu About MIS-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text active" id="nav_tabs_link_about_mis" data-bs-toggle="tab" href="#nav_tabs_link_about_mis"
+                                            role="tab" aria-controls="nav_tabs_link_about_mis" aria-selected="true">ABOUT MIS</a>
+                                    </li>
+            <!--                        Menu Oblates-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text " id="nav_tabs_link_oblates" data-bs-toggle="tab" href="#nav_tabs_link_oblates"
+                                            role="tab" aria-controls="nav_tabs_link_oblates" aria-selected="true">OBLATES</a>
+                                    </li>
+            <!--                        Menu OMI and Education-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_omi_education" data-bs-toggle="tab" href="#nav_tabs_link_omi_education"
+                                           role="tab" aria-controls="nav_tabs_link_omi_education" aria-selected="true">OMI AND EDUCATION</a>
+                                    </li>
+            <!--                        Menu VISION and MISSION-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_vision_mission" data-bs-toggle="tab" href="#nav_tabs_link_vision_mission"
+                                           role="tab" aria-controls="nav_tabs_link_vision_mission" aria-selected="true">VISION AND MISSION</a>
+                                    </li>
+            <!--                        Menu GOVERNING BODY MEMBERS-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_governing_menbers" data-bs-toggle="tab" href="#nav_tabs_link_governing_menbers"
+                                            role="tab" aria-controls="nav_tabs_link_governing_menbers" aria-selected="false">GOVERNING BODY MEMBERS</a>
+                                    </li>
+            <!--                        Menu ACADEMIC COUNCIL-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_academic_council" data-bs-toggle="tab" href="#nav_tabs_link_academic_council"
+                                            role="tab" aria-controls="nav_tabs_link_academic_council" aria-selected="false">ACADEMIC COUNCIL</a>
+                                    </li>
+            <!--                        Menu CORE COMMITTEE-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_core_committee" data-bs-toggle="tab" href="#nav_tabs_link_core_committee"
+                                            role="tab" aria-controls="nav_tabs_link_core_committee" aria-selected="false">CORE COMMITTEE</a>
+                                    </li>
+            <!--                        Menu ALUMNI / AE ASSOCIATION-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_alumni_associate" data-bs-toggle="tab" href="#nav_tabs_link_alumni_associate"
+                                            role="tab" aria-controls="nav_tabs_link_alumni_associate" aria-selected="false">ALUMNI / AE ASSOCIATION</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="s_tabs_content tab-content">
+<!--                    Content About MIS-->
+                                <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">ABOUT US.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+
+                                <div class="tab-pane fade active show" id="nav_tabs_link_about_mis" role="tabpanel" aria-labelledby="nav_tabs_link_about_mis">
+                                    <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">ABOUT US.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Write one or two paragraphs describing your product or services.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+<!--                    Content Oblates-->
+                                <div class="tab-pane fade" id="nav_tabs_link_oblates" role="tabpanel" aria-labelledby="nav_tabs_link_oblates">
+                                    <section class="s_text_image o_cc o_cc1 pb48 pt48 o_colored_level" data-snippet="s_image_text" data-name="Image - Text"
+                                            data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                            <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center flex-row-reverse o_colored_level">
+                                                    <div class="align-self-stretch s_media_list_img_wrapper col-lg-5">
+                                                        <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                             class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                             data-file-name="s_media_list_2.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="236"
+                                                             data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_2.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                    </div>
+                                                    <div class="s_media_list_body col-lg-7">
+                                                        <h3 id="mis_oblates" class="o_default_snippet_text">OBLATES.....</h3>
+                                                        <h5 class="o_default_snippet_text">A heart as big as the world.</h5>
+                                                        <p class="o_default_snippet_text">
+                                                            Eugene de Mazenod was born into a noble family of Aix-en-Provence in southern France in 1782, but his family
+                                                            had to flee as refugees during the French Revolution. In 1802 he returned to France and embraced a frivolous
+                                                            social life. However, on Good Friday 1807, before the crucifix in a church in Aix, the young man experienced
+                                                            a profound conversion that made him understand the spiritual and material plight of France and the Church.
+                                                            Within a year he entered the seminary and was ordained in 1811.
+                                                        </p>
+                                                            Father de Mazenod set about rebuilding a world of Christian values. He preached in villages with passion, tirelessly
+                                                            bringing the Word of God and the sacraments to all, visiting prisoners and offering the poor a renewed sense of dignity.
+                                                            In 1816 other priests, inspired by his vision and energy, joined him and in 1826 the Missionary Oblates of Mary Immaculate
+                                                            was formally approved by Pope Leo XII.
+                                                        <p>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p class="o_default_snippet_text">
+                                                     De Mazenod, deemed to have had a heart as big as the world', sent his growing corps
+                                                    of Oblates to mission in Canada, Sri Lanka, South Africa and in various parts of Europe.
+                                                </p>
+                                                <p class="o_default_snippet_text">
+                                                    Bishop Eugene de Mazenod died on May 21, 1861 and the Church recognised his life of dedication, virtue and outreach to
+                                                    the most abandoned when, on December 3, 1995. Pope John Paul 11 officially declared him a saint. More than 3,700 Oblate
+                                                    priests and brothers, supported by many Oblate Lay Associates, continue to mission on every continent of the world.
+                                                    His charism lives on in them.
+                                                </p>
+                                            </div>
+<!--                                            </div>-->
+                                        </div>
+                                    </section>
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Write one or two paragraphs describing your product or services.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+<!--                    Content  Omi and Education           -->
+                                <div class="tab-pane fade " id="nav_tabs_link_omi_education" role="tabpanel" aria-labelledby="nav_tabs_link_omi_education">
+                                    <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                            <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+                                                    <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                        <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                    </div>
+                                                    <div class="s_media_list_body col-lg-6">
+                                                        <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                        <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                              style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">ABOUT US565635.....</span></h3>
+                                                        <p>
+                                                            Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                            Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                            The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                            Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                            the Directorate of School Education, Government of West Bengal. The school follows
+                                                            the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                            Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                    Our parents are a strong support to participate harmoniously to create an educational
+                                                    experience to anyone in the campus by their dynamic activities with the school staff.
+                                                    Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                    learning hubs of Mary Immaculate School campus.
+                                                </p>
+                                            </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+
+                        <div class="oe_structure oe_empty">
+                            <section class="s_text_block" style="background-image: none;">
+                                <div class="container s_allow_columns">
+                                    <p class="o_default_snippet_text">To be successful your content needs to be useful to your readers.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+<!--                    Content Vision and Mission-->
+                                <div class="tab-pane fade" id="nav_tabs_link_vision_mission" role="tabpanel" aria-labelledby="nav_tabs_link_vision_mission">
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Start with the customer – find out what they want and give it to them.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+<!--                    Content Governing Body Members-->
+                                <div class="tab-pane fade" id="nav_tabs_link_governing_menbers" role="tabpanel" aria-labelledby="nav_tabs_link_governing_menbers">
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Start with the customer – find out what they want and give it to them.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+<!--                    Content  Academic Council           -->
+                                <div class="tab-pane fade" id="nav_tabs_link_academic_council" role="tabpanel" aria-labelledby="nav_tabs_link_academic_council">
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Start with the customer – find out what they want and give it to them.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+<!--                    Content  Core Committee           -->
+                                <div class="tab-pane fade" id="nav_tabs_link_core_committee" role="tabpanel" aria-labelledby="nav_tabs_link_core_committee">
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Start with the customer – find out what they want and give it to them.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+<!--                    Content  Academic Council           -->
+                                <div class="tab-pane fade" id="nav_tabs_link_alumni_associate" role="tabpanel" aria-labelledby="nav_tabs_link_alumni_associate">
+                                    <div class="oe_structure oe_empty">
+                                        <section class="s_text_block" style="background-image: none;">
+                                            <div class="container s_allow_columns">
+                                                <p class="o_default_snippet_text">Start with the customer – find out what they want and give it to them.</p>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+<!--                old-->
+                <section class="s_table_of_content pt24 pb24 o_cc">
+                    <div class="container-fluid mt-2">
+                        <div class="row s_nb_column_fixed">
+                            <div class="col-lg-2 s_table_of_content_navbar_wrap s_table_of_content_navbar_sticky s_table_of_content_vertical_navbar
+                                            d-print-none d-none d-lg-block o_not_editable o_cc" data-name="Navbar">
+                                <div class="s_table_of_content_navbar list-group o_no_link_popover bg-warning rounded-1" style="top: 76px;" >
+                                    <a href="#mis_about_us" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0 active">About Us</a>
+                                    <a href="#mis_oblates" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">OBLATES</a>
+                                    <a href="#mis_omi_education" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">OMI and Education</a>
+                                    <a href="#vision_mission" class="table_of_content_link list-group-item list-group-item-action py-2 border-0 rounded-0">Vission And Mission</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 s_table_of_content_main oe_structure oe_empty" data-name="Content">
+<!--                                <section class="pb16">-->
+<!--                                    <h2 id="mis_about_us" data-anchor="true">About Us</h2>-->
+                                    <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">ABOUT US.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+<!--                                <section class="pb16">-->
+<!--                                    <h2 id="mis_oblates" data-anchor="true">OBLATES.....</h2>-->
+                                    <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center flex-row-reverse o_colored_level">
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-5">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                 class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                 data-file-name="s_media_list_2.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="236"
+                                                                 data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_2.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                        <div class="s_media_list_body col-lg-7">
+                                                            <h3 id="mis_oblates" class="o_default_snippet_text">OBLATES.....</h3>
+                                                            <h5 class="o_default_snippet_text">A heart as big as the world.</h5>
+                                                            <p class="o_default_snippet_text">
+                                                                Eugene de Mazenod was born into a noble family of Aix-en-Provence in southern France in 1782, but his family
+                                                                had to flee as refugees during the French Revolution. In 1802 he returned to France and embraced a frivolous
+                                                                social life. However, on Good Friday 1807, before the crucifix in a church in Aix, the young man experienced
+                                                                a profound conversion that made him understand the spiritual and material plight of France and the Church.
+                                                                Within a year he entered the seminary and was ordained in 1811.
+                                                            </p>
+                                                                Father de Mazenod set about rebuilding a world of Christian values. He preached in villages with passion, tirelessly
+                                                                bringing the Word of God and the sacraments to all, visiting prisoners and offering the poor a renewed sense of dignity.
+                                                                In 1816 other priests, inspired by his vision and energy, joined him and in 1826 the Missionary Oblates of Mary Immaculate
+                                                                was formally approved by Pope Leo XII.
+                                                            <p>
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p class="o_default_snippet_text">
+                                                             De Mazenod, deemed to have had a heart as big as the world', sent his growing corps
+                                                            of Oblates to mission in Canada, Sri Lanka, South Africa and in various parts of Europe.
+                                                        </p>
+                                                        <p class="o_default_snippet_text">
+                                                            Bishop Eugene de Mazenod died on May 21, 1861 and the Church recognised his life of dedication, virtue and outreach to
+                                                            the most abandoned when, on December 3, 1995. Pope John Paul 11 officially declared him a saint. More than 3,700 Oblate
+                                                            priests and brothers, supported by many Oblate Lay Associates, continue to mission on every continent of the world.
+                                                            His charism lives on in them.
+                                                        </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+                                <section class="s_text_image pt48 pb0 o_colored_level" data-snippet="s_text_image" data-name="Text - Image"
+                                         data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                                <h2 id="mis_omi_education" class="o_default_snippet_text">OMI AND EDUCATION</h2>
+                                                <p class="o_default_snippet_text">
+                                                     The Society of Oblates of Mary Immaculate, a Catholic Christian Religious Order founded by Saint Eugene de Mazenod
+                                                    in 1816, has been active in the field of education throughout the world since its origin. Worldwide, the Oblates are
+                                                    responsible for 86 Educational Institutions in 63 countries. These Oblates Educational Institutions engage the efforts
+                                                    of approximately 1000's of teachers, educating approximately 30,000 students. In India, The Society of Oblates has
+                                                    founded 18 Primary and Middle Schools, 18 High Schools with 215 teachers, educating about 5000 students belonging to
+                                                    every social class, community, and linguistic group. These Institutions are part of the Catholic Church's effort to
+                                                    share in the country's educational undertaking. The Oblate School in India aims at the intellectual, integral, personal
+                                                    formation of the children and youth. To accomplish these, special efforts are made:
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                                <img src="/web_editor/image_shape/website.s_text_image_default_image/web_editor/solid/solid_square_1.svg?c2=o-color-3"
+                                                   class="img img-fluid mx-auto" alt="" data-shape="web_editor/solid/solid_square_1" data-original-mimetype="image/jpeg"
+                                                   data-file-name="s_text_image.svg" data-shape-colors=";o-color-3;;;" loading="lazy" data-original-id="1252"
+                                                   data-original-src="/theme_real_estate/static/src/img/snippets/s_text_image.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    To help the students to become mature, spiritually-oriented men and women of character.
+                                                    To encourage them continuously to strive after excellence in every field.
+                                                    To value and judiciously use their freedom. To be clear and firm on principles and courageous in action:
+                                                    To be unselfish in the service of their fellowmen:
+                                                    To become agents of needed social change in our country.
+                                                </p>
+                                                <p>
+                                                    The Oblate schools thus aim at making its own contribution towards a transformation of the present-day social condition
+                                                    so that the principles of social justice, equality of opportunity, genuine freedom, and respect for religious and moral
+                                                    values enshrined in the constitution of India, may prevail, and the possibility of living a fully human existence may be
+                                                    available to all.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="s_text_image o_cc o_cc1 pb48 pt48 o_colored_level" data-snippet="s_image_text" data-name="Image - Text"
+                                         data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                                <img src="/web_editor/image_shape/website.s_image_text_default_image/web_editor/solid/solid_square_2.svg?c1=o-color-3"
+                                                     class="img img-fluid mx-auto" alt="" data-shape="web_editor/solid/solid_square_2" data-original-mimetype="image/jpeg"
+                                                     data-file-name="s_image_text.svg" data-shape-colors="o-color-3;;;;" loading="lazy" data-original-id="1234"
+                                                     data-original-src="/theme_real_estate/static/src/img/snippets/s_image_text.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                            </div>
+                                            <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                                <h2 id="vision_mission" class="o_default_snippet_text">VISION AND MISSION</h2>
+                                                <p class="o_default_snippet_text">
+                                                    Our decoration experts are at your disposal to guide you step by step in the design of your interior and will give you the best advice for your interior design.
+                                                </p>
+                                                <p class="o_default_snippet_text">
+                                                    Discover our tailor-made services to embellish the decoration of your home.
+                                                </p>
+                                                <p>
+                                                    <a href="#" class="btn btn-primary o_default_snippet_text">Explore our services</a>
+                                                  </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+</template>
+
+<!--    OBLATES-->
+    <template id="mis_oblates" name="Oblates MIS">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>OBLATES</h1>
+                </div>
+            </section>
+            <div class="text-center align-items-center award-box awards-area-mobile bg-white d-inline-flex f-w-500 flex-column font-14 gap-2 justify-content-center p-3 position-absolute rounded-3 nine">
+	<img alt="Top Salesforce Partner" height="100" loading="lazy" src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" style="color:transparent" width="100"></img>
+	<span class="award-title">Top Salesforce Partner</span>
+</div>
+        </t>
+    </template>
+
+<!--    OBLATES-->
+    <template id="omi_and_education" name="OMI and Education">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>OMI and Education</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+<!--    Vision and Mission-->
+    <template id="mission_and_vission" name="Vision and Mission">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Vision and Mission</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+<!--    Governing Body Members-->
+    <template id="govering_body_members" name="Governing Body Members">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Governing Body Members</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+<!--    Academic Council-->
+    <template id="academic_council" name="Academic Council">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Academic Council</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+<!--    Core Committee-->
+    <template id="core_commitee" name="Core Committee">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Core Committee</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+<!--    Academic CouncilAlumni / AE Association-->
+    <template id="alumni_ae_associates" name="Alumni / AE Association">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Alumni / AE Association</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+</odoo>

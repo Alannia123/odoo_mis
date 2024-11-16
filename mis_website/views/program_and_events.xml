@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--    About MIS-->
+    <template id="program_events_gallery" name="Program and Events">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Program &amp; Events</h1>
+                </div>
+            </section>
+            <div id="wrap" class="o_wevent_index ">
+                <!-- Options -->
+                <t t-set="opt_events_list_cards" t-value="is_view_active('website_event.opt_events_list_cards')"/>
+                <t t-set="opt_events_list_columns" t-value="is_view_active('website_event.opt_events_list_columns')"/>
+            </div>
+            <div class="row">
+                <div class="row g-4 g-lg-3 g-xxl-4">
+                    <div t-if="not photos" class="col-12 alert alert-warning mt8">
+                        No results found for Photos.
+                    </div>
+                </div>
+            </div>
+    <!-- List -->
+            <div class="container glow-background">
+                <style>
+                    .animated-image img {
+                        width: 450px;
+                        height: 450px;
+                        transition: transform 0.5s ease-in-out;
+                    }
+
+                    .animated-image img:hover {
+                        transform: scale(1.2); /* Zoom effect */
+                    }
+
+                    .button-view {
+                      border-radius: 4px;
+                      background-color: #f4511e;
+                      border: none;
+                      color: #FFFFFF;
+                      text-align: center;
+                      font-size: 18px;
+                      padding: 12px;
+                      width: 200px;
+                      transition: all 0.5s;
+                      cursor: pointer;
+                      margin: 5px;
+                    }
+
+                    .button-view span {
+                      cursor: pointer;
+                      display: inline-block;
+                      position: relative;
+                      transition: 0.5s;
+                    }
+
+                    .button-view span:after {
+                      content: '\27A1';
+                      position: absolute;
+                      opacity: 0;
+                      top: 0;
+                      right: 20px;
+                      transition: 0.5s;
+                    }
+
+                    .button-view:hover span {
+                      padding-right: 25px;
+                    }
+
+                    .button-view:hover span:after {
+                      opacity: 1;
+                      right: 0;
+                    }
+                </style>
+
+                <div class="row">
+                    <t t-foreach="request.env['program.gallery'].search([])" t-as="gallery">
+                        <t t-set="photos" t-value="gallery.get_random_photos()"/>
+                        <h3><span t-out="gallery.event_id.name"> On </span><span style="color:blue;" t-out="gallery.date" ></span></h3>
+                        <t t-foreach="photos" t-as="photo">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card mb-4 animated-image">
+                                    <img t-att-src="image_data_uri(photo.datas)" height="700" wigth="800" />
+                                </div>
+                            </div>
+                        </t>
+                        <div class="text-end">
+                            <a style="color: green;font-size: 15px;" t-attf-href="/gallery/photos/#{gallery.id}">
+                                <b class="button-view"><span>View All</span></b>
+                            </a>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+<!--    Images gallery-->
+    <template id="program_events_gallery_individual_event" name="Program and Events">
+        <t t-call="website.layout">
+<!--            <div class="container">-->
+                <section class="s_image_gallery o_spc-small o_masonry pt24 pb24" data-vcss="001" data-columns="3" style="overflow: hidden; background-image: none;" data-snippet="s_images_wall" data-name="Images Wall">
+                    <div class="container">
+                         <style>
+                    .animated-image img {
+                        width: 400px;
+                        height: 400px;
+                        transition: transform 0.5s ease-in-out;
+                    }
+
+                    .animated-image img:hover {
+                        transform: scale(1.2); /* Zoom effect */
+                    }
+
+                             .button-view {
+                      border-radius: 4px;
+                      background-color: #f4511e;
+                      border: none;
+                      color: #FFFFFF;
+                      text-align: center;
+                      font-size: 18px;
+                      padding: 12px;
+                      width: 200px;
+                      transition: all 0.5s;
+                      cursor: pointer;
+                      margin: 5px;
+                    }
+
+                    .button-view span {
+                      cursor: pointer;
+                      display: inline-block;
+                      position: relative;
+                      transition: 0.5s;
+                    }
+
+                    .button-view span:after {
+                      content: '\2B05';
+                      position: absolute;
+                      opacity: 0;
+                      top: 0;
+                      right: -20px;
+                      transition: 0.5s;
+                    }
+
+                    .button-view:hover span {
+                      padding-right: 25px;
+                    }
+
+                    .button-view:hover span:after {
+                      opacity: 1;
+                      right: 0;
+                    }
+                </style>
+                    <div class="row s_nb_column_fixed">
+                        <t t-set="photos" t-value="gallery.get_current_enevt_photos()"/>
+                        <t t-foreach="photos" t-as="photo">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card mb-4 animated-image">
+                                    <img t-att-src="image_data_uri(photo.datas)" height="500" wigth="500" />
+<!--                                    <div class="card-body">-->
+<!--                                        <h5 class="card-title"><t t-esc="photo.name"/></h5>-->
+<!--&lt;!&ndash;                                        <p class="card-text"><t t-esc="photo.place"/></p>&ndash;&gt;-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="text-end" >
+                        <a  style="color: green;font-size: 15px;" t-attf-href="/program_events_gallery">
+                            <b class="button-view"><span>Back To Gallery</span></b>
+                        </a>
+                    </div>
+
+            </div>
+    </section>
+<!--            </div>-->
+        </t>
+    </template>
+
+</odoo>

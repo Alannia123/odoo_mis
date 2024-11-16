@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data >
+
+        <!--        Home-->
+         <record id="mis_menu_home" model="website.menu">
+            <field name="name">Home</field>
+            <field name="url">/mis_home</field>
+<!--            <field name="page_id" ref="website.homepage_page"/>-->
+             <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">10</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+        <!--        Prospectus-->
+        <record id="prospectus_menu" model="website.menu">
+            <field name="name">Prospectus</field>
+            <field name="url">/prospectus</field>
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">20</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+
+
+<!-- Academics-->
+        <record id="academics_main_menu" model="website.menu">
+            <field name="name">Academics</field>
+            <field name="url">/mis_academics</field>
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">30</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+<!--        <record id="academic_sub_menu" model="website.menu">-->
+<!--            <field name="name">Academic</field>-->
+<!--            <field name="url">/academic</field>-->
+<!--            <field name="parent_id" ref="mis_website.academics_main_menu"/>-->
+<!--            <field name="sequence" type="int">10</field>-->
+<!--            <field name="website_id" ref="website.default_website"/>-->
+<!--        </record>-->
+<!--        <record id="student_performance_menu" model="website.menu">-->
+<!--            <field name="name">Student Performance</field>-->
+<!--            <field name="url">/student_performance</field>-->
+<!--            <field name="parent_id" ref="mis_website.academics_main_menu"/>-->
+<!--            <field name="sequence" type="int">20</field>-->
+<!--            <field name="website_id" ref="website.default_website"/>-->
+<!--        </record>-->
+<!--        <record id="sylabus_menu" model="website.menu">-->
+<!--            <field name="name">Syllabus</field>-->
+<!--            <field name="url"></field>-->
+<!--            <field name="parent_id" ref="mis_website.academics_main_menu"/>-->
+<!--            <field name="sequence" type="int">30</field>-->
+<!--            <field name="website_id" ref="website.default_website"/>-->
+<!--        </record>-->
+<!--        <record id="primary_sylabus_menu" model="website.menu">-->
+<!--            <field name="name">Primary</field>-->
+<!--            <field name="url">/applyonline</field>-->
+<!--            <field name="parent_id" ref="mis_website.sylabus_menu"/>-->
+<!--            <field name="sequence" type="int">10</field>-->
+<!--            <field name="website_id" ref="website.default_website"/>-->
+<!--        </record>-->
+<!--        <record id="upper_primary_sylabus_menu" model="website.menu">-->
+<!--            <field name="name">Upper Primary</field>-->
+<!--            <field name="url">/applyonline</field>-->
+<!--            <field name="parent_id" ref="mis_website.sylabus_menu"/>-->
+<!--            <field name="sequence" type="int">20</field>-->
+<!--            <field name="website_id" ref="website.default_website"/>-->
+<!--        </record>-->
+
+<!--School Commitee-->
+         <record id="school_commitee_menu" model="website.menu">
+            <field name="name">School Committee</field>
+            <field name="url">/school_commitee</field>
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">40</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+<!--        <record id="academic_exam_commitee_menu" model="website.menu">-->
+<!--            <field name="name">Academic Exam Committee</field>-->
+<!--            <field name="url">/academic_exam_commitee</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">10</field>-->
+<!--        </record>-->
+<!--        <record id="english_lit_club_menu" model="website.menu">-->
+<!--            <field name="name">English Literature Club</field>-->
+<!--            <field name="url">/english_lit_club</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">20</field>-->
+<!--        </record>-->
+<!--        <record id="bengali_lit_club_menu" model="website.menu">-->
+<!--            <field name="name">Bengali Literature Club</field>-->
+<!--            <field name="url">/bengali_lit_club</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">30</field>-->
+<!--        </record>-->
+<!--        <record id="eco_club_menu" model="website.menu">-->
+<!--            <field name="name">ECO Club</field>-->
+<!--            <field name="url">/eco_club</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">40</field>-->
+<!--        </record>-->
+<!--        <record id="cultural_club_menu" model="website.menu">-->
+<!--            <field name="name">Cultural Club</field>-->
+<!--            <field name="url">/cultural_club</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">50</field>-->
+<!--        </record>-->
+<!--        <record id="sports_club_menu" model="website.menu">-->
+<!--            <field name="name">Sports Club</field>-->
+<!--            <field name="url">/sports_club</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">60</field>-->
+<!--        </record>-->
+<!--        <record id="students_council_menu" model="website.menu">-->
+<!--            <field name="name">Students Council</field>-->
+<!--            <field name="url">/students_council</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">70</field>-->
+<!--        </record>-->
+<!--        <record id="staff_menbers_menu" model="website.menu">-->
+<!--            <field name="name">Staff Members</field>-->
+<!--            <field name="url">/staff_menbers</field>-->
+<!--            <field name="parent_id" ref="mis_website.school_commitee_menu"/>-->
+<!--            <field name="sequence" type="int">80</field>-->
+<!--        </record>-->
+
+<!--Admission-->
+         <record id="school_admission_menu" model="website.menu">
+            <field name="name">Admission</field>
+            <field name="url">/applyonline</field>
+             <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">50</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+<!--Library-->
+         <record id="library_menu" model="website.menu">
+            <field name="name">Library</field>
+            <field name="url">/library</field>
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">60</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+<!--Program & events-->
+         <record id="program_events_menu" model="website.menu">
+            <field name="name">Program &amp; Events Gallery</field>
+            <field name="url">/program_events_gallery</field>
+             <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">70</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+         <record id="menu_contactus" model="website.menu">
+            <field name="name">Contact us</field>
+            <field name="url">/contactus</field>
+<!--            <field name="page_id" ref="website.contactus_page"/>-->
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">80</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,301 @@
+<template id="report_student_application_document">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                    <style>
+                        table, th, td {
+                            padding-left:10px;
+                            padding:5px;
+                        }
+                        .br-right {
+                            border-right:1 px solid black;
+                            border-left:none;
+                            border-bottom:none;
+                            border-top:none;
+                            padding:5px;
+                        }
+                        .no-border {
+                            border-right:none;
+                            border-left:none;
+                            border-bottom:none;
+                            border-top:none;
+                        }
+                        .text-right {
+                            text-align: end;
+                        }
+                        .br-bottom {
+                            border-bottom:1px solid black;
+                            padding:5px;
+                        }
+                        .tbl_border table, .tbl_border th, .tbl_border td {
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                            empty-cells:show;
+                        }
+                        .tbl_noborder table, .tbl_noborder th, .tbl_noborder td {
+                            border-collapse: collapse;
+                            empty-cells:show;
+                        }
+                    </style>
+                    <div class="page">
+                        <div id="header">
+                            <table width="100%"  class="no-border" style="padding-top:10px; border-color : #ffffff;">
+                                <tr class="no-border" >
+                                    <td  class="no-border" width="10%" style="padding-left:20px;">
+                                        <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="height: 150px; width: 150px;padding-top:40px" alt="Logo"/>
+                                    </td>
+                                    <td width="45%" class="no-border" style="border: 1 px solid black;">
+                                        <span style="font-size:24px;"><h3><t t-esc="o.company_id.name"/></h3><br/></span>
+                                        <span class="text-center no-border"><t t-esc="o.company_id.street"/> <t t-esc="o.company_id.street2"/></span>
+                                        <span class="text-center no-border"><t t-esc="o.company_id.city"/>, <t t-esc="o.company_id.state_id.name"/> - <t t-esc="o.company_id.zip"/></span><br/>
+                                        <span class="no-border">Website:www.misbasirhat.in</span>, <span>Phone:<t t-esc="o.company_id.mobile"/> - <t t-esc="o.company_id.zip"/></span><br/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="oe_structure"/>
+                        <div >
+                            <h4>
+                                <span style="border : 2 px solid black;">Application No: <t t-esc="o.name" /></span>
+                            </h4>
+                        </div>
+                        <div style="text-align: center;">
+                            <h3>
+                                <span style="border : 2 px solid black;">ONLINE APPLICATION FORM - SESSION: <t t-esc="o.academic_year_id.name" /></span>
+                            </h3>
+                        </div>
+                        <div style="margin-top:50px;">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Name of the Student:
+                                                </span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.first_name"/>
+                                            <span t-field="o.last_name"/>
+                                        </td>
+                                        <td rowspan="6">
+                                            <img t-if="o.image"
+                                                 t-attf-src="data:image/png;base64,{{o.image}}"
+                                                 height="220"
+                                                 border="1" width="180"
+                                                 style="margin-left:35px;"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Date of Birth:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.date_of_birth"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Exact Age(as on 1st April,<span t-field="o.academic_year_id.ay_start_date" t-options='{"format": "YYYY"}'/> ):</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.exact_age_april"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Religion:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.religion"/><strong> <span>Caste:</span></strong><span t-field="o.caste"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Gender(Male/Female):</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.gender"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Class of Admission:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Mother Tongue:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Blood Group:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Father's Name:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Father's Qualification:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Father's Occupation:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Mother's Name:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Mother's Qualification:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Mother's Occupation:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Present Residential Address(With PIN Code):</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Phone Number(WhatsApp):</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span>Aadhar No:</span>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.admission_class_id.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                    <table width="100%">
+                                        <span>If the student has a sister/brother in this school(not cousin/relatives) </span>
+                                        <tr>
+                                            <td width="50%">
+                                                <strong><span>Name:</span></strong><span t-field="o.admission_class_id.name"/>
+                                            </td>
+                                            <td width="25%">
+                                                <strong><span>Class:</span></strong><span t-field="o.admission_class_id.name"/>
+                                            </td>
+                                            <td width="25%">
+                                                <strong><span>Section:</span></strong><span t-field="o.admission_class_id.name"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div>
+                                        <strong><span>Special concern regarding Child:</span></strong><span t-field="o.admission_class_id.name"/>
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <div class="row">
+                                        <div class="col" style="width:80%">
+                                            <strong><span>Date of Addmission:</span></strong><span t-field="o.admission_class_id.name"/>
+                                        </div>
+                                        <div class="col" style="width:20%">
+                                            <strong><span style="text-align:end">Signature of Parent</span></strong>
+                                        </div>
+                                    </div>
+                                    <br></br>
+                                    <span style="border: 1.5 px solid black;text-align:center"><strong>FOR OFFICE USE</strong></span>
+                                    <div class="row">
+                                        <div class="col" >
+                                            <strong><span>Date of Addmission:</span></strong>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" >
+                                            <strong><span>Application Fee:</span></strong>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" width="70%">
+                                            <strong><span>Received By(Signature):</span></strong>
+                                        </div>
+                                        <div class="col" width="30%">
+                                            <strong><span>School Seal</span></strong>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </t>
+        </t>
+    </template>

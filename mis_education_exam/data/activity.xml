@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<!--Syllabus entry notification to techers-->
+    <record id="syllabus_entry_teachers_notification" model="mail.activity.type">
+        <field name="name">Syllabus entry for Teachers</field>
+        <field name="res_model">education.exam</field>
+    </record>
+
+
+</odoo>
+

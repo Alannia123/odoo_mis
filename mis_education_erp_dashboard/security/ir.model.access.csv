@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_erp_dashboard,access_erp_dashboard,model_erp_dashboard,base.group_user,1,1,1,1
+access_erp_dashboard_faculty,access_erp_dashboard faculty,model_erp_dashboard,mis_education_erp_dashboard.group_education_faculty,1,1,1,0
+access_erp_dashboard_principal,access_erp_dashboard principal,model_erp_dashboard,mis_education_erp_dashboard.group_education_principal,1,1,1,1
+
+

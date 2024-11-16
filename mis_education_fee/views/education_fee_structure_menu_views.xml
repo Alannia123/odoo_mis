@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Menu for Education fee-->
+    <menuitem id="education_fee_menu_root" name="MIS Fees"
+              web_icon="mis_education_fee,static/description/icon.png"
+              sequence="11"/>
+</odoo>
+

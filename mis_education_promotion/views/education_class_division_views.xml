@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Education class form view inherited add extra fields-->
+    <record id="education_class_division_view_form" model="ir.ui.view">
+        <field name="name">education.class.division.view.form.inherit.education.promotion</field>
+        <field name="model">education.class.division</field>
+        <field name="inherit_id"
+               ref="mis_education_core.education_class_division_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='faculty_id']" position="after">
+                <field name="is_last_class"/>
+                <field name="promote_class_id" invisible="is_last_class"
+                       required="not is_last_class"/>
+                <field name="promote_division_id" invisible="is_last_class"
+                       required="not is_last_class"/>
+            </xpath>
+        </field>
+    </record>
+    <!--    Education class result tree -->
+    <record id="education_class_division_view_tree_promotion_result"
+            model="ir.ui.view">
+        <field name="name">education.class.division.view.tree.promotion.result
+        </field>
+        <field name="model">education.class.division</field>
+        <field name="arch" type="xml">
+            <tree string="Class Division" create="false">
+                <field name="name"/>
+                <field name="academic_year_id"/>
+                <field name="faculty_id"/>
+            </tree>
+        </field>
+    </record>
+    <!--    Education class result form -->
+    <record id="education_class_division_view_form_promotion_result"
+            model="ir.ui.view">
+        <field name="name">education.class.division.view.form.promotion.result
+        </field>
+        <field name="model">education.class.division</field>
+        <field name="arch" type="xml">
+            <form string="Class Division" create="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="promote_class_id"/>
+                            <field name="promote_division_id"/>
+                        </group>
+                        <group>
+                            <field name="academic_year_id"/>
+                            <field name="faculty_id"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Students">
+                            <field name="final_student_ids" nolabel="1">
+                                <tree string="Students" editable="bottom">
+                                    <field name="student_id"/>
+                                    <field name="final_result"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--Education class division search view-->
+    <record id="education_class_division_view_search_promotion_result"
+            model="ir.ui.view">
+        <field name="name">education.division.view.search.promotion.result
+        </field>
+        <field name="model">education.class.division</field>
+        <field name="arch" type="xml">
+            <search string="Promotion Results">
+                <group expand="1" string="Group By">
+                    <filter string="Academic Year" name="group_academic_year"
+                            context="{'group_by':'academic_year_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <!--Education class division action-->
+    <record id="education_class_division_action"
+            model="ir.actions.act_window">
+        <field name="name">Promotion Results</field>
+        <field name="res_model">education.class.division</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_group_academic_year': 1}</field>
+
+    </record>
+    <!--Education class division tree view action-->
+    <record id="action_education_class_division_promotion_result_tree"
+            model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id"
+               ref="education_class_division_view_tree_promotion_result"/>
+        <field name="act_window_id"
+               ref="education_class_division_action"/>
+    </record>
+    <!--Education class division form view action-->
+    <record id="action_education_class_division_promotion_result_form"
+            model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id"
+               ref="education_class_division_view_form_promotion_result"/>
+        <field name="act_window_id"
+               ref="education_class_division_action"/>
+    </record>
+    <!--Education class division menu-->
+    <menuitem id="education_class_division_menu"
+              action="education_class_division_action"
+              parent="education_year_ending_menu"
+              sequence="1"
+              name="Promotion Results"/>
+</odoo>

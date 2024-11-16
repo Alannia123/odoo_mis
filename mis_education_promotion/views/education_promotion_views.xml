@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--        Form view for the eduction promotion    -->
+    <record id="education_promotion_view_form" model="ir.ui.view">
+        <field name="name">education.promotion.view.form</field>
+        <field name="model">education.promotion</field>
+        <field name="arch" type="xml">
+            <form string="Education Promotion">
+                <header>
+                    <button name="action_compute_final_result"
+                            type="object" invisible="state != 'draft'"
+                            class="oe_highlight"
+                            string="Compute Final Result"/>
+                    <button name="close_academic_year"
+                            type="object"
+                            invisible="state != 'result_computed'"
+                            class="oe_highlight"
+                            string="Close Academic Year"/>
+                    <field name="state" readonly="1" widget="statusbar"
+                           statusbar_visible="draft,result_computed,close"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" readonly="state != 'draft'"/>
+                    </group>
+                    <notebook>
+                        <page string="Students">
+                            <field name="academic_result_ids" nolabel="1">
+                                <tree string="Results" create="false"
+                                      edit="false">
+                                    <field name="student_id"/>
+                                    <field name="final_result"/>
+                                    <field name="division_id"/>
+                                    <field name="academic_year_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--        Tree view for the eduction promotion    -->
+    <record id="education_promotion_view_tree" model="ir.ui.view">
+        <field name="name">education.promotion.view.tree</field>
+        <field name="model">education.promotion</field>
+        <field name="arch" type="xml">
+            <tree string="Education Promotion">
+                <field name="name"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <!--        Action view for the eduction promotion    -->
+    <record id="education_promotion_action" model="ir.actions.act_window">
+        <field name="name">Education Promotion</field>
+        <field name="res_model">education.promotion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                You haven't created any promotion yet.
+            </p>
+        </field>
+    </record>
+    <!--  Menu items  -->
+    <menuitem
+            id="education_year_ending_menu" name="Year Ending"
+            parent="mis_education_core.menu_education_root" sequence="5"/>
+    <menuitem
+            id="education_promotion_sub_menu" name="Promotion"
+            parent="education_year_ending_menu"
+            action="education_promotion_action"/>
+</odoo>

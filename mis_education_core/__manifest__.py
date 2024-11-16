@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+
+{
+    'name': 'Educational ERP Core MIS',
+    'version': '17.0.1.0.1',
+    'category': 'School',
+    'summary': """Core Module of Educational ERP""",
+    'description': """A strong and complete user-friendly ERP solution designed 
+     specifically for school administration is Educational ERP. 
+     Details such as student entrance, enrollment information, faculty records, 
+     class management, and subject administration are simple to administer.""",
+    'author': 'Alanniainfotechz',
+    'company': 'Alanniainfotechz',
+    'maintainer': 'Alanniainfotechz',
+    'depends': ['stock', 'hr_recruitment', 'contacts'],
+    'data': [
+        'security/education_security.xml',
+        'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
+        'data/activity.xml',
+        'wizard/application_reject_views.xml',
+
+        'views/education_main_menu.xml',
+        'wizard/rank_card_wizard_view.xml',
+        'views/res_partner_views.xml',
+        'views/education_academic_year_views.xml',
+        'views/education_application_views.xml',
+        'views/education_class_views.xml',
+        'views/education_class_division_views.xml',
+        'views/education_student_views.xml',
+        'views/education_faculty_views.xml',
+        'views/education_document_views.xml',
+        'views/document_document_views.xml',
+        'views/education_division_views.xml',
+        'views/education_medium_views.xml',
+        'views/education_subject_views.xml',
+        'views/education_syllabus_views.xml',
+        'views/education_amenities_views.xml',
+        'views/res_company_views.xml',
+        'views/hr_applicant_views.xml',
+        'views/application_reject_reason_views.xml',
+        'views/grenn_book_view.xml',
+        'report/student_id_card_reports.xml',
+        'report/application_ir_action.xml',
+        'report/student_application_reports.xml',
+        'report/faculty_id_card_reports.xml',
+        'report/rank_card_action.xml',
+        'report/rank_card_template.xml',
+    ],
+    'demo': [
+        'demo/education_academic_year_demo.xml'
+    ],
+    'images': ['static/description/banner.jpg'],
+    'license': 'AGPL-3',
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}

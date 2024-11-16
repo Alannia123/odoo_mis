@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Setting the paper format -->
+    <record id="paperformat_admit_card" model="report.paperformat">
+            <field name="name">Admit Card A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">6</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+        <!--    <field name="report_ids" eval="[(6, 0, [ref('account.account_invoices_without_payment'), ref('account.account_invoices')])]"/>-->
+            <field name="dpi">100</field>
+        </record>
+    <!--Generate the pdf report-->
+    <record id="action_admit_card_print_report" model="ir.actions.report">
+        <field name="name">Print Admit Card</field>
+        <field name="model">education.exam</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">mis_education_exam.report_print_admit_card_report</field>
+        <field name="report_file">mis_education_exam.report_print_admit_card_report</field>
+<!--        <field name="paperformat_id" ref="mis_education_exam.paperformat_admit_card"/>-->
+        <field name="binding_model_id" ref="model_education_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

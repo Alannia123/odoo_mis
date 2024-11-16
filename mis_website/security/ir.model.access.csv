@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_program_events,access.program.events,model_program_events,,1,1,1,1
+access_program_gallery,access.program.gallery,model_program_gallery,,1,1,1,1
+access_program_gallery_photo,access.program.gallery.photo,model_program_gallery_photo,,1,1,1,1
+access_photo_tag,access.photo_tag,model_photo_tag,,1,1,1,1
+access_web_video,access.web.video,model_web_video,,1,1,1,1
+access_web_info,access.web.info,model_web_info,,1,1,1,1
+access_banner_info,access.banner.info,model_banner_info,,1,1,1,1

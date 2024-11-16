@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="report_student_application_document">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <style>
+                        body {
+                            font-size: 19.5px; /* Adjust to your desired font size */
+                                }
+                        table, th, td {
+                            padding-left:10px;
+                            padding:5px;
+                        }
+                        .br-right {
+                            border-right:1px solid black;
+                            padding:5px;
+                        }
+                        .no-border {
+                            border: none;
+                        }
+                        .text-right {
+                            text-align: end;
+                        }
+                        .text-center {
+                            text-align: center;
+                        }
+                        .br-bottom {
+                            border-bottom:1px solid black;
+                            padding:5px;
+                        }
+                        .tbl_border table, .tbl_border th, .tbl_border td {
+                            border: 1px solid black;
+                            border-collapse: collapse;
+                            empty-cells:show;
+                        }
+                        .tbl_noborder table, .tbl_noborder th, .tbl_noborder td {
+                            border-collapse: collapse;
+                            empty-cells:show;
+                        }
+
+                    </style>
+
+                    <div class="page" style="border: 2px solid black;page-break-after:always !important;">
+<!--                        <div id="header">-->
+                            <table width="100%" class="no-border">
+                                <tr class="no-border" >
+                                    <td  class="no-border" width="10%" style="vertical-align:top">
+                                        <img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="height: 150px; width: 120px;" alt="Logo"/>
+                                    </td>
+                                    <td width="90%"  class="no-border" >
+                                        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins"></link>
+                                        <span style="text-shadow: 2px 2px 5px #888;font-family: 'Abril Fatface', serif; font-size: 40px;padding-left:10 px">
+                                            <h2 style="padding-top:20px;text-align: center"><t t-esc="doc.company_id.name"/></h2>
+                                        </span>
+<!--                                        <span style=" font-size: 40px;padding-top: 20px"><h2><t t-esc="doc.company_id.name"/></h2></span>-->
+                                        <div class="text-center"><span ><t t-esc="doc.company_id.street"/> <t t-esc="doc.company_id.street2"/>
+                                            <t t-esc="doc.company_id.city"/><t t-esc="doc.company_id.state_id.name"/>-<t t-esc="doc.company_id.zip"/></span></div>
+                                        <div class="text-center"><span ><b>Website:</b><t t-esc="doc.company_id.website"/> , <b>Phone:</b>
+                                        <t t-esc="doc.company_id.mobile"/></span></div>
+                                    </td>
+                                </tr>
+                                <tr  style="border-top : 2px solid black; border-bottom : none;">
+                                    <td colspan="2" class="no-border">
+                                        <span ><b>Application No:<t t-esc="doc.name"/></b></span>
+                                    </td>
+                                </tr>
+                                <tr class="no-border" >
+                                    <td colspan="2" class="text-center no-border" >
+<!--                                        <span style="border: 2px solid #000; border-radius: 15px; padding: 10px; ">-->
+                                            <h3 class="no-border" style="color: #333; text-shadow: 2px 2px 4px #888;">APPLICATION FORM - SESSION: <t t-esc="doc.academic_year_id.name" /></h3>
+<!--                                        </span>-->
+                                    </td>
+                                </tr>
+                            </table>
+<!--                        </div>-->
+<!--                        <div class="background" t-field="doc.company_id.logo">-->
+<!--                            <img t-att-src="image_data_uri(doc.company_id.logo)" style="width: 100%; height: auto;" />-->
+<!--                        </div>-->
+<!--                        <br></br>-->
+                        <table width="100%" class="no-border" style="border:#fff;padding-top: 25px">
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong><span>Name of the Student</span></strong></td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border" width="40%"><span t-field="doc.first_name"/><span t-field="doc.last_name"/></td>
+                                <td class="no-border" width="30%" rowspan="7"><img t-if="doc.image" t-attf-src="data:image/png;base64,{{doc.image}}" height="160"  width="135"></img></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong><span>Date of Birth</span></strong></td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border" width="50%"><span t-field="doc.date_of_birth"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong>Exact Age</strong>(as on 1st April,<span t-field="doc.academic_year_id.ay_start_date" t-options='{"format": "YYYY"}'></span>)</td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border" width="50%"><span t-field="doc.exact_age_april"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong><span>Religion</span></strong></td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.religion"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong><span>Caste</span></strong></td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.caste"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong><span>Gender(Male/Female)</span></strong></td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.gender"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" style="vertical-align: top;" width="27%"><strong><span>Class of Admission</span></strong></td>
+                                <td class="no-border" style="vertical-align: top;" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border" style="vertical-align: top;"><span t-field="doc.admission_class_id.name"/></td>
+                            </tr>
+                        </table>
+                        <table class="no-border" width="100%" style="border:#fff;">
+                            <tr class="no-border">
+                                <td class="no-border" width="27%"><strong><span>Mother Tongue</span></strong></td>
+                                <td class="no-border" width="3%"><strong><span>:</span></strong></td>
+                                <td class="no-border" width="70%"><span t-field="doc.mother_tongue"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border" ><strong><span>Blood Group</span></strong></td>
+                                <td class="no-border" ><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.blood_group"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Father's Name</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.father_name"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Father's Qualification</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.father_qualify"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Father's Occupation</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.father_occupation"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Mother's Name</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.mother_name"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Mother's Qualification</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.mother_qualify"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Mother's Occupation</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.mother_occupation"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Present Residential Address(With PIN Code)</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.street"/>,<span t-field="doc.street2"/>,<span t-field="doc.city"/>,
+                                        <span t-field="doc.state_id.name"/>,<span t-field="doc.country_id.name"/> - <span t-field="doc.zip"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Phone Number(WhatsApp)</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.mobile"/>  /  <span t-field="doc.phone"/></td>
+                            </tr>
+                            <tr class="no-border">
+                                <td class="no-border"><strong><span>Aadhar No</span></strong></td>
+                                <td class="no-border"><strong><span>:</span></strong></td>
+                                <td class="no-border"><span t-field="doc.aadhar_no"/></td>
+                            </tr>
+
+                        </table>
+                        <t t-if="exist_sis_bro_info != False">
+                            <table width="100%" class="no-border" style="border:#fff;">
+                                <span>If the student has a sister/brother in this school(not cousin/relatives) </span>
+                                <tr class="no-border">
+                                    <td width="40%" class="no-border">
+                                        <strong><span>Name:</span></strong><span t-field="doc.exist_name"/>
+                                    </td>
+                                    <td width="30%" class="no-border">
+                                        <strong><span>Class:</span></strong><span t-field="doc.exist_class.name"/>
+                                    </td>
+                                    <td width="30%" class="no-border">
+                                        <strong><span>Section:</span></strong><span t-field="doc.exist_section.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                        <table width="100%" class="no-border" style="border:#fff;">
+                            <tr class="no-border">
+                                <td class="no-border" width="40%">
+                                    <strong><span>Special concern regarding Child  :</span></strong>
+                                </td>
+                                <td class="no-border"><span t-field="doc.special_concern"/></td>
+                            </tr>
+                        </table>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <table width="100%" class="no-border" style="border:#fff;">
+                             <tr class="no-border">
+                                <td width="75%" class="no-border"><strong><span>Date of Addmission:</span></strong><span t-field="doc.admission_date" t-options='{"format": "dd/MM/YYYY"}'/></td>
+                                <td width="25%" class="no-border"><strong><span class="text-right">Signature of Parent</span></strong></td>
+                            </tr>
+                        </table>
+                        <br></br>
+                        <br></br>
+<!--                        <table width="100%" class="no-border" style="border-top:1px solid black;border-bottom:#fff;">-->
+<!--                            <tr>-->
+<!--                                <td width="27%" class="no-border"></td>-->
+<!--                                <td width="3%" class="no-border"></td>-->
+<!--                                <td width="70%" class="no-border"><span style="border: 2px solid #000; border-radius: 15px; padding: 10px; display: inline-block;">-->
+<!--                                    <strong class="text-center" style="padding-left:20px;padding-right:5px;"> FOR OFFICE USE ONLY </strong></span></td>-->
+<!--                            </tr>-->
+<!--                            <tr class="no-border">-->
+<!--                               <td class="no-border"><strong><span style="padding-left: 20px">Date of Addmission</span></strong></td>-->
+<!--                               <td class="no-border"><strong><span >:</span></strong></td>-->
+<!--                                <td class="no-border"></td>-->
+<!--                            </tr>-->
+<!--                            <tr class="no-border">-->
+<!--                               <td class="no-border"><strong><span style="padding-left: 20px">Application Fee</span></strong></td>-->
+<!--                               <td class="no-border"><strong><span >:</span></strong></td>-->
+<!--                                <td class="no-border"></td>-->
+<!--                            </tr>-->
+<!--                            <tr class="no-border">-->
+<!--                               <td class="no-border"><strong><span style="padding-left: 20px">Received By</span></strong>(signature)</td>-->
+<!--                                <td class="no-border"><strong><span >:</span></strong></td>-->
+<!--                                <td class="no-border"></td>-->
+<!--                            </tr>-->
+<!--                            <tr class="no-border">-->
+<!--                                <td class="no-border"></td>-->
+<!--                                <td class="no-border"></td>-->
+<!--                                <td class="no-border" style="text-align: right;padding-right : 20 px"><span  ><b>School Seal</b></span></td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                        <table>-->
+
+                    </div>
+                </t>
+            </t>
+        </template>
+
+
+    <template id="report_student_application">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+<!--                <t t-call="mis_education_exam.report_print_admit_card_document" t-lang="doc.partner_id.lang"/>-->
+                <t t-call="mis_education_core.report_student_application_document" />
+            </t>
+        </t>
+    </template>
+</odoo>

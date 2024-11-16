@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+        <menuitem id="mis_website_menu_root" name="Web Gallery"
+              sequence="10"/>
+
+        <menuitem id="website_configuration_main_menu" name="Web Gallery"
+              parent="mis_website_menu_root" sequence="10"/>
+
+		<menuitem id="website_configuration_gallery_menu" name="Gallery"
+              parent="website_configuration_main_menu"
+              action="website_configuration_gallery_action" sequence="10"/>
+
+        <menuitem id="website_video_menu" name="Web Video"
+              parent="website_configuration_main_menu"
+              action="website_video_action" sequence="20"/>
+
+        <menuitem id="website_annoncements_menu" name="Announcements"
+              parent="website_configuration_main_menu"
+              action="website_announcements_action" sequence="30"/>
+
+        <menuitem id="website_banner_annoncements_menu" name="Web Banner"
+              parent="website_configuration_main_menu"
+              action="website_banner_announcements_action" sequence="40"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_education_exam_results,access.education.exam.results,mis_education_exam.model_education_exam_results,mis_education_core.group_education_faculty,1,1,1,0
+access_results_subject_line,access.results.subject.line,mis_education_exam.model_results_subject_line,mis_education_core.group_education_faculty,1,1,1,1
+access_education_exam_valuation,access.education.exam.valuation,mis_education_exam.model_education_exam_valuation,mis_education_core.group_education_faculty,1,1,1,0
+access_exam_valuation_line,access.exam.valuation.line,mis_education_exam.model_exam_valuation_line,mis_education_core.group_education_faculty,1,1,1,0
+access_education_exam,access.education.exam,mis_education_exam.model_education_exam,mis_education_core.group_education_faculty,1,1,1,0
+access_education_subject_line,access.education.subject.line,mis_education_exam.model_education_subject_line,base.group_user,1,1,1,1
+access_education_exam_type,access.education.exam.type,mis_education_exam.model_education_exam_type,mis_education_core.group_education_faculty,1,1,1,0
+access_exam_syllabus,access_exam_syllabus,mis_education_exam.model_exam_syllabus,mis_education_core.group_education_faculty,1,1,1,1

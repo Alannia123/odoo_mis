@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--    Academic-->
+    <template id="mis_academics" name="Academic MIS">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Academic MIS</h1>
+                </div>
+            </section>
+            <section class="s_tabs pt48 pb48 o_colored_level" data-vcss="001" data-snippet="s_tabs" data-name="Tabs" style="background-image: none;">
+        <div class="container">
+            <div class="s_tabs_main">
+                <div class="s_tabs_nav mb-3">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link o_default_snippet_text active" id="nav_tabs_link_1727005557082_24" data-bs-toggle="tab" href="#nav_tabs_content_1727005557082_24"
+                               role="tab" aria-controls="nav_tabs_content_1727005557082_24" aria-selected="true">Academic</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link o_default_snippet_text " id="nav_tabs_link_1727005557082_25" data-bs-toggle="tab" href="#nav_tabs_content_1727005557082_25"
+                               role="tab" aria-controls="nav_tabs_content_1727005557082_25" aria-selected="false">Student Performance</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link o_default_snippet_text" id="nav_tabs_link_1727005557082_26" data-bs-toggle="tab" href="#nav_tabs_content_1727005557082_26"
+                               role="tab" aria-controls="nav_tabs_content_1727005557082_26" aria-selected="false">Syllabus</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link o_default_snippet_text" id="nav_tabs_link_1727005557082_27" data-bs-toggle="tab" href="#nav_tabs_content_1727005557082_27"
+                               role="tab" aria-controls="nav_tabs_content_1727005557082_27" aria-selected="false">Syllabus1234</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="s_tabs_content tab-content">
+                    <div class="tab-pane fade" id="nav_tabs_content_1727005557082_24" role="tabpanel" aria-labelledby="nav_tabs_link_1727005557082_24">
+                                                        <section class="s_text_image o_cc o_cc1 pb48 pt48 o_colored_level" data-snippet="s_image_text" data-name="Image - Text"
+                                         data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                                <img src="/web_editor/image_shape/website.s_image_text_default_image/web_editor/solid/solid_square_2.svg?c1=o-color-3"
+                                                     class="img img-fluid mx-auto" alt="" data-shape="web_editor/solid/solid_square_2" data-original-mimetype="image/jpeg"
+                                                     data-file-name="s_image_text.svg" data-shape-colors="o-color-3;;;;" loading="lazy" data-original-id="1234"
+                                                     data-original-src="/theme_real_estate/static/src/img/snippets/s_image_text.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                            </div>
+                                            <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                                <h2 id="vision_mission" class="o_default_snippet_text">VISION AND MISSION</h2>
+                                                <p class="o_default_snippet_text">
+                                                    Our decoration experts are at your disposal to guide you step by step in the design of your interior and will give you the best advice for your interior design.
+                                                </p>
+                                                <p class="o_default_snippet_text">
+                                                    Discover our tailor-made services to embellish the decoration of your home.
+                                                </p>
+                                                <p>
+                                                    <a href="#" class="btn btn-primary o_default_snippet_text">Explore our services</a>
+                                                  </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                        <div class="oe_structure oe_empty">
+                            <section class="s_text_block" style="background-image: none;">
+                                <div class="container s_allow_columns">
+                                    <p class="o_default_snippet_text">Write one or two paragraphs describing your product or services.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade active show" id="nav_tabs_content_1727005557082_25" role="tabpanel" aria-labelledby="nav_tabs_link_1727005557082_25">
+                                                            <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">ABOUT US.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+
+                        <div class="oe_structure oe_empty">
+                            <section class="s_text_block" style="background-image: none;">
+                                <div class="container s_allow_columns">
+                                    <p class="o_default_snippet_text">To be successful your content needs to be useful to your readers.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav_tabs_content_1727005557082_26" role="tabpanel" aria-labelledby="nav_tabs_link_1727005557082_26">
+                        <div class="oe_structure oe_empty">
+                            <section class="s_text_block" style="background-image: none;">
+                                <div class="container s_allow_columns">
+                                    <p class="o_default_snippet_text">Start with the customer – find out what they want and give it to them.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav_tabs_content_1727005557082_27" role="tabpanel" aria-labelledby="nav_tabs_link_1727005557082_27">
+                        <div class="oe_structure oe_empty">
+                            <section class="s_text_block" style="background-image: none;">
+                                <div class="container s_allow_columns">
+                                    <p class="o_default_snippet_text">Start with the customer – 5457466486find out what they want and give it to them.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </t>
+    </template>
+
+<!--    Student Performance-->
+    <template id="student_performance" name="Student Performance MIS">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="https://media.istockphoto.com/id/1410336912/photo/happy-teacher-and-schoolgirl-giving-high-five-during-class-at-school.jpg?s=1024x1024&amp;w=is&amp;k=20&amp;c=6kzktqHzjmCr5NT54ARvu5zV5HjOyzeRzvQfmhsQZjY="/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Student Performance</h1>
+                </div>
+            </section>
+        </t>
+    </template>
+
+
+</odoo>

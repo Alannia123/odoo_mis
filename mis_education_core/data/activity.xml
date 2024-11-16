@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<!--    New Application Activity-->
+
+    <record id="new_addmission_application_receiving_activity" model="mail.activity.type">
+        <field name="name">New Admission Notification</field>
+        <field name="res_model">education.application</field>
+    </record>
+
+</odoo>
+

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="website.template_header_sales_two" inherit_id="website.layout" name="Template Header Sale 2" active="False">
+    <xpath expr="//header//nav" position="replace">
+        <t t-call="website.navbar">
+            <t t-set="_navbar_classes" t-valuef="o_header_force_no_radius d-none d-lg-block p-0 shadow-sm"/>
+
+            <div id="o_main_nav" class="o_main_nav">
+                <div class="o_header_hide_on_scroll">
+                    <div aria-label="Top" t-if="is_view_active('website.header_text_element') or is_view_active('website.header_social_links') or is_view_active('website.header_language_selector')" class="o_header_sales_two_top py-1">
+                        <ul class="navbar-nav container d-grid h-100 px-3 o_grid_header_3_cols">
+                            <!-- Return empty placeholder if the element is not active to keep the right layout -->
+                            <li class="o_header_sales_two_lang_selector_placeholder" t-if="is_view_active('website.header_language_selector') == False"/>
+                            <!-- Language Selector -->
+                            <t t-call="website.placeholder_header_language_selector">
+                                <t t-set="_div_classes" t-valuef="d-flex align-items-center h-100"/>
+                                <t t-set="_btn_class" t-valuef="btn-sm btn-outline-secondary border-0"/>
+                            </t>
+                            <!-- Text element -->
+                            <!-- Return empty placeholder if the element is not active to keep the right layout -->
+                            <li class="o_header_sales_two_txt_elts_placeholder" t-if="is_view_active('website.header_text_element') == False"/>
+                            <t t-call="website.placeholder_header_text_element">
+                                <t t-set="_txt_elt_content" t-valuef="sentence"/>
+                                <t t-set="_div_class" t-valuef="d-flex align-items-center mx-auto"/>
+                                <t t-set="_item_class" t-valuef="d-flex align-items-center"/>
+                            </t>
+                            <!-- Social -->
+                            <!-- Return empty placeholder if the element is not active to keep the right layout -->
+                            <li class="o_header_sales_two_social_links_placeholder" t-if="is_view_active('website.header_social_links') == False"/>
+                            <t t-call="website.placeholder_header_social_links">
+                                <t t-set="_div_class" t-valuef="d-flex align-items-center justify-content-end h-100"/>
+                            </t>
+                        </ul>
+                    </div>
+                    <div aria-label="Middle" class="container d-flex justify-content-between align-items-center py-1">
+                        <!-- Brand -->
+                        <a>
+                            <img  t-attf-src="/mis_website/static/src/img/school.jpeg" width="90" height="110" alt="Document" class="o_attachment_image"/>
+                        </a>
+                        <h5 class="stylish-heading">MARY IMMACULATE SCHOOL</h5>
+                        <ul class="navbar-nav align-items-center gap-1">
+                            <!-- Search bar -->
+                            <t t-call="website.placeholder_header_search_box">
+                                <t t-set="_input_classes" t-valuef="rounded-start-pill ps-3 text-bg-light"/>
+                                <t t-set="_submit_classes" t-valuef="rounded-end-pill p-3 bg-o-color-3 lh-1"/>
+                            </t>
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_link_class" t-valuef="btn btn-outline-secondary"/>
+                            </t>
+<!--                            <t >-->
+<!--                                <a class="btn btn-primary btn-glow-effect" href="/applyonline">-->
+<!--                                    Pay Online-->
+<!--                                </a>-->
+<!--                            </t>-->
+                            <!-- User Dropdown -->
+                            <t t-call="portal.user_dropdown">
+                                <t t-set="_user_name" t-value="true"/>
+                                <t t-set="_icon" t-value="true"/>
+                                <t t-set="_icon_class" t-valuef="fa-stack"/>
+                                <t t-set="_item_class" t-valuef="dropdown"/>
+                                <t t-set="_link_class" t-valuef="d-flex align-items-center border-0 fw-bold text-reset o_navlink_background_hover"/>
+                                <t t-set="_icon_wrap_class" t-value="'position-relative me-2 p-2 rounded-circle border bg-o-color-3'"/>
+                                <t t-set="_dropdown_menu_class" t-valuef="dropdown-menu-end"/>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+
+                <style>
+                .header-button-home {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-home:hover {
+                      background-color: #400080;
+                      transform: scale(1.05);
+                    }
+                .header-button-pros {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-pros:hover {
+                      background-color: #000080;
+                      transform: scale(1.05);
+                    }
+                .header-button-aca {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-aca:hover {
+                      background-color: #008080;
+                      transform: scale(1.05);
+                    }
+                .header-button-sc {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-sc:hover {
+                      background-color: #801a00;
+                      transform: scale(1.05);
+                    }
+                .header-button-lib {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-lib:hover {
+                      background-color: #997a00;
+                      transform: scale(1.05);
+                    }
+                .header-button-eve {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-eve:hover {
+                      background-color: #800060;
+                      transform: scale(1.05);
+                    }
+
+                .header-button-pay {
+                      background-color: #d55d5d;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-pay:hover {
+                      background-color: #8e2525;
+                      transform: scale(1.05);
+                    }
+                .header-button-apply {
+                      background-color: #009900;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-apply:hover {
+                      background-color: #003300;
+                      transform: scale(1.05);
+                    }
+                .header-button-con {
+                      background-color: #007bff;
+                      color: white;
+                      border: none;
+                      padding: 10px 12px;
+                      font-size: 16px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+
+                    .header-button-con:hover {
+                      background-color: #40bf80;
+                      transform: scale(1.05);
+                    }
+
+                </style>
+                <div aria-label="Bottom" class="border-top o_border_contrast">
+                    <div class="container d-flex justify-content-between">
+                        <!-- Navbar -->
+<!--                        <t t-call="website.navbar_nav">-->
+                            <ul id="top_menu" role="menu" class="nav navbar-nav top_menu me-4 py-1">
+<!--                                <li role="presentation" class="nav-item">-->
+<!--                                    <div class="wrapper">-->
+<!--                                    <a role="menuitem" href="/" class="nav-link ">-->
+<!--                                        <span data-oe-model="website.menu" data-oe-id="5" data-oe-field="name" data-oe-type="char"-->
+<!--                                              data-oe-expression="submenu.name"><st>Home</st></span>-->
+<!--                                    </a>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/mis_home" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="18" class="header-button-home"
+                                              data-oe-field="name" data-oe-type="char" data-oe-expression="submenu.name"><i class="fa fa-fw fa-star"></i>Home</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/prospectus" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="19" data-oe-field="name" class="header-button-pros"
+                                              data-oe-type="char" data-oe-expression="submenu.name">Prospectus</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/mis_academics" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="20" data-oe-field="name" class="header-button-aca"
+                                              data-oe-type="char" data-oe-expression="submenu.name">Academics</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/school_commitee" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="21" data-oe-field="name" class="header-button-sc"
+                                              data-oe-type="char" data-oe-expression="submenu.name">School Committee</span>
+                                    </a>
+                                </li>
+
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/library" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="23" data-oe-field="name" data-oe-type="char"  class="header-button-lib"
+                                              data-oe-expression="submenu.name">Library</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/program_events_gallery" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="24" data-oe-field="name" data-oe-type="char" class="header-button-eve"
+                                              data-oe-expression="submenu.name">Events Gallery</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/applyonline" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="22" data-oe-field="name" class="header-button-apply"
+                                              data-oe-type="char" data-oe-expression="submenu.name">For Admission</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/contactus" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-con"
+                                              data-oe-expression="submenu.name">Contact us</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/contactus" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"
+                                               data-oe-expression="submenu.name">Pay Online</span>
+                                    </a>
+                                </li>
+                                <ul class="navbar-nav"></ul>
+                            </ul>
+
+<!--                            &lt;!&ndash; Menu &ndash;&gt;-->
+<!--                            <t t-foreach="website.menu_id.child_id" t-as="submenu">-->
+<!--                                <t t-call="website.submenu">-->
+<!--                                    <t t-set="item_class" t-valuef="nav-item"/>-->
+<!--                                    <t t-set="link_class" t-valuef="nav-link"/>-->
+<!--                                </t>-->
+<!--                            </t>-->
+<!--                        </t>-->
+                        <!-- Call To Action -->
+                        <ul class="navbar-nav">
+                            <t t-call="website.header_call_to_action_stretched">
+                                <t t-set="_div_class" t-valuef="d-flex h-100"/>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <t t-call="website.template_header_mobile">
+            <t t-set="_txt_elt_content" t-valuef="sentence"/>
+            <t t-set="_extra_navbar_classes" t-valuef="o_header_force_no_radius"/>
+        </t>
+    </xpath>
+</template>
+
+</odoo>
+
+

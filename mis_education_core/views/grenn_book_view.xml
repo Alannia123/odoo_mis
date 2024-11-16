@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View for Listing Files -->
+    <record id="student_green_book_tree" model="ir.ui.view">
+        <field name="name">student.green.book.tree</field>
+        <field name="model">student.green.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_id"/>
+                <field name="class_div_id"/>
+                <field name="date"/>
+                <field name="remarks"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Uploading Files -->
+    <record id="student_green_book_form" model="ir.ui.view">
+        <field name="name">student.green.book.form</field>
+        <field name="model">student.green.book</field>
+        <field name="arch" type="xml">
+            <form string="Student Green Book">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="class_div_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="file_data" filename="file_name"/>
+                            <field name="remarks" readonly="0"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to Open the File Upload Model -->
+    <record id="action_student_green_book" model="ir.actions.act_window">
+        <field name="name">Student Green Book</field>
+        <field name="res_model">student.green.book</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to Create New Record.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_student_green_book" name="Green Book" parent="menu_education_main_menu" action="action_student_green_book" sequence="10"/>
+</odoo>
