@@ -133,11 +133,13 @@ class OnlineAdmission(http.Controller):
             request.env['education.document'].sudo().create({
                 # 'document_type_id': post.get('doc_type'),
                 'doc_attachment_ids': doc_attachment,
+                'birth_adaher': 'birth',
                 'application_ref_id': application.id
             })
             request.env['education.document'].sudo().create({
                 # 'document_type_id': post.get('doc_type'),
                 'doc_attachment_ids': adhar_doc_attachment,
+                'birth_adaher': 'aadhar',
                 'application_ref_id': application.id
             })
             if application:

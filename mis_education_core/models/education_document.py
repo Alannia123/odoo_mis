@@ -53,6 +53,7 @@ class EducationDocument(models.Model):
     document_type_id = fields.Many2one('document.document',
                                        string='Document Type', required=False,
                                        help="Choose the type of the Document")
+    birth_adaher = fields.Selection([('aadhar', 'AADHAR'), ('birth', 'B.CERTIFICATE')])
     description = fields.Text(string='Description', copy=False,
                               help="Enter a description about the document")
     has_hard_copy = fields.Boolean(

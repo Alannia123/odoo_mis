@@ -36,13 +36,14 @@
                     <group>
                         <group>
                             <field name="application_ref_id"
-                                   readonly="state in ['done','returned']"/>
+                                   readonly="1"/>
                             <field name="has_hard_copy"
                                    string="Hard copy received"
                                    readonly="state in ['done','returned']"/>
                         </group>
                         <group>
-                            <field name="document_type_id"
+                            <field name="birth_adaher" readonly="1"/>
+                            <field name="document_type_id" invisible="1"
                                    readonly="state in ['done','returned']"/>
                         </group>
                     </group>
@@ -109,7 +110,7 @@
             <tree>
                 <field name="name"/>
                 <field name="application_ref_id"/>
-                <field name="document_type_id"/>
+                <field name="birth_adaher"/>
                 <field name="description"/>
                 <field name="state"/>
             </tree>

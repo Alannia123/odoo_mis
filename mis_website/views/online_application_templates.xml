@@ -71,6 +71,21 @@
                                             50% { border-color: transparent; }
                                           }
                                         </style>
+                        <script>
+                            function CheckClassSelect() {
+                            var sel_class = document.getElementById("class_of_addmision").value;
+
+                            if(sel_class == ""){
+                                var first_name = document.getElementById("first_name");
+                                var last_name = document.getElementById("last_name");
+                                first_name.value = ''
+                                last_name.value = ''
+                                alert("Please select Class Of Addmission and Proceed!");
+
+                                }
+                            }
+                        </script>
+
                         <div class="card" style="width:100%;border:none;" id="application_form">
                                 <h3 class="typing-text" style="color: #333; text-shadow: 2px 2px 4px #888;text-align: center">ONLINE APPLICATION FORM FILLING ==>></h3>
                             <div width="60%" class="text-center">
@@ -81,7 +96,7 @@
                                         </span>
                                     </label>
                                     <div class="col">
-                                        <select name="class_of_addmision" data-init="1" required="1">
+                                        <select name="class_of_addmision" id="class_of_addmision" data-init="1" required="1">
                                             <option value="">Select Class...</option>
                                             <t t-foreach="classes" t-as="class">
                                                 <option t-att-value="class.id">
@@ -100,7 +115,7 @@
                                         </span>
                                     </label>
                                     <div class="col">
-                                        <input id="first_name" type="text"
+                                        <input id="first_name" type="text" onkeyup="CheckClassSelect();"
                                                class="form-control s_website_form_input"
                                                name="first_name"
                                                required="1"/>
@@ -113,7 +128,7 @@
                                         </span>
                                     </label>
                                     <div class="col">
-                                        <input id="last_name" type="text"
+                                        <input id="last_name" type="text" onkeyup="CheckClassSelect();"
                                                class="form-control s_website_form_input"
                                                name="last_name"
                                                required="1"/>
