@@ -317,7 +317,7 @@ aa:hover span:nth-child(6)
 <!--              Slide Section-->
                         <div class="col-lg-6 s_col_no_bgcolor" style="border-color: #4080bf;">
                         <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
-                <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000" id="myCarousel1730131905894" style="background-image: none;">
+                <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="7000" id="myCarousel1730131905894" style="background-image: none;">
 
             <ol class="carousel-indicators o_we_no_overlay">
                 <li data-bs-slide-to="0" data-bs-target="#myCarousel1730131905894" class=""></li>
@@ -508,8 +508,8 @@ aa:hover span:nth-child(6)
                                     <div class="card text-bg-white h-100 animated-image">
                                         <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_1" alt="" loading="lazy" style=""></img>
                                         <div class="card-body">
-                                            <h3 class="card-title">
-                                                 Optimizing water usage
+                                            <h3 class="card-title italic-bold underline-hover" style="color : #e35473">
+                                                 Play Ground
                                             </h3>
                                             <body class="card-text">
                                                 Using technology to optimize water usage can be a water-saving measure.
@@ -524,8 +524,8 @@ aa:hover span:nth-child(6)
                                     <div class="card text-bg-white h-100 animated-image">
                                         <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_2" alt="" loading="lazy" style=""></img>
                                         <div class="card-body">
-                                            <h3 class="card-title">
-                                                Sustainable Solutions
+                                            <h3 class="card-title italic-bold underline-hover" style="color : #e35473">
+                                                Digital Board
                                             </h3>
                                             <p class="card-text">
                                                  Creating sustainable solutions that have a positive impact on the planet and the local community.
@@ -540,8 +540,8 @@ aa:hover span:nth-child(6)
                                     <div class="card text-bg-white h-100 animated-image">
                                         <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_3" alt="" loading="lazy" style=""></img>
                                         <div class="card-body">
-                                            <h3 class="card-title">
-                                                Smart Garden
+                                            <h3 class="card-title italic-bold underline-hover" style="color : #e35473">
+                                                Computer Lab
                                             </h3>
                                             <p class="card-text">
                                                 Learn how to use technology to optimize your garden and grow fresh produce all year round.
@@ -556,8 +556,8 @@ aa:hover span:nth-child(6)
                                     <div class="card text-bg-white h-100 animated-image">
                                         <img class="card-img-top" src="/web/image/website.s_three_columns_default_image_3" alt="" loading="lazy" style=""></img>
                                         <div class="card-body">
-                                            <h3 class="card-title">
-                                                Smart Garden
+                                            <h3 class="card-title italic-bold underline-hover" style="color : #e35473">
+                                                Science Lab
                                             </h3>
                                             <p class="card-text">
                                                 Learn how to use technology to optimize your garden and grow fresh produce all year round.
@@ -572,113 +572,130 @@ aa:hover span:nth-child(6)
                         </div>
                     </section>
 
-<!--            Road map-->
-<!--                    <section class="s_timeline pt24 pb48 o_cc3 o_colored_level" data-snippet="s_timeline" data-name="Timeline" style="background-image: none;">-->
-<!--                        <div class="container s_timeline_line">-->
-<!--                            <div class="s_timeline_row d-block d-md-flex flex-row" data-name="Row">-->
-<!--                                <div class="s_timeline_date"><b class="o_default_snippet_text">2019</b></div>-->
-<!--                                <div class="s_timeline_content d-flex">-->
-<!--                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">-->
-<!--                                        <div class="card-body">-->
-<!--                                            <h5 class="card-title o_default_snippet_text">Your title</h5>-->
-<!--                                            <p class="card-text o_default_snippet_text">A timeline is a graphical representation on which important events are marked.</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <i class="fa fa-1x fa-child bg-o-color-2 rounded-circle s_timeline_icon"></i>-->
-<!--                                </div>-->
-<!--                                <div class="s_timeline_content"></div>-->
-<!--                            </div>-->
-<!--                            <div class="s_timeline_row d-block d-md-flex flex-row" data-name="Row">-->
-<!--                                <div class="s_timeline_date"><b class="o_default_snippet_text">2018</b></div>-->
-<!--                                <div class="s_timeline_content d-flex">-->
-<!--                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">-->
-<!--                                        <div class="card-body">-->
-<!--                                            <p class="card-text o_default_snippet_text">You can edit, duplicate...</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <i class="fa fa-1x fa-graduation-cap bg-o-color-2 rounded-circle s_timeline_icon"></i>-->
-<!--                                </div>-->
-<!--                                <div class="s_timeline_content d-flex">-->
-<!--                                    <i class="fa fa-1x fa-asterisk bg-o-color-2 rounded-circle s_timeline_icon"></i>-->
-<!--                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">-->
-<!--                                        <div class="card-body">-->
-<!--                                            <p class="card-text o_default_snippet_text">...and switch the timeline contents to fit your needs.</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="s_timeline_row d-block d-md-flex flex-row-reverse" data-name="Row">-->
-<!--                                <div class="s_timeline_date"><b class="o_default_snippet_text">2015</b></div>-->
-<!--                                <div class="s_timeline_content d-flex">-->
-<!--                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">-->
-<!--                                        <div class="card-body">-->
-<!--                                            <p class="card-text o_default_snippet_text">Use this timeline as a part of your resume, to show your visitors what you've done in the past.</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <i class="fa fa-1x fa-bolt bg-o-color-2 rounded-circle s_timeline_icon"></i>-->
-<!--                                </div>-->
-<!--                                <div class="s_timeline_content"></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </section>-->
 
-<!--                    <section class="s_company_team pt120 pb120 o_cc3 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[&quot;x&quot;]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">-->
-<!--                        <div class="o_we_shape o_web_editor_Origins_02_001 o_we_flip_x o_third_extra_shape_mapping"></div>-->
-<!--                        <div class="container">-->
-<!--                            <div class="row s_nb_column_fixed">-->
-<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
-<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
-<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
-<!--                                            <img alt="" src="/mis_website/image/mis_website.Admit" class="img-fluid rounded-circle mx-auto"-->
-<!--                                                 loading="lazy" data-original-id="86" data-original-src="/mis_website/static/src/img/Admit.jpg" data-mimetype="image/png" style=""></img>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-lg-8">-->
-<!--                                            <h4 class="o_default_snippet_text">Tony Fred, CEO</h4>-->
-<!--                                            <p class="o_default_snippet_text">-->
-<!--                                                Founder and chief visionary, Tony is the driving force behind the company. He loves-->
-<!--                                                to keep his hands full by participating in the development of the software,-->
-<!--                                                marketing, and customer experience strategies.-->
-<!--                                            </p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
-<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
-<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
-<!--                                            <img alt="" src="/web/image/website.s_company_team_image_2" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="87" data-original-src="/website/static/src/img/snippets_demo/s_team_member_2.png" data-mimetype="image/png" style=""></img>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-lg-8">-->
-<!--                                            <h4 class="o_default_snippet_text">Mich Stark, COO</h4>-->
-<!--                                            <p class="o_default_snippet_text">Mich loves taking on challenges. With his multi-year experience as Commercial Director in the software industry, Mich has helped the company to get where it is today. Mich is among the best minds.</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
-<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
-<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
-<!--                                            <img alt="" src="/web/image/website.s_company_team_image_3" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="88" data-original-src="/website/static/src/img/snippets_demo/s_team_member_3.png" data-mimetype="image/png" style=""></img>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-lg-8">-->
-<!--                                          <h4 class="o_default_snippet_text">Aline Turner, CTO</h4>-->
-<!--                                          <p class="o_default_snippet_text">Aline is one of the iconic people in life who can say they love what they do. She mentors 100+ in-house developers and looks after the community of thousands of developers.</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="col-lg-6 pt24 pb24 o_colored_level">-->
-<!--                                    <div class="row s_col_no_resize s_col_no_bgcolor">-->
-<!--                                        <div class="col-lg-4 pb16 o_not_editable">-->
-<!--                                            <img alt="" src="/web/image/website.s_company_team_image_4" class="img-fluid rounded-circle mx-auto" loading="lazy" data-original-id="89" data-original-src="/website/static/src/img/snippets_demo/s_team_member_4.png" data-mimetype="image/png" style=""></img>-->
-<!--                                        </div>-->
-<!--                                        <div class="col-lg-8">-->
-<!--                                              <h4 class="o_default_snippet_text">Iris Joe, CFO</h4>-->
-<!--                                              <p class="o_default_snippet_text">Iris, with her international experience, helps us easily understand the numbers and improves them. She is determined to drive success and delivers her professional acumen to bring the company to the next level.</p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </section>-->
+
+                    <section class="s_company_team pt120 pb120 o_cc3 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[&quot;x&quot;]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">
+                        <div class="o_we_shape o_web_editor_Origins_02_001 o_we_flip_x o_third_extra_shape_mapping"></div>
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-6 pt24 pb24 o_colored_level">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <div class="col-lg-4 pb16 o_not_editable">
+                                            <img src="/mis_website/static/src/img/harry44.jpg" alt="img1" class="img-fluid rounded-circle " loading="lazy" style=""/>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <h4 class="o_default_snippet_text">Rev. Fr. Harry Immanual, OMI,</h4>
+                                            <p class="o_default_snippet_text">
+                                                President of  the group of OMI schools,
+                                                St. Joseph Bhavan, Rudra Road,
+                                                St. Thomas Mount,
+                                                Chennai.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt24 pb24 o_colored_level">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <div class="col-lg-4 pb16 o_not_editable">
+                                            <img src="/mis_website/static/src/img/aroc1.jpeg" alt="img1" class="img-fluid rounded-circle " loading="lazy" style=""/>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <h4 class="o_default_snippet_text">Rev. Fr. S.D. Arockia Raj, OMI</h4>
+                                            <p class="o_default_snippet_text">
+                                                Secretary of the group of OMI Schools,
+                                                St. Eugene English Medium School
+                                                Boda, chhattisgarh
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt24 pb24 o_colored_level">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <div class="col-lg-4 pb16 o_not_editable">
+                                            <img src="/mis_website/static/src/img/arockia.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <h4 class="o_default_snippet_text">Rev. Fr. Arockia Doss, OMI</h4>
+                                            <p class="o_default_snippet_text">
+                                                Principal,
+                                                Mary Immaculate School,
+                                                Patilachadra,
+                                                Basirhat.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 pt24 pb24 o_colored_level">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <div class="col-lg-4 pb16 o_not_editable">
+                                            <img src="/mis_website/static/src/img/solomon.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <h4 class="o_default_snippet_text">Rev. Fr. C. Solomon, OMI</h4>
+                                            <p class="o_default_snippet_text">
+                                                Manager,
+                                                Mary Immaculate School,
+                                                Patilachadra,
+                                                Basirhat.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+<!--            Road map-->
+                    <section class="s_timeline pt24 pb48 o_cc3 o_colored_level" data-snippet="s_timeline" data-name="Timeline" style="background-image: none;">
+                        <div class="container s_timeline_line">
+                            <div class="s_timeline_row d-block d-md-flex flex-row" data-name="Row">
+                                <div class="s_timeline_date"><b class="o_default_snippet_text">2019</b></div>
+                                <div class="s_timeline_content d-flex">
+                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
+                                        <div class="card-body">
+                                            <h5 class="card-title o_default_snippet_text">Your title</h5>
+                                            <p class="card-text o_default_snippet_text">A timeline is a graphical representation on which important events are marked.</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa fa-1x fa-child bg-o-color-2 rounded-circle s_timeline_icon"></i>
+                                </div>
+                                <div class="s_timeline_content"></div>
+                            </div>
+                            <div class="s_timeline_row d-block d-md-flex flex-row" data-name="Row">
+                                <div class="s_timeline_date"><b class="o_default_snippet_text">2018</b></div>
+                                <div class="s_timeline_content d-flex">
+                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
+                                        <div class="card-body">
+                                            <p class="card-text o_default_snippet_text">You can edit, duplicate...</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa fa-1x fa-graduation-cap bg-o-color-2 rounded-circle s_timeline_icon"></i>
+                                </div>
+                                <div class="s_timeline_content d-flex">
+                                    <i class="fa fa-1x fa-asterisk bg-o-color-2 rounded-circle s_timeline_icon"></i>
+                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
+                                        <div class="card-body">
+                                            <p class="card-text o_default_snippet_text">...and switch the timeline contents to fit your needs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="s_timeline_row d-block d-md-flex flex-row-reverse" data-name="Row">
+                                <div class="s_timeline_date"><b class="o_default_snippet_text">2015</b></div>
+                                <div class="s_timeline_content d-flex">
+                                    <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
+                                        <div class="card-body">
+                                            <p class="card-text o_default_snippet_text">Use this timeline as a part of your resume, to show your visitors what you've done in the past.</p>
+                                        </div>
+                                    </div>
+                                    <i class="fa fa-1x fa-bolt bg-o-color-2 rounded-circle s_timeline_icon"></i>
+                                </div>
+                                <div class="s_timeline_content"></div>
+                            </div>
+                        </div>
+                    </section>
 <!--Final-->
+
 <!--                    <section class="s_call_to_action o_cc o_cc3" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Rainy/08_001&quot;}" data-snippet="s_call_to_action">-->
 <!--                        <div class="o_we_shape o_web_editor_Rainy_08_001 o_footer_extra_shape_mapping"></div>-->
 <!--                        <div class="container">-->

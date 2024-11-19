@@ -39,3 +39,4 @@ access_education_class_history_user,access.education.class.history.user,mis_educ
 access_education_rank_wizard,access.education.rank.wizard,mis_education_core.model_rank_wizard,base.group_user,1,1,1,1
 access_education_class_subject,access.education.class.subject,mis_education_core.model_education_class_subject,base.group_user,1,1,1,1
 access_student_green_book,access.student.green.book,mis_education_core.model_student_green_book,base.group_user,1,1,1,1
+access_attachment,access.attachment.green.book,base.model_ir_attachment,mis_education_core.group_education_office_admin,1,1,1,1

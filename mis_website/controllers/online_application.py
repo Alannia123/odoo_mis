@@ -42,38 +42,6 @@ class OnlineAdmission(http.Controller):
     @http.route('/admission/submit', type='http', auth='public',   website=True)
     def register_admission(self, **post):
         """ This will create a new student application with the values."""
-        # # uploaded_photo = post.get('photo')
-        # upload_birth_certi = post.get('birth_certi')
-        # upload_adhar = post.get('adhar')
-        # print('DDDDDDDDDDDDDDDDD',upload_birth_certi)
-        # # if uploaded_photo:
-        # #     file_content = uploaded_photo.read()
-        # #     file_size = len(file_content)  # in bytes
-        # #     file_size_kb = file_size / 1024
-        # #     max_size = 1 * 1024 * 1024  # 5 MB in bytes
-        # #     print('SSSSSSSSSSSSSSSSSfile_size_kbfile_size_kb', file_size_kb)
-        # #     print('SSSSSSSSSSSSSSSSSfile_size_kbfile_size_kbTYPE', type(file_content))
-        # #     print('DSSSSSSSSSSSSSSSmax_size', max_size)
-        # #     if file_size > max_size:
-        # #         return "Your Uploaded Student Photo size file exceeding 1MB. Please Update within 1MB."
-        #
-        # if upload_birth_certi:
-        #     file_content_birth = upload_birth_certi.read()
-        #     file_size_birth = len(file_content_birth)  # in bytes
-        #     file_size_kb_birth = file_size_birth / 1024
-        #     print('SSSSSSSSSSSSSSSSS',file_size_kb_birth)
-        #     birth_max_size = 2 * 1024 * 1024  # 5 MB in bytes
-        #     print('DSSSSSSSSSSSSSSS',birth_max_size)
-        #     if file_size_birth > birth_max_size:
-        #         return "Your Uploaded Student Birth Cretificate file size exceeding 2MB. Please Update within 2MB."
-        #
-        # if upload_adhar:
-        #     file_content_adhar = upload_adhar.read()
-        #     file_size_aadhar = len(file_content_adhar)  # in bytes
-        #     file_size_kb_adhar = file_size_aadhar / 1024
-        #     adhar_max_size = 2 * 1024 * 1024  # 5 MB in bytes
-        #     if file_size_aadhar > adhar_max_size:
-        #         return "Your Uploaded Student Aadhar file size exceeding 2MB. Please Update within 2MB."
         exist_student = False
         print('PJO________________',post.get('photo'))
         if post:

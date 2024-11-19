@@ -9,5 +9,11 @@
         <field name="res_model">education.application</field>
     </record>
 
+
+    <record id="verify_addmission_application_receiving_activity" model="mail.activity.type">
+        <field name="name">Verify Admission Notification</field>
+        <field name="res_model">education.application</field>
+    </record>
+
 </odoo>
 

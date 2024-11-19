@@ -93,6 +93,7 @@ class EducationDocument(models.Model):
                                          copy=False, string="Application Ref",
                                          help="Application reference "
                                               "of document")
+
     doc_attachment_ids = fields.Many2many(
         'ir.attachment', 'education_doc_attach_rel',
         'doc_id', 'attach_id3', string="Attachment", copy=False,

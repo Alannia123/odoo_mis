@@ -512,6 +512,22 @@
                                 </div>
                             </div>
                             <br/>
+<!--                            <script>-->
+<!--                            document.getElementById('photo').addEventListener('change', function(event) {-->
+<!--                                const file = event.target.files[0]; // Get the first selected file-->
+<!--                                if (file) {-->
+<!--                                    const fileSizeInBytes = file.size; // File size in bytes-->
+<!--                                    const fileSizeInKB = (fileSizeInBytes / 1024).toFixed(2); // Convert to KB (optional)-->
+<!--                                    const fileSizeInMB = (fileSizeInKB / 1024).toFixed(2); // Convert to MB (optional)-->
+<!--                                    console.log('SSSSSSSSSSSSSSSSS',fileSizeInMB)-->
+
+<!--                                    document.getElementById('fileSize').innerText =-->
+<!--                                        `File size: ${fileSizeInBytes} bytes (${fileSizeInKB} KB, ${fileSizeInMB} MB)`;-->
+<!--                                } else {-->
+<!--                                    document.getElementById('fileSize').innerText = 'No file selected.';-->
+<!--                                }-->
+<!--                            });-->
+<!--                        </script>-->
 
                             <div class="row">
                                 <div class="col">
@@ -522,7 +538,7 @@
                                         </span>
                                     </label>
                                     <div class="col">
-                                        <input type="file" name="photo" required="1"
+                                        <input type="file" name="photo" required="1" id="photo"
                                                accept="image/*,application/pdf"/>
                                     </div>
                                 </div>

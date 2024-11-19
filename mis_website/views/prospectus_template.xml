@@ -22,40 +22,40 @@
                                 <ul class="nav nav-pills" role="tablist">
             <!--                        Menu About MIS-->
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link o_default_snippet_text active" id="nav_tabs_link_about_mis" data-bs-toggle="tab" href="#nav_tabs_link_about_mis"
-                                            role="tab" aria-controls="nav_tabs_link_about_mis" aria-selected="true">ABOUT MIS</a>
+                                        <a class="nav-link o_default_snippet_text active" id="nav_tabs_link_about_mis" data-bs-toggle="tab" href="#nav_tabs_content_about_mis"
+                                            role="tab" aria-controls="nav_tabs_content_about_mis" aria-selected="true">ABOUT MIS</a>
                                     </li>
             <!--                        Menu Oblates-->
-<!--                                    <li class="nav-item" role="presentation">-->
-<!--                                        <a class="nav-link o_default_snippet_text " id="nav_tabs_link_oblates" data-bs-toggle="tab" href="#nav_tabs_link_oblates"-->
-<!--                                            role="tab" aria-controls="nav_tabs_link_oblates" aria-selected="true">OBLATES</a>-->
-<!--                                    </li>-->
-<!--            &lt;!&ndash;                        Menu OMI and Education&ndash;&gt;-->
-<!--                                    <li class="nav-item" role="presentation">-->
-<!--                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_omi_education" data-bs-toggle="tab" href="#nav_tabs_link_omi_education"-->
-<!--                                           role="tab" aria-controls="nav_tabs_link_omi_education" aria-selected="true">OMI AND EDUCATION</a>-->
-<!--                                    </li>-->
-<!--            &lt;!&ndash;                        Menu VISION and MISSION&ndash;&gt;-->
-<!--                                    <li class="nav-item" role="presentation">-->
-<!--                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_vision_mission" data-bs-toggle="tab" href="#nav_tabs_link_vision_mission"-->
-<!--                                           role="tab" aria-controls="nav_tabs_link_vision_mission" aria-selected="true">VISION AND MISSION</a>-->
-<!--                                    </li>-->
-<!--            &lt;!&ndash;                        Menu GOVERNING BODY MEMBERS&ndash;&gt;-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text " id="nav_tabs_link_oblates" data-bs-toggle="tab" href="#nav_tabs_content_oblates"
+                                            role="tab" aria-controls="nav_tabs_content_oblates" aria-selected="true">OBLATES</a>
+                                    </li>
+            <!--                        Menu OMI and Education-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_omi_education" data-bs-toggle="tab" href="#nav_tabs_content_omi_education"
+                                           role="tab" aria-controls="nav_tabs_content_omi_education" aria-selected="true">OMI AND EDUCATION</a>
+                                    </li>
+            <!--                        Menu VISION and MISSION-->
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_vision_mission" data-bs-toggle="tab" href="#nav_tabs_content_vision_mission"
+                                           role="tab" aria-controls="nav_tabs_content_vision_mission" aria-selected="true">VISION AND MISSION</a>
+                                    </li>
+            <!--                        Menu GOVERNING BODY MEMBERS-->
 <!--                                    <li class="nav-item" role="presentation">-->
 <!--                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_governing_menbers" data-bs-toggle="tab" href="#nav_tabs_link_governing_menbers"-->
 <!--                                            role="tab" aria-controls="nav_tabs_link_governing_menbers" aria-selected="false">GOVERNING BODY MEMBERS</a>-->
 <!--                                    </li>-->
-<!--            &lt;!&ndash;                        Menu ACADEMIC COUNCIL&ndash;&gt;-->
+            <!--                        Menu ACADEMIC COUNCIL-->
 <!--                                    <li class="nav-item" role="presentation">-->
 <!--                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_academic_council" data-bs-toggle="tab" href="#nav_tabs_link_academic_council"-->
 <!--                                            role="tab" aria-controls="nav_tabs_link_academic_council" aria-selected="false">ACADEMIC COUNCIL</a>-->
 <!--                                    </li>-->
-<!--            &lt;!&ndash;                        Menu CORE COMMITTEE&ndash;&gt;-->
+            <!--                        Menu CORE COMMITTEE-->
 <!--                                    <li class="nav-item" role="presentation">-->
 <!--                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_core_committee" data-bs-toggle="tab" href="#nav_tabs_link_core_committee"-->
 <!--                                            role="tab" aria-controls="nav_tabs_link_core_committee" aria-selected="false">CORE COMMITTEE</a>-->
 <!--                                    </li>-->
-<!--            &lt;!&ndash;                        Menu ALUMNI / AE ASSOCIATION&ndash;&gt;-->
+            <!--                        Menu ALUMNI / AE ASSOCIATION-->
 <!--                                    <li class="nav-item" role="presentation">-->
 <!--                                        <a class="nav-link o_default_snippet_text" id="nav_tabs_link_alumni_associate" data-bs-toggle="tab" href="#nav_tabs_link_alumni_associate"-->
 <!--                                            role="tab" aria-controls="nav_tabs_link_alumni_associate" aria-selected="false">ALUMNI / AE ASSOCIATION</a>-->
@@ -64,6 +64,8 @@
                             </div>
                             <div class="s_tabs_content tab-content">
 <!--                    Content About MIS-->
+
+                                <div class="tab-pane fade active show" id="nav_tabs_content_about_mis" role="tabpanel" aria-labelledby="nav_tabs_content_about_mis">
                                 <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
                                              data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
                                         <div class="container">
@@ -105,6 +107,141 @@
                                         </div>
 <!--                                    </section>-->
                                 </section>
+                                </div>
+<!--                        Content Oblates-->
+                                <div class="tab-pane fade" id="nav_tabs_content_oblates" role="tabpanel" aria-labelledby="nav_tabs_link_oblates">
+                                <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">OBLATES.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+                                </div>
+<!--                            Content Education-->
+                                <div class="tab-pane fade" id="nav_tabs_content_omi_education" role="tabpanel" aria-labelledby="nav_tabs_link_omi_education">
+                                <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">OMI AND EDUCATION.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+                                </div>
+<!--                                Ontent vision-->
+                                <div class="tab-pane fade" id="nav_tabs_content_vision_mission" role="tabpanel" aria-labelledby="nav_tabs_link_vision_mission">
+                                <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"
+                                             data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/09_001&quot;,&quot;flip&quot;:[]}" style="background-image: none;">
+                                        <div class="container">
+<!--                                            <div class="row s_nb_column_fixed s_col_no_bgcolor">-->
+                                                <div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor no-gutters align-items-center o_colored_level">
+
+                                                        <div class="s_media_list_body col-lg-6">
+                                                            <h3 id="mis_about_us" class="o_default_snippet_text">
+                                                                <span class="o_animated_text o_animate o_anim_zoom_in o_visible o_animated"
+                                                                      style="animation-name: o_anim_zoom_in; animation-play-state: running; visibility: visible;">VISION AND MISSION.....</span></h3>
+                                                            <p>
+                                                                Mary Immaculate E.M. School, Basirhat was started on 11 March 2014 at OMI
+                                                                Maria Bhavan, with KG 1 as a co-education school to be upgraded every year.
+                                                                The school was accorded with permanent NOC eum Certificate of Recognition,
+                                                                Refer, Memo No. 20- SC/AIS/NOC AIS/RTE/COMMTT/55/2019, dated: 24.01.2023 by
+                                                                the Directorate of School Education, Government of West Bengal. The school follows
+                                                                the proposed syllabus of ICSE Board, New Delhi. "Mary Immaculate English Medium School",
+                                                                Basirhat, is a missionary school, which has its mission and vision according to the Gospel values. We take care of our children's all-round education.
+                                                            </p>
+                                                        </div>
+                                                        <div class="align-self-stretch s_media_list_img_wrapper col-lg-6">
+                                                            <img src="/web_editor/image_shape/website.s_media_list_default_image_1/web_editor/composition/composition_square_1.svg?c1=o-color-4&amp;c2=o-color-2"
+                                                                class="s_media_list_img h-100 w-100" alt="" data-shape="web_editor/composition/composition_square_1" data-original-mimetype="image/jpeg"
+                                                                data-file-name="s_media_list_1.svg" data-shape-colors="o-color-4;o-color-2;;;" loading="lazy" data-original-id="235"
+                                                                data-original-src="/theme_anelusia/static/src/img/snippets/s_media_list_1.jpg" data-mimetype="image/svg+xml" style=""></img>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>
+                                                        We are fortunate and blessed with a team of committed teachers and non-teaching staff.
+                                                        Our parents are a strong support to participate harmoniously to create an educational
+                                                        experience to anyone in the campus by their dynamic activities with the school staff.
+                                                        Anyone can witness a variety of activities that keep the class rooms dynamic and cheerful
+                                                        learning hubs of Mary Immaculate School campus.
+                                                    </p>
+                                                </div>
+<!--                                            </div>-->
+                                        </div>
+<!--                                    </section>-->
+                                </section>
+                                </div>
 
 <!--                                <div class="tab-pane fade active show" id="nav_tabs_link_about_mis" role="tabpanel" aria-labelledby="nav_tabs_link_about_mis">-->
 <!--                                    <section class="s_media_list pt15 pb15 o_colored_level" data-vcss="001" data-snippet="s_media_list" data-name="Media List"-->

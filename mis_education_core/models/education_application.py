@@ -50,6 +50,9 @@ class EducationApplication(models.Model):
             rec.write({
                 'state': 'verification'
             })
+        principal = self.env.ref('mis_education_core.group_education_principal').users
+        self.activity_schedule('mis_education_core.verify_addmission_application_receiving_activity',
+                               user_id=principal.id, note=f'New Admission verification For  {self.name}')
 
     def action_create_student(self):
         """Create student from the application
@@ -145,6 +148,7 @@ class EducationApplication(models.Model):
 
             else:
                 raise ValidationError(_('No Documents provided'))
+
 
     def _compute_document_count(self):
         """Return the count of the documents provided"""

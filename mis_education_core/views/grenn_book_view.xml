@@ -50,5 +50,6 @@
     </record>
 
     <!-- Menu Item -->
-    <menuitem id="menu_student_green_book" name="Green Book" parent="menu_education_main_menu" action="action_student_green_book" sequence="10"/>
+    <menuitem id="menu_student_green_book" name="Green Book" parent="menu_education_main_menu"
+              action="action_student_green_book" sequence="10"/>
 </odoo>

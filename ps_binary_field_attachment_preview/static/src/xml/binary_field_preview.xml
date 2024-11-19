@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ps_binary_field_attachment_preview.BinaryFieldPreview" owl="1">
+        <div class="o_field_binary o_field_binary_preview" t-att-class="props.className">
+            <button class="btn btn-link preview-button" t-on-click="openPreview" t-if="props.record.resId and !props.record.dirty and props.record.data[this.props.name] " >
+                <i class="fa fa-eye"/>
+            </button>
+            <t t-component="constructor.components.BinaryField" t-props="props" />
+        </div>
+    </t>
+</templates>

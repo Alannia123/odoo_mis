@@ -14,6 +14,7 @@
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="blood_group"/>
+                <field name="admission_class_id"/>
                 <field name="state"/>
             </tree>
         </field>
@@ -34,7 +35,7 @@
                     <button name="action_application_verify" type="object"
                             class="oe_highlight"
                             string="Verify Application"
-                            groups="base.group_user"
+                            groups="mis_education_core.group_education_principal"
                             help="Click to verify the application and documents"
                             invisible="state != 'verification'"/>
                     <button name="action_create_student"
@@ -44,7 +45,7 @@
                             invisible="state != 'approve'"/>
                     <button name="%(mis_education_core.application_reject_action)d"
                             string="Reject"
-                            type="action"
+                            type="action" groups="mis_education_core.group_education_principal"
                             context="{'default_application_id': active_id}"
                             invisible="state != 'approve'"/>
                     <button name="action_re_request" string="Re Request"
