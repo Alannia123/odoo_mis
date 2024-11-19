@@ -2,7 +2,7 @@
 <odoo>
 	<data>
 
-        <menuitem id="mis_website_menu_root" name="Web Gallery"
+        <menuitem id="mis_website_menu_root" name="Web Gallery" groups="mis_education_core.group_education_principal"
               sequence="10"/>
 
         <menuitem id="website_configuration_main_menu" name="Web Gallery"
