@@ -1,0 +1,8 @@
+<record id="action_student_homework" model="ir.actions.act_window">
+    <field name="name">Homework</field>
+    <field name="res_model">student.homework</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_student_homework_root" name="Homework" sequence="1"/>
+<menuitem id="menu_student_homework" name="Manage Homework" parent="menu_student_homework_root" action="action_student_homework"/>
