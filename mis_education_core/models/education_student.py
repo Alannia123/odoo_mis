@@ -60,6 +60,8 @@ class EducationStudent(models.Model):
 
     date_of_birth = fields.Date(string="Date of Birth", required=True,
                                 help="Enter date of birth of student")
+    date_of_addmission = fields.Date(string="Date of Addmission", required=True,
+                                help="Enter date of addmission of student")
     # guardian_id = fields.Many2one('res.partner', string="Guardian",
     #                               domain=[('is_parent', '=', True)],
     #                               help="Select guardian of the student")

@@ -23,6 +23,7 @@
         'views/student_portal_templates.xml',
         # 'views/nav_bar_template.xml',
         'views/website_header.xml',
+        'views/login_logo.xml',
 
     ],
 

@@ -46,6 +46,7 @@
         'report/faculty_id_card_reports.xml',
         'report/rank_card_action.xml',
         'report/rank_card_template.xml',
+        # 'views/login_logo.xml',
     ],
     'demo': [
         'demo/education_academic_year_demo.xml'

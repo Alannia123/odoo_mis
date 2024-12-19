@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <template id="custom_login" inherit_id="web.login">
+        <xpath expr="//form[@class='oe_login_form']" position="before">
+            <div class="text-center pb-3 border-bottom {{'mb-3' if form_small else 'mb-4'}} text-center">
+                <img src="/mis_website/static/src/img/schoollogo.png" alt="Company Logo" style="max-height:120px; max-width: 100%; width:auto"/>
+            </div>
+<!--            <div class="card-body">-->
+<!--                        <div t-attf-class="text-center pb-3 border-bottom {{'mb-3' if form_small else 'mb-4'}}">-->
+<!--                            <img t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}" alt="Logo" style="max-height:120px; max-width: 100%; width:auto"/>-->
+<!--                        </div>-->
+<!--            </div>-->
+        </xpath>
+    </template>
+
+
+    <template id="web.brand_promotion_message" name="Brand Promotion Message">
+
+        <style>
+            .company-name {
+                        font-family: 'Arial', sans-serif; /* Clean and professional font */
+                        font-size: 18px; /* Adjust size to your preference */
+                        font-weight: bold; /* Bold for emphasis */
+                        color: #ff0080; /* Neutral dark gray for readability */
+                        text-transform: uppercase; /* Optional: make all letters uppercase */
+                        letter-spacing: 1.5px; /* Slight spacing for a modern look */
+                    }
+        </style>
+        <t t-set="odoo_logo">
+            <a target="_blank"
+                t-attf-href="http://www.odoo.com?utm_source=db&amp;utm_medium=#{_utm_medium}"
+                class="badge text-bg-light">
+                <img alt="Odoo"
+                    src="/web/static/img/odoo_logo_tiny.png"
+                    width="62" height="20"
+                    style="width: auto; height: 1em; vertical-align: baseline;"/>
+            </a>
+        </t>
+        <span>Powered by </span><span class="company-name">ALANNIAINFOTECH</span>
+        <t t-set="final_message">Powered by ALANNIAINFOTECH</t>
+<!--        <t t-out="final_message "/>-->
+    </template>
+
+</odoo>
