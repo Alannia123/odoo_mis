@@ -1,0 +1,26 @@
+html {
+	body {
+		main {
+			.oe_website_login_container {
+				background-color: white;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				display: flex;
+				align-items: center;
+			}
+
+			.oe_login_form,
+			.oe_signup_form,
+			.oe_reset_password_form {
+				margin: 20px auto;
+				padding: 95px;
+				border-radius: 0px;
+				background-color: white;
+				max-width: fit-content;
+				height: inherit;
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Advance Login Form",
+    "description": """The Advance Login Form is a highly customizable and visually appealing login interface designed specifically for Odoo 17. This module transforms the standard Odoo Web Login Screen into a modern and user-friendly interface, enhancing the overall login experience for users. Odoo Login Module Odoo Login App Odoo Login Form Module Odoo Login Form App Login Form Odoo App Login Form App for Odoo Odoo app for Login Form download Login Form Module for Odoo Odoo App for Login Form management Odoo App for Login Form Advance Features Odoo Password visibility Odoo Password strength criteria Odoo Personalized login Odoo Enhanced login experience Odoo Easy login Odoo Login page customization Odoo Center-aligned login form Odoo Left-aligned login form Odoo Right-aligned login form Odoo Authentication Odoo Strong password Odoo Secure login Odoo Login layout Odoo Login security Odoo Login form settings Odoo Login alignment Odoo Toggle password visibility Upgrade login Odoo Odoo Login interface Odoo Login enhancement Odoo Customize login Odoo Login appearance Odoo Login screen Odoo Login design Odoo Login customization Odoo Login layout options Odoo Login screen design Odoo Login security features Odoo Login form design Odoo Login form customization Odoo Login form appearance Odoo Login form alignment Odoo Login form colors Odoo Login form security Odoo Login form personalization Odoo Login form usability Odoo Login form UI Odoo Login form UX Odoo Login form user experience Odoo Login form security best practices Odoo Login form customization tips Odoo Login form visual design Odoo Login form user interaction Odoo Login form security enhancements Odoo Login form user-friendly Odoo Login form personalized experience Odoo Login form security measures Odoo Login form color schemes Odoo Login form background image Odoo Login form alignment options Odoo Login form password visibility Odoo Login form password strength Odoo Login form customization benefits Odoo Login form user preferences Odoo Login form features Odoo Login form functionality Odoo Login form usability improvements Odoo Login form security guidelines Odoo Login form UI enhancements Odoo Login form UX optimization Odoo Login form personalization options Odoo Login form security best practices Odoo Login form customization advantages""",
+    "summary": "Advance Login Form is an attractive modified view for login form. Odoo Login Module Odoo Login App Odoo Login Form Module Odoo Login Form App Login Form Odoo App Login Form App for Odoo Odoo app for Login Form download Login Form Module for Odoo Odoo App for Login Form management Odoo App for Login Form Advance Features Odoo Password visibility Odoo Password strength criteria Odoo Personalized login Odoo Enhanced login experience Odoo Easy login Odoo Login page customization Odoo Center-aligned login form Odoo Left-aligned login form Odoo Right-aligned login form Odoo Authentication Odoo Strong password Odoo Secure login Odoo Login layout Odoo Login security Odoo Login form settings Odoo Login alignment Odoo Toggle password visibility Upgrade login Odoo Odoo Login interface Odoo Login enhancement Odoo Customize login Odoo Login appearance Odoo Login screen Odoo Login design Odoo Login customization Odoo Login layout options Odoo Login screen design Odoo Login security features Odoo Login form design Odoo Login form customization Odoo Login form appearance Odoo Login form alignment Odoo Login form colors Odoo Login form security Odoo Login form personalization Odoo Login form usability Odoo Login form UI Odoo Login form UX Odoo Login form user experience Odoo Login form security best practices Odoo Login form customization tips Odoo Login form visual design Odoo Login form user interaction Odoo Login form security enhancements Odoo Login form user-friendly Odoo Login form personalized experience Odoo Login form security measures Odoo Login form color schemes Odoo Login form background image Odoo Login form alignment options Odoo Login form password visibility Odoo Login form password strength Odoo Login form customization benefits Odoo Login form user preferences Odoo Login form features Odoo Login form functionality Odoo Login form usability improvements Odoo Login form security guidelines Odoo Login form UI enhancements Odoo Login form UX optimization Odoo Login form personalization options Odoo Login form security best practices Odoo Login form customization advantages",
+    "category": "Web",
+    'sequence': 30,
+    "version": "17.0.1.0.0",
+    "author": "Zehntech Technologies Inc.",
+    "company": "Zehntech Technologies Inc.",
+    "maintainer": "Zehntech Technologies Inc.",
+    "contributor": "Zehntech Technologies Inc.",
+    "website": "https://www.zehntech.com/",
+    "support": "odoo-support@zehntech.com",
+    "depends": [
+        "web",
+        "auth_signup",
+        "website",
+    ],
+    "assets": {
+        "web.assets_frontend": [
+            "advance_login_form/static/src/scss/login_form.scss",
+            "advance_login_form/static/src/scss/custom.scss",
+            "advance_login_form/static/src/js/login-form.js",
+        ],
+    },
+    "data": [
+        "static/src/xml/login.xml",
+        "views/templates.xml",
+        "views/res_config_settings_views.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
+    ],
+    "license": "OPL-1",
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "price": 0.00,
+    "currency": "USD",
+}

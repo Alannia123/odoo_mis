@@ -1,0 +1,164 @@
+// ------------login form----------------
+
+.btn-fill-primary:hover,
+.btn-primary:hover {
+    color: #FFFFFF;
+    background-color: #915381;
+    border-color: #915381;
+}
+
+.oe_login_form>.oe_login_buttons>button.btn.btn-primary {
+    width: 150px;
+}
+
+.oe_login_form>.field-login>.form-control {
+    border: 1px solid #714b6770;
+}
+
+.oe_login_buttons>.d-flex {
+    display: flex !important;
+    gap: 42px;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: white;
+    border-color: #9153817a;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #91538163;
+}
+
+.card-body .text-center .border-end {
+    color: #915381;
+    text-decoration: none;
+}
+
+
+.btn-fill-primary:hover,
+.btn-primary:hover {
+    color: #FFFFFF;
+    background-color: #915381;
+    border-color: #915381;
+}
+
+.oe_login_form .oe_login_buttons .btn-primary {
+    border-color: #915381;
+    background-color: #915381;
+    border-radius: 1.25rem;
+}
+
+.input-group-password input#password {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid #CED4DA;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: background-color 0.05s ease-in-out, border-color 0.05s ease-in-out, box-shadow 0.05s ease-in-out;
+}
+
+.input-group-password input#password:focus {
+    color: #212529;
+    background-color: white;
+    border-color: #9153817a;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #91538163;
+}
+
+.oe_login_buttons>.btn-link {
+    color: #fff !important;
+}
+
+.oe_login_buttons>.btn-link:hover {
+    color: #fff !important;
+}
+
+.oe_signup_form .oe_login_buttons>.btn-link {
+    color: #915381 !important;
+}
+
+.oe_signup_form .oe_login_buttons>.btn-link:hover {
+    color: #915381 !important;
+}
+
+.oe_signup_form .oe_login_buttons>.btn-primary {
+    color: #fff !important;
+    background-color: #915381 !important;
+    border-color: #915381 !important;
+}
+
+.visibility_icon {
+    position: relative !important;
+    left: 90%;
+    bottom: 29px;
+}
+
+.oe_login_form>.d-grid {
+    display: grid !important;
+    /* width: 100px; */
+    justify-items: center;
+}
+
+a:hover {
+    color: #714b67;
+}
+
+a {
+    color: #915381;
+}
+
+.py-5>.bg-100 {
+    background-color: none;
+}
+
+.py-5>.card>.card-body {
+    background-color: #F8F9FA !important;
+}
+
+.oe_login_buttons>.btn-primary:focus {
+    box-shadow: #915381 !important;
+}
+
+.oe_login_form>.oe_login_buttons>.btn {
+    box-shadow: none !important;
+}
+
+.oe_signup_form>.oe_login_buttons>.btn {
+    box-shadow: none !important;
+}
+
+.custom-bold-label {
+    font-weight: bold;
+}
+
+body.oe_webclient {
+    background-image: url('/your_module/static/src/img/Odoo_logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.o_cc4>.navbar-light>.o_footer {
+    background-color: #915381;
+}
+
+.oe_login_form:has(> .align_advance_login_form_left) {
+    margin-left: 0px !important;
+}
+
+.oe_login_form:has(> .align_advance_login_form_right) {
+    margin-right: 0px !important;
+}
+
+// Change colour of login form eye icon
+.oe_login_form .mb-3 .fa.fa-eye-slash,
+.oe_login_form .mb-3 .fa.fa-eye{
+    color: black !important;
+}

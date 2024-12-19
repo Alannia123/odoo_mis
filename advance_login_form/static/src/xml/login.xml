@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_web_login" inherit_id="web.login" name="Custom Login">
+            <xpath expr="//form" position="inside">
+                <t t-set="alignment_of_form" t-value="request.env['ir.config_parameter'].sudo().get_param('advance_login_form.alignment')"></t>
+                <span t-attf-class="#{'align_advance_login_form_left' if alignment_of_form == 'left' else 'align_advance_login_form_right' if alignment_of_form == 'right' else 'align_advance_login_form_center'}" separator=" "></span>
+            </xpath>
+            <xpath expr="//form[@class='oe_login_form']" position="attributes">
+                <attribute name="t-attf-style">background-color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.background_color') or ''}; color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''};</attribute>
+            </xpath>
+            <xpath expr="//div[@class='mb-3 field-login']/label[@for='login']" position="attributes">
+                <attribute name="class">form-label custom-bold-label</attribute>
+                <attribute name="t-esc">"Username"</attribute>
+            </xpath>
+            <xpath expr="//div[@class='mb-3 field-login']/input[@name='login']" position="attributes">
+                <attribute name="placeholder">Enter Username</attribute>
+                <attribute name="t-attf-style">border-color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''} !important;</attribute>
+                <attribute name="t-attf-onfocus">this.style.boxShadow = '0 0 0 0.2rem #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''}';</attribute>
+                <attribute name="t-attf-onblur">this.style.boxShadow = 'none';</attribute>
+            </xpath>
+            <xpath expr="//div[@class='mb-3'][2]/label[@for='password']" position="attributes">
+                <attribute name="class">form-label custom-bold-label</attribute>
+                <attribute name="t-esc">"Password"</attribute>
+            </xpath>
+
+            <xpath expr="//input[@name='password']" position="attributes">
+                <attribute name="placeholder">Enter Password</attribute>
+                <attribute name="t-attf-style">border-color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''} !important;</attribute>
+                <attribute name="t-attf-onfocus">this.style.boxShadow = '0 0 0 0.2rem #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''}';</attribute>
+                <attribute name="t-attf-onblur">this.style.boxShadow = 'none';</attribute>
+            </xpath>
+            <xpath expr="//input[@name='password']" position="after">
+                <span class="fa fa-eye-slash visibility_icon" id="passwordToggleIcon" onclick="togglePasswordVisibility()"></span>
+            </xpath>
+            <xpath expr="//button[@class='btn btn-primary']" position="attributes">
+                <attribute name="t-attf-style">background-color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.button_color') or ''}; border-color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.button_color') or ''}; color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''} </attribute>
+                <attribute name="t-attf-onmouseover">this.style.backgroundColor='#{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.button_hover_color') or ''}'; this.style.borderColor='#{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.button_hover_color') or ''}'; this.style.color='#{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''}';</attribute>
+                <attribute name="t-attf-onmouseout">this.style.backgroundColor='#{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.button_color') or ''}'; this.style.borderColor='#{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.button_color') or ''}'; this.style.color='#{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''}';</attribute>
+            </xpath>
+            <xpath expr="//button[@name='redirect']" position="attributes">
+                <attribute name="t-attf-style">color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''} !important;</attribute>
+            </xpath>
+            <xpath expr="//div[@class='justify-content-between mt-2 d-flex small']/a[@t-if='reset_password_enabled']" position="attributes">
+                <attribute name="t-attf-style">color: #{request.env['ir.config_parameter'].sudo().get_param('advance_login_form.text_color') or ''} </attribute>
+            </xpath>
+        </template>
+    </data>
+</odoo>

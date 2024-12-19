@@ -1,0 +1,157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* advance_login_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240229\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-20 12:39+0000\n"
+"PO-Revision-Date: 2024-05-20 12:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: advance_login_form
+#: model:ir.model.fields,field_description:advance_login_form.field_res_config_settings__alignment
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Alignment"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,field_description:advance_login_form.field_res_config_settings__background_color
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Background Color"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,field_description:advance_login_form.field_res_config_settings__button_color
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Button Color"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,field_description:advance_login_form.field_res_config_settings__button_hover_color
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Button Hover Color"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields.selection,name:advance_login_form.selection__res_config_settings__alignment__center
+msgid "Center"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model,name:advance_login_form.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: advance_login_form
+#. odoo-javascript
+#: code:addons/advance_login_form/static/src/xml/login.xml:0
+#: model_terms:ir.ui.view,arch_db:advance_login_form.custom_web_login
+#, python-format
+msgid "Enter Password"
+msgstr ""
+
+#. module: advance_login_form
+#. odoo-javascript
+#: code:addons/advance_login_form/static/src/xml/login.xml:0
+#: model_terms:ir.ui.view,arch_db:advance_login_form.custom_web_login
+#, python-format
+msgid "Enter Username"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,field_description:advance_login_form.field_res_config_settings__login_background_image
+msgid "Image"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields.selection,name:advance_login_form.selection__res_config_settings__alignment__left
+msgid "Left"
+msgstr ""
+
+#. module: advance_login_form
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Login Background Image"
+msgstr ""
+
+#. module: advance_login_form
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Login Form"
+msgstr ""
+
+#. module: advance_login_form
+#: model_terms:ir.ui.view,arch_db:advance_login_form.left_login_layout
+msgid "Logo"
+msgstr ""
+
+#. module: advance_login_form
+#: model_terms:ir.ui.view,arch_db:advance_login_form.left_login_layout
+msgid "Manage Databases"
+msgstr ""
+
+#. module: advance_login_form
+#. odoo-python
+#: code:addons/advance_login_form/models/res_users.py:0
+#, python-format
+msgid ""
+"Password must be at least 8 characters long and contain at least one "
+"lowercase letter, one uppercase letter, one digit, and one special "
+"character."
+msgstr ""
+
+#. module: advance_login_form
+#: model_terms:ir.ui.view,arch_db:advance_login_form.left_login_layout
+msgid "Powered by <span>Odoo</span>"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields.selection,name:advance_login_form.selection__res_config_settings__alignment__right
+msgid "Right"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,help:advance_login_form.field_res_config_settings__background_color
+msgid "Select Background Color for Login Page"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,help:advance_login_form.field_res_config_settings__login_background_image
+msgid "Select Background Image For Login Page"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,help:advance_login_form.field_res_config_settings__alignment
+msgid "Select Background Theme"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,help:advance_login_form.field_res_config_settings__button_color
+msgid "Select Button Color for Login Page"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,help:advance_login_form.field_res_config_settings__button_hover_color
+msgid "Select Hover Color for Button"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,help:advance_login_form.field_res_config_settings__text_color
+msgid "Select Text Color for Login Page"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model.fields,field_description:advance_login_form.field_res_config_settings__text_color
+#: model_terms:ir.ui.view,arch_db:advance_login_form.res_config_settings_view_form_login_background
+msgid "Text Color"
+msgstr ""
+
+#. module: advance_login_form
+#: model:ir.model,name:advance_login_form.model_res_users
+msgid "User"
+msgstr ""

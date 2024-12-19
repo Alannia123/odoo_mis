@@ -8,8 +8,11 @@
             <div class="text-center pb-3 border-bottom {{'mb-3' if form_small else 'mb-4'}} text-center">
                 <img src="/mis_website/static/src/img/schoollogo.png" alt="Company Logo" style="max-height:120px; max-width: 100%; width:auto"/>
             </div>
-            <t t-if="is_mobile">
+            <t t-if="not is_mobile">
                 <div class="text-shimmer text-center">Welcome To MIS!!!</div>
+            </t>
+            <t t-else="">
+                <div class="text-shimmer text-center">Welcome To MIS App!!!</div>
             </t>
 
             <style>
