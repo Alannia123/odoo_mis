@@ -1,0 +1,16 @@
+<!-- data/cron_job.xml -->
+<odoo>
+    <data >
+        <record id="ir_cron_my_cron_job" model="ir.cron">
+            <field name="name">Create Homework Template</field>
+            <field name="model_id" ref="mis_homework.model_student_homework"/> <!-- Replace with your model -->
+            <field name="state">code</field>
+            <field name="code">model.generate_homework_template()</field>
+            <field name="interval_number">1</field> <!-- Interval Number -->
+            <field name="interval_type">days</field> <!-- Interval Type: minutes, hours, days, weeks, months -->
+            <field name="numbercall">-1</field> <!-- -1 for unlimited -->
+            <field name="doall" eval="False"/> <!-- True to execute missed jobs -->
+            <field name="nextcall" eval="(DateTime.now().replace(hour=2, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+        </record>
+    </data>
+</odoo>

@@ -27,4 +27,10 @@
         <field name="users"
                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>
+
+    <!--Education Student Parent  group user-->
+    <record id="group_education_student_parent" model="res.groups">
+        <field name="name">Student Or Parent</field>
+        <field name="category_id" ref="module_category_education"/>
+    </record>
 </odoo>

@@ -13,8 +13,10 @@
     'data': [
         'security/ir.model.access.csv',
         # 'data/sequence.xml',
+        'data/homework_cron.xml',
+        'wizard/home_entry_wizard_view.xml',
         'views/home_work_view.xml',
-        'views/student_view.xml',
+        # 'views/student_view.xml',
         'views/anounce_view.xml',
     ],
     #  'assets': {

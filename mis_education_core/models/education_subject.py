@@ -13,7 +13,7 @@ class EducationSubject(models.Model):
                        help="Name of the Subject")
     type = fields.Selection([('lkg', 'LKG'),('ukg', 'UKG'), ('onetwo', '1-2 STD'), ('threefive', '3-5 STD'),
                              ('sixeight', '6-8 STD'), ('ninten', '9-10 STD')],
-                            'Report Card', required=True)
+                            'Report Card', required=False)
 
     # is_language = fields.Boolean(string="Language",
     #                              help="Tick if this subject is a language")

@@ -5,9 +5,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="student_id"/>
-                <field name="subject"/>
-                <field name="due_date"/>
+                <field name="class_div_id" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin,mis_education_core.group_education_faculty"/>
+                <field name="homework_date"/>
                 <field name="state"/>
             </tree>
         </field>
@@ -19,15 +18,56 @@
         <field name="model">student.homework</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_create_to_student" string="Create Homework"
+                            type="object"
+                            groups="mis_education_core.group_education_faculty"
+                            class="btn-secondary"/>
+                    <button name="action_update_to_student" string="Update Homework"
+                            type="object"
+                            groups="mis_education_core.group_education_faculty"
+                            invisible="state != 'post'"
+                            class="btn-secondary"/>
+                    <field name="state" widget="statusbar"/>
+<!--                    <div class="oe_running_text" width="100%">-->
+<!--                        <marquee behavior="scroll" direction="left">-->
+<!--                            <field name="description" widget="char" readonly="1"/>-->
+<!--                        </marquee>-->
+<!--                    </div>-->
+                </header>
                 <sheet>
+
                     <group>
-                        <field name="name"/>
-                        <field name="student_id"/>
-                        <field name="subject"/>
-                        <field name="due_date"/>
-                        <field name="description"/>
-                        <field name="state"/>
+                         <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="class_div_id" options="{'no_create':True,'no_open':True}"
+                                   groups="mis_education_core.group_education_faculty"/>
+                            <field name="homework_date"/>
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="HomeWork" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin,mis_education_core.group_education_faculty">
+                            <field name="work_line_ids" >
+                                <tree create="0" edit="0">
+                                    <field name="subject_id" style="width: 130px;" options="{'no_create':True,'no_open':True}"/>
+                                    <field name="homework" style="width: 400px;"/>
+                                    <field name="image" style="width: 100px;"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="HomeWorks">
+                            <field name="work_view_ids">
+                                <tree create="0" edit="0">
+                                    <field name="homework_desc" widget="html" />
+                                    <field name="image" />
+                                </tree>
+                            </field>
+
+                        </page>
+                    </notebook>
+
                     <style>
                         .oe_running_text {
                             margin-top: 20px;
@@ -43,11 +83,7 @@
                     </style>
 
                      <!-- Running Text Section -->
-                <div class="oe_running_text">
-                    <marquee behavior="scroll" direction="left">
-                        <field name="description" widget="char"/>
-                    </marquee>
-                </div>
+
                 </sheet>
             </form>
         </field>
@@ -63,6 +99,7 @@
 
     <menuitem id="menu_student_homework_root" name="Homework" sequence="1"/>
     <menuitem id="menu_student_homework" name="Manage Homework" parent="menu_student_homework_root" action="action_student_homework"/>
+
 
 </odoo>
 

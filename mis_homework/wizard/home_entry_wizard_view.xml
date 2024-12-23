@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="form_open_home_work_wizard" model="ir.ui.view">
+        <field name="name">homework.entry.form</field>
+        <field name="model">homework.entry</field>
+        <field name="arch" type="xml">
+            <form string="Homework Entry">
+                <group>
+                    <group>
+                        <field name="class_div_id"/>
+                        <field name="subject_id"/>
+                    </group>
+                    <group>
+                        <field name="homework_date"/>
+                        <field name="image"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="homework"/>
+                </group>
+                <footer>
+                    <button string="Create Work" type="object" name="create_homework_entry" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="action_open_home_work_wizard" model="ir.actions.act_window">
+        <field name="name">Homework Entry</field>
+        <field name="res_model">homework.entry</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_open_home_work_wizard" name="Homework Entry" parent="menu_student_homework_root"
+              groups="mis_education_core.group_education_faculty" action="action_open_home_work_wizard"/>
+
+</odoo>

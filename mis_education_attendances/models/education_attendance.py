@@ -18,7 +18,7 @@ class EducationAttendance(models.Model):
                                   string='Division', required=True,
                                   help="Class division for attendance")
     date = fields.Date(string='Date', default=fields.Date.today, required=True,
-                       help="Attendance date")
+                       help="Attendance date", readonly=True)
     attendance_line_ids = fields.One2many('education.attendance.line',
                                           'attendance_id',
                                           string='Attendance Line',
@@ -114,28 +114,28 @@ class EducationAttendance(models.Model):
             records.present_morning = False
         self.all_marked_morning = False
 
-    def action_mark_all_present_afternoon(self):
-        """Action for marking all students afternoon attendance"""
-        for records in self.attendance_line_ids:
-            records.present_afternoon = True
-        self.all_marked_afternoon = True
+    # def action_mark_all_present_afternoon(self):
+    #     """Action for marking all students afternoon attendance"""
+    #     for records in self.attendance_line_ids:
+    #         records.present_afternoon = True
+    #     self.all_marked_afternoon = True
 
-    def action_un_mark_all_present_afternoon(self):
-        """Action for un marking all students afternoon attendance"""
-        for records in self.attendance_line_ids:
-            records.present_afternoon = False
-        self.all_marked_afternoon = False
+    # def action_un_mark_all_present_afternoon(self):
+    #     """Action for un marking all students afternoon attendance"""
+    #     for records in self.attendance_line_ids:
+    #         records.present_afternoon = False
+    #     self.all_marked_afternoon = False
 
     def action_attendance_done(self):
         """Button action for setting attendance and line status to done"""
         for records in self.attendance_line_ids:
             records.state = 'done'
-            if not records.present_morning and not records.present_afternoon:
-                records.full_day_absent = 1
-            elif not records.present_morning:
-                records.half_day_absent = 1
-            elif not records.present_afternoon:
-                records.half_day_absent = 1
+            # if not records.present_morning and not records.present_afternoon:
+            #     records.full_day_absent = 1
+            # elif not records.present_morning:
+            #     records.half_day_absent = 1
+            # elif not records.present_afternoon:
+            #     records.half_day_absent = 1
         self.state = 'done'
 
     def action_set_to_draft(self):
