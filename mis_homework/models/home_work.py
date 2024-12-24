@@ -46,6 +46,7 @@ class StudentHomework(models.Model):
                                     """
                 view_id = self.env['student.homework.view'].create({
                                                                     'work_id' : self.id,
+                                                                    'work_view_attachment_ids' : work.work_attachment_ids.ids,
                                                                     })
                 print('DDDDDDFFFFFFFFF00000000',view_id)
                 if view_id:
@@ -53,7 +54,6 @@ class StudentHomework(models.Model):
                                         <h1>{work.subject_id.name}</h1><br/>
                                         <p> {work.homework}. </p>
                                     """
-                    view_id.image = work.image
         self.state = 'post'
 
     def action_update_to_student(self):
@@ -66,7 +66,10 @@ class StudentHomeworkLine(models.Model):
     work_id = fields.Many2one('student.homework', string="Home Work")
     subject_id = fields.Many2one('education.subject', 'Subject', required=True)
     homework = fields.Char('Homework')
-    image = fields.Binary('Image')
+    work_attachment_ids = fields.Many2many(
+        'ir.attachment', 'education_work_attach_rel',
+        'work_id', 'work_attach', string="Attachment", copy=False,
+        help='You can attach the copy of your document')
 
 class StudentHomeworkLine(models.Model):
     _name = 'student.homework.view'
@@ -74,6 +77,9 @@ class StudentHomeworkLine(models.Model):
 
     work_id = fields.Many2one('student.homework', string="Home Work", readonly=True)
     homework_desc = fields.Html('Homeworks', readonly=True)
-    image = fields.Binary('Image', readonly=True)
+    work_view_attachment_ids = fields.Many2many(
+        'ir.attachment', 'education_view_attach_rel',
+        'stu_view_id', 'stu_work_attach', string="Attachment", copy=False,
+        help='You can attach the copy of your document')
 
 #

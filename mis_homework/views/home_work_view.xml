@@ -13,7 +13,7 @@
     </record>
 
 
-        <record id="view_student_homework_form" model="ir.ui.view">
+    <record id="view_student_homework_form" model="ir.ui.view">
         <field name="name">student.homework.form</field>
         <field name="model">student.homework</field>
         <field name="arch" type="xml">
@@ -50,18 +50,18 @@
                     <notebook>
                         <page string="HomeWork" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin,mis_education_core.group_education_faculty">
                             <field name="work_line_ids" >
-                                <tree create="0" edit="0">
+                                <tree editable="bottom" create="0" edit="0">
                                     <field name="subject_id" style="width: 130px;" options="{'no_create':True,'no_open':True}"/>
                                     <field name="homework" style="width: 400px;"/>
-                                    <field name="image" style="width: 100px;"/>
+                                    <field name="work_attachment_ids" style="width: 100px;" widget="many2many_binary"/>
                                 </tree>
                             </field>
                         </page>
                         <page string="HomeWorks">
                             <field name="work_view_ids">
                                 <tree create="0" edit="0">
-                                    <field name="homework_desc" widget="html" />
-                                    <field name="image" />
+                                    <field name="homework_desc" widget="html" style="width: 400px;"/>
+                                    <field name="work_view_attachment_ids" widget="many2many_binary" style="width: 100px;"/>
                                 </tree>
                             </field>
 
@@ -96,6 +96,27 @@
         <field name="res_model">student.homework</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+
+
+    <record id="view_student_view_homework_form" model="ir.ui.view">
+        <field name="name">student.homework.view.form</field>
+        <field name="model">student.homework.view</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                         <group>
+                            <field name="work_id" invisible="1"/>
+                            <field name="homework_desc"/>
+                            <field name="work_view_attachment_ids" widget="many2many_binary"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
     <menuitem id="menu_student_homework_root" name="Homework" sequence="1"/>
     <menuitem id="menu_student_homework" name="Manage Homework" parent="menu_student_homework_root" action="action_student_homework"/>
