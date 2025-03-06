@@ -17,21 +17,29 @@
                         <button name="toggle_active" type="object"
                                 class="oe_stat_button" icon="fa-archive">
                             <field name="active" widget="boolean_button"
-                                   options='{"terminology": "archive"}'/>
+                                   options='{"terminology": "archive"}' groups="mis_education_core.group_education_principal"/>
                         </button>
                     </div>
                     <group>
                         <group>
-                            <field name="class_division_id"/>
-                            <field name="academic_year_id"/>
+                            <field name="class_division_id" options="{'no_open': True, 'no_create': True}" groups="mis_education_core.group_education_principal"/>
+                            <field name="academic_year_id" options="{'no_open': True, 'no_create': True}"/>
                         </group>
                         <group>
+                            <field name="file_name" invisible="1"/>
+                            <field name="pdf_file" filename="file_name" groups="mis_education_core.group_education_principal"/>
                             <field name="company_id"
                                    groups="base.group_multi_company"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Monday">
+                        <page string="Time Table">
+                            <group>
+                                <field name="preview_image" widget="image"/>
+                            </group>
+
+                        </page>
+                        <page string="Monday" invisible="1">
                             <field name="timetable_mon_ids"
                                    domain="[('week_day','=', 0)]"
                                    context="{'default_week_day': '0'} ">
@@ -47,7 +55,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Tuesday">
+                        <page string="Tuesday" invisible="1">
                             <field name="timetable_tue_ids"
                                    domain="[('week_day','=', 1)]"
                                    context="{'default_week_day': '1'}">
@@ -63,7 +71,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Wednesday">
+                        <page string="Wednesday" invisible="1">
                             <field name="timetable_wed_ids"
                                    domain="[('week_day','=', 2)]"
                                    context="{'default_week_day': '2'}">
@@ -77,7 +85,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Thursday">
+                        <page string="Thursday" invisible="1">
                             <field name="timetable_thur_ids"
                                    domain="[('week_day','=', 3)]"
                                    context="{'default_week_day': '3'}">
@@ -93,7 +101,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Friday">
+                        <page string="Friday" invisible="1">
                             <field name="timetable_fri_ids"
                                    domain="[('week_day','=', 4)]"
                                    context="{'default_week_day': '4'}">
@@ -109,7 +117,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Saturday">
+                        <page string="Saturday" invisible="1">
                             <field name="timetable_sat_ids"
                                    domain="[('week_day','=', 5)]"
                                    context="{'default_week_day': '5'}">
@@ -125,7 +133,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Sunday">
+                        <page string="Sunday" invisible="1">
                             <field name="timetable_sun_ids"
                                    domain="[('week_day','=', 6)]"
                                    context="{'default_week_day': '6'}">

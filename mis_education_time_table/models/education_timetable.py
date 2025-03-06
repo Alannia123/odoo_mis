@@ -2,6 +2,10 @@
 
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
+from odoo import models, fields, api
+import base64
+import tempfile
+from pdf2image import convert_from_path
 
 
 class EducationTimetable(models.Model):
@@ -75,6 +79,17 @@ class EducationTimetable(models.Model):
         'res.company', string='Company',
         default=lambda self: self.env['res.company']._company_default_get(),
         help="Company associated with the timetable.")
+    pdf_file = fields.Binary(string="Upload TimeTable", attachment=True)
+    file_name = fields.Char('File Name')
+    preview_image = fields.Binary(string="PDF Preview", readonly=True)
+
+    @api.onchange('pdf_file')
+    def _generate_preview(self):
+        if self.pdf_file:
+            self.preview_image = self.pdf_file
+        else:
+            self.preview_image = False
+
 
     def create(self, vals_list):
         if ('class_division_id' in vals_list.keys() and

@@ -114,15 +114,15 @@
         </field>
     </record>
     <!--    Schedules menu-->
-    <menuitem
-            id="education_time_table_schedule_main_menu"
-            name="Schedules"
-            parent="education_time_table_main_menu"
-            sequence="2"/>
-    <!--    Timetable Schedule menu-->
-    <menuitem
-            id="education_time_table_schedule_sub_menu"
-            name="Timetable Schedule"
-            parent="education_time_table_schedule_main_menu"
-            action="education_timetable_schedule_action"/>
+<!--    <menuitem-->
+<!--            id="education_time_table_schedule_main_menu"-->
+<!--            name="Schedules"-->
+<!--            parent="education_time_table_main_menu"-->
+<!--            sequence="2"/>-->
+<!--    &lt;!&ndash;    Timetable Schedule menu&ndash;&gt;-->
+<!--    <menuitem-->
+<!--            id="education_time_table_schedule_sub_menu"-->
+<!--            name="Timetable Schedule"-->
+<!--            parent="education_time_table_schedule_main_menu"-->
+<!--            action="education_timetable_schedule_action"/>-->
 </odoo>

@@ -52,15 +52,15 @@
         </field>
     </record>
     <!--    Configuration menu-->
-    <menuitem
-            id="education_timetable_menu_configuration"
-            name="Configuration"
-            parent="education_time_table_main_menu"
-            sequence="3"/>
-    <!--    Periods menu-->
-    <menuitem
-            id="education_timetable_period_sub_menu"
-            name="Periods"
-            parent="education_timetable_menu_configuration"
-            action="timetable_period_action"/>
+<!--    <menuitem-->
+<!--            id="education_timetable_menu_configuration"-->
+<!--            name="Configuration"-->
+<!--            parent="education_time_table_main_menu"-->
+<!--            sequence="3"/>-->
+<!--    &lt;!&ndash;    Periods menu&ndash;&gt;-->
+<!--    <menuitem-->
+<!--            id="education_timetable_period_sub_menu"-->
+<!--            name="Periods"-->
+<!--            parent="education_timetable_menu_configuration"-->
+<!--            action="timetable_period_action"/>-->
 </odoo>
