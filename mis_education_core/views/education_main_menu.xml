@@ -3,11 +3,47 @@
     <!-- Main menus of Education-->
     <menuitem id="menu_education_root" name="MIS"
               web_icon="mis_education_core,static/description/icon.png"
-              sequence="2"/>
+              sequence="2" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
     <menuitem id="menu_education_main_menu" name="Configuration" groups="mis_education_core.group_education_principal"
               parent="menu_education_root"/>
     <menuitem id="menu_education_class_conf" name="Class"
               parent="menu_education_main_menu" sequence="0"/>
     <menuitem id="menu_education_application_conf" name="Application"
               parent="menu_education_main_menu" sequence="1"/>
+
+    <menuitem
+        id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
+        name="Dashboards"
+        action="spreadsheet_dashboard.ir_actions_dashboard_action"
+        web_icon="spreadsheet_dashboard,static/description/icon.png"
+        groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
+        sequence="37"/>
+
+    <menuitem
+        id="calendar.mail_menu_calendar"
+        name="Calendar"
+        sequence="10"
+        web_icon="calendar,static/description/icon.png"
+        groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
+
+    <menuitem id="base.menu_management" name="Apps" sequence="500"
+              web_icon="base,static/description/modules.png" groups="mis_education_core.group_education_principal"/>
+
+    <menuitem name="Contacts"
+        id="contacts.menu_contacts"
+        sequence="20"
+        web_icon="contacts,static/description/icon.png"
+        groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
+
+
+     <menuitem
+            id="hr.menu_hr_root"
+            name="Employees"
+            groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
+            web_icon="hr,static/description/icon.png"
+            sequence="185"/>
+
+
+
+
 </odoo>

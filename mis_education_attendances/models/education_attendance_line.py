@@ -15,8 +15,8 @@ class EducationAttendanceLine(models.Model):
     student_id = fields.Many2one('education.student',
                                  string='Student',
                                  help="Student ID for the attendance")
-    register_no = fields.Char('Registration Number', required=True)
-    roll_no = fields.Char('Roll Number', required=True)
+    register_no = fields.Char(related='student_id.register_no', string='Registration Number', required=True, readonly=True)
+    roll_no = fields.Char(related='student_id.roll_no', string='Roll Number', readonly=True)
     student_name = fields.Char(string='Student', related='student_id.name',
                                help="Student name for attendance")
     class_id = fields.Many2one('education.class', string='Class',

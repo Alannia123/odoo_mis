@@ -12,7 +12,7 @@
     'author': 'Alanniainfotechz',
     'company': 'Alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['stock', 'hr_recruitment', 'contacts','base'],
+    'depends': ['stock', 'hr_recruitment', 'contacts','base','spreadsheet_dashboard', 'calendar', 'contacts', 'hr'],
     'data': [
         'security/education_security.xml',
         'security/ir.model.access.csv',
