@@ -3,9 +3,6 @@
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 from odoo import models, fields, api
-import base64
-import tempfile
-from pdf2image import convert_from_path
 
 
 class EducationTimetable(models.Model):
