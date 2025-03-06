@@ -8,7 +8,8 @@
                 <t t-if="banner">
                     <div class="row">
                         <div style="background-color: #003399;" class="hov_hi">
-                            <marquee onmouseover="this.stop();" onmouseout="this.start();"><t t-out="banner.info"/><span style="color:red;">Click Here For</span><a class="btn btn-primary" href="/applyonline">Apply Online</a></marquee>
+<!--                            <marquee onmouseover="this.stop();" onmouseout="this.start();"><t t-out="banner.info"/><span style="color:red;">Click Here For</span><a class="btn btn-primary" href="/applyonline">Apply Online</a></marquee>-->
+                            <marquee onmouseover="this.stop();" onmouseout="this.start();"><t t-out="banner.info"/></marquee>
                         </div>
                     </div>
                 </t>

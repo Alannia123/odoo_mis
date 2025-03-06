@@ -25,7 +25,7 @@ class home_controller(http.Controller):
         print('NOFGHDFHGD',display_notice)
         vals = {
             'today_date': today_date,
-            'banner': request.env['banner.info'].sudo().search([]),
+            'banner': request.env['banner.info'].sudo().search([('enable', '=', True)], limit=1),
             'notices': display_notice,
             # 'photos': request.env['program.gallery.photo'].sudo().search([]),
             # 'events': request.env['program.events'].sudo().search([]),
