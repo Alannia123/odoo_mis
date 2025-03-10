@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="identity_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="height: 2px;">
+                        <div class="oe_structure" />
+                        <t t-foreach="o" t-as="student">
+                            <center>
+                                <table class="table table-sm" style="width: 40%;">
+                                    <tr style="">
+                                        <td align="center">
+                                            <h4><strong><span
+                                                        t-field="student.sudo().school_id.name"
+                                                    /></strong></h4>
+                                            <span
+                                                t-field="student.school_id.contact_phone"
+                                                class="fa fa-phone"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr style=" border-bottom: 1px solid white;">
+                                        <td align="center">
+                                            <img
+                                                t-if="student.photo"
+                                                t-att-src="'data:image/png;base64,%s' % student.photo.decode('utf-8')"
+                                                style="max-height: 200px; max-width: 150px; border-radius: 40%;"
+                                                height="125"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:24px;" align="center">
+                                            <span t-field="student.name" /> <span
+                                                t-field="student.middle"
+                                            /> <span t-field="student.last" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Class:</strong>
+                                            <span
+                                                t-field="student.standard_id.standard_id.name"
+                                            />  <span
+                                                t-field="student.standard_id.division_id.name"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Roll No:</strong>
+                                            <span t-field="student.roll_no" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Medium:</strong>
+                                            <span t-field="student.medium_id.name" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>DOB:</strong>
+                                            <span t-field="student.date_of_birth" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Mob:</strong>
+                                            <span t-field="student.mobile" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-top: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Blood Group:</strong>
+                                            <span t-field="student.blood_group" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                        </t>
+                   </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

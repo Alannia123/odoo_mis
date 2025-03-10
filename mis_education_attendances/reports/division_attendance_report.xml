@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <template id="report_attendance_report_document">
+            <t t-call="web.html_container">
+                <t t-call="web.basic_layout">
+                    <style>
+                        table, th, td {
+                            padding-left:10px;
+                            padding:5px;
+                        }
+                        .no-border {
+                            border-right:none;
+                            border-left:none;
+                            border-bottom:none;
+                            border-top:none;
+                        }
+                        .text-right {
+                            text-align: end;
+                        }
+
+                    </style>
+                    <div class="page" style="page-break-after:always !important;">
+                        <div id="header">
+                            <div style="border : 1.8px solid black ;border-bottom: none;">
+                                <h2 class="text-center">MARY IMMACULATE ENGLISH MEDIUM SCHOOL, PATILACHANDRA, BASIRHAT</h2><br/>
+                                <h3 class="text-center">PROGRESS REPORT, ACADEMIC YEAR : <t t-esc="doc.academic_year_id.name"/></h3><br/>
+                            </div>
+                            <t t-foreach="doc.student_ids" t-as="student">
+                                <table width="100%" style="padding-top:10px;border : 1.8px solid black;border-bottom: none;">
+                                    <tr class="no-border">
+                                        <td width="55%" class="text-center no-border">
+                                            <span >Student Name :<t t-esc="student.name"/> </span>
+                                        </td>
+                                        <td width="10%" class="no-border">
+                                            <span>Class :<t t-esc="doc.class_id.name"/> </span>
+                                        </td>
+                                        <td width="10%" class="no-border">
+                                            <span>Section :<t t-esc="doc.division_id.name"/> </span>
+                                        </td>
+                                        <td width="10%" class="no-border">
+                                            <span>ROll No :<t t-esc="student.ad_no"/> </span>
+                                        </td>
+                                        <td width="15%" class="no-border">
+                                            <span>ID No :<t t-esc="student.ad_no"/> </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table width="100%" style="padding-top:10px;border : 1.5px solid black;border-bottom: none;">
+                                    <tr class="no-border">
+                                        <td width="60%" class="no-border">
+<!--                                        Table subjects-->
+                                            <table width="100%" style="border: 1.5px solid black;">
+                                                <thead >
+                                                    <tr>
+                                                        <th name="subjects" rowspan="2" class="text-center"><span>SUBJECTS</span></th>
+                                                        <th name="term_1" colspan="3" class="text-center"><span>TERM 1</span></th>
+                                                        <th name="term_2" colspan="3" class="text-center"><span>TERM 2</span></th>
+                                                        <th name="term_3" colspan="3" class="text-center"><span>TERM 3</span></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th name="exam_1" class="text-center"><span>Exam</span></th>
+                                                        <th name="assign_1" class="text-center"><span>Assign</span></th>
+                                                        <th name="total_1" class="text-center"><span>Total</span></th>
+                                                        <th name="exam_2" class="text-center"><span>Exam</span></th>
+                                                        <th name="assign_2" class="text-center"><span>Assign</span></th>
+                                                        <th name="total_2" class="text-center"><span>Total</span></th>
+                                                        <th name="exam_3" class="text-center"><span>Exam</span></th>
+                                                        <th name="assign_3" class="text-center"><span>Assign</span></th>
+                                                        <th name="total_3" class="text-center"><span>Total</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>English Literature</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>English Language</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Bengali/Hindi</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Maths</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Physics</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Chemistry</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Biology</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>History</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Computer Application</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td name="bengali_hindi" class="text-left"><span>Geography</span></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                        <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color: #ffffff;"><span>Physics</span></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color: #ffffff;"><span>Physics</span></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color: #ffffff;"><span>Physics</span></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color: #ffffff;"><span>Physics</span></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right" ><span><b>TOTAL</b></span></td>
+                                                        <td colspan="2" style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td colspan="2" style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td colspan="2" style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right" ><span><b>PERCENTAGE</b></span></td>
+                                                        <td colspan="2" style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td colspan="2" style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                        <td colspan="2" style="color: #ffffff;"></td>
+                                                        <td style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right" ><span><b>GRADE</b></span></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right" ><span><b>ATTENDANCE</b></span></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right" ><span><b>PARENTS SIGNATURE</b></span></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                        <td colspan="3" style="color: #ffffff;"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td width="40%" class="no-border">
+                                            <table width="100%" class="no-border">
+                                                <tr class="no-border">
+                                                    <td class="no-border">
+<!--                                            Table Maturity-->
+                                                        <table width="100%" style="border: 1.5px solid black;">
+                                                            <thead >
+                                                                <tr>
+                                                                    <th name="maturity" class="text-center"><span>MATURITY DEVELOPMENT</span></th>
+                                                                    <th name="term_1" class="text-center"><span>TERM 1</span></th>
+                                                                    <th name="term_2" class="text-center"><span>TERM 2</span></th>
+                                                                    <th name="term_3" class="text-center"><span>TERM 3</span></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody style="line-height: 10px">
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>DISCIPLINE/INITIATIVE</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>PERSEVERANCE</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>CONCENTRATION</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>POWER OF OBSERVATION</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>CURIOSITY</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>SELF CONFIDENCE</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>RESPONSIBILITY</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>RELATIONSHIP</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>GROUP WORK</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>NEATNESS</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>RESPECT OF RULES</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>RESPECT FOR OTHERS</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>PHYSICAL EDUCATION</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td name="bengali_hindi" class="text-center"><span>PUNCTUALITY</span></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                    <td class="text-center"><t t-esc="student.ad_no"/></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="no-border">
+                                                    <td class="no-border">
+<!--                                                        Table Grade-->
+                                                        <table width="100%" style="border: 1.5px solid black;">
+                                                            <tr>
+                                                                <td class="text-center" colspan="2"><b>GRADE TABLE</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center" width="70%"><b>90% to 100%</b></td>
+                                                                <td class="text-center" width="30%"><b>AA</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center" width="70%"><b>80% to 90%</b></td>
+                                                                <td class="text-center" width="30%"><b>A+</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center" width="70%"><b>70% to 80%</b></td>
+                                                                <td class="text-center" width="30%"><b>A</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center" width="70%"><b>60% to 70%</b></td>
+                                                                <td class="text-center" width="30%"><b>B</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center" width="70%"><b>50% to 60%</b></td>
+                                                                <td class="text-center" width="30%"><b>C</b></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center" width="70%"><b>LESS THAN 50%</b></td>
+                                                                <td class="text-center" width="30%"><b>D</b></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr class="no-border">
+                                        <table width="100%" style="border: 1.5px solid black;padding-top: 20px;padding-left: 20px;padding-right: 20px">
+                                    <tr>
+                                        <td class="text-center" rowspan="2">
+                                            <span style="padding-top: 50px;"><b>REMARKS</b></span>
+                                        </td>
+                                        <td><span><b>QUARTERLY</b></span></td>
+                                        <td><span><b>OFFERLY</b></span></td>
+                                        <td><span><b>PROMOTION</b></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #ffffff;">QUARTERLY</td>
+                                        <td style="color: #ffffff;">QUARTERLY</td>
+                                        <td style="color: #ffffff;">QUARTERLY</td>
+                                    </tr>
+                                </table>
+                                    </tr>
+                                </table>
+
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_attendance_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="mis_education_attendances.report_attendance_report_document" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

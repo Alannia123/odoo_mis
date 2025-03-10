@@ -30,6 +30,18 @@ class EducationStudent(models.Model):
                 'type': 'ir.actions.act_window'
             }
 
+    def action_view_student_discipline_history(self):
+        discipline_id = self.env['student.green.book'].search([('student_id', '=', self.id)])
+
+        return {
+            'name': _('Student Discipline'),
+            'view_mode': 'form',
+            'res_model': 'student.green.book',
+            'res_id': discipline_id.id,
+            'view_id': self.env.ref('mis_education_core.student_green_book_form').id,
+            'type': 'ir.actions.act_window'
+        }
+
     # @api.model
     # def name_search(self, name, args=None, operator='ilike', limit=100):
     #     if name:
@@ -132,6 +144,15 @@ class EducationStudent(models.Model):
     exist_class = fields.Many2one('education.class', 'Class')
     exist_section = fields.Many2one('education.division', 'Section')
     special_concern = fields.Char('Special Concern regarding Child')
+    no_of_discipline_history = fields.Integer('Disp History', compute='_compute_no_of_discipline_history')
+
+    def _compute_no_of_discipline_history(self):
+        for rec in self:
+            discipline_id = self.env['student.green.book'].search([('student_id', '=', rec.id)])
+            if discipline_id:
+                rec.no_of_discipline_history = len(discipline_id.green_line_ids)
+            else:
+                rec.no_of_discipline_history = 0
 
     _sql_constraints = [
         ('register_no', 'unique(register_no)',

@@ -27,7 +27,7 @@ class EducationAttendanceLine(models.Model):
                                   help="Enter class division for attendance",
                                   required=True)
     date = fields.Date(string='Date', required=True, help="Date of attendance")
-    present_morning = fields.Boolean(string='Morning',
+    present_morning = fields.Boolean(string='Present/Absent',
                                      help="Enable if the student is present "
                                           "in the morning.")
     # present_afternoon = fields.Boolean(string='After Noon',
@@ -35,8 +35,8 @@ class EducationAttendanceLine(models.Model):
     #                                         "in the afternoon")
     full_day_absent = fields.Integer(string='Full Day',
                                      help="Full day present or not")
-    half_day_absent = fields.Integer(string='Half Day',
-                                     help="Half present or not")
+    # half_day_absent = fields.Integer(string='Half Day',
+    #                                  help="Half present or not")
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')],
                              string='State', default='draft',
                              help="Stages of student every day attendance")

@@ -36,14 +36,33 @@
                 <field name="class_id"/>
                 <field name="division_id"/>
                 <field name="date"/>
-                <field name="half_day_absent" string="Half Day(#Leaves)"
-                       sum="Total"/>
+<!--                <field name="half_day_absent" string="Half Day(#Leaves)"-->
+<!--                       sum="Total"/>-->
                 <field name="full_day_absent" string="Full Day(#Leaves)"
                        sum="Total"/>
                 <field name="state"/>
             </tree>
         </field>
     </record>
+
+<!--    Pivot view-->
+    <record id="education_attendance_line_view_pivot" model="ir.ui.view">
+            <field name="name">education.attendance.line.pivot</field>
+            <field name="model">education.attendance.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Division Attendance Report">
+                    <!-- Grouping dimensions -->
+                    <field name="student_id" type="row"/>
+                    <field name="present_morning" type="col"/>
+
+                    <!-- Measurable fields to aggregate -->
+                    <field name="division_id" type="measure"/>
+<!--                    <field name="present_morning" type="measure"/>-->
+<!--                    <field name="discount" type="measure"/>-->
+<!--                    <field name="price_subtotal" type="measure"/>-->
+                </pivot>
+            </field>
+        </record>
     <!--Search view of the Education attendance line-->
     <record id="education_attendance_line_view_search" model="ir.ui.view">
         <field name="name">education.attendance.line.view.search</field>

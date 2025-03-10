@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="teacher_identity_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="height: 2px;">
+                        <div class="oe_structure" />
+                        <t t-foreach="o" t-as="teacher">
+                            <center>
+                                <table class="table table-sm" style="width: 40%;">
+                                    <tr style="">
+                                        <td align="center">
+                                            <h4><strong><span
+                                                        t-field="teacher.sudo().school_id.name"
+                                                    /></strong></h4>
+                                            <span
+                                                t-field="teacher.school_id.contact_phone"
+                                                class="fa fa-phone"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr style=" border-bottom: 1px solid white;">
+                                        <td align="center">
+                                            <img
+                                                t-if="teacher.avatar_128"
+                                                t-att-src="'data:image/png;base64,%s' % teacher.avatar_128.decode('utf-8')"
+                                                style="max-height: 200px; max-width: 150px; border-radius: 40%;"
+                                                height="125"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:24px;" align="center">
+                                            <span t-field="teacher.name" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Gender:</strong>
+                                            <span t-field="teacher.gender" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>BirthDate:</strong>
+                                            <span t-field="teacher.sudo().birthday" />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Standard:</strong>
+                                            <span
+                                                t-field="teacher.sudo().standard_id.name"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        style="border-top: none; border-bottom: 1px solid white;"
+                                    >
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Email:</strong>
+                                            <span t-field="teacher.sudo().work_email" />
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top: none;">
+                                        <td style="font-size:18px;" align="left">
+                                            <strong>Contact:</strong>
+                                            <span
+                                                t-field="teacher.sudo().mobile_phone"
+                                            />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                      </t>
+                   </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

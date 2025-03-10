@@ -23,10 +23,10 @@
                     <group>
                         <group>
                             <field name="division_id"
-                                   readonly="attendance_created == True"/>
-                            <field name="faculty_id"/>
+                                   readonly="attendance_created == True" options="{'no_create':True,'no_open':True}"/>
+                            <field name="faculty_id" options="{'no_create':True,'no_open':True}"/>
                             <field name="class_id" invisible="1"/>
-                            <field name="academic_year_id" invisible="1"/>
+                            <field name="academic_year_id" invisible="0" options="{'no_create':True,'no_open':True}"/>
                         </group>
                         <group>
                             <field name="date"
@@ -48,7 +48,7 @@
                          invisible="attendance_created == False">
                         <div style="width: 50%;float:left;text-align:right;padding-right: 15%;"
                              invisible="all_marked_morning == True or state != 'draft'">
-                            <button style="padding: 1px 5px;background-color: #5fb18d !important;border-color: #5fb18d !important;"
+                            <button style="padding: 1px 10px;background-color: #5fb18d !important;border-color: #5fb18d !important;"
                                     string="Mark All"
                                     name="action_mark_all_present_morning"
                                     type="object"
@@ -56,44 +56,40 @@
                         </div>
                         <div style="width: 50%;float:left;text-align:right;padding-right: 15%;"
                              invisible="all_marked_morning == False or state != 'draft'">
-                            <button style="padding: 1px 5px;background-color: #e25151;border-color: #e0e0e0;color:#575751;"
+                            <button style="padding: 1px 10px;background-color: #e25151;border-color: #e0e0e0;color:#575751;"
                                     string="Un Mark"
                                     name="action_un_mark_all_present_morning"
-                                    type="object"
+                                    type="object" invisible="all_marked_morning == True or state != 'draft'"
                                     class="oe_highlight"/>
                         </div>
-<!--                        <div style="width:50%;float:left;padding-left:10%;"-->
-<!--                             invisible="all_marked_afternoon == True or state != 'draft'">-->
-<!--                            <button style="padding: 1px 5px;background-color: #5fb18d !important;border-color: #5fb18d !important;"-->
-<!--                                    string="Mark All"-->
-<!--                                    name="action_mark_all_present_afternoon"-->
-<!--                                    type="object"-->
-<!--                                    class="oe_highlight"/>-->
-<!--                        </div>-->
-<!--                        <div style="width:50%;float:left;padding-left:10%;"-->
-<!--                             invisible="all_marked_afternoon == False or state != 'draft'">-->
-<!--                            <button style="padding: 1px 5px;background-color: #e25151;border-color: #e0e0e0;color:#575751;"-->
-<!--                                    string="Un Mark"-->
-<!--                                    name="action_un_mark_all_present_afternoon"-->
-<!--                                    type="object"-->
-<!--                                    class="oe_highlight"/>-->
-<!--                        </div>-->
                     </div>
-                    <div class="table_header_box"
-                         invisible="attendance_created == False">
+                    <notebook>
+                        <page string="Attendance Entry" invisible="attendance_created == False">
+                            <button
+                                    string="Mark All"
+                                    name="action_mark_all_present_morning"
+                                    type="object"
+                                    class="oe_highlight btn-success"/>
+                            <button
+                                    string="Un Mark"
+                                    name="action_un_mark_all_present_morning" class="oe_highlight btn-danger"
+                                    type="object" invisible="all_marked_morning == False or state != 'draft'"/>
+<!--                    <div class="table_header_box"-->
+<!--                         invisible="attendance_created == False">-->
                         <field name="attendance_line_ids"
                                readonly="state != 'draft'">
-                            <tree editable="bottom" create="false"
-                                  delete="false">
+                            <tree editable="bottom" create="false" decoration-danger="present_morning == False" decoration-success="present_morning != False" delete="false">
                                 <field name="student_name" readonly="1"
                                        style=" width: 500px; "/>
                                 <field name="register_no"/>
                                 <field name="roll_no"/>
-                                <field name="present_morning"/>
+                                <field name="present_morning" />
 <!--                                <field name="present_afternoon"/>-->
                             </tree>
                         </field>
-                    </div>
+<!--                    </div>-->
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"
