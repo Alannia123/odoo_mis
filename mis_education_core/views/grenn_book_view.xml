@@ -62,7 +62,7 @@
     </record>
 
     <!-- Menu Item -->
-    <menuitem id="menu_student_decipline_root" name="Students Discipline" sequence="1" groups="mis_education_core.group_education_principal"/>
+    <menuitem id="menu_student_decipline_root" name="Students Discipline" sequence="110" groups="mis_education_core.group_education_principal"/>
     <menuitem id="menu_student_green_book" name="Green Book" parent="menu_student_decipline_root"
               action="action_student_green_book" sequence="10"/>
 </odoo>

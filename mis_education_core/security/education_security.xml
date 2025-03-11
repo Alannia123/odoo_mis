@@ -9,21 +9,21 @@
     <!--Education Faculty group user-->
     <record id="group_education_faculty" model="res.groups">
         <field name="name">Staff</field>
-        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+<!--        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
         <field name="category_id" ref="module_category_education"/>
     </record>
     <!--Education HOD group user-->
     <record id="group_education_office_admin" model="res.groups">
         <field name="name">Office Admin</field>
-        <field name="implied_ids"
-               eval="[(4, ref('group_education_faculty'))]"/>
+<!--        <field name="implied_ids"-->
+<!--               eval="[(4, ref('group_education_faculty'))]"/>-->
         <field name="category_id" ref="module_category_education"/>
     </record>
     <!--Education Principal group user-->
     <record id="group_education_principal" model="res.groups">
         <field name="name">Principal</field>
         <field name="category_id" ref="module_category_education"/>
-        <field name="implied_ids" eval="[(4, ref('group_education_office_admin'))]"/>
+<!--        <field name="implied_ids" eval="[(4, ref('group_education_office_admin'))]"/>-->
         <field name="users"
                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>

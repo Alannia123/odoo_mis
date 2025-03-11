@@ -1,0 +1,91 @@
+<odoo>
+    <record id="mis_task_management_tree" model="ir.ui.view">
+        <field name="name">task.management.tree</field>
+        <field name="model">task.management</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="user_id"/>
+                <field name="task_desc"/>
+                <field name="scheduled_date" widget="remaining_days"/>
+                <field name="state" widget="badge"
+                    decoration-success="state == 'done'"
+                    decoration-muted="state == 'draft'"
+                    decoration-warning="state in ('assigned', 'in_progress')"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="mis_task_management_form" model="ir.ui.view">
+        <field name="name">task.management.form</field>
+        <field name="model">task.management</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_assign_to_faculty" string="Assign Task"
+                            type="object" invisible="state != 'draft'"
+                            groups="mis_education_core.group_education_principal"
+                            class="oe_highlight"/>
+                    <button name="accept_task_by_faculty" string="Accept Task"
+                            type="object"
+                            groups="mis_education_core.group_education_faculty,mis_education_core.group_education_office_admin"
+                            invisible="state != 'assigned'"
+                            class="oe_highlight"/>
+                    <button name="complete_task_by_faculty" string="Complete"
+                            type="object"
+                            groups="mis_education_core.group_education_faculty,mis_education_core.group_education_office_admin"
+                            invisible="state != 'in_progress'"
+                            class="oe_highlight"/>
+                    <button name="reset_to_draft" string="Reset To Draft"
+                            type="object"
+                            groups="mis_education_core.group_education_principal"
+                            invisible="state not in ('draft', 'assigned')"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_edit_only">
+                        <label for="name" class="oe_inline"/>
+                    </div>
+                    <h1>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                    </h1>
+                    <group>
+                         <group>
+                            <field name="create_date" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                            <field name="user_id" options="{'no_create':True,'no_open':True}" required="1" readonly="state != 'draft'"/>
+                            <field name="scheduled_date" required="1" readonly="state != 'draft'"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="task_desc" required="1" readonly="state != 'draft'"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="action_task_management" model="ir.actions.act_window">
+        <field name="name">MIS Task</field>
+        <field name="res_model">task.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_task_management_root" name="Task Management" sequence="120"
+        web_icon="mis_task_mgnt,static/description/icon.png"/>
+    <menuitem id="menu_task_management" name="Manage Task" parent="menu_task_management_root" action="action_task_management"/>
+
+
+</odoo>
+

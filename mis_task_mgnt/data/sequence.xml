@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo >
+
+
+    <record id="task_sequence" model="ir.sequence">
+        <field name="name">Task Seq</field>
+        <field name="code">task.management</field>
+        <field name="prefix">TASK</field>
+        <field name="padding">4</field>
+    </record>
+
+
+
+
+</odoo>
