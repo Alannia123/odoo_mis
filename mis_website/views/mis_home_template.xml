@@ -8,7 +8,6 @@
                 <t t-if="banner">
                     <div class="row">
                         <div style="background-color: #003399;" class="hov_hi">
-<!--                            <marquee onmouseover="this.stop();" onmouseout="this.start();"><t t-out="banner.info"/><span style="color:red;">Click Here For</span><a class="btn btn-primary" href="/applyonline">Apply Online</a></marquee>-->
                             <marquee onmouseover="this.stop();" onmouseout="this.start();"><t t-out="banner.info"/></marquee>
                         </div>
                     </div>
@@ -311,7 +310,7 @@ aa:hover span:nth-child(6)
                             <div class="card bg-white h-100 card-body">
                                 <h5 style="color:#3f4475;"><u>Notice Or Announcement</u></h5>
                                 <marquee width="100%" class="fixed-marquee2" height="100%" behavior="scroll" direction="down" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-                                    <t t-out="notices"/>
+                                    <t t-raw="notices"/>
                                 </marquee>
                             </div>
                         </div>
