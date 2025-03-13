@@ -24,9 +24,9 @@
                     </h1>
                     <group>
                         <group>
-                            <field name="exam_id"
+                            <field name="exam_id" options="{'no_create': True, 'no_open':True}"
                                    readonly="state != 'draft' or mark_sheet_created "/>
-                            <field name="division_id"
+                            <field name="division_id" options="{'no_create': True, 'no_open':True}"
                                    readonly="state != 'draft' or mark_sheet_created "/>
                             <field name="subject_ids" invisible="1" />
                             <field name="faculty_ids" invisible="1" />
@@ -67,7 +67,7 @@
                                     <field name="exam_mark"/>
                                     <field name="assign_mark"/>
                                     <field name="mark_scored"/>
-                                    <field name="pass_or_fail"
+                                    <field name="pass_or_fail" readonly="1"
                                            widget="boolean_toggle"/>
                                     <field name="valuation_id"
                                            column_invisible="1"/>

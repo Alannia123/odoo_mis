@@ -14,12 +14,12 @@
                         <group>
                             <field name="student_id" invisible="1"/>
                             <field name="student_name"/>
-                            <field name="exam_id"/>
+                            <field name="exam_id" options="{'no_create': True, 'no_open':True}"/>
                         </group>
                         <group>
-                            <field name="class_id"/>
-                            <field name="division_id"/>
-                            <field name="academic_year_id" invisible="1"/>
+                            <field name="class_id" options="{'no_create': True, 'no_open':True}"/>
+                            <field name="division_id" options="{'no_create': True, 'no_open':True}"/>
+                            <field name="academic_year_id" invisible="0" options="{'no_create': True, 'no_open':True}"/>
                         </group>
                     </group>
                     <notebook>

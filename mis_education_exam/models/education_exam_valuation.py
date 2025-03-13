@@ -18,28 +18,28 @@ class EducationExamValuation(models.Model):
     name = fields.Char(
         string='Name', default='New', help='Name of the exam valuation.')
     exam_id = fields.Many2one(
-        'education.exam', string='Exam', required=True,
+        'education.exam', string='Exam', required=True, tracking=True,
         domain=[('state', '=', 'ongoing')], help='Associated exam for'
                                                  ' valuation.')
     class_id = fields.Many2one(
-        'education.class', string='Class',
+        'education.class', string='Class', tracking=True,
         required=True, help='Class associated with the exam valuation.')
     division_id = fields.Many2one(
         'education.class.division',
-        string='Division', required=True,
+        string='Division', required=True, tracking=True,
         help='Division associated with the exam valuation.')
     teachers_id = fields.Many2one(
-        'education.faculty', string='Evaluator',
+        'education.faculty', string='Evaluator', tracking=True,
         help='Teacher or faculty responsible for exam valuation.')
-    mark = fields.Float(
+    mark = fields.Integer(
         string='Max Mark', required=True,
         help='Maximum mark for the exam.')
-    pass_mark = fields.Float(
+    pass_mark = fields.Integer(
         string='Pass Mark', required=True,
         help='Passing mark for the exam.')
     state = fields.Selection(
         [('draft', 'Draft'), ('completed', 'Completed'),
-         ('cancel', 'Canceled')],
+         ('cancel', 'Canceled')], tracking=True,
         default='draft', help='State of the exam valuation.')
     valuation_line_ids = fields.One2many(
         'exam.valuation.line',
@@ -47,13 +47,13 @@ class EducationExamValuation(models.Model):
         help='Students and their marks in the valuation.')
     subject_id = fields.Many2one(
         'education.subject',
-        string='Subject', required=True,
+        string='Subject', required=True, tracking=True,
         help='Subject for which the valuation is conducted.')
     mark_sheet_created = fields.Boolean(
         string='Mark sheet Created', copy=False,
         help='Flag indicating whether the mark sheet is created.')
     date = fields.Date(
-        string='Date', default=fields.Date.today,
+        string='Date', default=fields.Date.today, readonly=True,
         help='Date of the exam valuation.')
     academic_year_id = fields.Many2one(
         'education.academic.year', string='Academic Year',
@@ -285,15 +285,15 @@ class StudentsExamValuationLine(models.Model):
     student_name = fields.Char(string='Student Name',
                                help='Name of the student.')
     roll_no = fields.Char('Roll Number')
-    exam_mark = fields.Float(string='Exam Mark',
+    exam_mark = fields.Integer(string='Exam Mark',
                                help='Marks obtained by the student in the exam.')
-    assign_mark = fields.Float(string='Asign. Mark',
-                               help='Marks obtained by the student in the exam.')
-    mark_scored = fields.Float(string='Total Mark',
+    assign_mark = fields.Integer(string='Asign. Mark',
+                               help='Marks obtained by the student in the exam.', tracking=True,)
+    mark_scored = fields.Integer(string='Total Mark',
                                help='Marks obtained by the student in the exam.', compute='compute_total_marks')
     pass_or_fail = fields.Boolean(string='Pass/Fail',
-                                  help='Indicates whether the student has '
-                                       'passed or failed in the exam.')
+                                  help='Indicates whether the student has ' 
+                                       'passed or failed in the exam.', tracking=True)
     valuation_id = fields.Many2one('education.exam.valuation',
                                    string='Valuation',
                                    help='Exam Valuation to which this line '

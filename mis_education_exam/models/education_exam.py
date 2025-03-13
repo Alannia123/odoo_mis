@@ -23,13 +23,13 @@ class EducationExam(models.Model):
     name = fields.Char(
         string='Name', default='New', help='Name of the education exam.')
     class_id = fields.Many2one(
-        'education.class', string='Class',
+        'education.class', string='Class', tracking=True,
         help='Class associated with the exam.')
     division_id = fields.Many2one(
         'education.class.division', string='Division',
         help='Division associated with the exam.')
     exam_type_id = fields.Many2one(
-        'education.exam.type', string='Type', required=True,
+        'education.exam.type', string='Type', required=True, tracking=True,
         help='Type of the education exam.')
     school_class_division_wise = fields.Selection(
         [('school', 'School'), ('class', 'Class'), ('division', 'Division')],
@@ -46,14 +46,14 @@ class EducationExam(models.Model):
     #     string='End Date', required=True,
     #     help='End date of the education exam.')
     subject_line_ids = fields.One2many(
-        'education.subject.line', 'exam_id',
+        'education.subject.line', 'exam_id', tracking=True,
         string='Subjects', help='Subjects associated with the exam.')
     sylabus_line_ids = fields.One2many(
-        'exam.syllabus', 'exam_id',
+        'exam.syllabus', 'exam_id', tracking=True,
         string='Syllabus', help='Syllabus associated with the exam.')
     state = fields.Selection(
         [('draft', 'Draft'), ('waiting_syllabus', 'Waiting For Syllabus'), ('ongoing', 'Ongoing'),
-         ('close', 'Closed'), ('cancel', 'Canceled')],
+         ('close', 'Closed'), ('cancel', 'Canceled')], tracking=True,
         default='draft', help='Current state of the education exam.')
     academic_year_id = fields.Many2one(
         'education.academic.year', string='Academic Year', readonly=True, required=True, default=_get_default_academic_year,

@@ -35,9 +35,9 @@
                     <page string="Subjects">
                         <field name="subject_ids" nolabel="1">
                             <tree string="Syllabus Items" editable="bottom">
-                                <field name="subject_id" />
+                                <field name="subject_id" options="{'no_create': True, 'no_open': True}"/>
                                 <field name="type" />
-                                <field name="faculty_ids" widget="many2many_tags"/>
+                                <field name="faculty_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True}"/>
                             </tree>
                         </field>
                     </page>
