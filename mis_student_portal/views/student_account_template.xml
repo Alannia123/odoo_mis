@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <template id="student_portal_my_home" name="My Student Portal">
+        <t t-call="portal.portal_layout">
+            <t t-set="my_details" t-value="True"/>
+            <div class="o_portal_my_home">
+                <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
+                <t t-set="portal_client_category_enable" t-value="True"/>
+                <div class="o_portal_docs row g-2">
+                    <div class="o_portal_doc_spinner spinner-border text-o-color-2 align-self-center mt-5"/>
+                    <div t-if="portal_alert_category_enable" class="o_portal_category row g-2 mt-3" id="portal_alert_category"/>
+                    <div t-if="portal_client_category_enable" class="o_portal_category row g-2 mt-3" id="portal_client_category"/>
+                    <div t-if="portal_service_category_enable" class="o_portal_category row g-2 mt-3" id="portal_service_category"/>
+                    <div t-if="portal_vendor_category_enable" class="o_portal_category row g-2 mt-3" id="portal_vendor_category"/>
+                    <t t-set="icon" t-value="'/sale/static/src/img/bag.svg'"/>
+                    <t t-set="title">Announcements</t>
+                    <t t-set="url" t-value="'/school/announcements'"/>
+                    <t t-set="text">Follow, view or pay your orders</t>
+                    <t t-set="placeholder_count" t-value="announce_count"/>
+                    <t t-set="config_card" t-value="True"/>
+                    <t t-set="show_count" t-value="True"/>
+                    <t t-set="my_details" t-value="True"/>
+            <div>
+                <h3>Student Management</h3>
+                <br/>
+                <br/>
+                <div class="student_home list-group">
+                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"
+                       name="booking_page" type="submit"
+                       href="/student/info">
+                        Home
+                    </a>
+                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"
+                       name="booking_page" type="submit"
+                       href="/student/documents">
+                        Documents
+                    </a>
+                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"
+                       name="booking_page" type="submit"
+                       href="/student/exam/results">
+                        Exam Results
+                    </a>
+                </div>
+            </div>
+
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="url" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div t-if="icon" class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/sale/static/src/img/bag.svg"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <t t-out="placeholder_count"/>
+                                        <span t-if="placeholder_count"  t-att-data-placeholder_count="placeholder_count"/>
+                                        <span t-out="title"/>
+                                    </h5>
+                                    <p class="m-0 text-600">
+                                        <t t-out="text"/>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/sale/static/src/img/bag.svg'"/>
+                            <t t-set="title">Announcements</t>
+                            <t t-set="url" t-value="'/my/orders'"/>
+                            <t t-set="text">Follow, view or pay your orders</t>
+                            <t t-set="placeholder_count" t-value="'announce_count'"/>
+                            <t t-set="config_card" t-value="True"/>
+                            <t t-set="show_count" t-value="True"/>
+                        </t>
+                    </div>
+                    <div id="portal_client_category" position="inside">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/account/static/src/img/Bill.svg'"/>
+                            <t t-set="title">Today HomeWorks</t>
+                            <t t-set="url" t-value="'/my/homeworks/today?filterby=invoices'"/>
+                            <t t-set="text">Follow, download or pay your invoices</t>
+                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
+
+                        </t>
+                    </div>
+                    <div id="portal_client_category" position="inside">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/account/static/src/img/Bill.svg'"/>
+                            <t t-set="title">All HomeWorks</t>
+                            <t t-set="url" t-value="'/my/homeworks/all?filterby=invoices'"/>
+                            <t t-set="text">Follow, download or pay your invoices</t>
+                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
+                            <t t-set="config_card" t-value="True"/>
+                            <t t-set="show_count" t-value="True"/>
+                        </t>
+                    </div>
+                    <div id="portal_client_category" position="inside">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/account/static/src/img/Bill.svg'"/>
+                            <t t-set="title">All HomeWorks</t>
+                            <t t-set="url" t-value="'/my/homeworks/all?filterby=invoices'"/>
+                            <t t-set="text">Follow, download or pay your invoices</t>
+                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
+                            <t t-set="config_card" t-value="True"/>
+                            <t t-set="show_count" t-value="True"/>
+                        </t>
+                    </div>
+                    <div id="portal_client_category" position="inside">
+                        <t t-set="partner_sudo" t-value="request.env.user.partner_id"/>
+                        <t t-set="providers_sudo"
+                           t-value="request.env['payment.provider'].sudo()._get_compatible_providers(request.env.company.id, partner_sudo.id, 0., force_tokenization=True, is_validation=True)"/>
+                        <t t-set="methods_allowing_tokenization"
+                           t-value="request.env['payment.method'].sudo()._get_compatible_payment_methods(
+                                        providers_sudo.ids,
+                                        partner_sudo.id,
+                                        force_tokenization=True,
+                                    )"
+                        />
+                        <t t-set="existing_tokens" t-value="partner_sudo.payment_token_ids + partner_sudo.commercial_partner_id.payment_token_ids"/>
+                        <t t-if="methods_allowing_tokenization or existing_tokens" t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/payment/static/img/payment-methods.svg'"/>
+                            <t t-set="title">Payment methods</t>
+                            <t t-set="text">Manage your payment methods</t>
+                            <t t-set="url" t-value="'/my/payment_method'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                    </div>
+                    <div class="o_portal_category row g-2 mt-3" id="portal_common_category">
+                        <t t-call="portal.portal_docs_entry" t-if="False"/>
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
+                            <t t-set="title">Settings</t>
+                            <t t-set="text">Configure your connection parameters</t>
+                            <t t-set="url" t-value="'/my/security'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+        </t>
+    </template>
+
+</odoo>

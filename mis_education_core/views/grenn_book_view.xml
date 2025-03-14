@@ -61,6 +61,37 @@
         </field>
     </record>
 
+    <!--Search view of Education Student-->
+    <record id="education_student_search" model="ir.ui.view">
+        <field name="name">Students</field>
+        <field name="model">education.student</field>
+        <field name="arch" type="xml">
+            <search string="Search Students">
+                <field name="class_division_id"/>
+                <field name="medium_id"/>
+                <field name="sec_lang_id"/>
+                <field name="gender"/>
+                <field name="religion"/>
+                <field name="caste"/>
+                <field name="mother_tongue"/>
+                <group expand='0' string='Group by...'>
+                    <filter string='Class' name="class" domain="[]"
+                            context="{'group_by' : 'class_division_id'}"/>
+                    <filter string='Gender' name="gender" domain="[]"
+                            context="{'group_by' : 'gender'}"/>
+                    <filter string='Medium' name="medium" domain="[]"
+                            context="{'group_by' : 'medium_id'}"/>
+                    <filter string='Religion' name="religion" domain="[]"
+                            context="{'group_by' : 'religion'}"/>
+                    <filter string='Caste' name="caste" domain="[]"
+                            context="{'group_by' : 'caste'}"/>
+                    <filter string='Mother Tongue' name="language" domain="[]"
+                            context="{'group_by' : 'mother_tongue'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- Menu Item -->
     <menuitem id="menu_student_decipline_root" name="Students Discipline" sequence="110" groups="mis_education_core.group_education_principal"/>
     <menuitem id="menu_student_green_book" name="Green Book" parent="menu_student_decipline_root"

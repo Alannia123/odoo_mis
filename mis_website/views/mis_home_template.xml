@@ -309,7 +309,7 @@ aa:hover span:nth-child(6)
                         <div class="col-lg-3 s_col_no_bgcolor" style="border-color: #4080bf;">
                             <div class="card bg-white h-100 card-body">
                                 <h5 style="color:#3f4475;"><u>Notice Or Announcement</u></h5>
-                                <marquee width="100%" class="fixed-marquee2" height="100%" behavior="scroll" direction="down" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                                <marquee width="100%" class="fixed-marquee2" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
                                     <t t-raw="notices"/>
                                 </marquee>
                             </div>
@@ -317,7 +317,7 @@ aa:hover span:nth-child(6)
 <!--              Slide Section-->
                         <div class="col-lg-6 s_col_no_bgcolor" style="border-color: #4080bf;">
                         <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
-                <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="7000" id="myCarousel1730131905894" style="background-image: none;">
+                <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="4000" id="myCarousel1730131905894" style="background-image: none;">
 
             <ol class="carousel-indicators o_we_no_overlay">
                 <li data-bs-slide-to="0" data-bs-target="#myCarousel1730131905894" class=""></li>
