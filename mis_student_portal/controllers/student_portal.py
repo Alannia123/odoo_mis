@@ -16,18 +16,30 @@ from odoo.addons.portal.controllers.portal import CustomerPortal
 class CustomerPortalCustom(CustomerPortal):
     """Controller for taking Home"""
 
+
     @route(['/my', '/my/home'], type='http', auth="user", website=True)
     def home(self, **kw):
-        print('ghhgh33333333------==========')
+        values = self._prepare_portal_layout_values()
         announce_count = request.env['web.info'].sudo().search_count([('enable', '=', True)])
-        # values = self._prepare_portal_layout_values()
-        print('ghhgh33333333------==========',announce_count)
+        print('ghhgh33333333------==========', announce_count)
+        # if not request.env.user.partner_id.is_student:
+        #     return request.render("portal.portal_my_home", values)
+        # else:
         return request.render("mis_student_portal.student_portal_my_home", {'announce_count' : announce_count})
 
     @route(['/school/announcements'], type='http', auth="user", website=True)
     def get_school_announcements(self, **kw):
         print('ghhgh33333333------==========')
-        announce_count = request.env['web.info'].sudo().search([('enable', '=', True)])
+        display_notice = ''
+        notices = request.env['web.info'].sudo().search([('enable', '=', True)])
+        raw_html = ""
+        for notice in notices:
+            date = notice.date.strftime('%d-%m-%Y')
+            raw_html = raw_html + f"""
+                                    <div style="text-align:center;">
+                                        <h4 style="color:blue;"><u>{date}</u></h2>
+                                        <p><strong>{notice.anounce}</strong>.</p>
+                                    </div><br/><br/>
+                                    """
         # values = self._prepare_portal_layout_values()
-        print('ghhgh33333333------==========', announce_count)
-        return request.render("mis_student_portal.student_school_announcements", {'announce_count': announce_count})
+        return request.render("mis_student_portal.student_school_announcements", {'notices': raw_html})

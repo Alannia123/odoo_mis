@@ -22,28 +22,28 @@
                     <t t-set="config_card" t-value="True"/>
                     <t t-set="show_count" t-value="True"/>
                     <t t-set="my_details" t-value="True"/>
-            <div>
-                <h3>Student Management</h3>
-                <br/>
-                <br/>
-                <div class="student_home list-group">
-                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"
-                       name="booking_page" type="submit"
-                       href="/student/info">
-                        Home
-                    </a>
-                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"
-                       name="booking_page" type="submit"
-                       href="/student/documents">
-                        Documents
-                    </a>
-                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"
-                       name="booking_page" type="submit"
-                       href="/student/exam/results">
-                        Exam Results
-                    </a>
-                </div>
-            </div>
+<!--            <div>-->
+<!--                <h3>Student Management</h3>-->
+<!--                <br/>-->
+<!--                <br/>-->
+<!--                <div class="student_home list-group">-->
+<!--                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"-->
+<!--                       name="booking_page" type="submit"-->
+<!--                       href="/student/info">-->
+<!--                        Home-->
+<!--                    </a>-->
+<!--                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"-->
+<!--                       name="booking_page" type="submit"-->
+<!--                       href="/student/documents">-->
+<!--                        Documents-->
+<!--                    </a>-->
+<!--                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"-->
+<!--                       name="booking_page" type="submit"-->
+<!--                       href="/student/exam/results">-->
+<!--                        Exam Results-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
 
                     <div id="portal_client_category" position="inside">
                         <div class="col-md-6">
