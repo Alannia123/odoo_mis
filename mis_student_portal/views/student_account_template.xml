@@ -14,97 +14,125 @@
                     <div t-if="portal_client_category_enable" class="o_portal_category row g-2 mt-3" id="portal_client_category"/>
                     <div t-if="portal_service_category_enable" class="o_portal_category row g-2 mt-3" id="portal_service_category"/>
                     <div t-if="portal_vendor_category_enable" class="o_portal_category row g-2 mt-3" id="portal_vendor_category"/>
-                    <t t-set="icon" t-value="'/sale/static/src/img/bag.svg'"/>
-                    <t t-set="title">Announcements</t>
-                    <t t-set="url" t-value="'/school/announcements'"/>
-                    <t t-set="text">Follow, view or pay your orders</t>
-                    <t t-set="placeholder_count" t-value="announce_count"/>
-                    <t t-set="config_card" t-value="True"/>
-                    <t t-set="show_count" t-value="True"/>
-                    <t t-set="my_details" t-value="True"/>
-<!--            <div>-->
-<!--                <h3>Student Management</h3>-->
-<!--                <br/>-->
-<!--                <br/>-->
-<!--                <div class="student_home list-group">-->
-<!--                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"-->
-<!--                       name="booking_page" type="submit"-->
-<!--                       href="/student/info">-->
-<!--                        Home-->
-<!--                    </a>-->
-<!--                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"-->
-<!--                       name="booking_page" type="submit"-->
-<!--                       href="/student/documents">-->
-<!--                        Documents-->
-<!--                    </a>-->
-<!--                    <a style="background:white;font-size:19px;color:black;border-bottom: 1px solid burlywood;"-->
-<!--                       name="booking_page" type="submit"-->
-<!--                       href="/student/exam/results">-->
-<!--                        Exam Results-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-
+<!--                    Announcements-->
                     <div id="portal_client_category" position="inside">
                         <div class="col-md-6">
-                            <a t-att-href="url" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
-                                <div t-if="icon" class="o_portal_icon align-self-start">
-                                    <img t-attf-src="/sale/static/src/img/bag.svg"/>
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
                                 </div>
                                 <div>
                                     <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
-                                        <t t-out="placeholder_count"/>
-                                        <span t-if="placeholder_count"  t-att-data-placeholder_count="placeholder_count"/>
-                                        <span t-out="title"/>
+                                        <span>Announcements</span>
                                     </h5>
                                     <p class="m-0 text-600">
-                                        <t t-out="text"/>
+                                        <span style="color:red;">Late:</span><t t-out="late_count"/>
+                                        <span style="padding-left:5 px;color:blue;">Today:</span><t t-out="today_count"/>
+                                    </p>
+                                    <p class="m-0 text-600">
+                                        <span>Check the Announcements</span>
                                     </p>
                                 </div>
                             </a>
                         </div>
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/sale/static/src/img/bag.svg'"/>
-                            <t t-set="title">Announcements</t>
-                            <t t-set="url" t-value="'/my/orders'"/>
-                            <t t-set="text">Follow, view or pay your orders</t>
-                            <t t-set="placeholder_count" t-value="'announce_count'"/>
-                            <t t-set="config_card" t-value="True"/>
-                            <t t-set="show_count" t-value="True"/>
-                        </t>
                     </div>
+<!--                    Today HomeWorks-->
                     <div id="portal_client_category" position="inside">
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/account/static/src/img/Bill.svg'"/>
-                            <t t-set="title">Today HomeWorks</t>
-                            <t t-set="url" t-value="'/my/homeworks/today?filterby=invoices'"/>
-                            <t t-set="text">Follow, download or pay your invoices</t>
-                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Today HomeWorks</span>
+                                    </h5>
 
-                        </t>
+                                    <p class="m-0 text-600">
+                                        <span>Check today homework</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+
+<!--                    All HomeWorks-->
                     <div id="portal_client_category" position="inside">
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/account/static/src/img/Bill.svg'"/>
-                            <t t-set="title">All HomeWorks</t>
-                            <t t-set="url" t-value="'/my/homeworks/all?filterby=invoices'"/>
-                            <t t-set="text">Follow, download or pay your invoices</t>
-                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
-                            <t t-set="config_card" t-value="True"/>
-                            <t t-set="show_count" t-value="True"/>
-                        </t>
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>All HomeWorks</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check List of all homeworks</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+<!--                    TimeTable-->
                     <div id="portal_client_category" position="inside">
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/account/static/src/img/Bill.svg'"/>
-                            <t t-set="title">All HomeWorks</t>
-                            <t t-set="url" t-value="'/my/homeworks/all?filterby=invoices'"/>
-                            <t t-set="text">Follow, download or pay your invoices</t>
-                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
-                            <t t-set="config_card" t-value="True"/>
-                            <t t-set="show_count" t-value="True"/>
-                        </t>
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Timetable</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>View Timetable</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+<!--                    TimeTable-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Fees Payments</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check Paid and Unpaid fees</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+<!--                    Teacher To Parent-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Teacher To Parent</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check messages from Teacher</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
                     <div id="portal_client_category" position="inside">
                         <t t-set="partner_sudo" t-value="request.env.user.partner_id"/>
                         <t t-set="providers_sudo"
@@ -138,6 +166,60 @@
                 </div>
             </div>
             <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+        </t>
+    </template>
+
+
+    <template id="portal.my_account_link" name="Link to frontend portal" inherit_id="portal.user_dropdown">
+        <xpath expr="//*[@id='o_logout_divider']" position="before">
+            <a href="/my/home" role="menuitem" class="dropdown-item ps-3">
+                <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/> Student Dashboard
+            </a>
+        </xpath>
+    </template>
+
+
+    <template id="portal.portal_layout" name="Portal Layout">
+        <t t-call="portal.frontend_layout">
+            <t t-set="is_portal" t-value="True"/>
+
+            <div t-if="not no_breadcrumbs and not my_details and not breadcrumbs_searchbar" class="o_portal container mt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <t t-call="portal.portal_breadcrumbs"/>
+                    <t t-if="prev_record or next_record" t-call='portal.record_pager'/>
+                </div>
+            </div>
+            <div id="wrap" class='o_portal_wrap'>
+                <div class="container pt-3">
+                    <t t-if="my_details">
+                        <div class="wrapper col-12 d-flex flex-wrap justify-content-between align-items-center">
+                            <h3 class="my-3" style="color:blue;">My Dashboard</h3>
+                            <button class="btn py-0 d-flex align-items-center gap-2 d-lg-none ms-auto"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#accountOffCanvas">
+                                <img class="o_avatar rounded"
+                                t-att-src="image_data_uri(user_id.partner_id.avatar_1024)" alt="Contact"/>
+                            </button>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div t-attf-class="o_portal_content col-12 col-lg-8 mb-5">
+                                <t t-out="0"/>
+                            </div>
+                            <div class="d-none d-lg-flex justify-content-end col-lg-4">
+                                <t t-call="portal.side_content"/>
+                            </div>
+                            <div class="offcanvas offcanvas-start d-lg-none" id="accountOffCanvas">
+                                <t t-call="portal.side_content">
+                                    <t t-set="isOffcanvas" t-value="true"/>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <t t-out="0"/>
+                    </t>
+                </div>
+            </div>
         </t>
     </template>
 

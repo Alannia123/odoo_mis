@@ -11,6 +11,7 @@ from odoo.exceptions import AccessDenied, AccessError, MissingError, UserError, 
 from odoo.http import content_disposition, Controller, request, route
 from odoo.tools import consteq
 from odoo.addons.portal.controllers.portal import CustomerPortal
+from datetime import date
 
 
 class CustomerPortalCustom(CustomerPortal):
@@ -20,12 +21,22 @@ class CustomerPortalCustom(CustomerPortal):
     @route(['/my', '/my/home'], type='http', auth="user", website=True)
     def home(self, **kw):
         values = self._prepare_portal_layout_values()
-        announce_count = request.env['web.info'].sudo().search_count([('enable', '=', True)])
-        print('ghhgh33333333------==========', announce_count)
+        today_date = date.today()
+        announcements = request.env['web.info'].sudo().search([('enable', '=', True)])
+        print('ghhgh33333333------==========', announcements)
+        late_count = 0
+        today_count = 0
+        for announce in announcements:
+            if today_date > announce.date.date():
+                late_count = late_count + 1
+            if today_date == announce.date.date():
+                today_count = today_count + 1
+
         # if not request.env.user.partner_id.is_student:
         #     return request.render("portal.portal_my_home", values)
         # else:
-        return request.render("mis_student_portal.student_portal_my_home", {'announce_count' : announce_count})
+        return request.render("mis_student_portal.student_portal_my_home", {'late_count' : late_count,
+                                                                            'today_count' : today_count})
 
     @route(['/school/announcements'], type='http', auth="user", website=True)
     def get_school_announcements(self, **kw):
