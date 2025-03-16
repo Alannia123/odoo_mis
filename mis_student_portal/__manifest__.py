@@ -15,6 +15,7 @@
         # 'data/web_menu.xml',
         'views/student_account_template.xml',
         'views/announce_template.xml',
+        'views/home_work_template.xml',
 
     ],
 

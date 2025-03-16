@@ -22,8 +22,8 @@ class home_controller(http.Controller):
             date = notice.date.strftime('%d-%m-%Y')
             raw_html = raw_html + f"""
                             <div style="text-align:center;">
-                                <h4 style="color:blue;"><u>{date}</u></h2>
-                                <p><strong>{notice.anounce}</strong>.</p>
+                                <h4 style="color:#331a00;"><u>{date}</u></h2>
+                                <span style="color: {notice.color};"><strong >{notice.anounce}</strong>.</span>
                             </div><br/><br/>
                             """
 

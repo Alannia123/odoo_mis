@@ -46,11 +46,35 @@ class CustomerPortalCustom(CustomerPortal):
         raw_html = ""
         for notice in notices:
             date = notice.date.strftime('%d-%m-%Y')
-            raw_html = raw_html + f"""
-                                    <div style="text-align:center;">
-                                        <h4 style="color:blue;"><u>{date}</u></h2>
-                                        <p><strong>{notice.anounce}</strong>.</p>
-                                    </div><br/><br/>
-                                    """
+            raw_html = raw_html + f""" <div style="text-align:center;">
+                                <h4 style="color:#331a00;"><u>{date}</u></h2>
+                                <span style="color: {notice.color};"><strong >{notice.anounce}</strong>.</span>
+                            </div><br/><br/>
+                            """
         # values = self._prepare_portal_layout_values()
         return request.render("mis_student_portal.student_school_announcements", {'notices': raw_html})
+
+
+    @route(['/school/all_homeworks'], type='http', auth="user", website=True)
+    def get_school_all_homeworks(self, **kw):
+        print('ghhgh33333333------======all_homeworks====',request.env.user.partner_id)
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        print('ghhgh33333333------======all_homeworks====', student_id)
+        home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id)])
+        print('ghhgh33333333------======all_homeworks====', home_work_ids)
+
+        return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids})
+
+
+    @route(['/homework/get_homework/<int:work_id>'],  type='http', auth="user", website=True)
+    def get_school_get_homeworks(self, work_id=None, **kw):
+        # homework_id = int(work_id)
+        print('ghhgh33333333------======all_homeworks===homework_id=',work_id)
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        print('ghhgh33333333------======all_homeworks====', student_id)
+        home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id)])
+        print('ghhgh33333333------======all_homeworks====', home_work_ids)
+
+        return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids})

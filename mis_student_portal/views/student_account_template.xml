@@ -59,7 +59,7 @@
 <!--                    All HomeWorks-->
                     <div id="portal_client_category" position="inside">
                         <div class="col-md-6">
-                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                            <a t-att-href="'/school/all_homeworks'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
                                 <div class="o_portal_icon align-self-start">
                                     <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
                                 </div>

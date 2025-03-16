@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_all_homeworks" name="My Sales Orders">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">All Homeworks</t>
+            </t>
+            <h3>All Homeworks</h3>
+<!--            </t>-->
+            <div t-if="not homeworks" class="alert alert-warning" role="alert">
+                There are currently no homeworks for you.
+            </div>
+<!--            <t t-if="orders" t-call="portal.portal_table">-->
+            <table class="table table-sm table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>Title #</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="homeworks" t-as="homework">
+                        <tr>
+                            <td><a t-attf-href="/homework/get_homework/#{homework.id}" ><t t-out="homework.name"/></a></td>
+                            <td t-esc="homework.homework_date"/>
+
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+            <table width="50%">
+                <thead>
+                    <tr >
+                        <th>
+                            <span >Title #</span>
+                        </th>
+                        <th class="text-end">Date</th>
+<!--                        <th class="text-center"/>-->
+<!--                        <th class="text-end">Total</th>-->
+                    </tr>
+                </thead>
+                <t t-foreach="homeworks" t-as="homework">
+                    <tr>
+<!--                        <td><a t-att-href="homework.get_portal_url()"><t t-out="homework.name"/></a></td>-->
+                        <td><t t-out="homework.name"/></td>
+                        <td class="text-end">
+                            <span t-field="homework.homework_date" />
+<!--                            <span class='d-none d-md-inline' t-field="order.date_order" t-options="{'time_only': True}"/>-->
+                        </td>
+<!--                        <td class="text-center">-->
+<!--                            <span t-if="order.locked"  class="badge rounded-pill text-bg-success">-->
+<!--                                <i class="fa fa-fw fa-check" role="img" aria-label="Done" title="Done"/>Done-->
+<!--                            </span>-->
+<!--                        </td>-->
+<!--                        <td class="text-end"><span t-field="order.amount_total"/></td>-->
+                    </tr>
+                </t>
+<!--            </t>-->
+            </table>
+        </t>
+    </template>
+
+</odoo>

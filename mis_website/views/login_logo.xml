@@ -46,7 +46,7 @@
         <style>
             .company-name {
                         font-family: 'Arial', sans-serif; /* Clean and professional font */
-                        font-size: 18px; /* Adjust size to your preference */
+                        font-size: 16px; /* Adjust size to your preference */
                         font-weight: bold; /* Bold for emphasis */
                         color: #ff0080; /* Neutral dark gray for readability */
                         text-transform: uppercase; /* Optional: make all letters uppercase */
@@ -63,7 +63,7 @@
                     style="width: auto; height: 1em; vertical-align: baseline;"/>
             </a>
         </t>
-        <span>Powered by </span><span class="company-name">ALANNIAINFOTECH</span>
+        <span>Powered by </span><span class="company-name">ALANNIAINFOTECHZ</span>
         <t t-set="final_message">Powered by ALANNIAINFOTECH</t>
 <!--        <t t-out="final_message "/>-->
     </template>
