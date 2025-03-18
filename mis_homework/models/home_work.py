@@ -7,14 +7,15 @@ from odoo import models, fields, api, _
 class StudentHomework(models.Model):
     _name = 'student.homework'
     _description = 'Student Homework'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _order = "id desc"
 
     name = fields.Char(string="Homework Title", required=True, readonly=True, default='New' )
     description = fields.Text(string="Description")
     homework_date = fields.Date(string='Homework Date', default=fields.Date.today, readonly=True)
-    class_div_id = fields.Many2one('education.class.division', 'Class', required=True, readonly=True)
+    class_div_id = fields.Many2one('education.class.division', 'Division', required=True, readonly=True)
     work_line_ids = fields.One2many('student.homework.line', 'work_id', string="Home Work")
-    work_view_ids = fields.One2many('student.homework.view', 'work_id', string="Home Work")
-    state = fields.Selection([('draft', 'Draft'), ('post', 'Posted')], 'State', default='draft')
+    state = fields.Selection([('draft', 'Draft'), ('post', 'Posted')], 'State', default='draft', tracking=True)
     # homework_desc = fields.Html('Homeworks', readonly=True)
 
     # @api.model
@@ -66,20 +67,5 @@ class StudentHomeworkLine(models.Model):
     work_id = fields.Many2one('student.homework', string="Home Work")
     subject_id = fields.Many2one('education.subject', 'Subject', required=True)
     homework = fields.Char('Homework')
-    work_attachment_ids = fields.Many2many(
-        'ir.attachment', 'education_work_attach_rel',
-        'work_id', 'work_attach', string="Attachment", copy=False,
-        help='You can attach the copy of your document')
+    attachment_id = fields.Many2one('ir.attachment', 'File Uploaded')
 
-class StudentHomeworkLine(models.Model):
-    _name = 'student.homework.view'
-    _description = 'Student Homework View'
-
-    work_id = fields.Many2one('student.homework', string="Home Work", readonly=True)
-    homework_desc = fields.Html('Homeworks', readonly=True)
-    work_view_attachment_ids = fields.Many2many(
-        'ir.attachment', 'education_view_attach_rel',
-        'stu_view_id', 'stu_work_attach', string="Attachment", copy=False,
-        help='You can attach the copy of your document')
-
-#

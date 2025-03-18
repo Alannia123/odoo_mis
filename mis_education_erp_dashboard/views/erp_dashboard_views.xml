@@ -8,7 +8,7 @@
     </record>
     <!--    Educational Dashboard Menu-->
     <menuitem id="education_erp_dashboard_menu_root"
-              name="MIS Dashboard"
+              name="MIS Dashboard" sequence="1"
               web_icon="mis_education_erp_dashboard,static/description/icon.png"/>
     <!--    Dashboard Menu-->
     <menuitem id="erp_dashboard_details_menu" name="MIS Dashboard"

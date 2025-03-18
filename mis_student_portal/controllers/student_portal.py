@@ -22,20 +22,12 @@ class CustomerPortalCustom(CustomerPortal):
     def home(self, **kw):
         values = self._prepare_portal_layout_values()
         today_date = date.today()
-        announcements = request.env['web.info'].sudo().search([('enable', '=', True)])
-        print('ghhgh33333333------==========', announcements)
-        late_count = 0
-        today_count = 0
-        for announce in announcements:
-            if today_date > announce.date.date():
-                late_count = late_count + 1
-            if today_date == announce.date.date():
-                today_count = today_count + 1
-
+        all_count = request.env['web.info'].sudo().search_count([('enable', '=', True)])
+        today_count = request.env['web.info'].sudo().search_count([('enable', '=', True),('date', '=', today_date)])
         # if not request.env.user.partner_id.is_student:
         #     return request.render("portal.portal_my_home", values)
         # else:
-        return request.render("mis_student_portal.student_portal_my_home", {'late_count' : late_count,
+        return request.render("mis_student_portal.student_portal_my_home", {'all_count' : all_count,
                                                                             'today_count' : today_count})
 
     @route(['/school/announcements'], type='http', auth="user", website=True)
@@ -78,3 +70,10 @@ class CustomerPortalCustom(CustomerPortal):
         print('ghhgh33333333------======all_homeworks====', home_work_ids)
 
         return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids})
+
+
+class CustomLogout(http.Controller):
+    @http.route('/web/session/logout', type='http', auth="public", website=True)
+    def logout(self, redirect='/web/login'):
+        request.session.logout()
+        return request.redirect(redirect)

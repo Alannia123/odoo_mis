@@ -9,16 +9,19 @@
             <form string="Homework Entry">
                 <group>
                     <group>
-                        <field name="class_div_id"/>
-                        <field name="subject_id"/>
+                        <field name="class_div_id" options='{"no_open": True, "no_create": True}'/>
+                        <field name="subject_id" options='{"no_open": True, "no_create": True}' domain="[('id', 'in', domain_subjects)]"/>
+                        <field name="domain_subjects" invisible="1"/>
                     </group>
                     <group>
                         <field name="homework_date"/>
-                        <field name="image"/>
+                        <field name="file_name" invisible="1"/>
+                        <field name="file_upload" filename="file_name"/>
+                        <field name="erase_exist" widget="boolean_toggle"/>
                     </group>
                 </group>
                 <group>
-                    <field name="homework"/>
+                    <field name="homework" required="1"/>
                 </group>
                 <footer>
                     <button string="Create Work" type="object" name="create_homework_entry" class="btn-primary"/>

@@ -9,7 +9,7 @@
     'author': 'Alannia',
     'company': 'alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['web','website','portal', 'mis_website'],
+    'depends': ['web','website','portal', 'mis_website', 'mis_education_erp_dashboard'],
     'data': [
         # 'security/ir.model.access.csv',
         # 'data/web_menu.xml',
@@ -27,10 +27,8 @@
     # },
     'assets': {
         'web.assets_frontend': [
-            '/mis_website/static/src/css/style.css',
+            '/mis_student_portal/static/src/css/dashboard.css',
             # '/mis_website/static/src/css/sample.css',
-            '/mis_website/static/src/js/online_application.js',
-            '/mis_website/static/src/js/valaidate_js.js',
         ],
     },
 
