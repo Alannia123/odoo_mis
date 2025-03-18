@@ -69,7 +69,7 @@
                                                 <i class="fa fa-wpforms"/>
                                             </div>
                                             <div class="stat-content">
-                                                <div class="stat-head">Today Homeworks</div>
+                                                <div class="stat-head">Today's Homeworks</div>
 <!--                                                <div class="stat-count">-->
 <!--                                                    <span ></span><t t-out="all_count"/>-->
 <!--                                                </div>-->

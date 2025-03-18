@@ -11,10 +11,10 @@ class MisTask(models.Model):
     _order = "id desc"
 
     name = fields.Char('Name', required=False, readonly=True, tracking=True)
-    create_date = fields.Datetime('Date', default=lambda self: fields.Datetime.now(), tracking=True)
-    scheduled_date = fields.Datetime('Sheduled Date', default=lambda self: fields.Datetime.now(), tracking=True)
+    create_date = fields.Date('Date', default=lambda self: fields.Datetime.now(), tracking=True, readonly=True)
+    scheduled_date = fields.Date('Completion Date', default=lambda self: fields.Datetime.now(), tracking=True)
     user_id = fields.Many2one('res.users', 'Faculty', tracking=True)
-    task_desc = fields.Char('Task Desc', copy=False, tracking=True)
+    task_desc = fields.Text('Task Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('assigned', 'Assigned'), ('in_progress', 'In Progress'), ('done', 'Done')],
                                         default='draft', string="State", help="Stages of attendance" , tracking=True)
 

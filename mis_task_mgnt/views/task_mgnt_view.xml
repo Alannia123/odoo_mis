@@ -82,7 +82,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_task_management_root" name="Task Management"
+    <menuitem id="menu_task_management_root" name="Task Management" sequence="100"
         web_icon="mis_task_mgnt,static/description/icon.png" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin,mis_education_core.group_education_faculty"/>
     <menuitem id="menu_task_management" name="Manage Task" parent="menu_task_management_root" action="action_task_management"/>
 
