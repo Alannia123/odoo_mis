@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_teacher_class_parent,access_teacher_class_parent,model_teacher_class_parent,mis_education_core.group_education_principal,1,1,1,1
+access_teacher_class_parent,access_teacher_class_parent,model_teacher_class_parent,base.group_user,1,1,1,0
+
+access_teacher_student_parent,access_teacher_student_parent,model_teacher_student_parent,mis_education_core.group_education_principal,1,1,1,1
+access_teacher_student_parent,access_teacher_student_parent,model_teacher_student_parent,base.group_user,1,1,1,0
+

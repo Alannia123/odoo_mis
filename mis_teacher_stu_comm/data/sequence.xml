@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo >
+
+
+    <record id="teacher_class_parent_sequence" model="ir.sequence">
+        <field name="name">Teacher Class Parent</field>
+        <field name="code">teacher.class.parent</field>
+        <field name="prefix">TCP</field>
+        <field name="padding">4</field>
+    </record>
+
+    <record id="teacher_student_parent_sequence" model="ir.sequence">
+        <field name="name">Teacher Student Parent</field>
+        <field name="code">teacher.student.parent</field>
+        <field name="prefix">TSP</field>
+        <field name="padding">4</field>
+    </record>
+
+
+
+
+</odoo>

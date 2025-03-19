@@ -1,0 +1,78 @@
+<odoo>
+    <record id="mis_parent_student_teacher_comm_tree" model="ir.ui.view">
+        <field name="name">teacher.student.parent.tree</field>
+        <field name="model">teacher.student.parent</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="class_div_id"/>
+                <field name="faculty_id"/>
+                <field name="student_id"/>
+                <field name="desc"/>
+                <field name="state" widget="badge"
+                    decoration-success="state == 'done'"
+                    decoration-muted="state == 'draft'"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="mis_parent_student_teacher_comm_form" model="ir.ui.view">
+        <field name="name">teacher.student.parent.form</field>
+        <field name="model">teacher.student.parent</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                     <button name="action_assign_to_student" string="Send"
+                            type="object" invisible="state != 'draft'"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_edit_only">
+                        <label for="name" class="oe_inline"/>
+                    </div>
+                    <h1>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                    </h1>
+                    <group>
+                         <group>
+                             <field name="student_ids" invisible="1"/>
+                             <field name="faculty_ids" invisible="1"/>
+                            <field name="class_div_id" readonly="state != 'draft'" options="{'no_create':True,'no_open':True}"/>
+                            <field name="student_id" readonly="state != 'draft'"  domain="[('id', 'in', student_ids)]" options="{'no_create':True,'no_open':True}"/>
+
+                        </group>
+                        <group>
+                            <field name="create_date" />
+                            <field name="faculty_id" domain="[('id', 'in', faculty_ids)]" options="{'no_create':True,'no_open':True}" required="1" readonly="state != 'draft'"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="desc" required="1" readonly="state != 'draft'"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="action_parent_student_teacher_communication" model="ir.actions.act_window">
+        <field name="name">Teacher To Parent</field>
+        <field name="res_model">teacher.student.parent</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_parent_student_teacher_communication" name="Teacher To Parent" parent="menu_parent_student_comm_root"
+              action="action_parent_student_teacher_communication"/>
+
+
+</odoo>
+

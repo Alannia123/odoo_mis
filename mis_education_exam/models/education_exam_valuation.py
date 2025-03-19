@@ -64,7 +64,7 @@ class EducationExamValuation(models.Model):
         default=lambda self: self.env['res.company']._company_default_get(),
         help='Company associated with the exam valuation.')
     subject_ids = fields.Many2many('education.subject', 'Subjects')
-    faculty_ids = fields.Many2many('education.faculty', 'edu_fac_rel', 'exam_val',  'Divisions')
+    faculty_ids = fields.Many2many('education.faculty', 'edu_fac_rel', 'exam_val',  'Faculties')
 
     @api.onchange('division_id')
     def _onchange_division_id(self):

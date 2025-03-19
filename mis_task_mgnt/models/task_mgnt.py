@@ -15,7 +15,7 @@ class MisTask(models.Model):
     scheduled_date = fields.Date('Completion Date', default=lambda self: fields.Datetime.now(), tracking=True)
     user_id = fields.Many2one('res.users', 'Faculty', tracking=True)
     task_desc = fields.Text('Task Desc', copy=False, tracking=True)
-    state = fields.Selection([('draft', 'Draft'), ('assigned', 'Assigned'), ('in_progress', 'In Progress'), ('done', 'Done')],
+    state = fields.Selection([('draft', 'Draft'), ('assigned', 'Assigned'), ('in_progress', 'In Progress'), ('done', 'Completed')],
                                         default='draft', string="State", help="Stages of attendance" , tracking=True)
 
     @api.model_create_multi
