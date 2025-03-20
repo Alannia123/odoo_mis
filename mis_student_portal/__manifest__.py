@@ -9,13 +9,14 @@
     'author': 'Alannia',
     'company': 'alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['web','website','portal', 'mis_website', 'mis_education_erp_dashboard'],
+    'depends': ['web','website','portal', 'mis_website', 'mis_education_erp_dashboard', 'muk_web_theme'],
     'data': [
         # 'security/ir.model.access.csv',
         # 'data/web_menu.xml',
         'views/student_account_template.xml',
         'views/announce_template.xml',
         'views/home_work_template.xml',
+        'views/student_info_temp.xml',
 
     ],
 

@@ -38,7 +38,7 @@
 .content-card-body {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
 }
 .stat-widget-one {
     margin-top: 2.3rem;

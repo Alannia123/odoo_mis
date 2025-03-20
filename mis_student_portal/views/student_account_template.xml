@@ -19,16 +19,13 @@
                         <div class="col-md-6"  >
                             <div class="content-card" style="width: 288px;">
                                 <div class="content-card-body">
-                                    <a t-att-href="'/school/announcements'" t-att-title="title">
+                                    <a t-att-href="'/school/student_info'" t-att-title="title">
                                         <div class="stat-widget-one">
                                             <div class="stat-icon">
                                                 <i class="fa fa-user"/>
                                             </div>
                                             <div class="stat-content">
                                                 <div class="stat-head">Student Info</div>
-    <!--                                            <div class="stat-count">-->
-    <!--                                                <span style="color:red;">Late:</span><t t-out="late_count"/>-->
-    <!--                                            </div>-->
                                             </div>
                                         </div>
                                     </a>
@@ -49,7 +46,7 @@
                                             <div class="stat-content">
                                                 <div class="stat-head">Announcements</div>
                                                 <div class="stat-count">
-                                                    <span ></span><t t-out="all_count"/>
+                                                    <span ></span><t t-out="all_announce_count"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,42 +55,43 @@
                             </div>
                         </div>
                     </div>
-<!--                    Today Homeworks-->
-                    <div id="portal_client_category" position="inside">
-                        <div class="col-md-6"  >
-                            <div class="content-card" style="width: 288px;">
-                                <div class="content-card-body">
-                                    <a t-att-href="'/school/announcements'" t-att-title="title">
-                                        <div class="stat-widget-one">
-                                            <div class="stat-icon">
-                                                <i class="fa fa-wpforms"/>
-                                            </div>
-                                            <div class="stat-content">
-                                                <div class="stat-head">Today's Homeworks</div>
-<!--                                                <div class="stat-count">-->
-<!--                                                    <span ></span><t t-out="all_count"/>-->
-<!--                                                </div>-->
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <style>
+                        .glow-text {
+                                font-size: 0.9rem;
+                                font-weight: bold;
+                                color: #e60000;
+                                text-align: center;
+                                text: 0 0 5px #e60000, 0 0 10px #e60000, 0 0 15px #cc0099, 0 0 20px #ffffb3, 0 0 25px #ffffb3;
+<!--                                text-shadow: 0 0 5px #e60000, 0 0 10px #e60000, 0 0 15px #cc0099, 0 0 20px #cc0099, 0 0 25px #cc0099;-->
+                                animation: glow 1.5s infinite alternate;
+                            }
+
+                            @keyframes glow {
+                                0% {
+                                    text: 0 0 5px #e60000, 0 0 10px #e60000, 0 0 15px #ffffb3, 0 0 20px #ffffb3;
+                                }
+                                100% {
+                                    text: 0 0 10px #e60000, 0 0 20px #e60000, 0 0 30px #ffffb3, 0 0 40px #ffffb3;
+                                }
+                            }
+
+                    </style>
 <!--                    All Homeworks-->
                     <div id="portal_client_category" position="inside">
                         <div class="col-md-6"  >
                             <div class="content-card" style="width: 288px;">
                                 <div class="content-card-body">
-                                    <a t-att-href="'/school/announcements'" t-att-title="title">
+                                    <a t-att-href="'/school/all_homeworks'" t-att-title="title">
                                         <div class="stat-widget-one">
                                             <div class="stat-icon">
                                                 <i class="fa fa-wpforms"/>
                                             </div>
                                             <div class="stat-content">
-                                                <div class="stat-head">All Homeworks</div>
+                                                <div class="stat-head">Homeworks</div>
                                                 <div class="stat-count">
-                                                    <span ></span><t t-out="all_count"/>
+                                                    <span ></span><t t-out="home_work_count"/>
+<!--                                                    <img src="mis_student_portal/static/src/img/new_badge.png" width="90" height="80"></img>-->
+                                                    <small class="glow-text">NEW</small>
                                                 </div>
                                             </div>
                                         </div>

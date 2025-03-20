@@ -4,64 +4,89 @@
     <template id="portal_all_homeworks" name="My Sales Orders">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
-
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">All Homeworks</t>
             </t>
-            <h3>All Homeworks</h3>
-<!--            </t>-->
-            <div t-if="not homeworks" class="alert alert-warning" role="alert">
-                There are currently no homeworks for you.
+            <h3>Today Homeworks</h3>
+            <div t-if="not today_homework" class="alert alert-warning" role="alert">
+                There are currently no homeworks for Today.
             </div>
-<!--            <t t-if="orders" t-call="portal.portal_table">-->
-            <table class="table table-sm table-striped table-responsive">
-                <thead>
-                    <tr>
-                        <th>Title #</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <t t-if="today_homework">
+                <table class="table table-sm table-striped table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Title #</th>
+                            <th class="text-center">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="today_homework" t-as="work">
+                            <tr>
+                                <td><a t-attf-href="/homework/get_homework/#{work.id}" ><t t-out="work.name"/></a></td>
+                                <td t-esc="work.homework_date"/>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </t>
+
+            <h3>All Homeworks</h3>
+            <div t-if="not homeworks" class="alert alert-warning" role="alert">
+                There are currently no homeworks for You.
+            </div>
+            <t t-if="homeworks">
+                <table class="table table-sm table-striped table-responsive">
+                    <thead>
+                        <tr >
+                            <th>
+                                <span >Title #</span>
+                            </th>
+                            <th class="text-center">Date</th>
+                        </tr>
+                    </thead>
                     <t t-foreach="homeworks" t-as="homework">
                         <tr>
                             <td><a t-attf-href="/homework/get_homework/#{homework.id}" ><t t-out="homework.name"/></a></td>
-                            <td t-esc="homework.homework_date"/>
-
+                            <td class="text-end">
+                                <span t-field="homework.homework_date" />
+                            </td>
                         </tr>
                     </t>
-                </tbody>
-            </table>
-
-            <table width="50%">
-                <thead>
-                    <tr >
-                        <th>
-                            <span >Title #</span>
-                        </th>
-                        <th class="text-end">Date</th>
-<!--                        <th class="text-center"/>-->
-<!--                        <th class="text-end">Total</th>-->
-                    </tr>
-                </thead>
-                <t t-foreach="homeworks" t-as="homework">
-                    <tr>
-<!--                        <td><a t-att-href="homework.get_portal_url()"><t t-out="homework.name"/></a></td>-->
-                        <td><t t-out="homework.name"/></td>
-                        <td class="text-end">
-                            <span t-field="homework.homework_date" />
-<!--                            <span class='d-none d-md-inline' t-field="order.date_order" t-options="{'time_only': True}"/>-->
-                        </td>
-<!--                        <td class="text-center">-->
-<!--                            <span t-if="order.locked"  class="badge rounded-pill text-bg-success">-->
-<!--                                <i class="fa fa-fw fa-check" role="img" aria-label="Done" title="Done"/>Done-->
-<!--                            </span>-->
-<!--                        </td>-->
-<!--                        <td class="text-end"><span t-field="order.amount_total"/></td>-->
-                    </tr>
-                </t>
-<!--            </t>-->
-            </table>
+                </table>
+            </t>
         </t>
+    </template>
+
+    <template id="portal_open_homeworks" name="My Sales Orders">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">HomeWork</t>
+            </t>
+            <a t-attf-href="/school/all_homeworks" ><h5 style="color:blue;">HomeWork</h5></a>
+            <div >
+                <span><b>Title :</b></span><span t-field="home_work_id.name"></span><br></br>
+                <span><b>Faculty :</b></span><span t-field="home_work_id.class_div_id.faculty_id.name"></span>
+            </div>
+                <table class="table table-sm table-striped table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Subject #</th>
+                            <th class="text-center">Homework Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="home_work_id.work_line_ids" t-as="line">
+                            <tr>
+                                <td><span t-field="line.subject_id.name"/></td>
+                                <td ><span t-field="line.homework"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </t>
+
+
     </template>
 
 </odoo>

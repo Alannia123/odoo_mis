@@ -62,6 +62,18 @@ class EducationExam(models.Model):
         'res.company', string='Company',
         default=lambda self: self.env['res.company']._company_default_get(), readonly=True,
         help='Company associated with the exam.')
+    mark = fields.Integer(
+        string='Max Mark', required=True,
+        help='Maximum mark for the exam.')
+    pass_mark = fields.Integer(
+        string='Pass Mark', required=True,
+        help='Passing mark for the exam.')
+
+    @api.onchange('exam_type_id')
+    def _onchange_exam_type(self):
+        if self.exam_type_id:
+            self.mark = self.exam_type_id.mark
+            self.pass_mark = self.exam_type_id.pass_mark
 
     def get_all_class_divs(self):
         all_class_ids = self.env['education.class.division'].search([('class_id', '=', self.class_id.id)])
@@ -274,7 +286,31 @@ class EducationExamType(models.Model):
          ('final',
           'Final Exam (Exam that promotes students to the next class)')],
         string='Exam Type', default='class', help='Type of education exam.', readonly=True)
+    mark = fields.Integer(
+        string='Max Mark', required=True,
+        help='Maximum mark for the exam.')
+    pass_mark = fields.Integer(
+        string='Pass Mark', required=True,
+        help='Passing mark for the exam.')
     company_id = fields.Many2one(
         'res.company', string='Company',
         default=lambda self: self.env['res.company']._company_default_get(),
         help='Company associated with the education exam type.')
+
+    @api.onchange('pass_mark')
+    def _onchange_pass_mark(self):
+        """
+           Update the 'pass_or_fail' field for valuation_line records
+           when 'pass_mark' changes.
+
+           This onchange method is triggered when the 'pass_mark' field changes.
+           It updates the 'pass_or_fail' field for all valuation_line records
+           based on the new 'pass_mark'.
+
+           :raises UserError: If 'pass_mark' is greater than 'mark'.
+        """
+        if self.pass_mark > self.mark:
+            raise UserError(_('Pass mark must be less than Max Mark'))
+        # for records in self.valuation_line_ids:
+        #     records.pass_or_fail = True if (records.mark_scored >=
+        #                                     self.pass_mark) else False

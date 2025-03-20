@@ -22,13 +22,28 @@ class CustomerPortalCustom(CustomerPortal):
     def home(self, **kw):
         values = self._prepare_portal_layout_values()
         today_date = date.today()
-        all_count = request.env['web.info'].sudo().search_count([('enable', '=', True)])
-        today_count = request.env['web.info'].sudo().search_count([('enable', '=', True),('date', '=', today_date)])
-        # if not request.env.user.partner_id.is_student:
+        all_announce_count = request.env['web.info'].sudo().search_count([('enable', '=', True)])
+        today_announce_count = request.env['web.info'].sudo().search_count([('enable', '=', True),('date', '=', today_date)])
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        home_work_count = request.env['student.homework'].sudo().search_count([('class_div_id', '=', student_id.class_division_id.id)])
+        today_home_work_count = request.env['student.homework'].sudo().search_count([('class_div_id', '=', student_id.class_division_id.id),
+                                                                                                        ('homework_date', '=', today_date)])
+        # if request.env.user._is_internal():
         #     return request.render("portal.portal_my_home", values)
         # else:
-        return request.render("mis_student_portal.student_portal_my_home", {'all_count' : all_count,
-                                                                            'today_count' : today_count})
+        return request.render("mis_student_portal.student_portal_my_home", {'all_announce_count' : all_announce_count,
+                                                                            'today_announce_count' : today_announce_count,
+                                                                            'home_work_count' : home_work_count,
+                                                                            'today_home_work_count' : today_home_work_count,
+                                                                            })
+
+    @route(['/school/student_info'], type='http', auth="user", website=True)
+    def get_school_student_info(self, **kw):
+        print('ghhgh33333333------==========')
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        return request.render("mis_student_portal.student_info", {'student': student_id})
 
     @route(['/school/announcements'], type='http', auth="user", website=True)
     def get_school_announcements(self, **kw):
@@ -50,26 +65,27 @@ class CustomerPortalCustom(CustomerPortal):
     @route(['/school/all_homeworks'], type='http', auth="user", website=True)
     def get_school_all_homeworks(self, **kw):
         print('ghhgh33333333------======all_homeworks====',request.env.user.partner_id)
+        today_date = date.today()
         partner = request.env.user.partner_id
         student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
         print('ghhgh33333333------======all_homeworks====', student_id)
         home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id)])
+        today_home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id),
+                                                                             ('homework_date', '=', today_date)])
         print('ghhgh33333333------======all_homeworks====', home_work_ids)
 
-        return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids})
+        return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids,
+                                                                          'today_homework': today_home_work_ids})
 
 
     @route(['/homework/get_homework/<int:work_id>'],  type='http', auth="user", website=True)
     def get_school_get_homeworks(self, work_id=None, **kw):
         # homework_id = int(work_id)
         print('ghhgh33333333------======all_homeworks===homework_id=',work_id)
-        partner = request.env.user.partner_id
-        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
-        print('ghhgh33333333------======all_homeworks====', student_id)
-        home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id)])
-        print('ghhgh33333333------======all_homeworks====', home_work_ids)
+        home_work_id = request.env['student.homework'].sudo().browse(work_id)
+        print('ghhgh33333333------======all_homeworks====', home_work_id)
 
-        return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids})
+        return request.render("mis_student_portal.portal_open_homeworks", {'home_work_id': home_work_id})
 
 
 class CustomLogout(http.Controller):

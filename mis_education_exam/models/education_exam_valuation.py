@@ -64,7 +64,14 @@ class EducationExamValuation(models.Model):
         default=lambda self: self.env['res.company']._company_default_get(),
         help='Company associated with the exam valuation.')
     subject_ids = fields.Many2many('education.subject', 'Subjects')
-    faculty_ids = fields.Many2many('education.faculty', 'edu_fac_rel', 'exam_val',  'Faculties')
+    # faculty_ids = fields.Many2many('education.faculty', 'edu_fac_rel', 'exam_val', 'education_faculty_id', string='Faculties')
+    edu_faculty_ids = fields.Many2many('education.faculty', 'edu_faculty_rel', 'fac_exam_val', 'edu_faculty_id', string='Faculties')
+
+    @api.onchange('exam_id')
+    def _onchange_exam_type(self):
+        if self.exam_id:
+            self.mark = self.exam_id.mark
+            self.pass_mark = self.exam_id.pass_mark
 
     @api.onchange('division_id')
     def _onchange_division_id(self):
@@ -77,30 +84,30 @@ class EducationExamValuation(models.Model):
 
     @api.onchange('subject_id')
     def _onchange_subject_id(self):
-        self.faculty_ids = False
+        self.edu_faculty_ids = False
         self.teachers_id = False
         if self.subject_id:
             class_subjects = self.division_id.class_id.subject_ids
             sub_faculty_ids = class_subjects.filtered(lambda sub : sub.subject_id == self.subject_id).faculty_ids
-            self.faculty_ids = sub_faculty_ids.ids
+            self.edu_faculty_ids = sub_faculty_ids.ids
 
-    @api.onchange('pass_mark')
-    def _onchange_pass_mark(self):
-        """
-           Update the 'pass_or_fail' field for valuation_line records
-           when 'pass_mark' changes.
-
-           This onchange method is triggered when the 'pass_mark' field changes.
-           It updates the 'pass_or_fail' field for all valuation_line records
-           based on the new 'pass_mark'.
-
-           :raises UserError: If 'pass_mark' is greater than 'mark'.
-        """
-        if self.pass_mark > self.mark:
-            raise UserError(_('Pass mark must be less than Max Mark'))
-        for records in self.valuation_line_ids:
-            records.pass_or_fail = True if (records.mark_scored >=
-                                            self.pass_mark) else False
+    # @api.onchange('pass_mark')
+    # def _onchange_pass_mark(self):
+    #     """
+    #        Update the 'pass_or_fail' field for valuation_line records
+    #        when 'pass_mark' changes.
+    #
+    #        This onchange method is triggered when the 'pass_mark' field changes.
+    #        It updates the 'pass_or_fail' field for all valuation_line records
+    #        based on the new 'pass_mark'.
+    #
+    #        :raises UserError: If 'pass_mark' is greater than 'mark'.
+    #     """
+    #     if self.pass_mark > self.mark:
+    #         raise UserError(_('Pass mark must be less than Max Mark'))
+    #     for records in self.valuation_line_ids:
+    #         records.pass_or_fail = True if (records.mark_scored >=
+    #                                         self.pass_mark) else False
 
     @api.onchange('exam_id', 'subject_id')
     def _onchange_exam_id(self):
@@ -125,12 +132,12 @@ class EducationExamValuation(models.Model):
             else:
                 self.class_id = ''
                 self.division_id = ''
-            self.mark = ''
-            if self.subject_id:
-                for sub in self.exam_id.subject_line_ids:
-                    if sub.subject_id.id == self.subject_id.id:
-                        if sub.mark:
-                            self.mark = sub.mark
+            # self.mark = ''
+            # if self.subject_id:
+            #     for sub in self.exam_id.subject_line_ids:
+            #         if sub.subject_id.id == self.subject_id.id:
+            #             if sub.mark:
+            #                 self.mark = sub.mark
         domain = []
         subjects = self.exam_id.subject_line_ids
         for items in subjects:

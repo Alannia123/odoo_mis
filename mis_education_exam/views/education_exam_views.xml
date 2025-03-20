@@ -44,7 +44,10 @@
                             <field name="class_division_hider" invisible="1"/>
                         </group>
                         <group>
-                        <field name="academic_year_id" options="{'no_create': True, 'no_open':True}"/>
+                            <field name="academic_year_id" options="{'no_create': True, 'no_open':True}"/>
+                            <field name="mark" force_save="1" readonly="1"/>
+                            <field name="pass_mark" force_save="1" readonly="1"/>
+
 
 <!--                            <field name="start_date"-->
 <!--                                   readonly="state != 'draft'"/>-->
@@ -59,9 +62,9 @@
                                     <field name="subject_id" force_save="1"/>
                                     <field name="date"/>
                                     <field name="time_from"
-                                           widget="float_time"/>
-                                    <field name="time_to" widget="float_time"/>
-                                    <field name="mark"/>
+                                           widget="float_time" column_invisible="1"/>
+                                    <field name="time_to" widget="float_time" column_invisible="1"/>
+                                    <field name="mark" column_invisible="1"/>
                                     <field name="exam_id" column_invisible="1"/>
                                 </tree>
                             </field>
@@ -121,8 +124,14 @@
                         <field name="name" placeholder="Eg: Annual Exam"/>
                     </h1>
                     <group>
-                        <field name="school_class_division_wise"
-                               widget="radio"/>
+                        <group>
+                            <field name="school_class_division_wise"
+                                   widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="mark"/>
+                            <field name="pass_mark"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
