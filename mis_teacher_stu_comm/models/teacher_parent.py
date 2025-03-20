@@ -15,7 +15,7 @@ class TeacherStudentClass(models.Model):
     class_div_id = fields.Many2one('education.class.division', 'Division', tracking=True, required=True)
     faculty_id = fields.Many2one('education.faculty', 'Faculty', tracking=True, required=True)
     student_id = fields.Many2one('education.student', 'Student', tracking=True, required=True)
-    desc = fields.Char('Task Desc', copy=False, tracking=True)
+    desc = fields.Text('Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')],
                              default='draft', string="State", help="Stages of attendance", tracking=True)
     faculty_ids = fields.Many2many('education.faculty', 'comm_stu_fac_rel', 'comm_stu_val', 'Faculties')

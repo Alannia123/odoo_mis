@@ -38,6 +38,12 @@
 <!--                        </div>-->
 <!--            </div>-->
         </xpath>
+        <xpath expr="//form[@class='oe_login_form']/div[2]" position="replace">
+                <div class="mb-3 field-login">
+                    <label for="login" class="form-label">Username</label>
+                    <input type="text" placeholder="Email" name="login" t-att-value="login" id="login" t-attf-class="form-control #{'form-control-sm' if form_small else ''}" required="required" autocomplete="username" autofocus="autofocus" autocapitalize="off"/>
+                </div>
+        </xpath>
     </template>
 
 

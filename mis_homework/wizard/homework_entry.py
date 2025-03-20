@@ -62,6 +62,14 @@ class HomeWorkWizard(models.TransientModel):
                 'datas': self.file_upload,
             })
             work_line_id.attachment_id = doc_attachment.id
+        return {
+            'name': _('Home Work'),
+            'view_mode': 'form',
+            'res_model': 'student.homework',
+            'type': 'ir.actions.act_window',
+            'res_id': homework_id.id,
+            # 'context': self.env.context
+        }
 
     @api.onchange('class_div_id', 'subject_id')
     def domain_subject_ids(self):

@@ -67,7 +67,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_parent_student_comm_root" name="MIS Communication(TPC)" sequence="100"
+    <menuitem id="menu_parent_student_comm_root" name="Class Group Comm" sequence="100"
         web_icon="mis_teacher_stu_comm,static/src/img/communication.png" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin,mis_education_core.group_education_faculty"/>
     <menuitem id="menu_parent_student_communication" name="Class To Parent" parent="menu_parent_student_comm_root" action="action_parent_student_communication"/>
 

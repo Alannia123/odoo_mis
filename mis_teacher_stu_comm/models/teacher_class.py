@@ -14,7 +14,7 @@ class TeacherParentClass(models.Model):
     create_date = fields.Date('Date', default=lambda self: fields.Datetime.now(), tracking=True, readonly=True)
     class_div_id = fields.Many2one('education.class.division', 'Division', tracking=True, required=True)
     faculty_id = fields.Many2one('education.faculty', 'Faculty', tracking=True, required=True)
-    desc = fields.Text('Task Desc', copy=False, tracking=True)
+    desc = fields.Text('Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')],
                                         default='draft', string="State", help="Stages of attendance" , tracking=True)
     faculty_ids = fields.Many2many('education.faculty', 'comm_fac_rel', 'comm_val', 'Faculties')
