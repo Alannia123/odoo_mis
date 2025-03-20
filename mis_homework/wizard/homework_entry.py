@@ -15,7 +15,7 @@ class HomeWorkWizard(models.TransientModel):
     class_div_id = fields.Many2one('education.class.division', 'Division', required=True)
     subject_id = fields.Many2one('education.subject', 'Subject', required=True )
     domain_subjects = fields.Many2many('education.subject', 'edu_sub_rel', 'edu_subject_id', 'subject_id', 'Subjects')
-    homework = fields.Char('Homework')
+    homework = fields.Text('Homework')
     file_name = fields.Char('File Name')
     file_upload = fields.Binary('File Upload')
     erase_exist = fields.Boolean('Erase Existing Homework')

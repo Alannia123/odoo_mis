@@ -66,6 +66,6 @@ class StudentHomeworkLine(models.Model):
 
     work_id = fields.Many2one('student.homework', string="Home Work")
     subject_id = fields.Many2one('education.subject', 'Subject', required=True)
-    homework = fields.Char('Homework')
+    homework = fields.Text('Homework')
     attachment_id = fields.Many2one('ir.attachment', 'File Uploaded')
 
