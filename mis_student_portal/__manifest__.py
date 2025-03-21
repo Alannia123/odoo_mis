@@ -28,7 +28,7 @@
     # },
     'assets': {
         'web.assets_frontend': [
-            '/mis_student_portal/static/src/css/dashboard.css',
+            # '/mis_student_portal/static/src/css/dashboard.css',
             # '/mis_website/static/src/css/sample.css',
         ],
     },

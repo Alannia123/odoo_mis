@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <template id="student_portal_my_home" name="My Student Portal">
+        <t t-call="portal.portal_layout">
+            <t t-set="my_details" t-value="True"/>
+            <div class="o_portal_my_home">
+                <div class="oe_structure" id="oe_structure_portal_my_home_1"/>
+                <t t-set="portal_client_category_enable" t-value="True"/>
+                <div class="o_portal_docs row g-2">
+                    <div class="o_portal_doc_spinner spinner-border text-o-color-2 align-self-center mt-5"/>
+                    <div t-if="portal_alert_category_enable" class="o_portal_category row g-2 mt-3" id="portal_alert_category"/>
+                    <div t-if="portal_client_category_enable" class="o_portal_category row g-2 mt-3" id="portal_client_category"/>
+                    <div t-if="portal_service_category_enable" class="o_portal_category row g-2 mt-3" id="portal_service_category"/>
+                    <div t-if="portal_vendor_category_enable" class="o_portal_category row g-2 mt-3" id="portal_vendor_category"/>
+                    <style>
+                        .portal-tile {
+                                    display: block;
+                                    background: linear-gradient(135deg, #007bff, #0056b3);
+                                    padding: 25px;
+                                    border-radius: 15px;
+                                    text-align: center;
+                                    color: white;
+                                    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                                    text-decoration: none;
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .portal-tile:hover {
+                                    transform: scale(1.1);
+                                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                                }
+
+                                .tile-content {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+
+                                .portal-tile i {
+                                    display: block;
+                                    margin-bottom: 10px;
+                                    font-size: 40px;
+                                }
+
+                                .portal-tile p {
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                }
+
+                                @media (max-width: 768px) {
+                                    .col-md-3 {
+                                        width: 50%;
+                                        margin-bottom: 15px;
+                                    }
+                                }
+
+                                @media (max-width: 480px) {
+                                    .col-md-3 {
+                                        width: 100%;
+                                    }
+                                }
+
+                        .portal-small-tile {
+<!--                                    display: block;-->
+<!--                                    background: linear-gradient(135deg, #007bff, #0056b3);-->
+<!--                                    padding: 25px;-->
+<!--                                    border-radius: 15px;-->
+<!--                                    text-align: center;-->
+<!--                                    color: white;-->
+<!--                                    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;-->
+<!--                                    text-decoration: none;-->
+<!--                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);-->
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 80px;
+                                    height: 80px;
+                                    background:linear-gradient(135deg, #007bff, #0056b3);
+                                    border-radius: 10px;
+                                    text-decoration: none;
+                                    color: #333;
+                                    font-size: 14px;
+                                    transition: all 0.3s ease-in-out;
+                                    padding: 5px;
+                                    margin: 5px auto;
+                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .portal-small-tile i {
+                                    font-size: 24px;
+                                    margin-bottom: 5px;
+                                }
+
+                                .portal-small-tile:hover {
+                                    background: #007bff;
+                                    color: white;
+                                    transform: scale(1.05);
+                                }
+
+                                @media (max-width: 768px) {
+                                    .portal-small-tile {
+                                        width: 70px;
+                                        height: 70px;
+                                        font-size: 12px;
+                                    }
+
+                                    .portal-small-tile i {
+                                        font-size: 20px;
+                                    }
+                                }
+
+                        .portal-small-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background:linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 5px;
+    margin: 5px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portal-small-tile i {
+                        display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.portal-small-tile:hover {
+    transform: scale(1.1);
+                                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge for showing count */
+.tile-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .portal-small-tile {
+        width: 70px;
+        height: 70px;
+        font-size: 12px;
+    }
+
+    .portal-small-tile i {
+        font-size: 20px;
+    }
+
+    .tile-badge {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+}
+
+
+
+                    </style>
+<!--                    Student Info-->
+                    <div id="portal_client_category" position="inside">
+
+
+            <div class="row text-center mt-3">
+                <div class="col-6 col-sm-4 col-md-2">
+                    <a href="/my/orders" class="portal-small-tile">
+                        <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <p>Student Info</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2">
+                    <a href="/my/invoices" class="portal-small-tile">
+                        <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+                        <i class="fa fa-file-invoice"></i>
+                    </a>
+                    <p>Announcements</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2">
+                    <a href="/my/tasks" class="portal-small-tile">
+                        <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                    <p>Homeworks</p>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2">
+                    <a href="/my/tickets" class="portal-small-tile">
+                        <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+                        <i class="fa fa-life-ring"></i>
+                        <p>T</p>
+                    </a>
+                    <p><b>Timetable</b></p>
+                </div>
+            </div>
+                        <div class="row text-center mt-3">
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="/my/orders" class="portal-small-tile">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p>Orders</p>
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="/my/invoices" class="portal-small-tile">
+                    <i class="fa fa-file-invoice"></i>
+                    <p>Invoices</p>
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="/my/tasks" class="portal-small-tile">
+                    <i class="fa fa-tasks"></i>
+                    <p>Tasks</p>
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="/my/tickets" class="portal-small-tile">
+                    <i class="fa fa-life-ring"></i>
+                    <p>Support</p>
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="/my/contacts" class="portal-small-tile">
+                    <i class="fa fa-user"></i>
+                    <p>Contacts</p>
+                </a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-2">
+                <a href="/my/products" class="portal-small-tile">
+                    <i class="fa fa-box"></i>
+                    <p>Products</p>
+                </a>
+            </div>
+        </div>
+                        <div class="row text-center mt-3">
+                            <div class="col-md-3">
+                                <a href="/school/announcements" class="portal-tile">
+                                    <div class="tile-content">
+                                        <i class="fa fa-shopping-cart fa-3x"></i>
+                                        <p>Orders</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/my/invoices" class="portal-tile">
+                                    <div class="tile-content">
+                                        <i class="fa fa-file-invoice fa-3x"></i>
+                                        <p>Invoices</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/my/tasks" class="portal-tile">
+                                    <div class="tile-content">
+                                        <i class="fa fa-tasks fa-3x"></i>
+                                        <p>Tasks</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/my/tickets" class="portal-tile">
+                                    <div class="tile-content">
+                                        <i class="fa fa-life-ring fa-3x"></i>
+                                        <p>Support Tickets</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6"  >
+                            <div class="content-card" style="width: 288px;">
+                                <div class="content-card-body">
+                                    <a t-att-href="'/school/student_info'" t-att-title="title">
+                                        <div class="stat-widget-one">
+                                            <div class="stat-icon">
+                                                <i class="fa fa-user"/>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-head">Student Info</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    Announccements-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6"  >
+                            <div class="content-card" style="width: 288px;">
+                                <div class="content-card-body">
+                                    <a t-att-href="'/school/announcements'" t-att-title="title">
+                                        <div class="stat-widget-one">
+                                            <div class="stat-icon">
+                                                <i class="fa fa-bullhorn"/>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-head">Announcements</div>
+                                                <div class="stat-count">
+                                                    <span ></span><t t-out="all_announce_count"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        .glow-text {
+                                font-size: 0.9rem;
+                                font-weight: bold;
+                                color: #e60000;
+                                text-align: center;
+                                text: 0 0 5px #e60000, 0 0 10px #e60000, 0 0 15px #cc0099, 0 0 20px #ffffb3, 0 0 25px #ffffb3;
+<!--                                text-shadow: 0 0 5px #e60000, 0 0 10px #e60000, 0 0 15px #cc0099, 0 0 20px #cc0099, 0 0 25px #cc0099;-->
+                                animation: glow 1.5s infinite alternate;
+                            }
+
+                            @keyframes glow {
+                                0% {
+                                    text: 0 0 5px #e60000, 0 0 10px #e60000, 0 0 15px #ffffb3, 0 0 20px #ffffb3;
+                                }
+                                100% {
+                                    text: 0 0 10px #e60000, 0 0 20px #e60000, 0 0 30px #ffffb3, 0 0 40px #ffffb3;
+                                }
+                            }
+
+                    </style>
+<!--                    All Homeworks-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6"  >
+                            <div class="content-card" style="width: 288px;">
+                                <div class="content-card-body">
+                                    <a t-att-href="'/school/all_homeworks'" t-att-title="title">
+                                        <div class="stat-widget-one">
+                                            <div class="stat-icon">
+                                                <i class="fa fa-wpforms"/>
+                                            </div>
+                                            <div class="stat-content">
+                                                <div class="stat-head">Homeworks</div>
+                                                <div class="stat-count">
+                                                    <span ></span><t t-out="home_work_count"/>
+<!--                                                    <img src="mis_student_portal/static/src/img/new_badge.png" width="90" height="80"></img>-->
+                                                    <small class="glow-text">NEW</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Announcements</span>
+                                    </h5>
+                                    <p class="m-0 text-600">
+                                        <span style="color:red;">Late:</span><t t-out="late_count"/>
+                                        <span style="padding-left:5 px;color:blue;">Today:</span><t t-out="today_count"/>
+                                    </p>
+                                    <p class="m-0 text-600">
+                                        <span>Check the Announcements</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+<!--                    Today HomeWorks-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Today HomeWorks</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check today homework</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+<!--                    All HomeWorks-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/all_homeworks'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>All HomeWorks</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check List of all homeworks</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+<!--                    TimeTable-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Timetable</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>View Timetable</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+<!--                    TimeTable-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Fees Payments</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check Paid and Unpaid fees</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+<!--                    Teacher To Parent-->
+                    <div id="portal_client_category" position="inside">
+                        <div class="col-md-6">
+                            <a t-att-href="'/school/announcements'" t-att-title="title" t-attf-class="d-flex justify-content-start gap-2 gap-md-3 align-items-center py-3 pe-2 px-md-3 h-100 rounded text-decoration-none text-reset #{bg_color if bg_color else 'text-bg-light'}">
+                                <div class="o_portal_icon align-self-start">
+                                    <img t-attf-src="/mis_student_portal/static/src/img/announce.png"/>
+                                </div>
+                                <div>
+                                    <h5 t-attf-class="mt-0 mb-1 d-flex gap-2}">
+                                        <span>Teacher To Parent</span>
+                                    </h5>
+
+                                    <p class="m-0 text-600">
+                                        <span>Check messages from Teacher</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="portal_client_category" position="inside">
+                        <t t-set="partner_sudo" t-value="request.env.user.partner_id"/>
+                        <t t-set="providers_sudo"
+                           t-value="request.env['payment.provider'].sudo()._get_compatible_providers(request.env.company.id, partner_sudo.id, 0., force_tokenization=True, is_validation=True)"/>
+                        <t t-set="methods_allowing_tokenization"
+                           t-value="request.env['payment.method'].sudo()._get_compatible_payment_methods(
+                                        providers_sudo.ids,
+                                        partner_sudo.id,
+                                        force_tokenization=True,
+                                    )"
+                        />
+                        <t t-set="existing_tokens" t-value="partner_sudo.payment_token_ids + partner_sudo.commercial_partner_id.payment_token_ids"/>
+                        <t t-if="methods_allowing_tokenization or existing_tokens" t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/payment/static/img/payment-methods.svg'"/>
+                            <t t-set="title">Payment methods</t>
+                            <t t-set="text">Manage your payment methods</t>
+                            <t t-set="url" t-value="'/my/payment_method'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                    </div>
+                    <div class="o_portal_category row g-2 mt-3" id="portal_common_category">
+                        <t t-call="portal.portal_docs_entry" t-if="False"/>
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
+                            <t t-set="title">Settings</t>
+                            <t t-set="text">Configure your connection parameters</t>
+                            <t t-set="url" t-value="'/my/security'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure" id="oe_structure_portal_my_home_2"/>
+        </t>
+    </template>
+
+
+    <template id="portal.my_account_link" name="Link to frontend portal" inherit_id="portal.user_dropdown">
+        <xpath expr="//*[@id='o_logout_divider']" position="before">
+            <a href="/my/home" role="menuitem" class="dropdown-item ps-3">
+                <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/> Student Dashboard
+            </a>
+        </xpath>
+    </template>
+
+
+    <template id="portal.portal_layout" name="Portal Layout">
+        <t t-call="portal.frontend_layout">
+            <t t-set="is_portal" t-value="True"/>
+
+            <div t-if="not no_breadcrumbs and not my_details and not breadcrumbs_searchbar" class="o_portal container mt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <t t-call="portal.portal_breadcrumbs"/>
+                    <t t-if="prev_record or next_record" t-call='portal.record_pager'/>
+                </div>
+            </div>
+            <div id="wrap" class='o_portal_wrap'>
+                <div class="container pt-3">
+                    <t t-if="my_details">
+                        <div class="wrapper col-12 d-flex flex-wrap justify-content-between align-items-center">
+                            <h3 class="my-3" style="color:blue;">My Dashboard</h3>
+                            <button class="btn py-0 d-flex align-items-center gap-2 d-lg-none ms-auto"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#accountOffCanvas">
+                                <img class="o_avatar rounded"
+                                t-att-src="image_data_uri(user_id.partner_id.avatar_1024)" alt="Contact"/>
+                            </button>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div t-attf-class="o_portal_content col-12 col-lg-8 mb-5">
+                                <t t-out="0"/>
+                            </div>
+                            <div class="d-none d-lg-flex justify-content-end col-lg-4">
+                                <t t-call="portal.side_content"/>
+                            </div>
+                            <div class="offcanvas offcanvas-start d-lg-none" id="accountOffCanvas">
+                                <t t-call="portal.side_content">
+                                    <t t-set="isOffcanvas" t-value="true"/>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <t t-out="0"/>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
