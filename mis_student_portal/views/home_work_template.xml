@@ -7,7 +7,8 @@
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">All Homeworks</t>
             </t>
-            <h3>Today Homeworks</h3>
+            <div class="container glow-background">
+            <h4>Today Homeworks</h4>
             <div t-if="not today_homework" class="alert alert-warning" role="alert">
                 There are currently no homeworks for Today.
             </div>
@@ -30,7 +31,7 @@
                 </table>
             </t>
 
-            <h3>All Homeworks</h3>
+            <h4>All Homeworks</h4>
             <div t-if="not homeworks" class="alert alert-warning" role="alert">
                 There are currently no homeworks for You.
             </div>
@@ -54,6 +55,7 @@
                     </t>
                 </table>
             </t>
+            </div>
         </t>
     </template>
 

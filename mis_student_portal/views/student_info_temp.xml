@@ -7,6 +7,73 @@
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Student Info</t>
             </t>
+            <div class="container glow-background">
+            <div class="row">
+                        <center>
+                            <div class="col-xs-8" style="margin:auto">
+                                <table class="table table-condensed"
+                                       style="border: 3px solid black !important;width:60%;height:200px">
+                                    <tr>
+                                        <td width="1%"
+                                            style="border: 1px solid black !important;border-collapse: collapse;">
+                                            <p style="text-align:center;padding-top:10px;">
+                                                <img t-if="not student.image_1920"
+                                                     t-att-src="'/web/static/src/img/placeholder.png'"
+                                                     style="height: 120px;width: 130px;"/>
+                                                <img t-if="student.image_1920"
+                                                     t-attf-src="data:image/png;base64,{{student.image_1920}}"
+                                                     style="height: 120px;width: 130px;"/>
+                                            </p>
+                                            <p style="text-align:center; margin-top:10px">
+                                                <strong>
+                                                    <span t-field="student.name"/>
+                                                    <span t-field="student.last_name"/>
+                                                </strong>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="63%">
+                                            <table style="border-style: none;">
+                                                <td>
+                                                    <p style="text-align:right;">
+                                                        <strong>Ad No :
+                                                        </strong>
+                                                    </p>
+                                                    <p style="text-align:right;">
+                                                        <strong>
+                                                            Class :
+                                                        </strong>
+                                                    </p>
+                                                    <p style="text-align:right;width:100px">
+                                                        <strong>
+                                                            Contact :
+                                                        </strong>
+                                                    </p>
+                                                    <p style="text-align:right;">
+                                                        <strong>Sex
+                                                            :
+                                                        </strong>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p style="text-align:left;padding-left:10px;"
+                                                       t-field="student.ad_no"/>
+                                                    <p style="text-align:left;padding-left:10px;"
+                                                       t-field="student.class_division_id.name"/>
+                                                    <p style="text-align:left;padding-left:10px;"
+                                                       t-field="student.mobile"/>
+                                                    <p style="text-align:left;padding-left:10px;"
+                                                       t-field="student.gender"/>
+                                                </td>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </center>
+                    </div>
+            </div>
             <div class="card">
                 <div class="oe_inline row">
                     <br/>

@@ -15,6 +15,31 @@
                     <div t-if="portal_service_category_enable" class="o_portal_category row g-2 mt-3" id="portal_service_category"/>
                     <div t-if="portal_vendor_category_enable" class="o_portal_category row g-2 mt-3" id="portal_vendor_category"/>
                     <style>
+                        .portal-tile-color-stud{
+                                background:linear-gradient(135deg, #007bff, #0056b3);
+                        }
+                        .portal-tile-color-annoce{
+                                background:#990099;
+                        }
+                        .portal-tile-color-home{
+                                background:#660099;
+                        }
+                        .portal-tile-color-time{
+                                background:#808000;
+                        }
+                        .portal-tile-color-att{
+                                background:rgb(59, 102, 86);
+                        }
+                        .portal-tile-color-comm{
+                                background:#2952a3;
+                        }
+                        .portal-tile-color-commst{
+                                background:#5c8a8a;
+                        }
+                        .portal-tile-color-fees{
+                                background:#99b280;
+                        }
+
                         .portal-small-tile {
                             position: relative;
                             display: flex;
@@ -23,7 +48,7 @@
                             justify-content: center;
                             width: 80px;
                             height: 80px;
-                            background:linear-gradient(135deg, #007bff, #0056b3);
+
                             border-radius: 10px;
                             text-decoration: none;
                             color: white;
@@ -47,13 +72,28 @@
                         /* Badge for showing count */
                         .tile-badge {
                             position: absolute;
-                            top: 5px;
-                            right: 5px;
+                            top: -10px;
+                            right: 2px;
                             background: red;
                             color: white;
                             font-size: 12px;
                             font-weight: bold;
                             border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .tile-badge-left {
+                            position: absolute;
+                            bottom: -7px;
+                            left: 2px;
+                            background: red;
+                            color: white;
+                            font-size: 12px;
+                            font-weight: bold;
+                            border-radius: 20%;
                             width: 20px;
                             height: 20px;
                             display: flex;
@@ -69,42 +109,64 @@
                             }
 
                             .portal-small-tile i {
-                                font-size: 20px;
+                                font-size: 35px;
                             }
 
                             .tile-badge {
-                                width: 18px;
-                                height: 18px;
+                                width: 25px;
+                                height: 25px;
+                                font-size: 10px;
+                            }
+                        .tile-badge-left {
+                                width: 40px;
+                                height: 20px;
                                 font-size: 10px;
                             }
                         }
+
+                        @keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.text-scale {
+    animation: scaleUp 0.6s infinite;
+}
                     </style>
 <!--                    Student Info-->
+                    <div class="container glow-background">
                     <div id="portal_client_category" position="inside">
                         <div class="row text-center mt-3">
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/student_info" class="portal-small-tile">
+                                <a href="/school/student_info" class="portal-small-tile portal-tile-color-stud">
 <!--                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>-->
                                     <i class="fa fa-address-card"></i>
                                 </a>
                                 <p><b>Student Info</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/announcements" class="portal-small-tile">
+                                <a href="/school/announcements" class="portal-small-tile portal-tile-color-annoce">
+                                    <div class="tile-badge-left text-scale" t-if="all_announce_count"> New </div>
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-bullhorn"></i>
                                 </a>
                                 <p><b>Announcements</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/all_homeworks" class="portal-small-tile">
+                                <a href="/school/all_homeworks" class="portal-small-tile portal-tile-color-home">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
-                                    <i class="fa fa-pencil-square-o"></i>
+                                    <i class="fa fa-book"></i>
                                 </a>
                                 <p><b>Homeworks</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/my/tickets" class="portal-small-tile">
+                                <a href="/my/tickets" class="portal-small-tile portal-tile-color-time">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-clock-o"></i>
                                 </a>
@@ -113,28 +175,28 @@
                         </div>
                         <div class="row text-center mt-3">
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/student_info" class="portal-small-tile">
+                                <a href="/school/student_info" class="portal-small-tile portal-tile-color-att">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-calendar"></i>
                                 </a>
                                 <p><b>Attendance</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/announcements" class="portal-small-tile">
+                                <a href="/school/announcements" class="portal-small-tile portal-tile-color-comm">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-comments"></i>
                                 </a>
                                 <p><b>Class Comm</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/all_homeworks" class="portal-small-tile">
+                                <a href="/school/all_homeworks" class="portal-small-tile portal-tile-color-commst">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-comment"></i>
                                 </a>
                                 <p><b>Teacher Comm</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/my/tickets" class="portal-small-tile">
+                                <a href="/my/tickets" class="portal-small-tile portal-tile-color-fees">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-wpforms"></i>
                                 </a>
@@ -173,6 +235,7 @@
                             <t t-set="config_card" t-value="True"/>
                         </t>
                     </div>
+                </div>
                 </div>
             </div>
             <div class="oe_structure" id="oe_structure_portal_my_home_2"/>

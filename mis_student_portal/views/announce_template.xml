@@ -9,8 +9,9 @@
                 <t t-call="portal.portal_searchbar">
                     <t t-set="title">Announcements</t>
                 </t>
-                <h3>General Announcements</h3>
-                <div class="oe_structure">
+                <div class="container glow-background">
+                <h4 style="color:blue;padding-left:10 px;">School Announcements</h4>
+<!--                <div class="oe_structure">-->
                 <div t-if="not notices" class="alert alert-warning" role="alert">
                     There are currently no Announcements.
                 </div>
@@ -25,6 +26,7 @@
                         </div>
                 </div>
                 </div>
+<!--                </div>-->
             </t>
         </template>
 <!--&lt;!&ndash;            <t t-if="orders" t-call="portal.portal_table">&ndash;&gt;-->
