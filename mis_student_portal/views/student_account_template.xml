@@ -14,6 +14,7 @@
                     <div t-if="portal_client_category_enable" class="o_portal_category row g-2 mt-3" id="portal_client_category"/>
                     <div t-if="portal_service_category_enable" class="o_portal_category row g-2 mt-3" id="portal_service_category"/>
                     <div t-if="portal_vendor_category_enable" class="o_portal_category row g-2 mt-3" id="portal_vendor_category"/>
+<!--                    <t t-set="attendance" t-value="Present"/>-->
                     <style>
                         .portal-tile-color-stud{
                                 background:linear-gradient(135deg, #007bff, #0056b3);
@@ -100,6 +101,21 @@
                             align-items: center;
                             justify-content: center;
                         }
+                        .tile-badge-att {
+                            position: absolute;
+                            top: -7px;
+                            right: 2px;
+                            background: green;
+                            color: white;
+                            font-size: 12px;
+                            font-weight: bold;
+                            border-radius: 20%;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
 
                         @media (max-width: 768px) {
                             .portal-small-tile {
@@ -123,21 +139,79 @@
                                 font-size: 10px;
                             }
                         }
+                        .tile-badge-att {
+                                width: 40px;
+                                height: 20px;
+                                font-size: 10px;
+                            }
+                        }
 
                         @keyframes scaleUp {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+                                0% {
+                                    transform: scale(0.8);
+                                    opacity: 0;
+                                }
+                                100% {
+                                    transform: scale(1);
+                                    opacity: 1;
+                                }
+                            }
+
+                            .text-scale {
+                                animation: scaleUp 0.6s infinite;
+                            }
+
+                        @keyframes glitch {
+                              0% { text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #0000ff; }
+                              50% { text-shadow: -2px -2px 0px #ff0000, 2px 2px 0px #0000ff; }
+<!--                              100% { text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #0000ff; }-->
+                            }
+
+                            .glitch-text {
+                              font-size: 2rem;
+                              font-weight: bold;
+                              animation: glitch 2s infinite alternate;
+                            }
+                        @keyframes typing {
+  from { width: 0; }
+  to { width: 50%; }
 }
 
-.text-scale {
-    animation: scaleUp 0.6s infinite;
+@keyframes blink-caret {
+  50% { border-color: transparent; }
 }
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid black;
+  width: 0;
+  animation: typing 3s infinite, blink-caret 0.75s step-end infinite;
+
+                        @keyframes scaleUp {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.scale-up-loop {
+  display: inline-block;
+  animation: scaleUp 2s infinite;
+}
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.wave-text span {
+  display: inline-block;
+  animation: wave 1s infinite;
+}
+
+.wave-text span:nth-child(2) { animation-delay: 0.1s; }
+.wave-text span:nth-child(3) { animation-delay: 0.2s; }
+.wave-text span:nth-child(4) { animation-delay: 0.3s; }
                     </style>
 <!--                    Student Info-->
                     <div class="container glow-background">
@@ -152,7 +226,7 @@
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/announcements" class="portal-small-tile portal-tile-color-annoce">
-                                    <div class="tile-badge-left text-scale" t-if="all_announce_count"> New </div>
+                                    <div class="tile-badge-left typing-text" t-if="all_announce_count"> New </div>
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-bullhorn"></i>
                                 </a>
@@ -176,7 +250,8 @@
                         <div class="row text-center mt-3">
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/student_info" class="portal-small-tile portal-tile-color-att">
-                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+                                    <div class="tile-badge-att typing-text"><t t-esc="attendance"/></div>
+<!--                                    <div class="tile-badge text-scale" > <t t-esc="attendance"/> </div>-->
                                     <i class="fa fa-calendar"></i>
                                 </a>
                                 <p><b>Attendance</b></p>
@@ -184,16 +259,17 @@
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/announcements" class="portal-small-tile portal-tile-color-comm">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+
                                     <i class="fa fa-comments"></i>
                                 </a>
-                                <p><b>Class Comm</b></p>
+                                <p><b>Class <span t-out="div_name"/></b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/all_homeworks" class="portal-small-tile portal-tile-color-commst">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-comment"></i>
                                 </a>
-                                <p><b>Teacher Comm</b></p>
+                                <p><b>Teacher <span t-out="div_name"/></b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/my/tickets" class="portal-small-tile portal-tile-color-fees">
@@ -262,8 +338,65 @@
                     <t t-if="prev_record or next_record" t-call='portal.record_pager'/>
                 </div>
             </div>
+            <style>
+
+.animated-heading-mob {
+    font-size: 1.8em;
+    color: #878273;
+    animation: fadeInMove 3s ease-in-out, colorChange 3s 3s infinite alternate;
+}
+
+/* Animation for fading in and moving */
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for color change */
+@keyframes colorChange {
+    0% {
+        color: #00c2eb;
+    }
+    50% {
+        color: #a66963;
+    }
+    100% {
+        color: #b0cc8c;
+    }
+}
+            .logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  background: #ff5733;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.logout-btn i {
+  font-size: 12px;
+}
+        </style>
             <div id="wrap" class='o_portal_wrap'>
                 <div class="container pt-3">
+<!--                    <div class="row">-->
+<!--&lt;!&ndash;                        <div class="col" width="20%">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <img  t-attf-src="/mis_student_portal/static/src/img/school.jpeg" width="40" height="60" alt="Document" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="col" width="50%">&ndash;&gt;-->
+<!--                            <span class="text-center"> <h3 class="animated-heading-mob">MIS School</h3></span>-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </div>-->
                     <t t-if="my_details">
                         <div class="wrapper col-12 d-flex flex-wrap justify-content-between align-items-center">
                             <h3 class="my-3" style="color:blue;">My Dashboard</h3>
@@ -271,7 +404,8 @@
                             data-bs-toggle="offcanvas"
                             data-bs-target="#accountOffCanvas">
                                 <img class="o_avatar rounded"
-                                t-att-src="image_data_uri(user_id.partner_id.avatar_1024)" alt="Contact"/>
+                                t-att-src="image_data_uri(user_id.partner_id.avatar_1024)" alt="Contact"/><br></br>
+                                <h4><span t-filed="user_id.partner_id.name"></span></h4>
                             </button>
                         </div>
                         <div class="row justify-content-between">
@@ -295,5 +429,110 @@
             </div>
         </t>
     </template>
+
+    <template id="website.template_header_mobile" name="Template Header Mobile">
+    <t t-call="website.navbar">
+        <t t-set="_navbar_classes" t-valuef="o_header_mobile d-block d-lg-none shadow-sm px-0"/>
+        <t t-set="_navbar_expand_class" t-valuef="None"/>
+        <t t-set="_navbar_name" t-valuef="Mobile"/>
+        <t t-set="public_user" t-value="request.env.user._is_public()"/>
+        <t t-if="public_user">
+            <div id="o_main_nav" t-att-id="None" class="o_main_nav container flex-wrap justify-content-between">
+            <!-- Brand -->
+            <t t-call="website.placeholder_header_brand"/>
+            <ul class="o_header_mobile_buttons_wrap navbar-nav flex-row align-items-center gap-2 mb-0">
+                <li class="o_not_editable">
+                    <button
+                        class="nav-link btn me-auto p-2 o_not_editable"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#top_menu_collapse_mobile"
+                        aria-controls="top_menu_collapse_mobile"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >
+                        <span class="navbar-toggler-icon"/>
+                    </button>
+                </li>
+            </ul>
+            <div t-attf-class="offcanvas #{_side if _side else 'offcanvas-end'} o_navbar_mobile" id="top_menu_collapse_mobile">
+                <div class="offcanvas-header justify-content-end o_not_editable">
+                    <button type="button" class="nav-link btn-close" data-bs-dismiss="offcanvas" aria-label="Close"/>
+                </div>
+                <div class="offcanvas-body d-flex flex-column justify-content-between h-100 w-100">
+                    <ul class="navbar-nav">
+                        <!-- Search bar -->
+                        <t t-call="website.placeholder_header_search_box">
+                            <t t-set="_classes" t-valuef="mb-3"/>
+                            <t t-set="_input_classes" t-valuef="rounded-start-pill text-bg-light ps-3"/>
+                            <t t-set="_submit_classes" t-valuef="rounded-end-pill bg-o-color-3 pe-3"/>
+                            <t t-set="limit" t-valuef="0"/>
+                        </t>
+                        <!-- Navbar -->
+                        <t t-call="website.navbar_nav">
+                            <t t-set="_no_autohide_menu_mobile" t-valuef="True"/>
+                            <t t-set="is_mobile" t-value="True"/>
+
+                            <!-- Menu -->
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-valuef="nav-item"/>
+                                    <t t-set="link_class" t-valuef="nav-link"/>
+                                    <t t-set="dropdown_toggler_classes" t-valuef="d-flex justify-content-between align-items-center"/>
+                                    <t t-set="dropdown_menu_classes" t-valuef="position-relative rounded-0 o_dropdown_without_offset"/>
+                                </t>
+                            </t>
+                        </t>
+                        <!-- Text element -->
+                        <t t-call="website.placeholder_header_text_element">
+                            <t t-set="_div_class" t-valuef="mt-2 border-top pt-2 o_border_contrast"/>
+                        </t>
+                        <!-- Social -->
+                        <t t-call="website.placeholder_header_social_links">
+                            <t t-set="_div_class" t-valuef="mt-2 border-top pt-2 o_border_contrast"/>
+                        </t>
+                    </ul>
+                    <ul class="navbar-nav gap-2 mt-3 w-100">
+                        <!-- Sign In -->
+                        <t t-call="portal.placeholder_user_sign_in">
+                            <t t-set="_link_class" t-valuef="btn btn-outline-secondary w-100"/>
+                        </t>
+                        <!-- User Dropdown -->
+                        <t t-call="portal.user_dropdown">
+                            <t t-set="_icon" t-value="true"/>
+                            <t t-set="_user_name" t-value="true"/>
+                            <t t-set="_user_name_class" t-valuef="me-auto small"/>
+                            <t t-set="_link_class" t-valuef="btn-outline-secondary d-flex align-items-center border-0 px-2"/>
+                            <t t-set="_icon_class" t-valuef="me-2"/>
+                            <t t-set="_item_class" t-valuef="dropdown dropup"/>
+                            <t t-set="_dropdown_menu_class" t-valuef="w-100"/>
+                        </t>
+                        <!-- Language Selector -->
+                        <t t-call="website.placeholder_header_language_selector">
+                            <t t-set="_btn_class" t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
+                            <t t-set="_txt_class" t-valuef="me-auto small"/>
+                            <t t-set="_flag_class" t-valuef="me-2"/>
+                            <t t-set="_div_classes" t-valuef="dropup"/>
+                            <t t-set="_dropdown_menu_class" t-valuef="w-100"/>
+                        </t>
+                        <!-- Call To Action -->
+                        <t t-call="website.header_call_to_action_large"/>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </t>
+
+        <t t-else="">
+            <div id="o_main_nav" t-att-id="None" class="o_main_nav container flex-wrap justify-content-between">
+                <img  t-attf-src="/mis_student_portal/static/src/img/school.jpeg" width="40" height="60" alt="Document" />
+                <h3 class="animated-heading-mob" style="padding-right:100 px">MIS School</h3>
+                <a href="/web/session/logout" class="logout-btn">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+            </div>
+        </t>
+    </t>
+</template>
 
 </odoo>

@@ -34,7 +34,10 @@ class CustomerPortalCustom(CustomerPortal):
         # else:
         return request.render("mis_student_portal.student_portal_my_home", {'all_announce_count' : all_announce_count,
                                                                             'today_announce_count' : today_announce_count,
+                                                                            'student' : student_id,
+                                                                            'div_name' : student_id.class_division_id.name,
                                                                             'home_work_count' : home_work_count,
+                                                                            'attendance' : 'Present',
                                                                             'today_home_work_count' : today_home_work_count,
                                                                             })
 

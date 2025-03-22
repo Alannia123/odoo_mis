@@ -69,8 +69,8 @@
                     style="width: auto; height: 1em; vertical-align: baseline;"/>
             </a>
         </t>
-        <span>Powered by </span><span class="company-name">ALANNIAINFOTECHZ</span>
-        <t t-set="final_message">Powered by ALANNIAINFOTECH</t>
+        <span>Powered by </span><span class="company-name">ALANNIA INFOTECHZ</span>
+        <t t-set="final_message">Powered by ALANNIA INFOTECH</t>
 <!--        <t t-out="final_message "/>-->
     </template>
 
