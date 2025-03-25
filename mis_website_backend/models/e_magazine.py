@@ -16,7 +16,6 @@ class SchoolMagazine(models.Model):
     upload_date = fields.Date(string='Upload Date', default=fields.Date.today)
     file_name = fields.Char(string='PDF File', required=True, attachment=True)
     pdf_file = fields.Binary(string='PDF File', required=True, attachment=True)
-    # division_id = fields.Many2one('education.class.division', 'Division')
     teacher_id = fields.Many2one('res.users', string='Uploaded by', default=lambda self: self.env.user)
     cover_photo = fields.Binary('Cover Photo')
     state = fields.Selection([('draft', 'Draft'),('post', 'post')], 'State', default='draft', tracking=True)
