@@ -18,8 +18,19 @@ class SchoolMagazine(models.Model):
     pdf_file = fields.Binary(string='PDF File', required=True, attachment=True)
     teacher_id = fields.Many2one('res.users', string='Uploaded by', default=lambda self: self.env.user)
     cover_photo = fields.Binary('Cover Photo')
+    attachment_id = fields.Many2one('ir.attachment', 'Attachment',copy=False)
     state = fields.Selection([('draft', 'Draft'),('post', 'post')], 'State', default='draft', tracking=True)
 
 
     def action_post(self):
+        attachment = self.env['ir.attachment'].create({
+            'name': self.file_name,  # File name
+            'type': 'binary',  # Must be binary for file storage
+            'datas': self.pdf_file,  # Encode the file content
+            'mimetype': 'application/pdf',  # MIME type
+            'res_model': 'school.magazine',  # Attach it to a model (change 'your.model' to actual model name)
+            'res_id': self.id,  # Attach it to a specific record
+        })
+        self.attachment_id = attachment.id
+
         self.write({'state' : 'post'})

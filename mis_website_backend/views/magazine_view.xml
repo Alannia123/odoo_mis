@@ -19,7 +19,8 @@
 						<group>
 							<group>
 								<field name="name"/>
-								<field name="teacher_id" readonly="1"/>
+								<field name="teacher_id" readonly="1" options="{'no_create':True,'no_open':True}"/>
+								<field name="attachment_id" readonly="1" options="{'no_create':True,'no_open':True}"/>
 							</group>
 							<group>
 								<field name="upload_date" readonly="1"/>

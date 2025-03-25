@@ -38,10 +38,10 @@
 <!--                            <embed t-att-src="pdf_data_uri" type="application/pdf" width="100%" height="600px"/>-->
 <!--                            <iframe t-att-src="pdf_url" width="100%" height="600px"></iframe>-->
 <!--                            <iframe src="/mis_website/static/src/img/19g6DyySCeMQYJYh47h33hpUJxgWuy7Cy6zFqETC.pdf" width="100%" height="600px"></iframe>-->
-                            <iframe src="/web/content/2845?download=false" width="100%" height="600px"></iframe>
+                            <t t-raw="raw_html"/>
                         </div>
                         <div class="text-center mt-3">
-                            <a t-att-href="'/web/content/2845?download=true'" class="btn btn-primary">Download PDF</a>
+                            <a t-att-href="'/web/content/%s?download=true' % magazine.attachment_id.id" class="btn btn-primary">Download PDF</a>
                         </div>
                     </div>
                     <style>
