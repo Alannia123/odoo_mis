@@ -49,7 +49,6 @@
 <!--							invisible="context.get('active_model', 'program.gallery') != 'program.gallery'"/>-->
 <!--					</header>-->
 					<field name="name" />
-					<field name="division_id" />
 					<field name="upload_date" />
                     <field name="teacher_id" />
                     <field name="state" widget="badge"
