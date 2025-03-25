@@ -69,7 +69,7 @@
                     style="width: auto; height: 1em; vertical-align: baseline;"/>
             </a>
         </t>
-        <span>Powered by </span><span class="company-name">ALANNIA INFOTECHZ</span>
+        <span>Powered by </span><span ><img  class="o_company_logo_small" src="/mis_website/static/src/img/Alanniainfotechz.png" style="height: 35px; width: 90px;"  alt="Logo"/></span>
         <t t-set="final_message">Powered by ALANNIA INFOTECH</t>
 <!--        <t t-out="final_message "/>-->
     </template>
