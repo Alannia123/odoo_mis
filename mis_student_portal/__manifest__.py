@@ -9,7 +9,7 @@
     'author': 'Alannia',
     'company': 'alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['web','website','portal', 'mis_website', 'mis_education_erp_dashboard', 'muk_web_theme'],
+    'depends': ['web','website','portal', 'mis_website', 'mis_education_erp_dashboard'],
     'data': [
         # 'security/ir.model.access.csv',
         # 'data/web_menu.xml',

@@ -9,7 +9,7 @@
     'author': 'Alannia',
     'company': 'alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['base','mis_education_core', 'mis_website_backend'],
+    'depends': ['base','mis_education_core', 'mis_website_backend','mis_homework'],
     'data': [
         'security/ir.model.access.csv',
         # 'data/sequence.xml',

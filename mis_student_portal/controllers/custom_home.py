@@ -1,8 +1,18 @@
 from odoo import http
 from odoo.http import request
-from odoo.addons.web.controllers.main import Home
+from odoo.addons.website.controllers.main import Website
 
-class CustomHome(Home):
-    @http.route('/web', type='http', auth="user", website=True)
-    def web_client(self, s_action=None, **kw):
-        return http.local_redirect('/web#menu_id=42')  # Replace 'apps_menu_id' with actual menu ID
+class CustomLoginRedirect(Website):
+
+
+    def _login_redirect(self, uid, redirect=None):
+        """ Redirect regular users (employees) to the backend) and others to
+        the frontend
+        """
+        print('CCCCCCCCFFFFFFFFFFFFFFFFF============',redirect)
+        if not redirect and request.params.get('login_success'):
+            if request.env['res.users'].browse(uid)._is_internal():
+                redirect = '/web#action=747&cids=1&menu_id=543'
+            else:
+                redirect = '/my'
+        return super()._login_redirect(uid, redirect=redirect)

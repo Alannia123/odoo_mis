@@ -29,10 +29,10 @@ class CustomerPortalCustom(CustomerPortal):
         home_work_count = request.env['student.homework'].sudo().search_count([('class_div_id', '=', student_id.class_division_id.id)])
         today_home_work_count = request.env['student.homework'].sudo().search_count([('class_div_id', '=', student_id.class_division_id.id),
                                                                                                         ('homework_date', '=', today_date)])
-        # if request.env.user._is_internal():
-        #     return request.render("portal.portal_my_home", values)
-        # else:
-        return request.render("mis_student_portal.student_portal_my_home", {'all_announce_count' : all_announce_count,
+        if request.env.user._is_internal():
+            return request.render("portal.portal_my_home", values)
+        else:
+            return request.render("mis_student_portal.student_portal_my_home", {'all_announce_count' : all_announce_count,
                                                                             'today_announce_count' : today_announce_count,
                                                                             'student' : student_id,
                                                                             'div_name' : student_id.class_division_id.name,
@@ -96,3 +96,4 @@ class CustomLogout(http.Controller):
     def logout(self, redirect='/web/login'):
         request.session.logout()
         return request.redirect(redirect)
+
