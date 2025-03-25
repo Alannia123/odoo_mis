@@ -12,7 +12,8 @@ class MisTask(models.Model):
 
     name = fields.Char('Name', required=False, readonly=True, tracking=True)
     create_date = fields.Date('Date', default=lambda self: fields.Datetime.now(), tracking=True, readonly=True)
-    scheduled_date = fields.Date('Completion Date', default=lambda self: fields.Datetime.now(), tracking=True)
+    scheduled_date = fields.Date('Scheduled Date', default=lambda self: fields.Datetime.now(), tracking=True)
+    completion_date = fields.Date('Completion Date',  tracking=True)
     user_id = fields.Many2one('res.users', 'Faculty', tracking=True)
     task_desc = fields.Text('Task Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('assigned', 'Assigned'), ('in_progress', 'In Progress'), ('done', 'Completed')],
@@ -33,7 +34,9 @@ class MisTask(models.Model):
         return self.write({"state": "in_progress"})
 
     def complete_task_by_faculty(self):
-        return self.write({"state": "done"})
+        today_date = datetime.today().strftime('%Y-%m-%d')
+        return self.write({"state": "done", 'completion_date': today_date})
 
     def reset_to_draft(self):
-        return self.write({"state": "draft"})
+
+        return self.write({"state": "draft", 'completion_date': False})

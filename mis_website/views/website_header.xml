@@ -282,12 +282,18 @@
                                               data-oe-expression="submenu.name">Contact us</span>
                                     </a>
                                 </li>
-<!--                                <li role="presentation" class="nav-item">-->
-<!--                                    <a role="menuitem" href="/contactus" class="nav-link ">-->
-<!--                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"-->
-<!--                                               data-oe-expression="submenu.name">Pay Online</span>-->
-<!--                                    </a>-->
-<!--                                </li>-->
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/e_magazine" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"
+                                               data-oe-expression="submenu.name">E-Magazine</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/app_download" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"
+                                               data-oe-expression="submenu.name">App Download</span>
+                                    </a>
+                                </li>
                                 <ul class="navbar-nav"></ul>
                             </ul>
 

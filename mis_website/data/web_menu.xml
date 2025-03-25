@@ -160,6 +160,25 @@
             <field name="website_id" ref="website.default_website"/>
         </record>
 
+         <record id="menu_emagazine" model="website.menu">
+            <field name="name">E-Magazine us</field>
+            <field name="url">/e_magazine</field>
+<!--            <field name="page_id" ref="website.contactus_page"/>-->
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">90</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+        <record id="menu_app_download" model="website.menu">
+            <field name="name">App Download</field>
+            <field name="url">/app_download</field>
+<!--            <field name="page_id" ref="website.contactus_page"/>-->
+            <field name="parent_id" search="[('parent_id', '=', False), ('website_id', '=', 1)]"/>
+            <field name="sequence" type="int">100</field>
+            <field name="website_id" ref="website.default_website"/>
+        </record>
+
+
 
 
     </data>

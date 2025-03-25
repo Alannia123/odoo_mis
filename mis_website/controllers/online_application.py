@@ -180,5 +180,18 @@ class OnlineAdmission(http.Controller):
 
 
 
+    @http.route('/app_download', type='http', auth='public', website=True)
+    def get_e_android_download(self):
+        """To pass certain default field values
+                                  to the website registration form."""
+        vals = {
+            'classes': request.env['education.class'].sudo().search([('open_addmission', '=', True)]),
+            'exist_classes': request.env['education.class'].sudo().search([]),
+            'sections': request.env['education.division'].sudo().search([]),
+        }
+        return request.render('mis_website.app_release_temp', vals)
+
+
+
     #
 

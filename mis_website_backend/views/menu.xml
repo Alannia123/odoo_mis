@@ -2,10 +2,10 @@
 <odoo>
 	<data>
 
-        <menuitem id="mis_website_menu_root" name="Web Gallery" groups="mis_education_core.group_education_principal"
+        <menuitem id="mis_website_menu_root" name="Web Gallery"
               sequence="10"/>
 
-        <menuitem id="website_configuration_main_menu" name="Gallery"
+        <menuitem id="website_configuration_main_menu" name="Gallery" groups="mis_education_core.group_education_principal"
               parent="mis_website_menu_root" sequence="10"/>
 
 		<menuitem id="website_configuration_gallery_menu" name="Gallery"
@@ -23,6 +23,10 @@
         <menuitem id="website_banner_annoncements_menu" name="Web Banner"
               parent="website_configuration_main_menu"
               action="website_banner_announcements_action" sequence="40"/>
+
+        <menuitem id="website_magazine_menu" name="E-Magazine"
+              parent="mis_website_menu_root"
+              action="website_magazine_action" sequence="20"/>
 
 
     </data>

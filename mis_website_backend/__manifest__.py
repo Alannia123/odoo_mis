@@ -16,6 +16,7 @@
         'views/program_gallery_view.xml',
         'views/web_info_view.xml',
         'views/web_video_view.xml',
+        'views/magazine_view.xml',
         'views/menu.xml',
     ],
      'assets': {

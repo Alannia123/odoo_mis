@@ -8,7 +8,8 @@
                 <field name="create_date"/>
                 <field name="user_id"/>
                 <field name="task_desc"/>
-                <field name="scheduled_date" widget="remaining_days"/>
+                <field name="scheduled_date" widget="remaining_days" invisible="state in ['done']"/>
+                <field name="completion_date"  />
                 <field name="state" widget="badge"
                     decoration-success="state == 'done'"
                     decoration-muted="state == 'draft'"
@@ -59,6 +60,7 @@
                         <group>
                             <field name="user_id" options="{'no_create':True,'no_open':True}" required="1" readonly="state != 'draft'"/>
                             <field name="scheduled_date" required="1" readonly="state != 'draft'"/>
+                            <field name="completion_date"  readonly="1" invisible="state != 'done'"/>
                         </group>
                     </group>
                     <group>

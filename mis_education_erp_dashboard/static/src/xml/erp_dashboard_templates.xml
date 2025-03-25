@@ -4,7 +4,8 @@
     <t t-name="EducationalDashboard">
         <div class="oh_dashboards">
             <div class="row main-section" t-ref="root">
-                <div class="col-md-3 col-sm-3"  t-on-click="onclick_application_list">
+                <div class="col-md-3 col-sm-3"  >
+<!--                <div class="col-md-3 col-sm-3"  t-on-click="onclick_application_list">-->
                     <div class="content-card" style="width: 288px;">
                         <div class="content-card-body">
                             <div class="stat-widget-one">
@@ -24,7 +25,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-3" t-on-click="onclick_student_list">
+<!--                <div class="col-md-3 col-sm-3" t-on-click="onclick_student_list">-->
+                <div class="col-md-3 col-sm-3">
                     <div class="content-card" style="width: 288px;">
                         <div class="content-card-body">
                             <div class="stat-widget-one">
@@ -45,7 +47,8 @@
                     </div>
                 </div>
                 <!-- Tile that shows the number of faculties -->
-                <div class="col-md-3 col-sm-3" t-on-click="onclick_faculty_list">
+<!--                <div class="col-md-3 col-sm-3" t-on-click="onclick_faculty_list">-->
+                <div class="col-md-3 col-sm-3" >
                     <div class="content-card" style="width: 288px;">
                         <div class="content-card-body">
                             <div class="stat-widget-one">
@@ -102,7 +105,8 @@
                     </div>
                 </div>
                 <!-- Tile that shows the number of amenities -->
-               <div class="col-md-3 col-sm-3"  t-on-click="onclick_amenity_list">
+<!--               <div class="col-md-3 col-sm-3"  t-on-click="onclick_amenity_list">-->
+               <div class="col-md-3 col-sm-3"  >
                    <div class="content-card" style="width: 288px;">
                        <div class="content-card-body">
                            <div class="stat-widget-one">

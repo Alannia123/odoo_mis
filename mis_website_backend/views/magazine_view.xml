@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="website_magazine_action_form" model="ir.ui.view">
+			<field name="name">school.magazine.form</field>
+			<field name="model">school.magazine</field>
+			<field name="arch" type="xml">
+				<form string="Photo Gallery">
+
+						<header>
+							<button name="action_post" string="Action Post"
+									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
+									invisible="state not in ('draft')"
+									class="oe_highlight"/>
+							<field name="state" widget="statusbar"/>
+						</header>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+<!--								<field name="division_id"/>-->
+								<field name="teacher_id" readonly="1"/>
+							</group>
+							<group>
+								<field name="upload_date" readonly="1"/>
+								<field name="file_name" invisible="1"/>
+								<field name="pdf_file" filename="file_name"/>
+								<field name="cover_photo" widget="image" />
+							</group>
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids"/>
+						<field name="activity_ids"/>
+						<field name="message_ids"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="website_magazine_action_tree" model="ir.ui.view">
+			<field name="name">school.magazine.tree</field>
+			<field name="model">school.magazine</field>
+			<field name="arch" type="xml">
+				<tree string="E-Magazine">
+<!--					<header>-->
+<!--						<button name="action_generate_leads" type="object" class="o_button_generate_leads"-->
+<!--							string="Generate Leads" groups="sales_team.group_sale_manager" display="always"-->
+<!--							invisible="context.get('active_model', 'program.gallery') != 'program.gallery'"/>-->
+<!--					</header>-->
+					<field name="name" />
+					<field name="division_id" />
+					<field name="upload_date" />
+                    <field name="teacher_id" />
+                    <field name="state" widget="badge"
+                    decoration-success="state == 'post'"
+                    decoration-muted="state == 'draft'"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="website_magazine_action" model="ir.actions.act_window">
+			<field name="name">E-Magazine</field>
+			<field name="res_model">school.magazine</field>
+<!--			<field name="context">{'search_default_state':1}</field>-->
+			<field name="view_mode">tree,form</field>
+		</record>
+
+	</data>
+</odoo>

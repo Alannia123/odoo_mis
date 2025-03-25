@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--    About MIS-->
+     <template id="template_magazine_list" name="Magazine List">
+        <t t-call="website.layout">
+            <div class="container">
+                <h2 class="text-center">E-Magazines</h2>
+                <div class="row">
+                    <t t-foreach="magazines" t-as="magazine">
+                        <div class="col-md-3 magazine-item">
+                            <a t-att-href="'/e-magazine/view/%s' % magazine.id">
+                                <div class="magazine-card">
+                                    <div class="card mb-4 animated-image">
+                                    <img t-att-src="image_data_uri(magazine.cover_photo)" height="300" wigth="100" />
+                                    </div>
+                                    <h4 t-esc="magazine.name"/>
+                                    <span t-esc="magazine.upload_date" class="text-muted"/>
+                                </div>
+                            </a>
+                        </div>
+                    </t>
+                </div>
+            </div>
+            <style>
+                .magazine-item { text-align: center; margin-bottom: 20px; }
+                .magazine-card { padding: 15px; border: 1px solid #ddd; border-radius: 8px; transition: transform 0.3s; }
+                .magazine-card:hover { transform: scale(1.05); }
+            </style>
+        </t>
+    </template>
+         <template id="template_magazine_view" name="Magazine View">
+                <t t-call="website.layout">
+                    <div class="container">
+                        <h2 class="text-center" t-esc="magazine.name"/>
+                        <div class="text-center text-muted" t-esc="magazine.upload_date"/>
+                        <div class="pdf-container text-center">
+<!--                            <embed t-att-src="pdf_data_uri" type="application/pdf" width="100%" height="600px"/>-->
+<!--                            <iframe t-att-src="pdf_url" width="100%" height="600px"></iframe>-->
+<!--                            <iframe src="/mis_website/static/src/img/19g6DyySCeMQYJYh47h33hpUJxgWuy7Cy6zFqETC.pdf" width="100%" height="600px"></iframe>-->
+                            <iframe src="/web/content/2845?download=false" width="100%" height="600px"></iframe>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a t-att-href="'/web/content/2845?download=true'" class="btn btn-primary">Download PDF</a>
+                        </div>
+                    </div>
+                    <style>
+                        .pdf-container { margin-top: 20px; }
+                    </style>
+                </t>
+            </template>
+</odoo>

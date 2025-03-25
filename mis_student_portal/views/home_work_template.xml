@@ -8,9 +8,9 @@
                 <t t-set="title">All Homeworks</t>
             </t>
             <div class="container glow-background">
-            <h4>Today Homeworks</h4>
-            <div t-if="not today_homework" class="alert alert-warning" role="alert">
-                There are currently no homeworks for Today.
+            <h5>Today Homeworks</h5>
+            <div t-if="not today_homework" class="alert alert-warning" role="alert" style="font-size: 10 pt">
+                No homeworks for Today.
             </div>
             <t t-if="today_homework">
                 <table class="table table-sm table-striped table-responsive">
@@ -31,9 +31,9 @@
                 </table>
             </t>
 
-            <h4>All Homeworks</h4>
+            <h5>All Homeworks</h5>
             <div t-if="not homeworks" class="alert alert-warning" role="alert">
-                There are currently no homeworks for You.
+                No more homeworks for You.
             </div>
             <t t-if="homeworks">
                 <table class="table table-sm table-striped table-responsive">
@@ -73,8 +73,9 @@
                 <table class="table table-sm table-striped table-responsive">
                     <thead>
                         <tr>
-                            <th>Subject #</th>
+                            <th>Subject</th>
                             <th class="text-center">Homework Desc</th>
+                            <th class="text-center">File</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,6 +83,7 @@
                             <tr>
                                 <td><span t-field="line.subject_id.name"/></td>
                                 <td ><span t-field="line.homework"/></td>
+                                <td ><span t-field="line.attachment_id.name"/></td>
                             </tr>
                         </t>
                     </tbody>

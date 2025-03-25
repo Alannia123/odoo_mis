@@ -7,3 +7,4 @@ from . import photos_evets
 from . import school_commitee
 from . import mis_student
 from . import online_application
+from . import magazine

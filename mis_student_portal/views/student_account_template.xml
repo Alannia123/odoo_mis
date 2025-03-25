@@ -29,7 +29,7 @@
                                 background:#808000;
                         }
                         .portal-tile-color-att{
-                                background:rgb(59, 102, 86);
+                                background:#ff4da6;
                         }
                         .portal-tile-color-comm{
                                 background:#2952a3;
@@ -332,6 +332,7 @@
         <t t-call="portal.frontend_layout">
             <t t-set="is_portal" t-value="True"/>
 
+
             <div t-if="not no_breadcrumbs and not my_details and not breadcrumbs_searchbar" class="o_portal container mt-3">
                 <div class="d-flex justify-content-between align-items-center">
                     <t t-call="portal.portal_breadcrumbs"/>
@@ -374,12 +375,12 @@
   display: flex;
   align-items: center;
   gap: 8px; /* Space between icon and text */
-  background: #ff5733;
+  background: #009900;
   color: white;
   padding: 10px 15px;
   border: none;
   border-radius: 15px;
-  font-size: 12px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -389,14 +390,6 @@
         </style>
             <div id="wrap" class='o_portal_wrap'>
                 <div class="container pt-3">
-<!--                    <div class="row">-->
-<!--&lt;!&ndash;                        <div class="col" width="20%">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <img  t-attf-src="/mis_student_portal/static/src/img/school.jpeg" width="40" height="60" alt="Document" />&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="col" width="50%">&ndash;&gt;-->
-<!--                            <span class="text-center"> <h3 class="animated-heading-mob">MIS School</h3></span>-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--                    </div>-->
                     <t t-if="my_details">
                         <div class="wrapper col-12 d-flex flex-wrap justify-content-between align-items-center">
                             <h3 class="my-3" style="color:blue;">My Dashboard</h3>
@@ -524,11 +517,12 @@
         </t>
 
         <t t-else="">
-            <div id="o_main_nav" t-att-id="None" class="o_main_nav container flex-wrap justify-content-between">
-                <img  t-attf-src="/mis_student_portal/static/src/img/school.jpeg" width="40" height="60" alt="Document" />
+            <div id="o_main_nav" t-att-id="None" style="background:#f2f2f2;" class="o_main_nav container flex-wrap justify-content-between">
+
+                <img  t-attf-src="/mis_student_portal/static/src/img/school.jpeg" width="50" height="60" alt="Document" />
                 <h3 class="animated-heading-mob" style="padding-right:100 px">MIS School</h3>
                 <a href="/web/session/logout" class="logout-btn">
-                    <i class="fa fa-sign-out"></i>
+                    <i class="fa fa-angle-double-right"></i>
                 </a>
             </div>
         </t>
