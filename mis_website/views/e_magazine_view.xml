@@ -4,8 +4,9 @@
 <!--    About MIS-->
      <template id="template_magazine_list" name="Magazine List">
         <t t-call="website.layout">
-            <div class="container">
-                <h2 class="text-center">E-Magazines</h2>
+            <div class="container glow-background">
+                <p class="text-center" style="color:#174f5c;">E-Magazines</p>
+                <br></br>
                 <div class="row">
                     <t t-foreach="magazines" t-as="magazine">
                         <div class="col-md-3 magazine-item">
@@ -23,6 +24,27 @@
                 </div>
             </div>
             <style>
+                @keyframes wavy {
+                      0% { text-decoration-style: solid; }
+                      25% { text-decoration-style: dotted; }
+                      50% { text-decoration-style: dashed; }
+                      75% { text-decoration-style: double; }
+                      100% { text-decoration-style: wavy; }
+                    }
+
+                    p {
+                      font-size: calc(1.375rem + 1.5vw);
+                      text-decoration: underline;
+                      text-decoration-color: blue;
+                      animation: wavy 1s infinite;
+<!--                        font-weight: bold;-->
+                      color: white;
+                      -webkit-text-stroke: 1px black; /* Border */
+                      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+
+
+}
+
                 .magazine-item { text-align: center; margin-bottom: 20px; }
                 .magazine-card { padding: 15px; border: 1px solid #ddd; border-radius: 8px; transition: transform 0.3s; }
                 .magazine-card:hover { transform: scale(1.05); }
@@ -31,7 +53,7 @@
     </template>
          <template id="template_magazine_view" name="Magazine View">
                 <t t-call="website.layout">
-                    <div class="container">
+                    <div class="container glow-background">
                         <h2 class="text-center" t-esc="magazine.name"/>
                         <div class="text-center text-muted" t-esc="magazine.upload_date"/>
                         <div class="pdf-container text-center">

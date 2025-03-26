@@ -19,7 +19,7 @@
                             font-size: 18px;
                         }
             </style>
-        <div class="container text-center mt-5">
+        <div class="container text-center mt-5 glow-background">
             <h2>Download Our App</h2>
             <p>Scan the QR code below to download our MIS School app:</p>
             <img src="/mis_website/static/src/img/qr-code.png"

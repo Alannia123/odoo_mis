@@ -18,14 +18,14 @@
 					<sheet>
 						<group>
 							<group>
-								<field name="name"/>
+								<field name="name" readonly="state == 'done'"/>
 								<field name="teacher_id" readonly="1" options="{'no_create':True,'no_open':True}"/>
 								<field name="attachment_id" readonly="1" options="{'no_create':True,'no_open':True}"/>
 							</group>
 							<group>
 								<field name="upload_date" readonly="1"/>
 								<field name="file_name" invisible="1"/>
-								<field name="pdf_file" filename="file_name"/>
+								<field name="pdf_file" filename="file_name" readonly="state == 'done'"/>
 								<field name="cover_photo" widget="image" />
 							</group>
 						</group>
