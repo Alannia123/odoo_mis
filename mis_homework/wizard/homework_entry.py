@@ -4,6 +4,7 @@
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 from datetime import date
+import base64
 
 
 class HomeWorkWizard(models.TransientModel):
@@ -19,6 +20,15 @@ class HomeWorkWizard(models.TransientModel):
     file_name = fields.Char('File Name')
     file_upload = fields.Binary('File Upload')
     erase_exist = fields.Boolean('Erase Existing Homework')
+
+
+    @api.onchange('file_upload')
+    def _check_pdf(self):
+        """ Validate that the uploaded file is a PDF """
+        if self.file_upload:
+            decoded_file = base64.b64decode(self.file_upload)  # Decode the binary file
+            if not decoded_file.startswith(b"%PDF-"):  # Check PDF magic number
+                raise ValidationError("Only PDF files are allowed!")
 
 
     def create_homework_entry(self):

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_student_timetable" name="My Sales Orders">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Timetable</t>
+            </t>
+            <div class="container glow-background">
+            <h5>Timetable</h5>
+            <div class="col-lg-12 col-md-6">
+                <div class="card mb-4 animated-image">
+                    <img t-att-src="image_data_uri(timetable_id.pdf_file)" height="700" wigth="800" />
+                </div>
+            </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

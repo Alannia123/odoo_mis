@@ -16,3 +16,14 @@ class CustomLoginRedirect(Website):
             else:
                 redirect = '/my'
         return super()._login_redirect(uid, redirect=redirect)
+
+
+
+
+
+class CustomLogout(http.Controller):
+    @http.route('/web/session/logout', type='http', auth="public", website=True)
+    def logout(self, redirect='/web/login'):
+        request.session.logout()
+        return request.redirect(redirect)
+

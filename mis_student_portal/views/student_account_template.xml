@@ -240,7 +240,7 @@
                                 <p><b>Homeworks</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/my/tickets" class="portal-small-tile portal-tile-color-time">
+                                <a href="/school/timetable" class="portal-small-tile portal-tile-color-time">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-clock-o"></i>
                                 </a>
@@ -257,7 +257,7 @@
                                 <p><b>Attendance</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/announcements" class="portal-small-tile portal-tile-color-comm">
+                                <a href="/school/class_communation" class="portal-small-tile portal-tile-color-comm">
                                     <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
 
                                     <i class="fa fa-comments"></i>
@@ -385,7 +385,7 @@
 }
 
 .logout-btn i {
-  font-size: 12px;
+  font-size: 22px;
 }
         </style>
             <div id="wrap" class='o_portal_wrap'>

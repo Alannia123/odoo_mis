@@ -83,22 +83,14 @@
                             <tr>
                                 <td><span t-field="line.subject_id.name"/></td>
                                 <td ><span t-field="line.homework"/></td>
-                                <td ><span t-field="line.attachment_id.name"/></td>
+                                <td >
+                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
+                                </td>
                             </tr>
                         </t>
                     </tbody>
                 </table>
-<!--            <div id="invoice_communication" class="mt-4">-->
-<!--                        <h3>Communication history</h3>-->
-<!--                        <t t-call="portal.message_thread"/>-->
-<!--                    </div>-->
-            <t t-call="mail.portal_chatter">
-                <t t-set="res_model" t-value="'student.homework'" />
-                <t t-set="res_id" t-value="home_work_id.id" />
             </t>
-            </t>
-
-
     </template>
 
 </odoo>

@@ -90,10 +90,48 @@ class CustomerPortalCustom(CustomerPortal):
 
         return request.render("mis_student_portal.portal_open_homeworks", {'home_work_id': home_work_id})
 
+    @route(['/school/timetable'], type='http', auth="user", website=True)
+    def get_school_class_timetable(self, **kw):
+        print('ghhgh33333333------======all_homeworks====', request.env.user.partner_id)
+        today_date = date.today()
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        print('ghhgh33333333------======all_homeworks====', student_id)
+        timetable_id = request.env['education.timetable'].sudo().search([('class_division_id', '=', student_id.class_division_id.id),
+                                                                       ('academic_year_id.enable', '=', True)])
 
-class CustomLogout(http.Controller):
-    @http.route('/web/session/logout', type='http', auth="public", website=True)
-    def logout(self, redirect='/web/login'):
-        request.session.logout()
-        return request.redirect(redirect)
+        return request.render("mis_student_portal.portal_student_timetable", {'timetable_id': timetable_id})
 
+    @route(['/school/class_communation'], type='http', auth="user", website=True)
+    def get_school_all_class_comm(self, **kw):
+        print('ghhgh33333333------======all_homeworks====', request.env.user.partner_id)
+        today_date = date.today()
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        print('ghhgh33333333------======all_homeworks====', student_id)
+        class_comm_ids = request.env['teacher.class.parent'].sudo().search(
+                                        [('class_div_id', '=', student_id.class_division_id.id)])
+        today_class_comm_ids = request.env['teacher.class.parent'].sudo().search(
+                    [('class_div_id', '=', student_id.class_division_id.id), ('create_date', '=', today_date)])
+        print('ghhgh33333333------======all_homeworks====', class_comm_ids)
+
+        return request.render("mis_student_portal.portal_all_class_comms", {'class_comms': class_comm_ids,
+                                                                          'today_class_comms': today_class_comm_ids})
+
+    @route(['/class_comm/get_comm/<int:comm_id>'], type='http', auth="user", website=True)
+    def get_class_get_comms(self, comm_id=None, **kw):
+        # homework_id = int(work_id)
+        print('ghhgh33333333------======all_homeworks===homework_id=', comm_id)
+        class_com_id = request.env['teacher.class.parent'].sudo().browse(comm_id)
+        print('ghhgh33333333------======all_homeworks====', class_com_id)
+
+        return request.render("mis_student_portal.portal_open_communication", {'class_com_id': class_com_id})
+
+
+    @http.route(['/student/add_comment'], type='http', auth="user", methods=['POST'], website=True)
+    def add_comment(self, res_id, model, message, **kwargs):
+        if res_id and model and message:
+            record = request.env[model].sudo().browse(int(res_id))
+            if record.exists():
+                record.message_post(body=message, message_type='comment', subtype_xmlid="mail.mt_comment")
+        return request.redirect('/homework/get_homework/%s' % res_id)

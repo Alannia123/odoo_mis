@@ -7,6 +7,27 @@
             <t t-call="portal.portal_searchbar">
                 <t t-set="title">Student Info</t>
             </t>
+            <style>
+                    table {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+<!--    border-collapse: collapse;-->
+    width: 100%;
+}
+
+<!--th, td {-->
+<!--&lt;!&ndash;    border: 1px solid black;&ndash;&gt;-->
+<!--    padding: 3px;-->
+<!--    text-align: left;-->
+<!--}-->
+
+<!--th {-->
+<!--    background-color: #f2f2f2;-->
+<!--    font-weight: bold;-->
+<!--}-->
+
+                </style>
             <div class="glow-background">
                 <div >
                     <t t-if="student.image_1920">
@@ -23,41 +44,45 @@
                     </div>
                 </div>
                 <hr/>
-                <div style="margin-left:10px;">
+                <div style="margin-left:4px;">
                     <div>
                         <h6 style="color:#2980B9">
                             <u>BASIC DETAILS</u>
                         </h6>
                         <div>
-                            <div class="row">
-                                <div class="col-sm">
-                                    <label style="font-size: 12 pt;">Gender</label>
-                                    <span style="margin-left:100px;font-size: 10 pt;" t-esc="student.gender"/>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm">
-                                    <label>Date of Birth</label>
-                                    <span style="margin-left:60px"
-                                          t-esc="student.date_of_birth"/>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm">
-                                    <label>Blood Group</label>
-                                    <span style="margin-left:60px"
-                                          t-esc="student.blood_group"/>
-                                </div>
-                                <div class="col-sm">
-                                    <label>Address :</label><br></br>
-                                    <span style="margin-left:20px" t-esc="student.street"/><br></br>
-                                    <span style="margin-left:20px" t-esc="student.street2"/><br></br>
-                                    <span style="margin-left:20px" t-esc="student.city"/>,<t t-esc="student.state_id.name"></t><br></br>
-                                    <span style="margin-left:20px" t-esc="student.country_id.name"/>-<t t-esc="student.zip"></t>
-                                </div>
-                            </div>
-                        </div>
+                            <table class="no-border">
+                                <tr class="no-border">
+                                    <td class="no-border"><b>Division</b></td>
+                                    <td class="no-border">:</td>
+                                    <td class="no-border"><t t-esc="student.class_division_id.name"></t></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Gender</b></td>
+                                    <td>:</td>
+                                    <td><t t-esc="student.gender"></t></td>
+                                </tr>
+                                <tr>
+                                    <td><b>DOB</b></td>
+                                    <td>:</td>
+                                    <td><t t-esc="student.date_of_birth"></t></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Blood Group</b></td>
+                                    <td>:</td>
+                                    <td><t t-esc="student.blood_group"></t></td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top;"><b>Address</b></td>
+                                    <td style="vertical-align: top;">:</td>
+                                    <td>
+                                        <t t-esc="student.street"></t>,<br></br><t t-esc="student.street2"></t>,<br/>
+                                        <t t-esc="student.city"></t>,<t t-esc="student.state_id.name"></t>,<br></br>
+                                        <t t-esc="student.country_id.name"></t>-<t t-esc="student.zip"></t>,
+                                    </td>
+                                </tr>
+                            </table>
                     </div>
+                </div>
                 </div>
 
                 <br/>

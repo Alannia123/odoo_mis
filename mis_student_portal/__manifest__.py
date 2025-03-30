@@ -17,6 +17,7 @@
         'views/announce_template.xml',
         'views/home_work_template.xml',
         'views/student_info_temp.xml',
+        'views/time_table_template.xml',
 
     ],
 
