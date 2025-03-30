@@ -6,7 +6,7 @@ from random import randint
 
 class TeacherStudentClass(models.Model):
     _name = 'teacher.student.parent'
-    _description = "Class To Parent Communication"
+    _description = "Teacher To Parent Communication"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _order = "id desc"
 

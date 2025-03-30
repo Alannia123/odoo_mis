@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="portal_all_class_comms" name="My Sales Orders">
+    <template id="portal_stu_teacher_class_comms" name="My Sales Orders">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
@@ -9,10 +9,10 @@
             </t>
             <div class="container glow-background">
             <h5>Today Communications</h5>
-            <div t-if="not today_class_comms" class="alert alert-warning" role="alert" style="font-size: 10 pt">
+            <div t-if="not today_teacher_comm_ids" class="alert alert-warning" role="alert" style="font-size: 10 pt">
                 No Communications for Today.
             </div>
-            <t t-if="today_class_comms">
+            <t t-if="today_teacher_comm_ids">
                 <table class="table table-sm table-striped table-responsive">
                     <thead>
                         <tr>
@@ -21,9 +21,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="today_class_comms" t-as="comms">
+                        <t t-foreach="today_teacher_comm_ids" t-as="comms">
                             <tr>
-                                <td><a t-attf-href="/class_comm/get_comm/#{comms.id}" ><t t-out="comms.name"/></a></td>
+                                <td><a t-attf-href="/teacher_comm/get_comm/#{comms.id}" ><t t-out="comms.name"/></a></td>
                                 <td class="text-center" t-esc="comms.create_date"/>
                             </tr>
                         </t>
@@ -32,10 +32,10 @@
             </t>
 
             <h5>All Class Communications</h5>
-            <div t-if="not class_comms" class="alert alert-warning" role="alert">
+            <div t-if="not teacher_comm_ids" class="alert alert-warning" role="alert">
                 No more Communications for You.
             </div>
-            <t t-if="class_comms">
+            <t t-if="teacher_comm_ids">
                 <table class="table table-sm table-striped table-responsive">
                     <thead>
                         <tr >
@@ -45,11 +45,11 @@
                             <th class="text-center">Date</th>
                         </tr>
                     </thead>
-                    <t t-foreach="class_comms" t-as="comms">
+                    <t t-foreach="teacher_comm_ids" t-as="teacher_comm">
                         <tr>
-                            <td><a t-attf-href="/class_comm/get_comm/#{comms.id}" ><t t-out="comms.name"/></a></td>
+                            <td><a t-attf-href="/class_comm/get_comm/#{teacher_comm.id}" ><t t-out="teacher_comm.name"/></a></td>
                             <td class="text-center">
-                                <span t-field="comms.create_date" />
+                                <span t-field="teacher_comm.create_date" />
                             </td>
                         </tr>
                     </t>
@@ -59,7 +59,7 @@
         </t>
     </template>
 
-    <template id="portal_open_communication" name="My Sales Orders">
+    <template id="portal_open_teacher_communication" name="My Sales Orders">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
             <t t-call="portal.portal_searchbar">
@@ -67,17 +67,17 @@
             </t>
             <a t-attf-href="/school/class_communation" ><h5 style="color:blue;">Communications</h5></a>
             <div >
-                <span><b>Title :</b></span><span t-field="class_com_id.name"></span><br></br>
-                <span><b>Faculty :</b></span><span t-field="class_com_id.class_div_id.faculty_id.name"></span><br></br>
-                <span><b>Message :</b></span><br></br><span style="padding-left:20 px" t-field="class_com_id.desc"></span>
+                <span><b>Title :</b></span><span t-field="teacher_com_id.name"></span><br></br>
+                <span><b>Faculty :</b></span><span t-field="teacher_com_id.class_div_id.faculty_id.name"></span><br></br>
+                <span><b>Message :</b></span><br></br><span style="padding-left:20 px" t-field="teacher_com_id.desc"></span>
             </div>
             <br></br>
             <!-- Chatter Section -->
             <div id="portal_chatter">
                 <h4>Comments</h4>
-                <t t-if="class_com_id.message_ids">
+                <t t-if="teacher_com_id.message_ids">
                     <ul class="list-group">
-                        <t t-foreach="class_com_id.message_ids" t-as="message">
+                        <t t-foreach="teacher_com_id.message_ids" t-as="message">
                             <li class="list-group-item">
                                 <strong><t t-esc="message.author_id.name"/></strong>:
                                 <t t-esc="message.body"/>
@@ -89,8 +89,8 @@
                 </t>
                 <form action="/student/add_comment_class_comm" method="POST"  enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                    <input type="hidden" name="res_id" t-att-value="class_com_id.id"/>
-                    <input type="hidden" name="model" value="teacher.class.parent"/>
+                    <input type="hidden" name="res_id" t-att-value="teacher_com_id.id"/>
+                    <input type="hidden" name="model" value="teacher.student.parent"/>
                     <textarea name="message" class="form-control" required="1" placeholder="Add a comment..."></textarea>
                     <button type="submit" class="btn btn-success mt-2">
                         <i class="fa fa-comment"></i> Post Comment

@@ -31,10 +31,10 @@
             <div class="glow-background">
                 <div >
                     <t t-if="student.image_1920">
-                        <div style="padding-left: 40 px;">
+                        <div style="padding-left: 100 px;">
                             <img class="rounded-circle mr4 float-center o_portal_contact_img"
                                  t-att-src="image_data_uri(student.image_1920)"
-                                 style="width:250px;height:250px;"/>
+                                 style="width:180px;height:250px;"/>
                         </div>
                     </t>
                     <div style="padding-top:20px;margin-left:40 px">

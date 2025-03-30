@@ -24,17 +24,38 @@ class home_controller(http.Controller):
                             <div style="text-align:center;">
                                 <h4 style="color:#331a00;"><u>{date}</u></h2>
                                 <span style="color: {notice.color};"><strong >{notice.anounce}</strong>.</span>
-                            </div><br/><br/>
+                            </div><br/>
                             """
-
-
-        print('NOFGHDFHGD',display_notice)
+        today = datetime.today().strftime('%m-%d')  # Get today's MM-DD format
+        query = """
+                    SELECT id
+                    FROM education_student
+                    WHERE TO_CHAR(date_of_birth, 'MM-DD') = %s
+                """
+        request.env.cr.execute(query, (today,))
+        stu_birth_ids = request.env.cr.fetchall()
+        print('DDDDWWWWWWWWWWWWWW',stu_birth_ids)
+        birth_raw_html = ""
+        sr_no = 1
+        for stu_id in stu_birth_ids:
+            print('dddddddddgggggggggggggggg',stu_id)
+            student_id = request.env['education.student'].browse(stu_id)
+            if student_id:
+                birth_raw_html = birth_raw_html + f"""
+                                <div style="text-align:left;">
+                                    <span style="color: #001a00;">{sr_no})<strong >{student_id.name}({student_id.class_division_id.name})</strong>.</span>
+                                </div>
+                                """
+                sr_no = sr_no + 1
+        print('eeeeeeeeee',birth_raw_html)
+        birth_raw_html = birth_raw_html + f"""<br/><h1 class="birthday-wish text-center">Happy Birthday! 🎉</h1>"""
         vals = {
             'today_date': today_date,
             'banner': request.env['banner.info'].sudo().search([('enable', '=', True)], limit=1),
             'notices': raw_html,
+            'birth_raw_html': birth_raw_html,
+            'today_births': stu_birth_ids,
             # 'photos': request.env['program.gallery.photo'].sudo().search([]),
             # 'events': request.env['program.events'].sudo().search([]),
         }
-        print('LODFFFFFFFFFFFFFFFFF',vals)
         return request.render('mis_website.mis_home_page', vals)

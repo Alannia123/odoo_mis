@@ -270,6 +270,7 @@
         <field name="model">education.student</field>
         <field name="arch" type="xml">
             <search string="Search Students">
+                <field name="name"/>
                 <field name="class_division_id"/>
                 <field name="medium_id"/>
                 <field name="sec_lang_id"/>

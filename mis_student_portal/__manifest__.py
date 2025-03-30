@@ -18,6 +18,8 @@
         'views/home_work_template.xml',
         'views/student_info_temp.xml',
         'views/time_table_template.xml',
+        'views/class_comm.xml',
+        'views/teacher_stu_view.xml',
 
     ],
 

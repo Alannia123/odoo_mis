@@ -439,14 +439,71 @@ aa:hover span:nth-child(6)
 
         <!--Birthday-->
                         <div class="col-lg-3 s_col_no_bgcolor">
-                          <div class="card bg-white h-100">
-                              <img class="card-img-top" src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" alt=""
-                                   loading="lazy" data-original-id="73" data-original-src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" data-mimetype="image/jpeg" style=""></img>
+                          <div class="card bg-white h-100" t-attf-style="background: 'url(/mis_website/static/src/img/birth.jpg)'">
+                              <h1 class="birthday-glow text-center">Wishing You a Wonderful Day! 🎂</h1>
+                                <h1 class="birthday-bounce text-center">Have a Fantastic Year Ahead! 🎈</h1>
+<!--                                <h1 class="birthday-gradient">Cheers to Another Amazing Year! 🎁</h1>-->
+<!--                              <img class="card-img-top" src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" alt=""-->
+<!--                                   loading="lazy" data-original-id="73" data-original-src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" data-mimetype="image/jpeg" style=""></img>-->
                             <div class="card-body">
+                                <style>
+                                    .birthday-wish {
+    font-family: "Pacifico", cursive;
+    font-size: 24px;
+    padding-top: 24px;
+    color: #ff4081;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ff4081, 0 0 10px #ff79b0; }
+    50% { text-shadow: 0 0 20px #ff4081, 0 0 30px #ff79b0; }
+    100% { text-shadow: 0 0 5px #ff4081, 0 0 10px #ff79b0; }
+}
+
+.birthday-glow {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff4081;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.birthday-bounce {
+    font-size: 26px;
+    font-weight: bold;
+    color: #8c7373;
+    animation: bounce 1s infinite;
+}
+.birthday-gradient {
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff7eb3, #ff4081, #ff79b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+                                </style>
                               <h5 style="color:#3f4475;">Today's <strong>Birthday</strong>-<t t-out="today_date"></t></h5>
-                                <marquee width="100%" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
-                                    <b>Today No One's Birthday</b>
-                                </marquee>
+
+
+                                <t t-if="not today_births">
+                                    <marquee width="100%" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                                        <b>Today No One's Birthday</b>
+                                    </marquee>
+                                </t>
+                                <t t-else="">
+                                    <marquee width="100%" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+                                        <t t-raw="birth_raw_html"/>
+                                    </marquee>
+                                </t>
+
                             </div>
                           </div>
                         </div>
