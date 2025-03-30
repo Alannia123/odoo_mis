@@ -81,13 +81,12 @@
                             <li class="list-group-item">
                                 <strong><t t-esc="message.author_id.name"/></strong>:
                                 <t t-esc="message.body"/>
-                                <br/>
                                 <small><t t-esc="message.date"/></small>
                             </li>
                         </t>
                     </ul>
                 </t>
-                <form action="/student/add_comment_class_comm" method="POST"  enctype="multipart/form-data">
+                <form action="/teacher/add_comment_class_comm" method="POST"  enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                     <input type="hidden" name="res_id" t-att-value="teacher_com_id.id"/>
                     <input type="hidden" name="model" value="teacher.student.parent"/>

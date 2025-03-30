@@ -136,7 +136,7 @@ class CustomerPortalCustom(CustomerPortal):
         return request.redirect('/class_comm/get_comm/%s' % res_id)
 
     @route(['/school/teacher_communation'], type='http', auth="user", website=True)
-    def get_school_all_class_comm(self, **kw):
+    def get_school_all_teacher_comm(self, **kw):
         print('ghhgh33333333------======all_homeworks====', request.env.user.partner_id)
         today_date = date.today()
         partner = request.env.user.partner_id
@@ -160,7 +160,7 @@ class CustomerPortalCustom(CustomerPortal):
 
         return request.render("mis_student_portal.portal_open_teacher_communication", {'teacher_com_id': teacher_com_id})
 
-    @http.route(['/student/add_comment_class_comm'], type='http', auth="user", methods=['POST'], website=True)
+    @http.route(['/teacher/add_comment_class_comm'], type='http', auth="user", methods=['POST'], website=True)
     def add_comment_calss(self, res_id, model, message, **kwargs):
         if res_id and model and message:
             record = request.env[model].sudo().browse(int(res_id))

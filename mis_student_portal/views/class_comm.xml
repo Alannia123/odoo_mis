@@ -81,7 +81,6 @@
                             <li class="list-group-item">
                                 <strong><t t-esc="message.author_id.name"/></strong>:
                                 <t t-esc="message.body"/>
-                                <br/>
                                 <small><t t-esc="message.date"/></small>
                             </li>
                         </t>

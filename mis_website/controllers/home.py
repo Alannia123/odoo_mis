@@ -13,9 +13,7 @@ class home_controller(http.Controller):
     @http.route('/mis_home', type='http', auth='public', website=True)
     def mis_home_temp(self):
         display_notice = ''
-        print('SSSSSAAAAAAAAA',fields.Datetime.now())
         today_date = fields.Datetime.now().strftime('%d-%m-%Y')
-        print('XXXXXXSSSSSSS',today_date)
         notices= request.env['web.info'].sudo().search([('enable', '=', True)])
         raw_html = ""
         for notice in notices:
@@ -32,18 +30,20 @@ class home_controller(http.Controller):
                     FROM education_student
                     WHERE TO_CHAR(date_of_birth, 'MM-DD') = %s
                 """
-        request.env.cr.execute(query, (today,))
-        stu_birth_ids = request.env.cr.fetchall()
-        print('DDDDWWWWWWWWWWWWWW',stu_birth_ids)
+        # request.env.cr.execute(query, (today,))
+        # stu_birth_ids = request.env.cr.fetchall()
+        # print('DDDDWWWWWWWWWWWWWW',stu_birth_ids)
+        students = request.env['education.student'].sudo().search([])
+        birthday_students = students.filtered(lambda s: s.date_of_birth.strftime('%m-%d') == today)
         birth_raw_html = ""
         sr_no = 1
-        for stu_id in stu_birth_ids:
-            print('dddddddddgggggggggggggggg',stu_id)
-            student_id = request.env['education.student'].browse(stu_id)
+        for student_id in birthday_students:
+            print('dddddddddgggggggggggggggg',student_id)
+            # student_id = request.env['education.student'].browse(stu_id)
             if student_id:
                 birth_raw_html = birth_raw_html + f"""
                                 <div style="text-align:left;">
-                                    <span style="color: #001a00;">{sr_no})<strong >{student_id.name}({student_id.class_division_id.name})</strong>.</span>
+                                    <span style="color: #992600;">{sr_no})<strong >{student_id.name}({student_id.class_division_id.name})</strong>.</span>
                                 </div>
                                 """
                 sr_no = sr_no + 1
@@ -54,7 +54,7 @@ class home_controller(http.Controller):
             'banner': request.env['banner.info'].sudo().search([('enable', '=', True)], limit=1),
             'notices': raw_html,
             'birth_raw_html': birth_raw_html,
-            'today_births': stu_birth_ids,
+            'today_births': birthday_students,
             # 'photos': request.env['program.gallery.photo'].sudo().search([]),
             # 'events': request.env['program.events'].sudo().search([]),
         }
