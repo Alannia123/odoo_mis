@@ -81,8 +81,8 @@
                     <tbody>
                         <t t-foreach="home_work_id.work_line_ids" t-as="line">
                             <tr>
-                                <td><span t-field="line.subject_id.name"/></td>
-                                <td ><span t-field="line.homework"/></td>
+                                <td><span  t-field="line.subject_id.name"/></td>
+                                <td ><span style="background-color:#ffe6ff" t-field="line.homework"/></td>
                                 <td >
                                     <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
                                 </td>

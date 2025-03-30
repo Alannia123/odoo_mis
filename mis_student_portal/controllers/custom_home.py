@@ -27,3 +27,4 @@ class CustomLogout(http.Controller):
         request.session.logout()
         return request.redirect(redirect)
 
+

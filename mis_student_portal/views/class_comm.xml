@@ -69,12 +69,21 @@
             <div >
                 <span><b>Title :</b></span><span t-field="class_com_id.name"></span><br></br>
                 <span><b>Faculty :</b></span><span t-field="class_com_id.class_div_id.faculty_id.name"></span><br></br>
-                <span><b>Message :</b></span><br></br><span style="padding-left:20 px" t-field="class_com_id.desc"></span>
+                <span><b>Message :</b></span><br></br><span style="padding-left:20 px;background-color:#ffe6ff" t-field="class_com_id.desc"></span>
             </div>
             <br></br>
             <!-- Chatter Section -->
             <div id="portal_chatter">
                 <h4>Comments</h4>
+                <form action="/student/add_comment_class_comm" method="POST"  enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="res_id" t-att-value="class_com_id.id"/>
+                    <input type="hidden" name="model" value="teacher.class.parent"/>
+                    <textarea name="message" class="form-control" required="1" placeholder="Add a comment..."></textarea>
+                    <button type="submit" class="btn btn-success mt-2">
+                        <i class="fa fa-comment"></i> Post
+                    </button>
+                </form>
                 <t t-if="class_com_id.message_ids">
                     <ul class="list-group">
                         <t t-foreach="class_com_id.message_ids" t-as="message">
@@ -86,15 +95,7 @@
                         </t>
                     </ul>
                 </t>
-                <form action="/student/add_comment_class_comm" method="POST"  enctype="multipart/form-data">
-                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                    <input type="hidden" name="res_id" t-att-value="class_com_id.id"/>
-                    <input type="hidden" name="model" value="teacher.class.parent"/>
-                    <textarea name="message" class="form-control" required="1" placeholder="Add a comment..."></textarea>
-                    <button type="submit" class="btn btn-success mt-2">
-                        <i class="fa fa-comment"></i> Post Comment
-                    </button>
-                </form>
+
             </div>
 <!--            <div id="invoice_communication" class="mt-4">-->
 <!--                        <h3>Communication history</h3>-->

@@ -160,8 +160,8 @@ class CustomerPortalCustom(CustomerPortal):
 
         return request.render("mis_student_portal.portal_open_teacher_communication", {'teacher_com_id': teacher_com_id})
 
-    @http.route(['/teacher/add_comment_class_comm'], type='http', auth="user", methods=['POST'], website=True)
-    def add_comment_calss(self, res_id, model, message, **kwargs):
+    @http.route(['/teacher/add_comment_teacher_comm'], type='http', auth="user", methods=['POST'], website=True)
+    def add_comment_teacher(self, res_id, model, message, **kwargs):
         if res_id and model and message:
             record = request.env[model].sudo().browse(int(res_id))
             if record.exists():
