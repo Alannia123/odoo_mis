@@ -637,63 +637,72 @@ aa:hover span:nth-child(6)
                             <div class="row s_nb_column_fixed">
                                 <div class="col-lg-6 pt24 pb24 o_colored_level">
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <t t-set="president" t-value="member_id.member_line_ids.filtered(lambda x: x.designation == 'president')"/>
                                         <div class="col-lg-4 pb16 o_not_editable">
-                                            <img src="/mis_website/static/src/img/harry44.jpg" alt="img1" class="img-fluid rounded-circle " loading="lazy" style=""/>
+                                            <img t-att-src="image_data_uri(president.image)" style="border-radius: 30px; width: 200px; height: 200px; object-fit: cover;"/>
+<!--                                            <img src="/mis_website/static/src/img/harry44.jpg" alt="img1" class="img-fluid rounded-circle " loading="lazy" style=""/>-->
                                         </div>
                                         <div class="col-lg-8">
                                             <h4 class="o_default_snippet_text">Rev. Fr. Harry Immanual, OMI,</h4>
                                             <p class="o_default_snippet_text">
-                                                President of  the group of OMI schools,
-                                                St. Joseph Bhavan, Rudra Road,
-                                                St. Thomas Mount,
-                                                Chennai.
+                                                President of  the group of OMI schools,<br/>
+                                                St. Joseph Bhavan, Rudra Road,<br/>
+                                                St. Thomas Mount,<br/>
+                                                Chennai.<br/>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 pt24 pb24 o_colored_level">
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <t t-set="secretary" t-value="member_id.member_line_ids.filtered(lambda x: x.designation == 'secretary')"/>
                                         <div class="col-lg-4 pb16 o_not_editable">
-                                            <img src="/mis_website/static/src/img/aroc1.jpeg" alt="img1" class="img-fluid rounded-circle " loading="lazy" style=""/>
+                                            <img t-att-src="image_data_uri(secretary.image)" style="border-radius: 30px; width: 200px; height: 200px; object-fit: cover;"/>
+<!--                                            <img src="/mis_website/static/src/img/harry44.jpg" alt="img1" class="img-fluid rounded-circle " loading="lazy" style=""/>-->
                                         </div>
                                         <div class="col-lg-8">
                                             <h4 class="o_default_snippet_text">Rev. Fr. S.D. Arockia Raj, OMI</h4>
                                             <p class="o_default_snippet_text">
-                                                Secretary of the group of OMI Schools,
-                                                St. Eugene English Medium School
-                                                Boda, chhattisgarh
+                                                Secretary of the group of OMI Schools,<br/>
+                                                St. Eugene English Medium School<br/>
+                                                Boda, chhattisgarh<br/>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 pt24 pb24 o_colored_level">
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <t t-set="principal" t-value="member_id.member_line_ids.filtered(lambda x: x.designation == 'principal')"/>
                                         <div class="col-lg-4 pb16 o_not_editable">
-                                            <img src="/mis_website/static/src/img/arockia.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>
+                                            <img t-att-src="image_data_uri(principal.image)" style="border-radius: 30px; width: 200px; height: 200px; object-fit: cover;"/>
+<!--                                            <img src="/mis_website/static/src/img/arockia.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>-->
                                         </div>
                                         <div class="col-lg-8">
                                             <h4 class="o_default_snippet_text">Rev. Fr. Arockia Doss, OMI</h4>
                                             <p class="o_default_snippet_text">
-                                                Principal,
-                                                Mary Immaculate School,
-                                                Patilachadra,
-                                                Basirhat.
+                                                Principal,<br/>
+                                                Mary Immaculate School,<br/>
+                                                Patilachadra,<br/>
+                                                Basirhat.<br/>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 pt24 pb24 o_colored_level">
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <t t-set="manager" t-value="member_id.member_line_ids.filtered(lambda x: x.designation == 'manager')"/>
                                         <div class="col-lg-4 pb16 o_not_editable">
-                                            <img src="/mis_website/static/src/img/solomon.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>
+                                            <img t-att-src="image_data_uri(manager.image)" style="border-radius: 30px; width: 200px; height: 200px; object-fit: cover;"/>
+<!--                                            <img t-att-src="image_data_uri(employee.company_id.logo)" style="max-height:45pt;max-width:90%" alt="Company Logo"/>-->
+<!--                                            <img src="/mis_website/static/src/img/harry44.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>-->
                                         </div>
                                         <div class="col-lg-8">
                                             <h4 class="o_default_snippet_text">Rev. Fr. C. Solomon, OMI</h4>
                                             <p class="o_default_snippet_text">
-                                                Manager,
-                                                Mary Immaculate School,
-                                                Patilachadra,
-                                                Basirhat.
+                                                Manager,<br/>
+                                                Mary Immaculate School,<br/>
+                                                Patilachadra,<br/>
+                                                Basirhat.<br/>
                                             </p>
                                         </div>
                                     </div>

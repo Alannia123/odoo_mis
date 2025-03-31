@@ -33,6 +33,7 @@ class home_controller(http.Controller):
         # request.env.cr.execute(query, (today,))
         # stu_birth_ids = request.env.cr.fetchall()
         # print('DDDDWWWWWWWWWWWWWW',stu_birth_ids)
+        member_id = request.env['school.members'].sudo().search([])
         students = request.env['education.student'].sudo().search([])
         birthday_students = students.filtered(lambda s: s.date_of_birth.strftime('%m-%d') == today)
         birth_raw_html = ""
@@ -55,6 +56,7 @@ class home_controller(http.Controller):
             'notices': raw_html,
             'birth_raw_html': birth_raw_html,
             'today_births': birthday_students,
+            'member_id': member_id,
             # 'photos': request.env['program.gallery.photo'].sudo().search([]),
             # 'events': request.env['program.events'].sudo().search([]),
         }
