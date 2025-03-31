@@ -7,7 +7,7 @@
                 <field name="name"/>
                 <field name="create_date"/>
                 <field name="user_id"/>
-                <field name="task_desc"/>
+<!--                <field name="task_desc"/>-->
                 <field name="scheduled_date" widget="remaining_days" invisible="state in ['done']"/>
                 <field name="completion_date"  />
                 <field name="state" widget="badge"

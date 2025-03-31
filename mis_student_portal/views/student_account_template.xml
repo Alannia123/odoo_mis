@@ -554,7 +554,7 @@
         <xpath expr="//*[@id='o_logout_divider']" position="before">
             <a href="/my/home" role="menuitem" class="dropdown-item ps-3">
                 <t t-if="request.env.user._is_internal()">
-                    <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/> Teacher's Dashboard
+                    <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/> Password Change
                 </t>
                 <t t-else="">
                     <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/> Student Dashboard

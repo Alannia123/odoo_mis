@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<record id="website_configuration_gallery_form" model="ir.ui.view">
+			<field name="name">school.members.form</field>
+			<field name="model">school.members</field>
+			<field name="arch" type="xml">
+				<form string="School Members">
+					<sheet>
+<!--						<div class="oe_button_box" name="button_box">-->
+<!--							<button class="oe_stat_button" type="object" name="view_and_add_attachments" icon="fa-paperclip" >-->
+<!--                    			<field name="attach_count" widget="statinfo" string="Photos Count"/>-->
+<!--                			</button>-->
+<!--						</div>-->
+						<group>
+							<group>
+								<field name="name"/>
+							</group>
+							<group>
+								<field name="create_date"/>
+							</group>
+						</group>
+
+						<notebook>
+							<page id="photo_list" name="Configuration">
+								<field name="member_line_ids" >
+									<tree editable="bottom" create="1">
+										<field name="name"/>
+										<field name="designation"/>
+										<field name="desc"/>
+										<field name="image" widget="image" class="oe_avatar" options="{'zoom': true, 'preview_image':'image_128'}"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids"/>
+						<field name="activity_ids"/>
+						<field name="message_ids"/>
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="website_configuration_gallery_tree" model="ir.ui.view">
+			<field name="name">school.members.tree</field>
+			<field name="model">school.members</field>
+			<field name="arch" type="xml">
+				<tree string="School Members" >
+<!--					<header>-->
+<!--						<button name="action_generate_leads" type="object" class="o_button_generate_leads"-->
+<!--							string="Generate Leads" groups="sales_team.group_sale_manager" display="always"-->
+<!--							invisible="context.get('active_model', 'program.gallery') != 'program.gallery'"/>-->
+<!--					</header>-->
+					<field name="name" />
+					<field name="create_date" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="website_members_gallery_action" model="ir.actions.act_window">
+			<field name="name">School Members</field>
+			<field name="res_model">school.members</field>
+<!--			<field name="context">{'search_default_state':1}</field>-->
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+
+
+	</data>
+</odoo>

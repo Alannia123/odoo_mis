@@ -308,7 +308,7 @@ aa:hover span:nth-child(6)
                     <div class="row " >
                         <div class="col-lg-3 s_col_no_bgcolor" style="border-color: #4080bf;">
                             <div class="card bg-white h-100 card-body">
-                                <h5 style="color:#3f4475;"><u>Notice Or Announcement</u></h5>
+                                <h5 style="color:#3f4475;"><u>Announcements</u></h5>
                                 <marquee width="100%" class="fixed-marquee2" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
                                     <t t-raw="notices"/>
                                 </marquee>
@@ -490,7 +490,7 @@ aa:hover span:nth-child(6)
 }
 
                                 </style>
-                              <h5 style="color:#3f4475;">Today's <strong>Birthday</strong>-<t t-out="today_date"></t></h5>
+                              <h5 style="color:#3f4475;">Today's <strong>Birthday</strong>=><t t-out="today_date"></t></h5>
 
 
                                 <t t-if="not today_births">
@@ -706,12 +706,12 @@ aa:hover span:nth-child(6)
                     <section class="s_timeline pt24 pb48 o_cc3 o_colored_level" data-snippet="s_timeline" data-name="Timeline" style="background-image: none;">
                         <div class="container s_timeline_line">
                             <div class="s_timeline_row d-block d-md-flex flex-row" data-name="Row">
-                                <div class="s_timeline_date"><b class="o_default_snippet_text">2019</b></div>
+                                <div class="s_timeline_date"><b class="o_default_snippet_text">2025</b></div>
                                 <div class="s_timeline_content d-flex">
                                     <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
                                         <div class="card-body">
-                                            <h5 class="card-title o_default_snippet_text">Your title</h5>
-                                            <p class="card-text o_default_snippet_text">A timeline is a graphical representation on which important events are marked.</p>
+                                            <h5 class="card-title o_default_snippet_text">ICSE 1st Batch  (Class: X)</h5>
+                                            <p class="card-text o_default_snippet_text"></p>
                                         </div>
                                     </div>
                                     <i class="fa fa-1x fa-child bg-o-color-2 rounded-circle s_timeline_icon"></i>
@@ -719,11 +719,12 @@ aa:hover span:nth-child(6)
                                 <div class="s_timeline_content"></div>
                             </div>
                             <div class="s_timeline_row d-block d-md-flex flex-row" data-name="Row">
-                                <div class="s_timeline_date"><b class="o_default_snippet_text">2018</b></div>
+                                <div class="s_timeline_date"><b class="o_default_snippet_text">2022</b></div>
                                 <div class="s_timeline_content d-flex">
                                     <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
                                         <div class="card-body">
-                                            <p class="card-text o_default_snippet_text">You can edit, duplicate...</p>
+                                            <h5 class="card-title o_default_snippet_text">Best School in Basirhat, North 24 PGS...</h5>
+<!--                                            <p class="card-text o_default_snippet_text">Best School in Basirhat, North 24 PGS...</p>-->
                                         </div>
                                     </div>
                                     <i class="fa fa-1x fa-graduation-cap bg-o-color-2 rounded-circle s_timeline_icon"></i>
@@ -732,17 +733,19 @@ aa:hover span:nth-child(6)
                                     <i class="fa fa-1x fa-asterisk bg-o-color-2 rounded-circle s_timeline_icon"></i>
                                     <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
                                         <div class="card-body">
-                                            <p class="card-text o_default_snippet_text">...and switch the timeline contents to fit your needs.</p>
+                                            <h5 class="card-title o_default_snippet_text">Affiliated to ICSE.</h5>
+<!--                                            <p class="card-text o_default_snippet_text">Affiliated to ICSE </p>-->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="s_timeline_row d-block d-md-flex flex-row-reverse" data-name="Row">
-                                <div class="s_timeline_date"><b class="o_default_snippet_text">2015</b></div>
+                                <div class="s_timeline_date"><b class="o_default_snippet_text">2014</b></div>
                                 <div class="s_timeline_content d-flex">
                                     <div class="s_timeline_card s_card card bg-white w-100" data-name="Card" data-snippet="s_card">
                                         <div class="card-body">
-                                            <p class="card-text o_default_snippet_text">Use this timeline as a part of your resume, to show your visitors what you've done in the past.</p>
+                                            <h5 class="card-title o_default_snippet_text">Mary Immaculate School was Established.</h5>
+<!--                                            <p class="card-text o_default_snippet_text">Mary Immaculate School was Established</p>-->
                                         </div>
                                     </div>
                                     <i class="fa fa-1x fa-bolt bg-o-color-2 rounded-circle s_timeline_icon"></i>

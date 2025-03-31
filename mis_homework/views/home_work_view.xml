@@ -79,7 +79,8 @@
 
 
 
-    <menuitem id="menu_student_homework_root" name="Student Homework" sequence="90"/>
+    <menuitem id="menu_student_homework_root" name="Student Homework" sequence="90"
+                        web_icon="mis_homework,static/src/img/homework.png"/>
     <menuitem id="menu_student_homework" name="Manage Homework" parent="menu_student_homework_root" action="action_student_homework"/>
 
 
