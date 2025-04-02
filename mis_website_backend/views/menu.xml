@@ -8,10 +8,13 @@
 
 <!--        <menuitem id="website_configuration_main_menu" name="Gallery" -->
 <!--              parent="mis_website_menu_root" sequence="10"/>-->
-
-		<menuitem id="website_configuration_gallery_menu" name="Gallery"
+        <menuitem id="website_members_events_gallery_menu" name="Events"
               parent="mis_website_menu_root"
-              action="website_configuration_gallery_action" sequence="10"/>
+              action="website_configuration_event_action" sequence="10"/>
+
+<!--		<menuitem id="website_configuration_gallery_menu" name="Gallery"-->
+<!--              parent="mis_website_menu_root"-->
+<!--              action="website_configuration_gallery_action" sequence="10"/>-->
 
         <menuitem id="website_video_menu" name="Web Video"
               parent="mis_website_menu_root"
@@ -27,6 +30,9 @@
         <menuitem id="website_members_gallery_menu" name="Members"
               parent="mis_website_menu_root"
               action="website_members_gallery_action" sequence="50"/>
+<!--        <menuitem id="website_members_gallery_menu" name="Events"-->
+<!--              parent="mis_website_menu_root"-->
+<!--              action="website_configuration_event_action" sequence="50"/>-->
 
         <menuitem id="website_magazine_menu_root" name="E-Magazine" web_icon="mis_website_backend,static/src/img/mag.png"
                sequence="10"/>

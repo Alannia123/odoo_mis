@@ -13,8 +13,8 @@ class program_events_controller(http.Controller):
         """To redirect to contact page."""
 
         vals = {
-            'photos': request.env['ir.attachment'].sudo().search([('res_model', '=', 'program.gallery')]),
-            'events': request.env['program.events'].sudo().search([]),
+            'photos': request.env['ir.attachment'].sudo().search([('res_model', '=', 'event.gallery')]),
+            'events': request.env['event.gallery'].sudo().search([]),
         }
         print('LODFFFFFFFFFFFFFFFFF',vals)
         return request.render('mis_website.program_events_gallery', vals)
@@ -22,7 +22,7 @@ class program_events_controller(http.Controller):
 
     @http.route(['/gallery/photos/<int:event>'], type='http', auth="public", website=True)
     def get_event_galarry(self, event=None, **kw):
-        photo_gallery = request.env['program.gallery'].sudo().search([('id', '=', int(event))])
+        photo_gallery = request.env['event.gallery'].sudo().search([('id', '=', int(event))])
         print('DDDDDDDEEEEEEWWWWWWWWWWW',photo_gallery)
         values = {
                     'gallery': photo_gallery,

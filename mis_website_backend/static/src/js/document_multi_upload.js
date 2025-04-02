@@ -18,7 +18,6 @@ patch(ListController.prototype, {
                     var reader = new FileReader();
                     reader.onloadend = function(e) {
                         var dataurl = e.target.result;
-                        console.log('DDDDDDDDDDDDDDD',dataurl)
                         jsonrpc('/web/dataset/call_kw/upload.multi.documents/document_file_create', {
                             model: 'upload.multi.documents',
                             method: 'document_file_create',

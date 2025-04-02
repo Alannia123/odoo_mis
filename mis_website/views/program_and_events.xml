@@ -24,8 +24,8 @@
             </div>
             <div class="row">
                 <div class="row g-4 g-lg-3 g-xxl-4">
-                    <div t-if="not photos" class="col-12 alert alert-warning mt8">
-                        No results found for Photos.
+                    <div t-if="not events" class="col-12 alert alert-warning mt8">
+                        No more events found.
                     </div>
                 </div>
             </div>
@@ -83,9 +83,9 @@
                 </style>
 
                 <div class="row">
-                    <t t-foreach="request.env['program.gallery'].search([])" t-as="gallery">
+                    <t t-foreach="request.env['event.gallery'].search([])" t-as="gallery">
                         <t t-set="photos" t-value="gallery.get_random_photos()"/>
-                        <h3><span t-out="gallery.event_id.name"> On </span><span style="color:blue;" t-out="gallery.date" ></span></h3>
+                        <h3><span t-out="gallery.event_id.name"></span></h3>
                         <t t-foreach="photos" t-as="photo">
                             <div class="col-lg-3 col-md-6">
                                 <div class="card mb-4 animated-image">
