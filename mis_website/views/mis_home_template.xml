@@ -692,10 +692,11 @@ aa:hover span:nth-child(6)
                                     <div class="row s_col_no_resize s_col_no_bgcolor">
                                         <t t-set="manager" t-value="member_id.member_line_ids.filtered(lambda x: x.designation == 'manager')"/>
                                         <div class="col-lg-4 pb16 o_not_editable">
-                                            <img t-att-src="image_data_uri(manager.image)" style="border-radius: 30px; width: 200px; height: 200px; object-fit: cover;"/>
+                                            <img t-att-src="image_data_uri(manager.image)"  class="img-fluid" style="border-radius: 30px; width: 200px; height: 200px; object-fit: cover;"/>
 <!--                                            <img t-att-src="image_data_uri(employee.company_id.logo)" style="max-height:45pt;max-width:90%" alt="Company Logo"/>-->
 <!--                                            <img src="/mis_website/static/src/img/harry44.jpg" alt="img1" class="img-fluid rounded-circle mx-auto" loading="lazy" style=""/>-->
                                         </div>
+<!--                                        <img src="https://eugeneschoolboda.com/storage/aboutusmain/4uNHExBUEYxH5UPkdIF7G1V62oUO1cnT6iveQ5Td.jpg" alt="Profile Picture" class="img-fluid" style="height: 300px; width: 286px; object-fit: cover;">-->
                                         <div class="col-lg-8">
                                             <h4 class="o_default_snippet_text">Rev. Fr. C. Solomon, OMI</h4>
                                             <p class="o_default_snippet_text">

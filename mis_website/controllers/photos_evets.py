@@ -3,6 +3,7 @@
 import base64
 from odoo import http
 from odoo.http import request
+import json
 
 
 class program_events_controller(http.Controller):
@@ -28,4 +29,15 @@ class program_events_controller(http.Controller):
                     'gallery': photo_gallery,
                 }
         return request.render("mis_website.program_events_gallery_individual_event", values)
+
+    @http.route('/calendar/events', type='json', auth="public")
+    def get_calendar_events(self, **kwargs):
+        events = request.env['calendar.event'].sudo().search([])
+        print('tfghhgfhgfhg',events)
+        data = [{
+            'title': event.name,
+            'start': event.start,
+            'end': event.stop,
+        } for event in events]
+        return json.dumps(data)
 
