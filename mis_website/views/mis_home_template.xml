@@ -492,7 +492,7 @@ aa:hover span:nth-child(6)
 }
 
                                 </style>
-                              <h5 style="color:#4d2600;">Today's <strong>Birthday</strong>=><t t-out="today_date"></t></h5>
+                              <h5 style="color:#ff1a8c;">Today's <strong>Birthday</strong>==><t t-out="today_date"></t></h5>
                                 <t t-if="not today_births">
                                     <marquee width="100%" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
                                         <b>Today No One's Birthday</b>

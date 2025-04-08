@@ -20,6 +20,7 @@
         'views/magazine_view.xml',
         'views/members_view.xml',
         'views/web_slide_view.xml',
+        'views/res_config_settings_views.xml',
         'views/menu.xml',
     ],
      'assets': {

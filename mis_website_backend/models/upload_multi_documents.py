@@ -25,6 +25,7 @@ import gzip
 import boto3
 import logging
 _logger = logging.getLogger(__name__)
+from odoo.exceptions import UserError, ValidationError
 
 
 class UploadMultiDocuments(models.Model):
@@ -39,10 +40,21 @@ class UploadMultiDocuments(models.Model):
                 event_id = self.env['program.gallery.aws'].browse(rec_id)
                 sr_no = len(event_id.aws_url_ids) + 1
                 # AWS S3 credentials
-                AWS_ACCESS_KEY = 'AKIAZI2LIU3BGFJEFDHS'
-                AWS_SECRET_KEY = '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'
-                BUCKET_NAME = 'misodoo'
-                REGION = 'us-east-1'
+                AWS_ACCESS_KEY = self.env['ir.config_parameter'].sudo().get_param(
+                    'mis_website_backend.amazon_access_key')
+                # AWS_ACCESS_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_access_key')
+                AWS_SECRET_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_secret_key')
+                BUCKET_NAME = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_bucket_name')
+                REGION = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_region_name')
+                print('WSEFFFFFFFFFFFFF', AWS_ACCESS_KEY)
+                if not AWS_ACCESS_KEY:
+                    raise ValidationError(_("Please Add AWS Access Key"))
+                if not AWS_SECRET_KEY:
+                    raise ValidationError(_("Please Add AWS Secret Key"))
+                if not BUCKET_NAME:
+                    raise ValidationError(_("Please Add AWS Bucket Name"))
+                if not REGION:
+                    raise ValidationError(_("Please Add AWS Region Name"))
                 session = boto3.session.Session(
                     aws_access_key_id=AWS_ACCESS_KEY,
                     aws_secret_access_key=AWS_SECRET_KEY,
@@ -90,10 +102,21 @@ class UploadSlideImage(models.Model):
                 slide_id = self.env['web.slide.image'].browse(rec_id)
                 sr_no = len(slide_id.image_url_ids) + 1
                 # AWS S3 credentials
-                AWS_ACCESS_KEY = 'AKIAZI2LIU3BGFJEFDHS'
-                AWS_SECRET_KEY = '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'
-                BUCKET_NAME = 'misodoo'
-                REGION = 'us-east-1'
+                AWS_ACCESS_KEY = self.env['ir.config_parameter'].sudo().get_param(
+                    'mis_website_backend.amazon_access_key')
+                # AWS_ACCESS_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_access_key')
+                AWS_SECRET_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_secret_key')
+                BUCKET_NAME = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_bucket_name')
+                REGION = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_region_name')
+                print('WSEFFFFFFFFFFFFF', AWS_ACCESS_KEY)
+                if not AWS_ACCESS_KEY:
+                    raise ValidationError(_("Please Add AWS Access Key"))
+                if not AWS_SECRET_KEY:
+                    raise ValidationError(_("Please Add AWS Secret Key"))
+                if not BUCKET_NAME:
+                    raise ValidationError(_("Please Add AWS Bucket Name"))
+                if not REGION:
+                    raise ValidationError(_("Please Add AWS Region Name"))
                 session = boto3.session.Session(
                     aws_access_key_id=AWS_ACCESS_KEY,
                     aws_secret_access_key=AWS_SECRET_KEY,

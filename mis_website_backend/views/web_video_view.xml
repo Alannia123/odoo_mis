@@ -44,6 +44,7 @@
 				<tree string="Photo Gallery" >
 					<field name="name" />
 					<field name="date" />
+					<field name="show_website" widget="boolean_toggle"/>
 <!--					<field name="video" />-->
                     <field name="remarks" />
 				</tree>

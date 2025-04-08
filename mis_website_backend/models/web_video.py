@@ -5,6 +5,7 @@ import boto3
 import base64
 import logging
 from odoo import models, fields
+from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -31,11 +32,20 @@ class WebVideo(models.Model):
 
     def upload_image_to_s3(self):
         # AWS S3 credentials
-        AWS_ACCESS_KEY = 'AKIAZI2LIU3BGFJEFDHS'
-        AWS_SECRET_KEY = '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'
-        BUCKET_NAME = 'misodoo'
-        REGION = 'us-east-1'
-
+        AWS_ACCESS_KEY = self.env['ir.config_parameter'].sudo().get_param('mis_website_backend.amazon_access_key')
+        # AWS_ACCESS_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_access_key')
+        AWS_SECRET_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_secret_key')
+        BUCKET_NAME = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_bucket_name')
+        REGION = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_region_name')
+        print('WSEFFFFFFFFFFFFF',AWS_ACCESS_KEY)
+        if not AWS_ACCESS_KEY:
+            raise ValidationError(_("Please Add AWS Access Key"))
+        if not AWS_SECRET_KEY:
+            raise ValidationError(_("Please Add AWS Secret Key"))
+        if not BUCKET_NAME:
+            raise ValidationError(_("Please Add AWS Bucket Name"))
+        if not REGION:
+            raise ValidationError(_("Please Add AWS Region Name"))
         for rec in self:
             if not rec.video:
                 continue
