@@ -32,28 +32,27 @@ class WebVideo(models.Model):
 
     def upload_image_to_s3(self):
         # AWS S3 credentials
-        AWS_ACCESS_KEY = self.env['ir.config_parameter'].sudo().get_param('mis_website_backend.amazon_access_key')
-        # AWS_ACCESS_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_access_key')
-        AWS_SECRET_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_secret_key')
-        BUCKET_NAME = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_bucket_name')
-        REGION = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_region_name')
-        print('WSEFFFFFFFFFFFFF',AWS_ACCESS_KEY)
-        if not AWS_ACCESS_KEY:
+        aws_access_key = self.env['ir.config_parameter'].sudo().get_param('mis_website_backend.amazon_access_key')
+        aws_secret_key = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_secret_key')
+        aws_bucket_name = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_bucket_name')
+        aws_region_name = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_region_name')
+        print('WSEFFFFFFFFFFFFF',aws_access_key)
+        if not aws_access_key:
             raise ValidationError(_("Please Add AWS Access Key"))
-        if not AWS_SECRET_KEY:
+        if not aws_secret_key:
             raise ValidationError(_("Please Add AWS Secret Key"))
-        if not BUCKET_NAME:
+        if not aws_bucket_name:
             raise ValidationError(_("Please Add AWS Bucket Name"))
-        if not REGION:
+        if not aws_region_name:
             raise ValidationError(_("Please Add AWS Region Name"))
         for rec in self:
             if not rec.video:
                 continue
 
             session = boto3.session.Session(
-                aws_access_key_id=AWS_ACCESS_KEY,
-                aws_secret_access_key=AWS_SECRET_KEY,
-                region_name=REGION,
+                aws_access_key_id=aws_access_key,
+                aws_secret_access_key=aws_secret_key,
+                region_name=aws_region_name,
             )
             s3 = session.resource('s3')
 
@@ -62,13 +61,13 @@ class WebVideo(models.Model):
             file_data = base64.b64decode(rec.video)
 
             try:
-                s3.Bucket(BUCKET_NAME).put_object(
+                s3.Bucket(aws_bucket_name).put_object(
                     Key=file_name,
                     Body=file_data,
                     ContentType='video/mp4',
                     ACL='public-read'  # Or 'private'
                 )
-                s3_url = f"https://{BUCKET_NAME}.s3.{REGION}.amazonaws.com/{file_name}"
+                s3_url = f"https://{aws_bucket_name}.s3.{aws_bucket_name}.amazonaws.com/{file_name}"
                 rec.write({'s3_url': s3_url})
                 _logger.info(f"Uploaded image to S3: {s3_url}")
             except Exception as e:
