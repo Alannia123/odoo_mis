@@ -5,7 +5,7 @@
         <xpath expr="//div[hasclass('o_list_buttons')]"  position="inside">
 <!--			<t t-esc="context.get('active_model')"/>-->
 <!--            <t t-if="context.get('active_model') == 'program.gallery'">-->
-            <t t-if="nbSelected and props.resModel == 'event.gallery'">
+            <t t-if="nbSelected and props.resModel == 'program.gallery.aws'">
                 <button name="upload_form_button" multiple="multiple"
                 class="btn btn-secondary" type="button"
                     t-on-click="_onClickAttachment">Upload Photos

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The templates are defining the buttons to be displayed on list view-->
+<templates id="template" xml:space="preserve">
+    <t t-inherit="web.ListView.Buttons" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_list_buttons')]"  position="inside">
+<!--			<t t-esc="context.get('active_model')"/>-->
+<!--            <t t-if="context.get('active_model') == 'program.gallery'">-->
+            <t t-if="nbSelected and props.resModel == 'web.slide.image'">
+                <button name="upload_form_button" multiple="multiple"
+                class="btn btn-secondary" type="button"
+                    t-on-click="_onClickAttachment">Upload Images
+				<i class="fa fa-paperclip"/>
+
+			</button>
+            </t>
+
+<!--            </t>-->
+        </xpath>
+    </t>
+</templates>

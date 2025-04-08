@@ -12,8 +12,26 @@ class home_controller(http.Controller):
 
     @http.route('/mis_home', type='http', auth='public', website=True)
     def mis_home_temp(self):
+        vals = {}
         display_notice = ''
         today_date = fields.Datetime.now().strftime('%d-%m-%Y')
+        slide_id = request.env['web.slide.image'].sudo().search([('enable', '=', True)])
+        # if slide_id.image_url_ids[0]:
+        #     vals.update({'slide_1': slide_id.image_url_ids[0].url })
+        # if slide_id.image_url_ids[1]:
+        #     vals.update({'slide_2': slide_id.image_url_ids[1].url })
+        # # if slide_id.image_url_ids[2]:
+        #     vals.update({'slide_3': slide_id.image_url_ids[2].url })
+        # if slide_id.image_url_ids[3]:
+        #     vals.update({'slide_4': slide_id.image_url_ids[3].url })
+        # if slide_id.image_url_ids[4]:
+        #     vals.update({'slide_5': slide_id.image_url_ids[4].url })
+        # if slide_id.image_url_ids[5]:
+        #     vals.update({'slide_6': slide_id.image_url_ids[5].url })
+        # if slide_id.image_url_ids[6]:
+        #     vals.update({'slide_7': slide_id.image_url_ids[6].url })
+
+        video_id= request.env['web.video'].sudo().search([('show_website', '=', True)], limit=1)
         notices= request.env['web.info'].sudo().search([('enable', '=', True)])
         raw_html = ""
         for notice in notices:
@@ -32,14 +50,12 @@ class home_controller(http.Controller):
                 """
         # request.env.cr.execute(query, (today,))
         # stu_birth_ids = request.env.cr.fetchall()
-        # print('DDDDWWWWWWWWWWWWWW',stu_birth_ids)
         member_id = request.env['school.members'].sudo().search([])
         students = request.env['education.student'].sudo().search([])
         birthday_students = students.filtered(lambda s: s.date_of_birth.strftime('%m-%d') == today)
         birth_raw_html = ""
         sr_no = 1
         for student_id in birthday_students:
-            print('dddddddddgggggggggggggggg',student_id)
             # student_id = request.env['education.student'].browse(stu_id)
             if student_id:
                 birth_raw_html = birth_raw_html + f"""
@@ -48,7 +64,6 @@ class home_controller(http.Controller):
                                 </div>
                                 """
                 sr_no = sr_no + 1
-        print('eeeeeeeeee',birth_raw_html)
         birth_raw_html = birth_raw_html + f"""<br/><h1 class="birthday-wish text-center">Happy Birthday! 🎉</h1>"""
         vals = {
             'today_date': today_date,
@@ -57,7 +72,9 @@ class home_controller(http.Controller):
             'birth_raw_html': birth_raw_html,
             'today_births': birthday_students,
             'member_id': member_id,
-            # 'photos': request.env['program.gallery.photo'].sudo().search([]),
-            # 'events': request.env['program.events'].sudo().search([]),
-        }
+            'video_id': video_id,
+            'slide_id': slide_id,
+            'birth_background': 'mis_website/',
+            }
+        print('UTTTTTTTTTTTTTTTTT',vals)
         return request.render('mis_website.mis_home_page', vals)

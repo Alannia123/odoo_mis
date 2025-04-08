@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ #  Copyright (c) by The UniCube, 2023.
+  ~ #  License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+  ~ #  These code are maintained by The UniCubey.
+  -->
+
+<odoo>
+    <record id="view_push_notification_tree" model="ir.ui.view">
+        <field name="name">push.notification.list</field>
+        <field name="model">push.notification</field>
+        <field name="arch" type="xml">
+            <tree string="Notification Devices" create="0" duplicate="false">
+                <field name="user_id"/>
+                <field name="register_id"/>
+            </tree>
+        </field>
+
+    </record>
+    <record id="view_push_notification_form" model="ir.ui.view">
+        <field name="name">push.notification.form</field>
+        <field name="model">push.notification</field>
+        <field name="arch" type="xml">
+            <form string="Notification Devices Detail">
+                <group>
+                    <field name="user_id"/>
+                    <field name="register_id"/>
+                </group>
+            </form>
+        </field>
+
+    </record>
+
+    <!--    Action   -->
+    <record id="push_notification_list_view" model="ir.actions.act_window">
+        <field name="name">Notification Devices</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">push.notification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help">Show all notification registered devices</field>
+    </record>
+
+    <menuitem name="Notification Devices" id="noti_devices"
+              parent="base.menu_custom" action="push_notification_list_view" groups="base.group_user"/>
+</odoo>

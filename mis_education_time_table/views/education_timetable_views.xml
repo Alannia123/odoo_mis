@@ -6,6 +6,9 @@
         <field name="model">education.timetable</field>
         <field name="arch" type="xml">
             <form string="Education Timetable">
+                <header>
+                    <button name="post_student_photo" class="oe_highlight" type="object" string="Facebook"></button>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -26,6 +29,7 @@
                             <field name="academic_year_id" options="{'no_open': True, 'no_create': True}"/>
                         </group>
                         <group>
+                            <field name="facebook_photo_url" />
                             <field name="file_name" invisible="1"/>
                             <field name="pdf_file" filename="file_name" groups="mis_education_core.group_education_principal"/>
                             <field name="company_id"

@@ -1,16 +1,19 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_program_events,access.program.events,model_program_events,,1,1,1,1
-access_program_gallery,access.program.gallery,model_program_gallery,,1,1,1,1
-access_event_gallery,access.event.gallery,model_event_gallery,,1,1,1,1
+access_program_gallery_aws,access.program.gallery.aws,model_program_gallery_aws,,1,1,1,1
+access_program_gallery_aws_url,access.program.gallery.aws.url,model_program_gallery_aws_url,,1,1,1,1
 access_web_video,access.web.video,model_web_video,,1,1,1,1
 access_web_info,access.web.info,model_web_info,,1,1,1,1
 access_banner_info,access.banner.info,model_banner_info,,1,1,1,1
 
-access_upload_multi_document,access.upload.multi.document,model_upload_multi_documents,base.group_user,1,1,1,1
 
 access_e_magazine,access_e_magazine,model_school_magazine,mis_education_core.group_education_principal,1,1,1,1
 access_e_magazine,access_e_magazine,model_school_magazine,base.group_user,1,1,1,0
 
 access_school_members,access_school_members,model_school_members,base.group_user,1,1,1,1
 access_school_members_line,access_school_members_line,model_school_members_line,base.group_user,1,1,1,1
+
+access_web_slide_image,access_web_slide_image,model_web_slide_image,,1,1,1,1
+access_web_slide_image_url,access_web_slide_image_url,model_web_slide_image_url,,1,1,1,1
+access_slide_multi_documents,access_slide_multi_documents,model_slide_multi_documents,,1,1,1,1
 

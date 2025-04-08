@@ -32,17 +32,16 @@
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",
-    "depends": ["web", "mail", "mis_task_mgnt"],
+    "depends": ["web", "mail"],
     "data": [
         "security/ir.model.access.csv",
         "views/res_config_settings_views.xml"
     ],
     'assets': {
         'web.assets_backend': [
-            "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js",
-            "https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js",
+            "https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js",
+            "https://www.gstatic.com/firebasejs/8.4.3/firebase-messaging.js",
             "mail_push_notification/static/src/js/firebase.js",
-            # "mail_push_notification/static/src/js/custom_firebase.js",
         ],
     },
     "external_dependencies": {"python": ["firebase_admin"]},

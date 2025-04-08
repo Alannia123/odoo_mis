@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api, _
 from datetime import datetime
+import boto3
+import base64
+import logging
+from odoo import models, fields
+
+_logger = logging.getLogger(__name__)
 
 
 class WebVideo(models.Model):
@@ -13,6 +19,8 @@ class WebVideo(models.Model):
     video = fields.Binary(string="Video")
     file_name = fields.Char('File Name')
     remarks = fields.Char('Remarks')
+    s3_url = fields.Char(string="S3 URL", readonly=True)
+    show_website = fields.Boolean('Show On Website')
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -20,4 +28,39 @@ class WebVideo(models.Model):
             if 'name' not in vals or vals['name'] == 'New':
                 vals['name'] = self.env['ir.sequence'].next_by_code('web.vide') or _('New')
         return super().create(vals_list)
+
+    def upload_image_to_s3(self):
+        # AWS S3 credentials
+        AWS_ACCESS_KEY = 'AKIAZI2LIU3BGFJEFDHS'
+        AWS_SECRET_KEY = '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'
+        BUCKET_NAME = 'misodoo'
+        REGION = 'us-east-1'
+
+        for rec in self:
+            if not rec.video:
+                continue
+
+            session = boto3.session.Session(
+                aws_access_key_id=AWS_ACCESS_KEY,
+                aws_secret_access_key=AWS_SECRET_KEY,
+                region_name=REGION,
+            )
+            s3 = session.resource('s3')
+
+            file_name = rec.file_name
+            # file_content = base64.b64decode(datas[1])
+            file_data = base64.b64decode(rec.video)
+
+            try:
+                s3.Bucket(BUCKET_NAME).put_object(
+                    Key=file_name,
+                    Body=file_data,
+                    ContentType='video/mp4',
+                    ACL='public-read'  # Or 'private'
+                )
+                s3_url = f"https://{BUCKET_NAME}.s3.{REGION}.amazonaws.com/{file_name}"
+                rec.write({'s3_url': s3_url})
+                _logger.info(f"Uploaded image to S3: {s3_url}")
+            except Exception as e:
+                _logger.error(f"Error uploading to S3: {str(e)}")
 

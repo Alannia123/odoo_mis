@@ -3,6 +3,11 @@
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
 from odoo import models, fields, api
+import requests
+import base64
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class EducationTimetable(models.Model):
@@ -79,6 +84,47 @@ class EducationTimetable(models.Model):
     pdf_file = fields.Binary(string="Upload TimeTable", attachment=True)
     file_name = fields.Char('File Name')
     preview_image = fields.Binary(string="PDF Preview", readonly=True)
+    facebook_photo_url = fields.Char("Facebook Photo URL")
+
+    def post_student_photo(self):
+        if self.pdf_file:
+            url = self.upload_photo_to_facebook(self.pdf_file, caption="Test Photo")
+            if url:
+                self.facebook_photo_url = url
+
+
+
+    def upload_photo_to_facebook(self, image_data, caption=""):
+        page_access_token = 'YOUR_PAGE_ACCESS_TOKEN'
+        page_id = 'YOUR_PAGE_ID'
+
+        # Convert binary image to a temporary file or base64
+        image_base64 = base64.b64encode(image_data).decode('utf-8')
+
+        # Facebook Graph API endpoint
+        url = f"https://graph.facebook.com/{page_id}/photos"
+
+        payload = {
+            'caption': caption,
+            'access_token': page_access_token,
+            'published': 'true',
+        }
+
+        files = {
+            'source': image_data,
+        }
+
+        response = requests.post(url, data=payload, files=files)
+
+        if response.status_code == 200:
+            res_json = response.json()
+            post_id = res_json.get('post_id')
+            photo_id = res_json.get('id')
+            photo_url = f"https://www.facebook.com/{photo_id}"
+            return photo_url
+        else:
+            _logger.error("Facebook upload failed: %s", response.text)
+            return None
 
     @api.onchange('pdf_file')
     def _generate_preview(self):

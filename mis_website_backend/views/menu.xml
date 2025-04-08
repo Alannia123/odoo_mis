@@ -8,9 +8,17 @@
 
 <!--        <menuitem id="website_configuration_main_menu" name="Gallery" -->
 <!--              parent="mis_website_menu_root" sequence="10"/>-->
-        <menuitem id="website_members_events_gallery_menu" name="Events"
+<!--        <menuitem id="website_members_events_gallery_menu" name="Events"-->
+<!--              parent="mis_website_menu_root"-->
+<!--              action="website_configuration_event_action" sequence="10"/>-->
+<!--        -->
+        <menuitem id="website_members_events_gallery_aws_menu" name="Events"
               parent="mis_website_menu_root"
-              action="website_configuration_event_action" sequence="10"/>
+              action="website_configuration_gallery_aws_action" sequence="10"/>
+
+        <menuitem id="website_slide_images_menu" name="Web Slide"
+              parent="mis_website_menu_root"
+              action="website_slide_images_action" sequence="10"/>
 
 <!--		<menuitem id="website_configuration_gallery_menu" name="Gallery"-->
 <!--              parent="mis_website_menu_root"-->

@@ -31,14 +31,15 @@ class DailyAttendanceStudentRemark(models.TransientModel):
         string="Academic Session",
         default=lambda obj: obj.env["education.academic.year"].search([("enable", "=", True)]),
     )
-    course_id = fields.Many2one(
+    division_id = fields.Many2one(
         "education.class.division",
         string="Division",
         ondelete="restrict",
     )
     user = fields.Char(default=lambda self: self.env.user)
     user_id = fields.Many2one("education.faculty", string="Faculty")
-    standard_name = fields.Char(related="course_id.name", store=True)
+    standard_name = fields.Char(related="division_id.name", store=True)
+    year = fields.Char('Year', default='2025')
     month = fields.Selection(
         selection=[
             ("1", "January"),
@@ -56,22 +57,6 @@ class DailyAttendanceStudentRemark(models.TransientModel):
         ],
     )
     month_str = fields.Char(string="Month")
-    subject_ids = fields.Many2many(
-        "education.subject",
-        "subject_wizard_rel",
-        "subject_id",
-        "wizard_id",
-        string="Subject's",
-        ondelete="restrict",
-    )
-    subject_id = fields.Many2one("education.subject", string="Subject", help="Subject")
-    is_elective_subject = fields.Boolean(
-        string="Elective Subject", help="Check this if subject is elective."
-    )
-
-    @api.onchange("is_elective_subject")
-    def onchange_is_elective_subject(self):
-        self.subject_id = False
 
     @api.onchange("month")
     def onchange_month(self):
@@ -97,55 +82,61 @@ class DailyAttendanceStudentRemark(models.TransientModel):
     def generate_attendance(self):
         data = self.read()[0]
         for rec in self:
-            # months = {
-            #     "1": "January",
-            #     "2": "February",
-            #     "3": "March",
-            #     "4": "April",
-            #     "5": "May",
-            #     "6": "June",
-            #     "7": "July",
-            #     "8": "August",
-            #     "9": "September",
-            #     "10": "October",
-            #     "11": "November",
-            #     "12": "December",
-            # }
-            # days_of_month = calendar.monthrange(
-            #     int(rec.academic_year_id.code), int(rec.month)
-            # )[1]
-            # month_days = range(1, days_of_month + 1)
-            # last_day_month = calendar.monthrange(
-            #     int(rec.academic_year_id.code), int(rec.month)
-            # )[1]
-            # start_date_str = (
-            #     str(int(rec.academic_year_id.code)) + "-" + str(int(rec.month)) + "-01"
-            # )
-            # end_date_str = (
-            #     str(int(rec.academic_year_id.code))
-            #     + "-"
-            #     + str(int(rec.month))
-            #     + "-"
-            #     + str(last_day_month)
-            #     + " 23:00:00"
-            # )
+            months = {
+                "1": "January",
+                "2": "February",
+                "3": "March",
+                "4": "April",
+                "5": "May",
+                "6": "June",
+                "7": "July",
+                "8": "August",
+                "9": "September",
+                "10": "October",
+                "11": "November",
+                "12": "December",
+            }
+            days_of_month = calendar.monthrange(int(rec.year), int(rec.month))[1]
+            month_days = range(1, days_of_month + 1)
+            last_day_month = calendar.monthrange(
+                int(rec.year), int(rec.month)
+            )[1]
+            start_date_str = (
+                str(int(rec.year)) + "-" + str(int(rec.month)) + "-01"
+            )
+            end_date_str = (
+                str(int(rec.year))
+                + "-"
+                + str(int(rec.month))
+                + "-"
+                + str(last_day_month)
+                + " 23:00:00"
+            )
 
-            elective_subject = "and is_elective_subject = 'f'"
-            if rec.is_elective_subject:
-                elective_subject = f"and subject_id = {rec.subject_id.id}"
+            print('EEEEEEEEEEEEEEEE',days_of_month)
+            print('EEEEEEEEEEEEEEEE',month_days)
+            print('EEEEEEEEEEEEEEEE',last_day_month)
+            print('EEEEEEEEEEEEEEEE',start_date_str)
+            print('EEEEEEEEEEEEEEEE',end_date_str)
 
             self._cr.execute(
                 f"""
-                SELECT
-                    id
-                FROM
-                    education_attendance
-                WHERE
-                    state = 'done' and
-                    division_id = 1 
-                    """)
+                        SELECT
+                            id
+                        FROM
+                            education_attendance
+                        WHERE
+                            state = 'done' and
+                            division_id = %s and
+                            date >= %s and
+                            date <= %s
+                            """,
+                (rec.division_id.id, start_date_str, end_date_str),
+            )
             if not self._cr.fetchall():
                 raise ValidationError(_("Data Not Found"))
+        print('RETTTTTTTTTTTTTTTTTTT',self._cr.fetchall())
+        hnn
         if not self.user_id:
             report_id = self.env.ref("mis_education_attendances.monthly_attendance_report")
             return report_id.report_action(self, data=data, config=False)
@@ -290,17 +281,17 @@ class DailyAttendanceStudentRemark(models.TransientModel):
                 "12": "December",
             }
             days_of_month = calendar.monthrange(
-                int(rec.academic_year_id.code), int(rec.month)
+                int(2025), int(rec.month)
             )[1]
             month_days = range(1, days_of_month + 1)
             last_day_month = calendar.monthrange(
-                int(rec.academic_year_id.code), int(rec.month)
+                int(2025), int(rec.month)
             )[1]
             start_date_str = (
-                str(int(rec.academic_year_id.code)) + "-" + str(int(rec.month)) + "-01"
+                str(int(2025)) + "-" + str(int(rec.month)) + "-01"
             )
             end_date_str = (
-                str(int(rec.academic_year_id.code))
+                str(int(2025))
                 + "-"
                 + str(int(rec.month))
                 + "-"

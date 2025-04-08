@@ -22,6 +22,8 @@
 from firebase_admin import initialize_app, _apps
 from firebase_admin import credentials
 from odoo import fields, models, _
+import firebase_admin
+from firebase_admin import credentials
 
 
 class ResConfigSettings(models.TransientModel):
@@ -98,23 +100,27 @@ class ResConfigSettings(models.TransientModel):
             return False
         try:
             # Initialize the firebase app with the credentials
-            if not _apps:
-                cred = credentials.Certificate(
-                    {
-                        "type": "service_account",
-                        "project_id": self.project_id_firebase,
-                        "private_key_id": self.private_key_ref,
-                        "private_key": self.private_key.replace('\\n', '\n'),
-                        "client_email": self.client_email,
-                        "client_id": self.client_id_firebase,
-                        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-                        "token_uri": "https://oauth2.googleapis.com/token",
-                        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-                        "client_x509_cert_url": self.client_cert_url,
-                        "universe_domain": "googleapis.com"
-                    }
-                )
-                initialize_app(cred)
+            cred = credentials.Certificate("/home/moses/Downloads/service-account-file.json")
+            print('CRED------------------',cred)
+            initialize_app(cred)
+            # if not _apps:
+            #     cred = credentials.Certificate(
+            #         {
+            #             "type": "service_account",
+            #             "project_id": self.project_id_firebase,
+            #             "private_key_id": self.private_key_ref,
+            #             "private_key": self.private_key.replace('\\n', '\n'),
+            #             "client_email": self.client_email,
+            #             "client_id": self.client_id_firebase,
+            #             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            #             "token_uri": "https://oauth2.googleapis.com/token",
+            #             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+            #             "client_x509_cert_url": self.client_cert_url,
+            #             "universe_domain": "googleapis.com"
+            #         }
+            #     )
+            #     print('CREFFFFFFFFFFFFF=============',cred)
+            #     # initialize_app(cred)
             return {
                 'type': 'ir.actions.client',
                 'tag': 'display_notification',

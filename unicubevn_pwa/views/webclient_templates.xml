@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Setting background for pwa   -->
+    <template id="pwa_webclient_login" inherit_id="web.login_layout">
+        <xpath expr="//t[@t-call='web.frontend_layout']/t[last()]" position="after">
+            <t t-set="body_classname" t-value="'o_home_menu_background'"/>
+            <t t-set="login_card_classes" t-value="'rounded-0 shadow-sm bg-white'"/>
+        </xpath>
+    </template>
+    <!--   Setting theme color and IOS icon -->
+    <template id="pwa_webclient_bootstrap" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//meta[@name='theme-color']" position="replace">
+            <meta name="theme-color"
+                  t-att-content="'#FFFFFF' if request.httprequest.cookies.get('color_scheme') == 'dark' else ''"/>
+        </xpath>
+        <xpath expr="//link[@rel='apple-touch-icon']" position="replace">
+            <link rel="apple-touch-icon" href="/unicubevn_pwa/img/icon-192x192.png"/>
+        </xpath>
+    </template>
+
+    <!--    Change favicon icon   -->
+    <template id="pwa_web_layout" inherit_id="web.layout">
+        <xpath expr="//link[@type='image/x-icon']" position="replace">
+            <link type="image/x-icon" rel="shortcut icon"
+                  t-att-href="x_icon or '/unicubevn_pwa/static/img/favicon.ico'"/>
+        </xpath>
+    </template>
+    <!--   Change the offline screen   -->
+    <template id="pwa_webclient_offline" inherit_id="web.webclient_offline">
+        <xpath expr="//div[hasclass('card')]" position="replace">
+            <div class="card">
+                <img t-attf-src="data:image/png;base64,{{odoo_icon}}" alt="UniCube logo"/>
+                <h1>You are offline</h1>
+                <p>Check your network connection and come back here. We will load as soon as you're back online.</p>
+                <button onclick="location.reload()">Check again</button>
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

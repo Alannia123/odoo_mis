@@ -315,8 +315,8 @@ aa:hover span:nth-child(6)
                             </div>
                         </div>
 <!--              Slide Section-->
-                        <div class="col-lg-6 s_col_no_bgcolor" style="border-color: #4080bf;">
-                        <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+            <div class="col-lg-6 s_col_no_bgcolor" style="border-color: #4080bf;">
+                <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
                 <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="4000" id="myCarousel1730131905894" style="background-image: none;">
 
             <ol class="carousel-indicators o_we_no_overlay">
@@ -331,7 +331,8 @@ aa:hover span:nth-child(6)
 
             <div class="carousel-inner">
 
-                <div class="carousel-item pt120 pb120 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 546.711px;" data-name="Slide">
+<!--                <div class="carousel-item pt120 pb120 o_colored_level oe_img_bg o_bg_img_center" t-att-style="background-image: url(slide_1);" data-name="Slide">-->
+                <div class="carousel-item pt120 pb120 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[0].url if slide_id.image_url_ids[0] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_colored_level">
@@ -344,7 +345,8 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 546.711px;" data-name="Slide">
+<!--                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(slide_id.image_url_ids[0].url); min-height: 546.711px;" data-name="Slide">-->
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[1].url if slide_id.image_url_ids[1] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -357,7 +359,7 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center active" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 546.711px;" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center active" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[2].url if slide_id.image_url_ids[2] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -370,7 +372,7 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 546.711px;" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[3].url if slide_id.image_url_ids[3] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -383,7 +385,7 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_1&quot;); min-height: 546.711px;" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[4].url if slide_id.image_url_ids[4] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -397,10 +399,10 @@ aa:hover span:nth-child(6)
                     </div>
                 </div>
 
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_2&quot;); min-height: 546.711px;" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[5].url if slide_id.image_url_ids[5] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
-                            <div class="carousel-content col-lg-8 offset-lg-2 bg-black-50 text-center pt48 pb40 o_colored_level">
+                            <div class="carousel-content col-lg-6 o_draggable o_colored_level">
                                 <h2 class="display-3-fs o_default_snippet_text" style="display: none;">Clever Slogan</h2>
                                 <h4><font  class="o_default_snippet_text" style="display: none;">Good writing is simple, but not simplistic.</font></h4>
                                 <p class="lead o_default_snippet_text" style="display: none;">Storytelling is powerful.<br> It draws readers in and engages them.</br></p>
@@ -410,7 +412,7 @@ aa:hover span:nth-child(6)
                     </div>
                 </div>
 
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(&quot;/web/image/website.s_carousel_default_image_3&quot;); min-height: 546.711px;" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[6].url if slide_id.image_url_ids[6] else ''" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 offset-lg-6 o_colored_level">
@@ -435,17 +437,17 @@ aa:hover span:nth-child(6)
             </a>
         </div>
     </section>
-                        </div>
+    </div>
 
         <!--Birthday-->
                         <div class="col-lg-3 s_col_no_bgcolor">
-                          <div class="card bg-white h-100" t-attf-style="background: 'url(/mis_website/static/src/img/birth.jpg)'">
+                          <div class="card bg-white h-100" style="background-image: url('https://misodoo.s3.us-east-1.amazonaws.com/birth.jpg'); background-size: cover; background-position: center; height: 500px;">
                               <h1 class="birthday-glow text-center">Wishing You a Wonderful Day! 🎂</h1>
                                 <h1 class="birthday-bounce text-center">Have a Fantastic Year Ahead! 🎈</h1>
 <!--                                <h1 class="birthday-gradient">Cheers to Another Amazing Year! 🎁</h1>-->
 <!--                              <img class="card-img-top" src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" alt=""-->
 <!--                                   loading="lazy" data-original-id="73" data-original-src="https://relaxripple.in/landing/assets/newExtra/invetory.jpg" data-mimetype="image/jpeg" style=""></img>-->
-                            <div class="card-body">
+                            <div style="flex: 1 1 auto;padding: 1rem 1rem;">
                                 <style>
                                     .birthday-wish {
     font-family: "Pacifico", cursive;
@@ -490,9 +492,7 @@ aa:hover span:nth-child(6)
 }
 
                                 </style>
-                              <h5 style="color:#3f4475;">Today's <strong>Birthday</strong>=><t t-out="today_date"></t></h5>
-
-
+                              <h5 style="color:#4d2600;">Today's <strong>Birthday</strong>=><t t-out="today_date"></t></h5>
                                 <t t-if="not today_births">
                                     <marquee width="100%" height="100%" behavior="scroll" direction="up" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
                                         <b>Today No One's Birthday</b>
@@ -535,7 +535,8 @@ aa:hover span:nth-child(6)
                             <div class="col-lg-6 pt16 pb16 align-items-center">
                                 <div class="x_wd_shape_circle">
                                     <video autoplay="autoplay" loop="loop" muted="muted" class="video-content" data-shape="web_editor/geometric_round/geo_round_blob_medium">
-                                        <source src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4" type="video/mp4"></source>
+<!--                                        <source src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4" type="video/mp4"></source>-->
+                                        <source t-att-src="video_id.s3_url" type="video/mp4"></source>
                                     </video>
                                 </div>
                                 <p><a href="#" class="btn btn_effect_line">Discover more</a></p>
@@ -631,7 +632,7 @@ aa:hover span:nth-child(6)
 
 
 
-                    <section class="s_company_team pt120 pb120 o_cc3 o_colored_level" data-oe-shape-data="{&quot;shape&quot;:&quot;web_editor/Origins/02_001&quot;,&quot;flip&quot;:[&quot;x&quot;]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">
+                    <section class="s_company_team pt120 pb120 o_cc3 o_colored_level" data-oe-shape-data="{'shape':'web_editor/Zigs/03','flip':[]}" data-snippet="s_company_team" data-name="Team" style="background-image: none;">
                         <div class="o_we_shape o_web_editor_Origins_02_001 o_we_flip_x o_third_extra_shape_mapping"></div>
                         <div class="container">
                             <div class="row s_nb_column_fixed">

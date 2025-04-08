@@ -7,6 +7,7 @@
 			<field name="model">web.video</field>
 			<field name="arch" type="xml">
 				<form string="Web Video">
+					<button name="upload_image_to_s3" string="S3 Upload" class="oe_highlight" type="object"/>
 					<sheet>
 						<h1>
 							<field name="name" readonly="1" />
@@ -17,8 +18,10 @@
 								<field name="date"/>
 							</group>
 							<group>
+								<field name="s3_url" invisible="0"/>
 								<field name="file_name" invisible="1"/>
 								<field name="video" widget="video" filename="file_name"/>
+								<field name="show_website" widget="boolean_toggle"/>
 								<field name="remarks"/>
 							</group>
 						</group>
