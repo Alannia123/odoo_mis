@@ -8,7 +8,7 @@ patch(ListController.prototype, {
     //    /**
     //     * Handle the click event for upload documents.
     //     */
-    _onClickAttachment: async function() {
+    _onSelectedDocumentslide: async function() {
         var self = this;
         const SelectedRecords = await self.getSelectedResIds()
         var OnSelectedDocument = function(e) {

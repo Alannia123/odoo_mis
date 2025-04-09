@@ -19,7 +19,7 @@
 #    If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
-from odoo import api, models
+from odoo import api, models, _
 import os ,base64 , io
 import gzip
 import boto3
@@ -38,7 +38,6 @@ class UploadMultiDocuments(models.Model):
             data = value.split('base64')[1] if value else False
             for rec_id in selected_ids:
                 event_id = self.env['program.gallery.aws'].browse(rec_id)
-                sr_no = len(event_id.aws_url_ids) + 1
                 # AWS S3 credentials
                 AWS_ACCESS_KEY = self.env['ir.config_parameter'].sudo().get_param(
                     'mis_website_backend.amazon_access_key')
@@ -76,7 +75,7 @@ class UploadMultiDocuments(models.Model):
                     s3_url = f"https://{BUCKET_NAME}.s3.{REGION}.amazonaws.com/{file_name}"
                     url_id = self.env['program.gallery.aws.url'].create({
                                                                         'program_id' : event_id.id,
-                                                                        'sr_no' : sr_no,
+                                                                        # 'sr_no' : sr_no,
                                                                         'url' : s3_url,
                                                                     })
                     print("Uploaded image to S3: ", s3_url)
@@ -96,11 +95,11 @@ class UploadSlideImage(models.Model):
 
     @api.model
     def document_file_slide_upload(self, value, name, selected_ids, model):
+        print('--------------------------',name)
         if selected_ids:
             data = value.split('base64')[1] if value else False
             for rec_id in selected_ids:
                 slide_id = self.env['web.slide.image'].browse(rec_id)
-                sr_no = len(slide_id.image_url_ids) + 1
                 # AWS S3 credentials
                 AWS_ACCESS_KEY = self.env['ir.config_parameter'].sudo().get_param(
                     'mis_website_backend.amazon_access_key')
@@ -108,7 +107,6 @@ class UploadSlideImage(models.Model):
                 AWS_SECRET_KEY = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_secret_key')
                 BUCKET_NAME = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_bucket_name')
                 REGION = self.env['ir.config_parameter'].get_param('mis_website_backend.amazon_region_name')
-                print('WSEFFFFFFFFFFFFF', AWS_ACCESS_KEY)
                 if not AWS_ACCESS_KEY:
                     raise ValidationError(_("Please Add AWS Access Key"))
                 if not AWS_SECRET_KEY:
@@ -138,10 +136,9 @@ class UploadSlideImage(models.Model):
                     s3_url = f"https://{BUCKET_NAME}.s3.{REGION}.amazonaws.com/{file_name}"
                     url_id = self.env['web.slide.image.url'].create({
                                                                         'slide_id' : slide_id.id,
-                                                                        'sr_no' : sr_no,
+                                                                        # 'sr_no' : sr_no,
                                                                         'url' : s3_url,
                                                                     })
-                    print("Uploaded image to S3: ", s3_url)
                 except Exception as e:
                     _logger.error(f"Error uploading to S3: {str(e)}")
             # self.env['ir.attachment'].create({

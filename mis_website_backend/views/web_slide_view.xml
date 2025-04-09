@@ -29,12 +29,13 @@
 									<tree create="0" edit="0">
 										<field name="sr_no"/>
 										<field name="url"/>
+										<field name="image_preview" widget="html"/>
 									</tree>
 								</field>
 							</page>
-							<page string="Photos">
-								<field name="s3_image_html" widget="html" readonly="1"/>
-							</page>
+<!--							<page string="Photos">-->
+<!--								<field name="s3_image_html" widget="html" readonly="1"/>-->
+<!--							</page>-->
 						</notebook>
 					</sheet>
 <!--					<div class="oe_chatter">-->

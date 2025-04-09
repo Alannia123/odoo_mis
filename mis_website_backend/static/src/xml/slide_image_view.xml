@@ -8,7 +8,7 @@
             <t t-if="nbSelected and props.resModel == 'web.slide.image'">
                 <button name="upload_form_button" multiple="multiple"
                 class="btn btn-secondary" type="button"
-                    t-on-click="_onClickAttachment">Upload Images
+                    t-on-click="_onSelectedDocumentslide">Upload Images
 				<i class="fa fa-paperclip"/>
 
 			</button>

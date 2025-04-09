@@ -24,32 +24,32 @@ class ProgramEventsGalleryAws(models.Model):
     remarks = fields.Char('Remarks')
     attach_count = fields.Integer('Photos', compute='count_photos')
     aws_url_ids = fields.One2many('program.gallery.aws.url', 'program_id', 'Urls')
-    s3_image_html = fields.Html(string="Photos", readonly=True, compute='_compute_s3_image_html')
+    # s3_image_html = fields.Html(string="Photos", readonly=True, compute='_compute_s3_image_html')
 
-    def _compute_s3_image_html(self):
-        for rec in self:
-
-            html = ''
-            if rec.aws_url_ids:
-                for index, img in enumerate(rec.aws_url_ids, start=1):
-                    if img.url:
-                        html += f'''
-                                    <div style="margin-bottom:10px;">
-                                        <span style="
-                                            background-color: red;
-                                            color: white;
-                                            padding: 2px 8px;
-                                            border-radius: 10px;
-                                            font-size: 12px;
-                                            margin-right: 10px;
-                                            display: inline-block;
-                                        ">
-                                            {index}
-                                        </span>
-                                        <img src="{img.url}" width="200" style="vertical-align: middle;"/>
-                                    </div>
-                                '''
-            rec.s3_image_html = html
+    # def _compute_s3_image_html(self):
+    #     for rec in self:
+    #
+    #         html = ''
+    #         if rec.aws_url_ids:
+    #             for index, img in enumerate(rec.aws_url_ids, start=1):
+    #                 if img.url:
+    #                     html += f'''
+    #                                 <div style="margin-bottom:10px;">
+    #                                     <span style="
+    #                                         background-color: red;
+    #                                         color: white;
+    #                                         padding: 2px 8px;
+    #                                         border-radius: 10px;
+    #                                         font-size: 12px;
+    #                                         margin-right: 10px;
+    #                                         display: inline-block;
+    #                                     ">
+    #                                         {index}
+    #                                     </span>
+    #                                     <img src="{img.url}" width="200" style="vertical-align: middle;"/>
+    #                                 </div>
+    #                             '''
+    #         rec.s3_image_html = html
 
 
     def count_photos(self):
@@ -86,10 +86,10 @@ class ProgramEventsGalleryAws(models.Model):
             print('SSSSSAAAAAAAAAAAAAAA',photo_attaches)
             return photo_attaches
 
-    def write(self, vals_list):
-        res = super(ProgramEventsGalleryAws, self).write(vals_list)
-        self._compute_s3_image_html()
-        return res
+    # def write(self, vals_list):
+    #     res = super(ProgramEventsGalleryAws, self).write(vals_list)
+    #     self._compute_s3_image_html()
+    #     return res
 
 
 
@@ -101,6 +101,15 @@ class ProgramEventsGalleryAwsurl(models.Model):
     program_id = fields.Many2one('program.gallery.aws', 'Program Id')
     sr_no = fields.Integer('Sr.No')
     url = fields.Char('Url')
+    image_preview = fields.Html(string="Preview", compute="_compute_image_preview", sanitize=False)
+
+    @api.depends('url')
+    def _compute_image_preview(self):
+        sr_no = 1
+        for rec in self:
+            rec.image_preview = f'<img src="{rec.url}" width="100"/>'
+            rec.sr_no = sr_no
+            sr_no += 1
 
     # def unlink(self):
     #     res = super(ProgramEventsGalleryAwsurl, self).unlink()
