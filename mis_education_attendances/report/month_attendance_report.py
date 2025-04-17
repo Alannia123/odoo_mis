@@ -17,6 +17,7 @@ class ReportMonthAttendace(models.AbstractModel):
         return range(1, days_of_month + 1)
 
     def get_data(self, rec):
+        hhg
         months = {
             "1": "January",
             "2": "February",
@@ -49,6 +50,9 @@ class ReportMonthAttendace(models.AbstractModel):
             + str(last_day_month)
             + " 23:00:00"
         )
+
+
+        ghfhgfh
 
         elective_subject = f"and is_elective_subject = 'f'"
         if rec.is_elective_subject:

@@ -30,6 +30,7 @@ class SchoolMagazine(models.Model):
             'mimetype': 'application/pdf',  # MIME type
             'res_model': 'school.magazine',  # Attach it to a model (change 'your.model' to actual model name)
             'res_id': self.id,  # Attach it to a specific record
+            'public': True,  # Attach it to a specific record
         })
         self.attachment_id = attachment.id
 

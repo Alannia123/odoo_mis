@@ -317,14 +317,14 @@ aa:hover span:nth-child(6)
 <!--              Slide Section-->
             <div class="col-lg-6 s_col_no_bgcolor" style="border-color: #4080bf;">
                 <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
-                <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="4000" id="myCarousel1730131905894" style="background-image: none;">
+                <div class="s_carousel s_carousel_default carousel slide" data-bs-interval="3000" id="myCarousel1730131905894" style="background-image: none;">
 
             <ol class="carousel-indicators o_we_no_overlay">
-                <li data-bs-slide-to="0" data-bs-target="#myCarousel1730131905894" class=""></li>
+                <li data-bs-slide-to="0" data-bs-target="#myCarousel1730131905894" class="active" aria-current="true"></li>
                 <li data-bs-slide-to="1" data-bs-target="#myCarousel1730131905894" class=""></li>
-                <li data-bs-slide-to="2" data-bs-target="#myCarousel1730131905894" class="active" aria-current="true"></li>
+                <li data-bs-slide-to="2" data-bs-target="#myCarousel1730131905894" ></li>
                 <li data-bs-target="#myCarousel1730131905894" data-bs-slide-to="3"></li>
-                <li data-bs-target="#myCarousel1730131905894" data-bs-slide-to="4" aria-current="true"></li>
+                <li data-bs-target="#myCarousel1730131905894" data-bs-slide-to="4" ></li>
                 <li data-bs-target="#myCarousel1730131905894" data-bs-slide-to="5"></li>
                 <li data-bs-target="#myCarousel1730131905894" data-bs-slide-to="6"></li>
             </ol>

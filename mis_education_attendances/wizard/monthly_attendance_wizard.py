@@ -96,18 +96,23 @@ class DailyAttendanceStudentRemark(models.TransientModel):
                 "11": "November",
                 "12": "December",
             }
-            days_of_month = calendar.monthrange(int(rec.year), int(rec.month))[1]
+            month = rec.month
+            if int(rec.month) < 10:
+                month = "0" + rec.month
+            days_of_month = calendar.monthrange(int(rec.year), int(month))[1]
             month_days = range(1, days_of_month + 1)
+            print('MONNNNN',rec.month)
+            print('MONNNNN',month)
             last_day_month = calendar.monthrange(
-                int(rec.year), int(rec.month)
+                int(rec.year), int(month)
             )[1]
             start_date_str = (
-                str(int(rec.year)) + "-" + str(int(rec.month)) + "-01"
+                str(int(rec.year)) + "-" + str(int(month)) + "-01"
             )
             end_date_str = (
                 str(int(rec.year))
                 + "-"
-                + str(int(rec.month))
+                + str(int(month))
                 + "-"
                 + str(last_day_month)
                 + " 23:00:00"
@@ -133,10 +138,18 @@ class DailyAttendanceStudentRemark(models.TransientModel):
                             """,
                 (rec.division_id.id, start_date_str, end_date_str),
             )
-            if not self._cr.fetchall():
+            attendances = self.env['education.attendance'].search([
+                ('state', '=', 'done'),
+                ('division_id', '=', rec.division_id.id),
+                ('date', '>=', start_date_str),
+                ('date', '<=', end_date_str),
+            ])
+            attendance_ids = attendances.ids
+            print('uuuuuuuuuuuuuu',attendance_ids)
+            if not attendance_ids:
                 raise ValidationError(_("Data Not Found"))
         print('RETTTTTTTTTTTTTTTTTTT',self._cr.fetchall())
-        hnn
+        print('RETTTTTTTTTTTTTTTTTTT',data)
         if not self.user_id:
             report_id = self.env.ref("mis_education_attendances.monthly_attendance_report")
             return report_id.report_action(self, data=data, config=False)
