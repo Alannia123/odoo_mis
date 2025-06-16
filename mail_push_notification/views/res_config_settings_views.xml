@@ -38,7 +38,7 @@
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="project_id_firebase"
                                    required="push_notification==True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_left_pane">
                         </div>
@@ -47,7 +47,7 @@
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="private_key_ref"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_left_pane">
                         </div>
@@ -56,35 +56,35 @@
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="private_key"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="client_email"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="client_email"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="client_id_firebase"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="client_id_firebase"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="client_cert_url"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="client_cert_url"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="api_key"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="api_key"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="auth_domain"
@@ -98,35 +98,35 @@
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="storage_bucket"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="messaging_sender_id_firebase"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="messaging_sender_id_firebase"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="app_id_firebase"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="app_id_firebase"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="o_setting_right_pane">
                             <label for="measurement_id_firebase"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="measurement_id_firebase"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                           <div class="o_setting_right_pane">
                             <label for="vapid"
                                    class="col-2 col-lg-2 o_light_label"/>
                             <field name="vapid"
                                    required="push_notification == True"
-                                   password="1"/>
+                                   password="0"/>
                         </div>
                         <div class="col-lg-6 col-8 d-flex flex-row-reverse o_setting_box">
                             <button name="test_connection" string="Test Connection" type="object" class="btn-primary"/>

@@ -30,6 +30,7 @@ class MailPushNotification(http.Controller):
 
     @http.route('/firebase-messaging-sw.js', type='http', auth="public")
     def firebase_http(self):
+        print('FIEBASEDDDDDDDDDDDDD',request.env.company)
         """Returns the Firebase service worker script.
         :return: The Firebase service worker script.
         :rtype: str"""
@@ -94,6 +95,7 @@ class MailPushNotification(http.Controller):
         :param post: POST request data containing registration token.
         :type post: dict
        """
+        print('PUSH NOTIFIVASSSSSSSSSSSSSS', request.env.company)
         user_notification = request.env['push.notification'].sudo().search(
             [('register_id', '=', post.get('name'))], limit=1)
         if not user_notification:
@@ -107,6 +109,7 @@ class MailPushNotification(http.Controller):
         """Sends Firebase configuration details.
         :return: JSON containing Firebase configuration details.
         :rtype: str"""
+        print('CONFIG DEATATTASSSSSSSSSSSSSSSS', request.env.company)
         if request.env.company and request.env.company.push_notification:
             return json.dumps({
                 'vapid': request.env.company.vapid,
@@ -123,6 +126,7 @@ class MailPushNotification(http.Controller):
 
     @http.route('/firebase_credentials', type="json", auth="public")
     def firebase_credentials(self, **kw):
+        print('CRESDWWWWWWWWWWWWRRRRRRRRRRRRRRR', request.env.company)
         """ Retrieve Firebase credentials for the current company."""
         return {'id': request.env.company.id,
                 'push_notification': request.env.company.push_notification}

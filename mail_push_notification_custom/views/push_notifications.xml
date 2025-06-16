@@ -1,0 +1,44 @@
+<!-- File: your_module_name/views/push_notification_views.xml -->
+<odoo>
+    <record id="view_form_push_notification" model="ir.ui.view">
+        <field name="name">push.notification.form</field>
+        <field name="model">push.notification</field>
+        <field name="arch" type="xml">
+            <form string="Push Notification">
+                <sheet>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="register_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View (optional but helpful for list display) -->
+    <record id="view_tree_push_notification" model="ir.ui.view">
+        <field name="name">push.notification.tree</field>
+        <field name="model">push.notification</field>
+        <field name="arch" type="xml">
+            <tree string="Push Notifications">
+                <field name="user_id"/>
+                <field name="register_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to open the views -->
+    <record id="action_push_notification" model="ir.actions.act_window">
+        <field name="name">Push Notifications</field>
+        <field name="res_model">push.notification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item to access the form -->
+    <menuitem id="menu_push_notification_root" name="Push Notifications" sequence="1000"/>
+
+    <menuitem id="menu_push_notification"
+              name="Manage Registrations"
+              parent="menu_push_notification_root"
+              action="action_push_notification"/>
+</odoo>

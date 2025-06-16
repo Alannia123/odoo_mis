@@ -152,6 +152,7 @@ class DailyAttendanceStudentRemark(models.TransientModel):
         print('RETTTTTTTTTTTTTTTTTTT',data)
         if not self.user_id:
             report_id = self.env.ref("mis_education_attendances.monthly_attendance_report")
+            print('WWWWWQQQQQQQQQQQQQQQQQQ$$$$$$$$$',report_id)
             return report_id.report_action(self, data=data, config=False)
 
     @api.model

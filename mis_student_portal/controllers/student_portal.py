@@ -21,6 +21,7 @@ class CustomerPortalCustom(CustomerPortal):
     @route(['/my', '/my/home'], type='http', auth="user", website=True)
     def home(self, **kw):
         values = self._prepare_portal_layout_values()
+        print('ghghghhhgghfgh',self)
         today_date = date.today()
         all_announce_count = request.env['web.info'].sudo().search_count([('enable', '=', True)])
         today_announce_count = request.env['web.info'].sudo().search_count([('enable', '=', True),('date', '=', today_date)])

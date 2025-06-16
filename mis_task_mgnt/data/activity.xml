@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+<!--Picking Validate-->
+    <record id="task_assign_to_faculty_notification" model="mail.activity.type">
+        <field name="name">Assign To Faculty</field>
+        <field name="res_model">task.management</field>
+    </record>
+
+
+</odoo>
+

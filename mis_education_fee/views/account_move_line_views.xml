@@ -854,6 +854,7 @@
                                    options="{'no_create_edit': True, 'no_create': True}"
                                    required="1"/>
                             <field name="student_name" readonly="1"/>
+                            <field name="register_no" readonly="0"/>
                             <field name="partner_id" invisible="1"
                                    context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company'}"
                                    options='{"always_reload": True, "no_quick_create": True}'/>
@@ -982,7 +983,7 @@
 
                                     <!-- Displayed fields -->
                                     <field name="sequence" widget="handle"/>
-                                    <field name="move_name" invisible="1"/>
+                                    <field name="move_name" column_invisible="1"/>
                                     <field name="product_id"
                                            string="Fee Name"
                                            optional="show"
@@ -1020,28 +1021,28 @@
                                            string="Total"
                                     />
                                     <!-- Others fields -->
-                                    <field name="partner_id" invisible="1"/>
+                                    <field name="partner_id" column_invisible="1"/>
                                     <field name="amount_currency"
-                                           invisible="1"/>
-                                    <field name="currency_id" invisible="1"/>
-                                    <field name="debit" invisible="1"/>
-                                    <field name="credit" invisible="1"/>
-                                    <field name="date" invisible="1"/>
-                                    <field name="date_maturity" invisible="1"/>
+                                           column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="debit" column_invisible="1"/>
+                                    <field name="credit" column_invisible="1"/>
+                                    <field name="date" column_invisible="1"/>
+                                    <field name="date_maturity" column_invisible="1"/>
 
-                                    <field name="tax_line_id" invisible="1"/>
+                                    <field name="tax_line_id" column_invisible="1"/>
                                     <field name="tax_repartition_line_id"
-                                           invisible="1"/>
-                                    <field name="tax_tag_ids" invisible="1"/>
+                                           column_invisible="1"/>
+                                    <field name="tax_tag_ids" column_invisible="1"/>
                                     <field name="tax_base_amount"
-                                           invisible="1"/>
-                                    <field name="company_id" invisible="1"/>
+                                           column_invisible="1"/>
+                                    <field name="company_id" column_invisible="1"/>
                                     <field name="company_currency_id"
-                                           invisible="1"/>
+                                           column_invisible="1"/>
                                     <field name="display_type" force_save="1"
-                                           invisible="1"/>
+                                           column_invisible="1"/>
                                     <field name="account_internal_group"
-                                           invisible="1"/>
+                                           column_invisible="1"/>
                                 </tree>
                                 <kanban class="o_kanban_mobile">
                                     <!-- Displayed fields -->
@@ -1442,10 +1443,14 @@
                        filter_domain="['|', '|', ('name', 'ilike', self), ('ref', 'ilike', self), ('partner_id', 'ilike', self)]"/>
                 <field name="date"/>
                 <field name="partner_id"/>
+<!--                <field name="student_id" string="Student Name"/>-->
                 <field name="journal_id"/>
                 <filter string="Unposted" name="unposted"
                         domain="[('state', '=', 'draft')]"
                         help="Unposted Journal Entries"/>
+<!--                <filter string="Student Name" name="student_id"-->
+<!--                        domain="[('student_id', 'ilike', self)]"/>-->
+<!--                        help="Unposted Journal Entries"/>-->
                 <filter string="Posted" name="posted"
                         domain="[('state', '=', 'posted')]"
                         help="Posted Journal Entries"/>
@@ -1503,6 +1508,9 @@
                                 ('name', 'ilike', self), ('invoice_origin', 'ilike', self),
                                 ('ref', 'ilike', self), ('payment_reference', 'ilike', self),
                                 ('partner_id', 'child_of', self)]"/>
+                <field name="register_no" string="Register No"
+                       filter_domain="[('register_no', 'ilike', self), ]"/>
+
                 <field name="journal_id"/>
                 <field name="partner_id" operator="child_of"/>
                 <field name="invoice_user_id" string="Salesperson"
@@ -1722,8 +1730,7 @@
         <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" ref="view_out_invoice_tree"/>
         <field name="search_view_id" ref="view_account_invoice_filter"/>
-        <field name="domain">[('move_type', '=', 'out_invoice'),('is_fee', '=',
-            True)]
+        <field name="domain">[('move_type', '=', 'out_invoice'),('is_fee', '=', True)]
         </field>
         <field name="context">{'default_move_type': 'out_invoice'}</field>
         <field name="help" type="html">

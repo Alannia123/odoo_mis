@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+
+        <record id="monthly_attendance_report" model="ir.actions.report">
+            <field name="name">Monthly Attendance report</field>
+            <field name="model">monthly.attendance.wizard</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">mis_education_attendances.monthly_attendance_report_temp</field>
+        </record>
+
+
+
+
+        <template id="monthly_attendance_report_temp">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <h2 class="text-center text-uppercase text-primary fw-bold mb-4">
+                        Monthly Attendance Report
+                    </h2>
+                    <table width="100%">
+                        <tr>
+                            <td class="text-center" width="30%"><b>Division</b> : <t t-esc="standard_name"/></td>
+                            <td  class="text-center" width="30%"> <b>Month</b>: <t t-esc="month_str"/></td>
+                            <td  class="text-center" width="40%"> <b>Academic Year</b>: <t t-esc="academic_year_id"/></td>
+                        </tr>
+                    </table>
+
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                              <th class="badge bg-primary rounded-pill"><b>Student Name</b></th>
+                            <t t-foreach="dates" t-as="d">
+                              <th >
+                                <t t-esc="d.strftime('%d')"/>
+                              </th>
+                            </t>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <t t-foreach="students" t-as="student">
+                            <tr>
+                              <td><t t-esc="student.name"/></td>
+                              <t t-foreach="dates" t-as="d">
+                                <td>
+                                  <t t-set="status" t-value="attendance_dict.get(student.id, {}).get(d.strftime('%Y-%m-%d'))"/>
+                                    <t t-if="status == True">
+                                        <span style="color: green;">✅</span>
+<!--                                        <span class="fa fa-check-circle text-success"></span>-->
+                                    </t>
+                                  <t t-if="status == False">
+                                      <span style="color: red;">❌</span>
+<!--                                      <span class="fa fa-times-circle text-danger"></span>-->
+                                  </t>
+<!--                                  <t t-elif="status == 'absent'">❌</t>-->
+<!--                                  <t t-elif="status == 'leave'">🟡</t>-->
+        <!--                                  <t t-else"">-</t>-->
+                                </td>
+                              </t>
+                            </tr>
+                          </t>
+                        </tbody>
+                      </table>
+                    </div>
+                  </t>
+        </template>
+
+</odoo>
+
+
+

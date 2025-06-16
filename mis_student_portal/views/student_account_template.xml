@@ -509,8 +509,88 @@
                                 </a>
                                 <p><b>Fees &amp; Payments</b></p>
                             </div>
-                        </div>
+                            </div>
                     </div>
+
+                        <style>
+    .student-fees-container {
+        background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+        padding: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+
+<!--    .student-fees-container h2 {-->
+<!--        margin-bottom: 5px;-->
+<!--        color: #333;-->
+<!--    }-->
+
+<!--    .pie_canvas{-->
+<!--  margin-top: 30px;-->
+<!--  height: 400px;-->
+<!--  width: 100%;-->
+<!--  text-align: center;-->
+<!--}-->
+</style>
+
+
+<!--            <div class="student-fees-container">-->
+<!--                <h2>Fees Summary</h2>-->
+<!--            <canvas id="feeChart" width="400" height="400"></canvas>-->
+
+<!--        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+<!--        <script>-->
+<!--            var ctx = document.getElementById('feeChart').getContext('2d');-->
+<!--            var feeChart = new Chart(ctx, {-->
+<!--                type: 'pie',-->
+<!--                data: {-->
+<!--                    labels: ['Paid', 'Unpaid'],-->
+<!--                    datasets: [{-->
+<!--                        label: 'Fees',-->
+<!--                        data: [{'Paid': 15, 'Unpaid': 85}],-->
+<!--                        backgroundColor: ['#28a745', '#dc3545'],-->
+<!--                        borderWidth: 1-->
+<!--                    }]-->
+<!--                },-->
+<!--                options: {-->
+<!--                    responsive: true,-->
+<!--                    plugins: {-->
+<!--                        legend: {-->
+<!--                            position: 'bottom',-->
+<!--                        },-->
+<!--                        title: {-->
+<!--                            display: true,-->
+<!--                            text: 'Fees Overview'-->
+<!--                        }-->
+<!--                    }-->
+<!--                }-->
+<!--            });-->
+<!--        </script>-->
+<!--            </div>-->
+
+                        <!-- Division to show the pie chart for exam results -->
+               <div class="pie-container inline">
+                   <h2>Exam Result</h2>
+                   <hr/>
+                   <!-- Division for chart filter -->
+                   <div class="pie-chart-filter">
+                       <select class="academic_year_filter" id="select_period"
+                            t-on-change="change_select_period"
+                            required="true">
+                    </select>
+                   </div>
+                   <!-- Division to show the chart -->
+                   <div class="pie_canvas">
+                       <canvas class="exam_result" width="100%"/>
+                       <canvas class="academic_exam_result" width="100%"/>
+                   </div>
+               </div>
+
 
                     <div id="portal_client_category" position="inside">
                         <t t-set="partner_sudo" t-value="request.env.user.partner_id"/>

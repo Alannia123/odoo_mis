@@ -37,6 +37,7 @@ class AccountMove(models.Model):
         for item in self:
             item.invoice_line_ids = lines
             item.partner_id = item.student_id.partner_id
+            item.register_no = item.student_id.register_no
             item.class_division_id = item.student_id.class_division_id
             date_today = datetime.date.today()
             company = self.env.user.company_id
@@ -130,6 +131,7 @@ class AccountMove(models.Model):
                                                      'transaction.')
     partner_id = fields.Many2one('res.partner',
                                  string='Partner', help='Partner responsible.')
+    register_no = fields.Char('Register No')
 
     @api.model
     def create(self, vals):

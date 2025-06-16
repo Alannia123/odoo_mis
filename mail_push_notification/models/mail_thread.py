@@ -90,6 +90,8 @@ class MailThread(models.AbstractModel):
                 "universe_domain": "googleapis.com"
             })
             initialize_app(cred)
+        print('TODDDDDDDDDDDDDDDDD',[reg_id.register_id for reg_id in self.env['push.notification'].search(domain)])
+        print('TODDDDDDDDDDDDDDDDD',msg)
         message = messaging.MulticastMessage(
             notification=messaging.Notification(
                 title='Message from ' + msg[0]['author_id'][1],

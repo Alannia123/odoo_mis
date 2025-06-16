@@ -11,7 +11,7 @@ from odoo import api, models
 class BatchExamReport(models.AbstractModel):
     """Defining Batch exam report."""
 
-    _name = "report.school_attendance.attendance_month"
+    _name = "report.mis_education_attendances.attendance_month"
     _description = "Report attendance Month"
 
     def get_header_data(self, data):

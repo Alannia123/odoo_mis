@@ -7,7 +7,7 @@ from odoo import api, models
 
 
 class ReportMonthAttendace(models.AbstractModel):
-    _name = "report.school_attendance.monthly_attendance_report_tmpl"
+    _name = "report.mis_education_attendances.monthly_attendance_report_tmpl"
     _description = "Monthly Attendance Report"
 
     def get_dates(self, rec):
@@ -17,7 +17,6 @@ class ReportMonthAttendace(models.AbstractModel):
         return range(1, days_of_month + 1)
 
     def get_data(self, rec):
-        hhg
         months = {
             "1": "January",
             "2": "February",

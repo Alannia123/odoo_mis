@@ -9,10 +9,11 @@
     'author': 'Alannia',
     'company': 'alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['base','hr', 'mis_education_core'],
+    'depends': ['base','hr', 'mail', 'mis_education_core'],
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
+        'data/activity.xml',
         'data/sequence.xml',
         'views/task_mgnt_view.xml',
     ],

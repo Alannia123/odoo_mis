@@ -540,3 +540,4 @@ export class EducationalDashboard extends Component {
 }
 EducationalDashboard.template = "EducationalDashboard"
 registry.category("actions").add("erp_dashboard_tag", EducationalDashboard)
+

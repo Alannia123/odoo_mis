@@ -6,15 +6,15 @@ from random import randint
 
 class MisTask(models.Model):
     _name = 'task.management'
-    _description = "MIS Task Management"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _description = 'Task Management'
     _order = "id desc"
 
     name = fields.Char('Name', required=False, readonly=True, tracking=True)
     create_date = fields.Date('Date', default=lambda self: fields.Datetime.now(), tracking=True, readonly=True)
     scheduled_date = fields.Date('Scheduled Date', default=lambda self: fields.Datetime.now(), tracking=True)
     completion_date = fields.Date('Completion Date',  tracking=True)
-    user_id = fields.Many2one('res.users', 'Faculty', tracking=True)
+    user_id = fields.Many2one('res.users', 'Assigned To', tracking=True)
     task_desc = fields.Text('Task Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('assigned', 'Assigned'), ('in_progress', 'In Progress'), ('done', 'Completed')],
                                         default='draft', string="State", help="Stages of attendance" , tracking=True)
@@ -28,9 +28,22 @@ class MisTask(models.Model):
 
 
     def action_assign_to_faculty(self):
+        # self.message_post(
+        #     body="Task has been updated.",
+        #     subject="Task Update",
+        #     message_type="comment",
+        #     subtype_xmlid="mail.mt_comment",
+        # )
         return self.write({"state": "assigned"})
 
     def accept_task_by_faculty(self):
+        # msg_post = self.message_post(
+        #     body="Order has been reviewed by the manager.",
+        #     subject="Review Update",
+        #     message_type="comment",
+        #     subtype_xmlid="mail.mt_note",
+        #     author_id=partner.id,# Shows in chatter as a note
+        # )
         return self.write({"state": "in_progress"})
 
     def complete_task_by_faculty(self):

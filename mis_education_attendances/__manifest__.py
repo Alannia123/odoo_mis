@@ -15,7 +15,8 @@
     'depends': ['mis_education_core'],
     'data': [
         'security/ir.model.access.csv',
-        'report/monthly_attendance_report_view.xml',
+        # 'report/monthly_attendance_report_view.xml',
+        'reports/report_monthly_attendance.xml',
         # 'reports/division_attendance_report.xml',
         'wizard/monthly_attendance_wizard_view.xml',
         'views/education_attendance_line_views.xml',
