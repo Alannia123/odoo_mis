@@ -9,7 +9,7 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//block[@name='integration']" position="inside">
-                <div class="col-12 col-lg-12 o_setting_box" id="amazon">
+                <div class="col-12 col-lg-6 o_setting_box" id="amazon">
                     <div class="o_setting_left_pane">
                         <field name="is_amazon_connector"
                                string="Amazon S3 Cloud Storage"/>
@@ -47,121 +47,6 @@
                             <field name="amazon_region_name"
                                    invisible="(is_amazon_connector == False)"/>
                         </span>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-12 o_setting_box" id="firebase">
-                    <div id="firebase_setting"
-                         class="col-xs-12 col-md-6 o_setting_box">
-                        <div class="o_setting_left_pane">
-                            <field name="push_notification"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="push_notification"/>
-                        </div>
-                    </div>
-                    <div id="firebase_other_setting"
-                         class="col-xs-12 col-md-12 o_setting_box"
-                         invisible="push_notification == False">
-                        <div class="o_setting_left_pane">
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="project_id_firebase"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="project_id_firebase"
-                                   required="push_notification==True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_left_pane">
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="private_key_ref"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="private_key_ref"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_left_pane">
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="private_key"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="private_key"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="client_email"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="client_email"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="client_id_firebase"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="client_id_firebase"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="client_cert_url"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="client_cert_url"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="api_key"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="api_key"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="auth_domain"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="auth_domain"
-                                   required="push_notification == True"
-                                   password="1"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="storage_bucket"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="storage_bucket"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="messaging_sender_id_firebase"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="messaging_sender_id_firebase"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="app_id_firebase"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="app_id_firebase"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="measurement_id_firebase"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="measurement_id_firebase"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                          <div class="o_setting_right_pane">
-                            <label for="vapid"
-                                   class="col-2 col-lg-2 o_light_label"/>
-                            <field name="vapid"
-                                   required="push_notification == True"
-                                   password="0"/>
-                        </div>
-                        <div class="col-lg-6 col-8 d-flex flex-row-reverse o_setting_box">
-                            <button name="test_connection" string="Test Connection" type="object" class="btn-primary"/>
-                        </div>
                     </div>
                 </div>
             </xpath>
