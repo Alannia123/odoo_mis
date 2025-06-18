@@ -37,7 +37,6 @@ access_education_syllabus_principal,access.education.syllabus.principal,mis_educ
 access_education_class_history_principal,access.education.class.history.principal,mis_education_core.model_education_class_history,mis_education_core.group_education_principal,1,1,1,1
 access_education_class_history_user,access.education.class.history.user,mis_education_core.model_education_class_history,base.group_user,1,0,0,0
 
-access_education_rank_wizard,access.education.rank.wizard,mis_education_core.model_rank_wizard,base.group_user,1,1,1,1
 access_education_class_subject,access.education.class.subject,mis_education_core.model_education_class_subject,base.group_user,1,1,1,1
 access_student_green_book,access.student.green.book,mis_education_core.model_student_green_book,base.group_user,1,1,1,1
 access_student_green_line,access.student.green.line,mis_education_core.model_student_green_line,base.group_user,1,1,1,1

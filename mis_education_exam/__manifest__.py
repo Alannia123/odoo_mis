@@ -20,6 +20,7 @@
         'views/education_exam_valuation_views.xml',
         'views/education_exam_results_views.xml',
         'views/education_student_views.xml',
+        'wizard/rank_card_wizard_view.xml',
     ],
     'images': ['static/description/banner.jpg'],
     'license': 'AGPL-3',

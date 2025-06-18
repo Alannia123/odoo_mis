@@ -7,3 +7,4 @@ access_education_exam,access.education.exam,mis_education_exam.model_education_e
 access_education_subject_line,access.education.subject.line,mis_education_exam.model_education_subject_line,base.group_user,1,1,1,1
 access_education_exam_type,access.education.exam.type,mis_education_exam.model_education_exam_type,mis_education_core.group_education_faculty,1,1,1,0
 access_exam_syllabus,access_exam_syllabus,mis_education_exam.model_exam_syllabus,mis_education_core.group_education_faculty,1,1,1,1
+access_education_rank_wizard,access.education.rank.wizard,mis_education_exam.model_rank_wizard,base.group_user,1,1,1,1

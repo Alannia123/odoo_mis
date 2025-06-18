@@ -21,7 +21,7 @@
         'wizard/application_reject_views.xml',
 
         'views/education_main_menu.xml',
-        'wizard/rank_card_wizard_view.xml',
+        # 'wizard/rank_card_wizard_view.xml',
         'views/res_partner_views.xml',
         'views/education_academic_year_views.xml',
         'views/education_application_views.xml',

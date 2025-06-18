@@ -13,8 +13,8 @@
     'data': [
         'security/ir.model.access.csv',
         # 'data/sequence.xml',
-        'wizard/home_entry_wizard_view.xml',
         'views/home_work_view.xml',
+        'wizard/home_entry_wizard_view.xml',
     ],
     #  'assets': {
     #     'web.assets_backend': [
