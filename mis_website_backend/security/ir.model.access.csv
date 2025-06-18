@@ -16,4 +16,4 @@ access_school_members_line,access_school_members_line,model_school_members_line,
 access_web_slide_image,access_web_slide_image,model_web_slide_image,,1,1,1,1
 access_web_slide_image_url,access_web_slide_image_url,model_web_slide_image_url,,1,1,1,1
 access_slide_multi_documents,access_slide_multi_documents,model_slide_multi_documents,,1,1,1,1
-
+access_push_notification_user,access.push.notification.user,model_push_notification,base.group_user,1,1,1,1

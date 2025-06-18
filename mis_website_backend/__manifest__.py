@@ -28,6 +28,7 @@
             'mis_website_backend/static/src/js/document_multi_upload.js',
             'mis_website_backend/static/src/xml/document_multi_upload.xml',
             'mis_website_backend/static/src/js/slide_images.js',
+            'mis_website_backend/static/src/js/firebase.js',
             'mis_website_backend/static/src/xml/slide_image_view.xml',
         ],
     },
