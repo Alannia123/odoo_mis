@@ -376,6 +376,93 @@
                                 font-size: 10px;
                             }
                         }
+.tile-badge-att-ab {
+                            position: absolute;
+                            top: -7px;
+                            right: 2px;
+                            background: red;
+                            color: white;
+                            font-size: 12px;
+                            font-weight: bold;
+                            border-radius: 20%;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        @media (max-width: 768px) {
+                            .portal-small-tile {
+                                width: 70px;
+                                height: 70px;
+                                font-size: 12px;
+                            }
+
+                            .portal-small-tile i {
+                                font-size: 35px;
+                            }
+
+                            .tile-badge {
+                                width: 25px;
+                                height: 25px;
+                                font-size: 10px;
+                            }
+                        .tile-badge-left {
+                                width: 40px;
+                                height: 20px;
+                                font-size: 10px;
+                            }
+                        }
+                        .tile-badge-att-ab {
+                                width: 40px;
+                                height: 20px;
+                                font-size: 10px;
+                            }
+                        }.tile-badge-att-na {
+                            position: absolute;
+                            top: -7px;
+                            right: 2px;
+                            background: yellow;
+                            color: white;
+                            font-size: 12px;
+                            font-weight: bold;
+                            border-radius: 20%;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        @media (max-width: 768px) {
+                            .portal-small-tile {
+                                width: 70px;
+                                height: 70px;
+                                font-size: 12px;
+                            }
+
+                            .portal-small-tile i {
+                                font-size: 35px;
+                            }
+
+                            .tile-badge {
+                                width: 25px;
+                                height: 25px;
+                                font-size: 10px;
+                            }
+                        .tile-badge-left {
+                                width: 40px;
+                                height: 20px;
+                                font-size: 10px;
+                            }
+                        }
+                        .tile-badge-att-na {
+                                width: 40px;
+                                height: 20px;
+                                font-size: 10px;
+                            }
+                        }
 
                         @keyframes scaleUp {
                                 0% {
@@ -481,8 +568,9 @@
                         <div class="row text-center mt-3">
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/student_info" class="portal-small-tile portal-tile-color-att">
-<!--                                    <div class="tile-badge-att typing-text"><t t-esc="attendance"/></div>-->
-<!--                                    <div class="tile-badge text-scale" > <t t-esc="attendance"/> </div>-->
+                                    <t t-if="attendance == 'Present'"> <div class="tile-badge-att typing-text"><t t-esc="attendance"/></div></t>
+                                    <t t-if="attendance == 'Absent'"><div class="tile-badge-att-ab typing-text" > <t t-esc="attendance"/> </div></t>
+                                    <t t-else=""><div class="tile-badge-att-na typing-text" > <t t-esc="attendance"/> </div></t>
                                     <i class="fa fa-calendar"></i>
                                 </a>
                                 <p><b>Attendance</b></p>
@@ -574,22 +662,22 @@
 <!--            </div>-->
 
                         <!-- Division to show the pie chart for exam results -->
-               <div class="pie-container inline">
-                   <h2>Exam Result</h2>
-                   <hr/>
-                   <!-- Division for chart filter -->
-                   <div class="pie-chart-filter">
-                       <select class="academic_year_filter" id="select_period"
-                            t-on-change="change_select_period"
-                            required="true">
-                    </select>
-                   </div>
-                   <!-- Division to show the chart -->
-                   <div class="pie_canvas">
-                       <canvas class="exam_result" width="100%"/>
-                       <canvas class="academic_exam_result" width="100%"/>
-                   </div>
-               </div>
+<!--               <div class="pie-container inline">-->
+<!--                   <h2>Exam Result</h2>-->
+<!--                   <hr/>-->
+<!--                   &lt;!&ndash; Division for chart filter &ndash;&gt;-->
+<!--                   <div class="pie-chart-filter">-->
+<!--                       <select class="academic_year_filter" id="select_period"-->
+<!--                            t-on-change="change_select_period"-->
+<!--                            required="true">-->
+<!--                    </select>-->
+<!--                   </div>-->
+<!--                   &lt;!&ndash; Division to show the chart &ndash;&gt;-->
+<!--                   <div class="pie_canvas">-->
+<!--                       <canvas class="exam_result" width="100%"/>-->
+<!--                       <canvas class="academic_exam_result" width="100%"/>-->
+<!--                   </div>-->
+<!--               </div>-->
 
 
                     <div id="portal_client_category" position="inside">

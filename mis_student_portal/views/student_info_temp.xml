@@ -32,7 +32,7 @@
                 <div >
                     <t t-if="student.image_1920">
                         <div style="padding-left: 150 px;">
-                            <img class="rounded-circle mr4 float-center o_portal_contact_img"
+                            <img class="mr4 float-center o_portal_contact_img"
                                  t-att-src="image_data_uri(student.image_1920)"
                                  style="width:200px;height:250px;"/>
                         </div>
@@ -77,7 +77,7 @@
                                     <td>
                                         <t t-esc="student.street"></t>,<br></br><t t-esc="student.street2"></t>,<br/>
                                         <t t-esc="student.city"></t>,<t t-esc="student.state_id.name"></t>,<br></br>
-                                        <t t-esc="student.country_id.name"></t>-<t t-esc="student.zip"></t>,
+                                        <t t-esc="student.country_id.name"></t>-<t t-esc="student.zip"></t>
                                     </td>
                                 </tr>
                             </table>

@@ -30,6 +30,14 @@ class CustomerPortalCustom(CustomerPortal):
         home_work_count = request.env['student.homework'].sudo().search_count([('class_div_id', '=', student_id.class_division_id.id)])
         today_home_work_count = request.env['student.homework'].sudo().search_count([('class_div_id', '=', student_id.class_division_id.id),
                                                                                                         ('homework_date', '=', today_date)])
+        attandance_id = request.env['education.attendance'].sudo().search([('state', '=', 'done'),('date', '=', today_date),('division_id', '=', student_id.class_division_id.id)])
+        attendance = 'N/A'
+        if attandance_id:
+            today_attendance = attandance_id.attendance_line_ids.filtered(lambda atten_line: atten_line.register_no == student_id.register_no)
+            if today_attendance.present_morning:
+                attendance = 'Present'
+            else:
+                attendance = 'Absent'
         if request.env.user._is_internal():
             return request.render("mis_student_portal.teachsers_portal_my_home", values)
         else:
@@ -38,7 +46,7 @@ class CustomerPortalCustom(CustomerPortal):
                                                                             'student' : student_id,
                                                                             'div_name' : student_id.class_division_id.name,
                                                                             'home_work_count' : home_work_count,
-                                                                            'attendance' : 'Present',
+                                                                            'attendance' : attendance,
                                                                             'today_home_work_count' : today_home_work_count,
                                                                             })
 

@@ -44,31 +44,30 @@
                                 invisible="attendance_created == True"
                                 class="oe_highlight"/>
                     </div>
-                    <div style="height: 30px;"
-                         invisible="attendance_created == False">
-                        <div style="width: 50%;float:left;text-align:right;padding-right: 15%;"
-                             invisible="all_marked_morning == True or state != 'draft'">
-                            <button style="padding: 1px 10px;background-color: #5fb18d !important;border-color: #5fb18d !important;"
-                                    string="Mark All"
-                                    name="action_mark_all_present_morning"
-                                    type="object"
-                                    class="oe_highlight"/>
-                        </div>
-                        <div style="width: 50%;float:left;text-align:right;padding-right: 15%;"
-                             invisible="all_marked_morning == False or state != 'draft'">
-                            <button style="padding: 1px 10px;background-color: #e25151;border-color: #e0e0e0;color:#575751;"
-                                    string="Un Mark"
-                                    name="action_un_mark_all_present_morning"
-                                    type="object" invisible="all_marked_morning == True or state != 'draft'"
-                                    class="oe_highlight"/>
-                        </div>
-                    </div>
+<!--                    <div style="height: 30px;"-->
+<!--                         invisible="attendance_created == False">-->
+<!--                        <div style="width: 50%;float:left;text-align:right;padding-right: 15%;">-->
+<!--                            <button style="padding: 1px 10px;background-color: #5fb18d !important;border-color: #5fb18d !important;"-->
+<!--                                    string="Mark All"-->
+<!--                                    name="action_mark_all_present_morning"-->
+<!--                                    type="object" invisible="state == 'done'"-->
+<!--                                    class="oe_highlight"/>-->
+<!--                        </div>-->
+<!--                        <div style="width: 50%;float:left;text-align:right;padding-right: 15%;"-->
+<!--                             invisible="all_marked_morning == False or state != 'draft'">-->
+<!--                            <button style="padding: 1px 10px;background-color: #e25151;border-color: #e0e0e0;color:#575751;"-->
+<!--                                    string="Un Mark"-->
+<!--                                    name="action_un_mark_all_present_morning"-->
+<!--                                    type="object" invisible="state != 'draft'"-->
+<!--                                    class="oe_highlight"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <notebook>
                         <page string="Attendance Entry" invisible="attendance_created == False">
                             <button
                                     string="Mark All"
                                     name="action_mark_all_present_morning"
-                                    type="object"
+                                    type="object" invisible="state != 'draft'"
                                     class="oe_highlight btn-success"/>
                             <button
                                     string="Un Mark"

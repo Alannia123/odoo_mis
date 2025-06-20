@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th>Title #</th>
-                            <th class="text-center">Date</th>
+                            <th >Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,8 +74,8 @@
                     <thead>
                         <tr>
                             <th>Subject</th>
-                            <th class="text-center">Homework Desc</th>
-                            <th class="text-center">File</th>
+                            <th >Homework Desc</th>
+                            <th >File</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,7 +84,7 @@
                                 <td><span  t-field="line.subject_id.name"/></td>
                                 <td ><span style="background-color:#ffe6ff" t-field="line.homework"/></td>
                                 <td >
-                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
+                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" >Download<i class="fa fa-download"/> </a>
                                 </td>
                             </tr>
                         </t>
