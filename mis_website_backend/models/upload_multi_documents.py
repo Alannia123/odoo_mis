@@ -70,7 +70,7 @@ class UploadMultiDocuments(models.Model):
                         Key=file_name,
                         Body=file_data,
                         ContentType='image/jpg',
-                        ACL='public-read'  # Or 'private'
+                          # Or 'private'
                     )
                     s3_url = f"https://{BUCKET_NAME}.s3.{REGION}.amazonaws.com/{file_name}"
                     url_id = self.env['program.gallery.aws.url'].create({

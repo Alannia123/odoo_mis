@@ -332,7 +332,7 @@ aa:hover span:nth-child(6)
             <div class="carousel-inner">
 
 <!--                <div class="carousel-item pt120 pb120 o_colored_level oe_img_bg o_bg_img_center" t-att-style="background-image: url(slide_1);" data-name="Slide">-->
-                <div class="carousel-item pt120 pb120 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[0].url if slide_id.image_url_ids[0] else ''" data-name="Slide">
+                <div class="carousel-item pt120 pb120 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_colored_level">
@@ -346,7 +346,7 @@ aa:hover span:nth-child(6)
                     </div>
                 </div>
 <!--                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(slide_id.image_url_ids[0].url); min-height: 546.711px;" data-name="Slide">-->
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[1].url if slide_id.image_url_ids[1] else ''" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -359,7 +359,7 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center active" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[2].url if slide_id.image_url_ids[2] else ''" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center active" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -372,7 +372,7 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[3].url if slide_id.image_url_ids[3] else ''" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -385,7 +385,7 @@ aa:hover span:nth-child(6)
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[4].url if slide_id.image_url_ids[4] else ''" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -399,7 +399,7 @@ aa:hover span:nth-child(6)
                     </div>
                 </div>
 
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[5].url if slide_id.image_url_ids[5] else ''" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 o_draggable o_colored_level">
@@ -412,7 +412,7 @@ aa:hover span:nth-child(6)
                     </div>
                 </div>
 
-                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" t-att-style="'background-image: url(%s);' % slide_id.image_url_ids[6].url if slide_id.image_url_ids[6] else ''" data-name="Slide">
+                <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
                     <div class="container oe_unremovable">
                         <div class="row">
                             <div class="carousel-content col-lg-6 offset-lg-6 o_colored_level">

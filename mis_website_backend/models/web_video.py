@@ -65,8 +65,8 @@ class WebVideo(models.Model):
                 s3.Bucket(BUCKET_NAME).put_object(
                     Key=file_name,
                     Body=file_data,
-                    ContentType='video/mp4',
-                    ACL='public-read'  # Or 'private'
+                    ContentType='video/mp4'
+                    # ACL='public-read'  # Or 'private'
                 )
                 s3_url = f"https://{BUCKET_NAME}.s3.{REGION}.amazonaws.com/{file_name}"
                 rec.write({'s3_url': s3_url})

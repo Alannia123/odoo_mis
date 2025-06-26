@@ -1,0 +1,19 @@
+<h1>Firebase Integration</h1>
+<h3>Configuration</h3>
+<h6> add in odoo.conf -</h6>
+<code>
+    [options]<br/>
+    firebase_private_key_path=/home/documents/cre.json
+</code>
+
+<h6>usage - </h6>
+
+<code>
+    from odoo.addons.firebase_integration.tools.firebase import send_firebase_notifications<br/>
+
+    msg = [<br>
+    &nbsp;{'token':'','body':'','title':''},<br/>
+    &nbsp;{'token':'','body':'','title':''}<br/>
+    ]<br/>
+    success_sent_message_count = send_firebase_notifications(msg)
+</code>
