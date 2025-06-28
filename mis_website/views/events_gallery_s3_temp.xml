@@ -101,30 +101,30 @@
                     </t>
                 </div>
 
-                <t t-set="title">General Calendar</t>
-            <div class="container">
-                <h1 class="text-center mt-4">General Calendar</h1>
-                <div id="calendar"></div>
-            </div>
+<!--                <t t-set="title">General Calendar</t>-->
+<!--            <div class="container">-->
+<!--                <h1 class="text-center mt-4">General Calendar</h1>-->
+<!--                <div id="calendar"></div>-->
+<!--            </div>-->
 
             <!-- Include FullCalendar CSS & JS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css"/>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.js"></script>
+<!--            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css"/>-->
+<!--            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.js"></script>-->
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    var calendarEl = document.getElementById('calendar');
-                    var calendar = new FullCalendar.Calendar(calendarEl, {
-                        initialView: 'dayGridMonth',  // Month view
-                        headerToolbar: {
-                            left: 'prev,next today',
-                            center: 'title',
-                            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                        },
-                    });
-                    calendar.render();
-                });
-            </script>
+<!--            <script>-->
+<!--                document.addEventListener('DOMContentLoaded', function () {-->
+<!--                    var calendarEl = document.getElementById('calendar');-->
+<!--                    var calendar = new FullCalendar.Calendar(calendarEl, {-->
+<!--                        initialView: 'dayGridMonth',  // Month view-->
+<!--                        headerToolbar: {-->
+<!--                            left: 'prev,next today',-->
+<!--                            center: 'title',-->
+<!--                            right: 'dayGridMonth,timeGridWeek,timeGridDay'-->
+<!--                        },-->
+<!--                    });-->
+<!--                    calendar.render();-->
+<!--                });-->
+<!--            </script>-->
             </div>
         </t>
     </template>

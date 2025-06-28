@@ -534,12 +534,24 @@ aa:hover span:nth-child(6)
                             </div>
                             <div class="col-lg-6 pt16 pb16 align-items-center">
                                 <div class="x_wd_shape_circle">
-                                    <video autoplay="autoplay" loop="loop" muted="muted" class="video-content" data-shape="web_editor/geometric_round/geo_round_blob_medium">
-<!--                                        <source src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4" type="video/mp4"></source>-->
-                                        <source t-att-src="video_id.s3_url" type="video/mp4"></source>
-                                    </video>
+                                    <div class="carousel-item pt152 pb152 o_colored_level oe_img_bg o_bg_img_center" style="background-image: url('/web/image/website.s_carousel_default_image_1');" data-name="Slide">
+                                        <div class="container oe_unremovable">
+                                            <div class="row">
+                                                <div class="carousel-content col-lg-6 offset-lg-6 o_colored_level">
+                                                    <h2><font class="display-3-fs o_default_snippet_text" style="display: none;">Edit this title</font></h2>
+                                                    <h4><font  class="o_default_snippet_text" style="display: none;">Good writing is simple, but not simplistic.</font></h4>
+                                                    <p><br></br></p>
+                                                    <p class="o_default_snippet_text" style="display: none;">Good copy starts with understanding how your product or service helps your customers. Simple words communicate better than big words and pompous language.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+<!--                                    <video autoplay="autoplay" loop="loop" muted="muted" class="video-content" data-shape="web_editor/geometric_round/geo_round_blob_medium">-->
+<!--&lt;!&ndash;                                        <source src="/mis_website/static/src/img/GTfkd9ZHwT8MyC6u3dgBlLvZau3bwlidu1Q4LTtE.mp4" type="video/mp4"></source>&ndash;&gt;-->
+<!--                                        <source t-att-src="video_id.s3_url" type="video/mp4"></source>-->
+<!--                                    </video>-->
                                 </div>
-                                <p><a href="#" class="btn btn_effect_line">Discover more</a></p>
+<!--                                <p><a href="#" class="btn btn_effect_line">Discover more</a></p>-->
                             </div>
                         </div>
                     </div>

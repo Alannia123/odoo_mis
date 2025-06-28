@@ -15,7 +15,7 @@ class home_controller(http.Controller):
         vals = {}
         display_notice = ''
         today_date = fields.Datetime.now().strftime('%d-%m-%Y')
-        slide_id = request.env['web.slide.image'].sudo().search([('enable', '=', True)])
+        # slide_id = request.env['web.slide.image'].sudo().search([('enable', '=', True)])
         # if slide_id.image_url_ids[0]:
         #     vals.update({'slide_1': slide_id.image_url_ids[0].url })
         # if slide_id.image_url_ids[1]:
@@ -73,7 +73,7 @@ class home_controller(http.Controller):
             'today_births': birthday_students,
             'member_id': member_id,
             'video_id': video_id,
-            'slide_id': slide_id,
+            # 'slide_id': slide_id,
             'birth_background': 'mis_website/',
             }
         print('UTTTTTTTTTTTTTTTTT',vals)

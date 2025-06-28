@@ -13,20 +13,28 @@
 									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
 									invisible="state not in ('draft')"
 									class="oe_highlight"/>
+							<button name="action_cancel" string="Action Post"
+									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
+									invisible="state not in ('post')"
+									class="oe_highlight"/>
+							<button name="action_rest_draft" string="Action Post"
+									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
+									invisible="state not in ('cancel')"
+									class="oe_highlight"/>
 							<field name="state" widget="statusbar"/>
 						</header>
 					<sheet>
 						<group>
 							<group>
-								<field name="name" readonly="state == 'done'"/>
+								<field name="name" readonly="state == 'post'"/>
 								<field name="teacher_id" readonly="1" options="{'no_create':True,'no_open':True}"/>
 								<field name="attachment_id" readonly="1" options="{'no_create':True,'no_open':True}"/>
 							</group>
 							<group>
 								<field name="upload_date" readonly="1"/>
 								<field name="file_name" invisible="1"/>
-								<field name="pdf_file" filename="file_name" readonly="state == 'done'"/>
-								<field name="cover_photo" widget="image" />
+								<field name="pdf_file" filename="file_name" readonly="state == 'post'"/>
+								<field name="cover_photo" widget="image" readonly="state == 'post'"/>
 							</group>
 						</group>
 					</sheet>

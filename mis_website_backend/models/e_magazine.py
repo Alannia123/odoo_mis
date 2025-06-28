@@ -19,10 +19,11 @@ class SchoolMagazine(models.Model):
     teacher_id = fields.Many2one('res.users', string='Uploaded by', default=lambda self: self.env.user)
     cover_photo = fields.Binary('Cover Photo')
     attachment_id = fields.Many2one('ir.attachment', 'Attachment',copy=False)
-    state = fields.Selection([('draft', 'Draft'),('post', 'post')], 'State', default='draft', tracking=True)
+    state = fields.Selection([('draft', 'Draft'),('post', 'Posted'),('cancel', 'Cancel')], 'State', default='draft', tracking=True)
 
 
     def action_post(self):
+        attachment = False
         attachment = self.env['ir.attachment'].create({
             'name': self.file_name,  # File name
             'type': 'binary',  # Must be binary for file storage
@@ -35,3 +36,9 @@ class SchoolMagazine(models.Model):
         self.attachment_id = attachment.id
 
         self.write({'state' : 'post'})
+
+    def action_cancel(self):
+        self.write({'state' : 'cancel'})
+
+    def action_rest_draft(self):
+        self.write({'state' : 'draft'})
