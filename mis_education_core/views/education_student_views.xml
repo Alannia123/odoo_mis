@@ -130,6 +130,7 @@
                                 <group>
                                     <field name="class_division_id"/>
                                     <field name="sec_lang_id"/>
+                                    <field name="ad_no"/>
                                 </group>
                                 <group>
                                     <field name="company_id" invisible="1"/>
