@@ -13,11 +13,11 @@
 									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
 									invisible="state not in ('draft')"
 									class="oe_highlight"/>
-							<button name="action_cancel" string="Action Post"
+							<button name="action_cancel" string="Action Cancel"
 									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
 									invisible="state not in ('post')"
 									class="oe_highlight"/>
-							<button name="action_rest_draft" string="Action Post"
+							<button name="action_rest_draft" string="Reset to Draft"
 									type="object" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
 									invisible="state not in ('cancel')"
 									class="oe_highlight"/>

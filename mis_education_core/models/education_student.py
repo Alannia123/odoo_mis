@@ -141,10 +141,12 @@ class EducationStudent(models.Model):
                                         help="Previous class history details")
     exist_sis_bro_info = fields.Boolean('Student has a sister/brother in this school(not cousin/relatives)')
     exist_name = fields.Char('Name')
+    exist_name = fields.Char('Name')
     exist_class = fields.Many2one('education.class', 'Class')
     exist_section = fields.Many2one('education.division', 'Section')
     special_concern = fields.Char('Special Concern regarding Child')
     no_of_discipline_history = fields.Integer('Disp History', compute='_compute_no_of_discipline_history')
+    aadhar_no = fields.Char('Aadhar Number', required=False)
 
     def _compute_no_of_discipline_history(self):
         for rec in self:
