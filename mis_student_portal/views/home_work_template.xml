@@ -83,14 +83,14 @@
                             <tr>
                                 <td><span  t-field="line.subject_id.name"/></td>
                                 <td >
-                                    <span id="speechText_#{line.id}"
-                                          t-attf-data-speak="Subject: #{line.subject_id.name}. Homework: #{line.homework}"
-                                          style="background-color:#ffe6ff">
-                                        <span t-field="line.homework"/>
+                                    <span t-att-id="'speechText_' + str(line.id)"
+                                        t-att-data-speak="'Subject: %s. Homework: %s' % (line.subject_id.name, line.homework)"
+                                        style="background-color:#ffe6ff;">
+                                    <span t-field="line.homework"/>
                                     </span>
                                     <button class="btn btn-info"
                                             t-att-onclick="'speakText(%s)' % line.id">
-                                        🔊 Speak
+                                        🔊
                                     </button>
                                 </td>
                                 <td >
@@ -103,9 +103,11 @@
                 <script>
                     function speakText(id) {
                         const span = document.getElementById("speechText_" + id);
+                        console.log('rrrrrrrrrrrrr',span)
                         if (span &amp;&amp; 'speechSynthesis' in window) {
                             const msg = new SpeechSynthesisUtterance();
                             msg.text = span.getAttribute("data-speak");
+                            console.log('rrrrrrrrrrrrr',msg.text)
                             msg.lang = "en-US";
                             window.speechSynthesis.cancel(); // stop any ongoing speech
                             window.speechSynthesis.speak(msg);

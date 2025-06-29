@@ -22,7 +22,7 @@
                     </style>
 
                     <div class="calendar-header d-flex justify-content-between align-items-center mb-3">
-                        <a t-attf-href="/school/student_attendance?month={{prev_month}}&amp;year={{prev_year}}" class="btn btn-light">⬅</a>
+                        <a t-attf-href="/school/student_attendance?month={{prev_month}}&amp;year={{prev_year}}" class="btn btn-light"><b>⬅</b></a>
                         <h4><t t-esc="month"/> <t t-esc="year"/></h4>
                         <a t-attf-href="/school/student_attendance?month={{next_month}}&amp;year={{next_year}}" class="btn btn-light">➡</a>
 
