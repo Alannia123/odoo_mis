@@ -42,51 +42,28 @@
                             </tr>
                         </thead>
                         <tbody>
-    <t t-foreach="weeks" t-as="week">
-        <tr>
-            <t t-foreach="week" t-as="day">
-                <t t-if="day">
-                    <t t-set="status" t-value="status_by_day.get(day)"/>
-                    <td t-att-class="
-                        status == 'present' and 'bg-success text-white badge' or
-                        status == 'absent' and 'bg-danger text-white badge' or
-                        status == 'half' and 'bg-primary text-white badge' or
-                        status == 'leave' and 'bg-warning text-white badge' or ''
-                    ">
-                        <t t-esc="day"/>
-                    </td>
-                </t>
-                <t t-if="not day">
-                    <td></td>
-                </t>
-            </t>
-        </tr>
-    </t>
-</tbody>
-
+                            <t t-foreach="weeks" t-as="week">
+                                <tr>
+                                    <t t-foreach="week" t-as="day">
+                                        <t t-if="day">
+                                            <t t-set="status" t-value="status_by_day.get(day)"/>
+                                            <td t-att-class="
+                                                status == 'present' and 'bg-success text-white badge' or
+                                                status == 'absent' and 'bg-danger text-white badge' or
+                                                status == 'half' and 'bg-primary text-white badge' or
+                                                status == 'leave' and 'bg-warning text-white badge' or ''
+                                            ">
+                                                <t t-esc="day"/>
+                                            </td>
+                                        </t>
+                                        <t t-if="not day">
+                                            <td></td>
+                                        </t>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
                     </table>
-
-
-
-
-                    <div class="container my-4">
-    <h3 id="speechText">Welcome! Your attendance calendar is shown below.</h3>
-    <button onclick="speakText()" class="btn btn-info mt-2">🔊 Speak</button>
-</div>
-                    <script>
-                    function speakText() {
-                        if ('speechSynthesis' in window) {
-                            const msg = new SpeechSynthesisUtterance();
-                            msg.text = document.getElementById("speechText").innerText;
-                            msg.lang = "en-US";
-                            msg.rate = 1;
-                            window.speechSynthesis.cancel(); // Reset previous
-                            window.speechSynthesis.speak(msg);
-                        } else {
-                            alert("Text-to-Speech is not supported in this browser.");
-                        }
-                    }
-                    </script>
                 </div>
             </t>
         </template>

@@ -82,7 +82,17 @@
                         <t t-foreach="home_work_id.work_line_ids" t-as="line">
                             <tr>
                                 <td><span  t-field="line.subject_id.name"/></td>
-                                <td ><span style="background-color:#ffe6ff" t-field="line.homework"/></td>
+                                <td >
+                                    <span id="speechText_#{line.id}"
+                                          t-attf-data-speak="Subject: #{line.subject_id.name}. Homework: #{line.homework}"
+                                          style="background-color:#ffe6ff">
+                                        <span t-field="line.homework"/>
+                                    </span>
+                                    <button class="btn btn-info"
+                                            t-att-onclick="'speakText(%s)' % line.id">
+                                        🔊 Speak
+                                    </button>
+                                </td>
                                 <td >
                                     <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" >Download<i class="fa fa-download"/> </a>
                                 </td>
@@ -90,6 +100,18 @@
                         </t>
                     </tbody>
                 </table>
+                <script>
+                    function speakText(id) {
+                        const span = document.getElementById("speechText_" + id);
+                        if (span &amp;&amp; 'speechSynthesis' in window) {
+                            const msg = new SpeechSynthesisUtterance();
+                            msg.text = span.getAttribute("data-speak");
+                            msg.lang = "en-US";
+                            window.speechSynthesis.cancel(); // stop any ongoing speech
+                            window.speechSynthesis.speak(msg);
+                        }
+                    }
+                </script>
             </t>
     </template>
 
