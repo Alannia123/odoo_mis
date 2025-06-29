@@ -19,6 +19,7 @@
         'views/student_info_temp.xml',
         'views/time_table_template.xml',
         'views/class_comm.xml',
+        'views/attendance_template.xml',
         'views/teacher_stu_view.xml',
 
     ],

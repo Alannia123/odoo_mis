@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="template_attendance_calendar" name="Student Attendance">
+            <t t-call="website.layout">
+                <div class="container my-5">
+                    <h2 class="text-center mb-4">My Attendance</h2>
+                    <style>
+                        .calendar-header h4 {
+                            font-weight: bold;
+                        }
+                        td {
+                            width: 40px;
+                            height: 40px;
+                        }
+                        .attendance-table {
+                            border: 2px solid #ccc;
+                            border-radius: 12px;
+                            overflow: hidden;
+                        }
+                    </style>
+
+                    <div class="calendar-header d-flex justify-content-between align-items-center mb-3">
+                        <a t-attf-href="/school/student_attendance?month={{prev_month}}&amp;year={{prev_year}}" class="btn btn-light">⬅</a>
+                        <h4><t t-esc="month"/> <t t-esc="year"/></h4>
+                        <a t-attf-href="/school/student_attendance?month={{next_month}}&amp;year={{next_year}}" class="btn btn-light">➡</a>
+
+                    </div>
+
+                    <div class="d-flex justify-content-around mb-3">
+                        <span class="badge bg-success">Present</span>
+                        <span class="badge bg-danger">Absent</span>
+                        <span class="badge bg-primary">Half day</span>
+                        <span class="badge bg-warning">Leave</span>
+                    </div>
+
+                    <table class="table table-borderless text-center border attendance-table">
+                        <thead>
+                            <tr>
+                                <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    <t t-foreach="weeks" t-as="week">
+        <tr>
+            <t t-foreach="week" t-as="day">
+                <t t-if="day">
+                    <t t-set="status" t-value="status_by_day.get(day)"/>
+                    <td t-att-class="
+                        status == 'present' and 'bg-success text-white badge' or
+                        status == 'absent' and 'bg-danger text-white badge' or
+                        status == 'half' and 'bg-primary text-white badge' or
+                        status == 'leave' and 'bg-warning text-white badge' or ''
+                    ">
+                        <t t-esc="day"/>
+                    </td>
+                </t>
+                <t t-if="not day">
+                    <td></td>
+                </t>
+            </t>
+        </tr>
+    </t>
+</tbody>
+
+                    </table>
+
+
+
+
+                    <div class="container my-4">
+    <h3 id="speechText">Welcome! Your attendance calendar is shown below.</h3>
+    <button onclick="speakText()" class="btn btn-info mt-2">🔊 Speak</button>
+</div>
+                    <script>
+                    function speakText() {
+                        if ('speechSynthesis' in window) {
+                            const msg = new SpeechSynthesisUtterance();
+                            msg.text = document.getElementById("speechText").innerText;
+                            msg.lang = "en-US";
+                            msg.rate = 1;
+                            window.speechSynthesis.cancel(); // Reset previous
+                            window.speechSynthesis.speak(msg);
+                        } else {
+                            alert("Text-to-Speech is not supported in this browser.");
+                        }
+                    }
+                    </script>
+                </div>
+            </t>
+        </template>
+
+</odoo>

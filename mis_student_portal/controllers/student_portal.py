@@ -111,6 +111,47 @@ class CustomerPortalCustom(CustomerPortal):
 
         return request.render("mis_student_portal.portal_student_timetable", {'timetable_id': timetable_id})
 
+    # @route(['/school/student_attendance'], type='http', auth="user", website=True)
+    # def get_school_student_attendance(self, **kw):
+    #     print('ghhgh33333333------======all_homeworks====', request.env.user.partner_id)
+    #     partner = request.env.user.partner_id
+    #     student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+    #     today = date.today()
+    #     month_start = today.replace(day=1)
+    #
+    #     month_end = today.replace(day=28)  # Simplified; use monthrange for full month
+    #
+    #     records = request.env['education.attendance.line'].sudo().search([
+    #         ('state', '=', 'done'),
+    #         ('division_id', '=', student_id.id),
+    #         ('date', '>=', month_start),
+    #         ('date', '<=', month_end)
+    #     ])
+    #     # attendance = 'N/A'
+    #     # if attandance_id:
+    #     #     today_attendance = attandance_id.attendance_line_ids.filtered(
+    #     #         lambda atten_line: atten_line.register_no == student_id.register_no)
+    #     #     if today_attendance.present_morning:
+    #     #         attendance = 'Present'
+    #     #     else:
+    #     #         attendance = 'Absent'
+    #
+    #     # Group records by day
+    #     days = {}
+    #     for rec in records:
+    #         if rec.present_morning:
+    #             days[rec.date.day] = 'present'
+    #         else:
+    #             days[rec.date.day] = 'absent'
+    #
+    #
+    #     return request.render('mis_student_portal.template_attendance_calendar', {
+    #         'days': days,
+    #         'month': today.strftime('%B'),
+    #         'year': today.year,
+    #     })
+
+
     @route(['/school/class_communation'], type='http', auth="user", website=True)
     def get_school_all_class_comm(self, **kw):
         print('ghhgh33333333------======all_homeworks====', request.env.user.partner_id)

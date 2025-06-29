@@ -567,7 +567,7 @@
                         </div>
                         <div class="row text-center mt-3">
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/school/student_info" class="portal-small-tile portal-tile-color-att">
+                                <a href="/school/student_attendance" class="portal-small-tile portal-tile-color-att">
                                     <t t-if="attendance == 'Present'"> <div class="tile-badge-att typing-text"><t t-esc="attendance"/></div></t>
                                     <t t-if="attendance == 'Absent'"><div class="tile-badge-att-ab typing-text" > <t t-esc="attendance"/> </div></t>
                                     <t t-else=""><div class="tile-badge-att-na typing-text" > <t t-esc="attendance"/> </div></t>
