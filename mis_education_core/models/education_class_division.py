@@ -104,12 +104,12 @@ class EducationClassDivision(models.Model):
                 'name': student.name,
                 'login': login,
                 'password': password,
-                'ch_password': password,
-                'class_id': self.id,
                 'partner_id': student.partner_id.id if student.partner_id else False,
                 'groups_id': [(6, 0, [portal_group.id])],
             })
 
             # Link to student
             student.user_id = user.id
+            student.login = login
+            student.ch_password = password
 

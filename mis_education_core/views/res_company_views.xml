@@ -25,17 +25,17 @@
         </field>
     </record>
 
-    <record id="view_res_users_form" model="ir.ui.view">
-        <field name="name">res.users.view.form.inherit.education.core</field>
-        <field name="model">res.users</field>
-        <field name="priority" eval="1"/>
-        <field name="inherit_id" ref="base.view_users_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='tz_offset']" position="after">
-                <field name="class_id"/>
-                <field name="ch_password"/>
-            </xpath>
-        </field>
-    </record>
+<!--    <record id="view_res_users_form" model="ir.ui.view">-->
+<!--        <field name="name">res.users.view.form.inherit.education.core</field>-->
+<!--        <field name="model">res.users</field>-->
+<!--        <field name="priority" eval="1"/>-->
+<!--        <field name="inherit_id" ref="base.view_users_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='tz_offset']" position="after">-->
+<!--                <field name="class_id"/>-->
+<!--                <field name="ch_password"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 
 </odoo>
