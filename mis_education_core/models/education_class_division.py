@@ -92,7 +92,7 @@ class EducationClassDivision(models.Model):
             login = student.register_no
 
             # Determine password
-            if student.aadhar_no and len(student.adhar_no) >= 4:
+            if student.aadhar_no and len(student.aadhar_no) >= 4:
                 password = student.aadhar_no[-4:]
             elif student.date_of_birth:
                 password = student.date_of_birth.strftime('%d%m%Y')
