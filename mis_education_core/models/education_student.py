@@ -147,6 +147,7 @@ class EducationStudent(models.Model):
     special_concern = fields.Char('Special Concern regarding Child')
     no_of_discipline_history = fields.Integer('Disp History', compute='_compute_no_of_discipline_history')
     aadhar_no = fields.Char('Aadhar Number', required=False)
+    user_id = fields.Many2one('res.users')
 
     def _compute_no_of_discipline_history(self):
         for rec in self:

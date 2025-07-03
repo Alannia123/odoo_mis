@@ -16,3 +16,13 @@ class ResCompany(models.Model):
     higher_class_id = fields.Many2one('education.class',
                                       string="Higher class",
                                       help="Highest class of institute")
+#
+#
+class Resusers(models.Model):
+    """Inheriting res_company for adding field related to an
+        education institution"""
+    _inherit = 'res.users'
+
+    class_id = fields.Many2one('education.class.division', string="class",
+                                    help="Smallest class of institute")
+    ch_password = fields.Char('Password Sample', readonly=True)

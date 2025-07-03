@@ -32,7 +32,7 @@
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",
-    "depends": ["web", "mail", "base"],
+    "depends": ["web", "mail", "base", "mis_education_core"],
     "data": [
         "security/ir.model.access.csv",
         "views/res_config_settings_views.xml",

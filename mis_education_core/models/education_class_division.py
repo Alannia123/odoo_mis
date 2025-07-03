@@ -82,3 +82,34 @@ class EducationClassDivision(models.Model):
         for rec in self:
             if rec.actual_strength <= 0:
                 raise ValidationError(_('Strength must be a Non-Zero value'))
+
+    def generate_portal_user(self):
+        print('ffffffffffff')
+        portal_group = self.env.ref('base.group_portal')
+        created_users = []
+
+        for student in self.student_ids:
+            login = student.register_no
+
+            # Determine password
+            if student.aadhar_no and len(student.adhar_no) >= 4:
+                password = student.aadhar_no[-4:]
+            elif student.date_of_birth:
+                password = student.date_of_birth.strftime('%d%m%Y')
+            else:
+                continue  # Skip if neither Aadhaar nor birthdate
+
+            # Create user
+            user = self.env['res.users'].create({
+                'name': student.name,
+                'login': login,
+                'password': password,
+                'ch_password': password,
+                'class_id': self.id,
+                'partner_id': student.partner_id.id if student.partner_id else False,
+                'groups_id': [(6, 0, [portal_group.id])],
+            })
+
+            # Link to student
+            student.user_id = user.id
+

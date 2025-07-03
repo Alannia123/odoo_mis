@@ -40,5 +40,5 @@
     <menuitem id="menu_push_notification"
               name="Manage Registrations"
               parent="menu_push_notification_root"
-              action="action_push_notification" groups="base.group_no_one"/>
+              action="action_push_notification" groups="mis_education_core.group_education_principal"/>
 </odoo>

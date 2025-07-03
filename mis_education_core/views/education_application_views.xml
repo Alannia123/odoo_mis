@@ -408,9 +408,9 @@
               action="education_application_action_report"
               parent="education_application_menu_report"
     />
-    <menuitem id="menu_education_admission" name="Admission"
+    <menuitem id="menu_education_admission" name="School"
               parent="menu_education_root" sequence="5"/>
-    <menuitem id="education_application_menu" name="Application"
-              parent="menu_education_admission"
-              action="education_application_action"/>
+<!--    <menuitem id="education_application_menu" name="Application"-->
+<!--              parent="menu_education_admission"-->
+<!--              action="education_application_action" sequence="10"/>-->
 </odoo>

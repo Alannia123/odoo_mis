@@ -64,6 +64,13 @@
         <field name="model">education.class.division</field>
         <field name="arch" type="xml">
             <form string="Class Division">
+                <header>
+                    <button name="generate_portal_user" type="object"
+                            class="oe_highlight"
+                            string="Create Portal User" groups="base.group_user"
+                            help="Click to create employee for this faculty"
+                    />
+                </header>
                 <sheet string="Class">
                     <div class="oe_button_box" name="button_box">
                         <button name="action_view_students" type="object"
@@ -97,6 +104,7 @@
                                 <tree string="Students" editable="bottom"
                                       create="false">
                                     <field name="name"/>
+                                    <field name="register_no"/>
                                     <field name="class_division_id"/>
                                     <field name="gender"/>
                                     <field name="date_of_birth"/>
