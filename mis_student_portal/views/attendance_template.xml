@@ -51,14 +51,21 @@
                                     <t t-foreach="week" t-as="day">
                                         <t t-if="day">
                                             <t t-set="status" t-value="status_by_day.get(day)"/>
-                                            <td t-att-class="
-                                                status == 'present' and 'bg-success text-white badge' or
-                                                status == 'absent' and 'bg-danger text-white badge' or
-                                                status == 'half' and 'bg-primary text-white badge' or
-                                                status == 'leave' and 'bg-warning text-white badge' or ''
-                                            ">
-                                                <t t-esc="day"/>
-                                            </td>
+                                            <t t-if="status == 'present'">
+                                                <td>
+                                                    <span class="badge bg-success rounded-pill px-3 py-2" t-esc="day"/>
+                                                </td>
+                                            </t>
+                                            <t t-elif="status == 'absent'">
+                                                <td>
+                                                    <span class="badge bg-danger rounded-pill px-3 py-2"  t-esc="day" />
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td>
+                                                    <span t-esc="day"/>
+                                                </td>
+                                            </t>
                                         </t>
                                         <t t-if="not day">
                                             <td></td>

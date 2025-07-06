@@ -67,3 +67,9 @@ class EducationFaculty(models.Model):
          ('o-', 'O-'), ('ab-', 'AB-'), ('ab+', 'AB+')], string='Blood Group',
         required=True, default='a+',
         track_visibility='onchange', help="Blood group og the faculty")
+    user_id = fields.Many2one(
+        'res.users',
+        string='Related User',
+        tracking=True,
+        # domain="[('groups_id', 'in', [ref('base.group_user')])]"
+    )

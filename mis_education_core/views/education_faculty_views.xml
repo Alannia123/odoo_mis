@@ -116,6 +116,7 @@
                                 <group>
                                     <field name="email"/>
                                     <field name="employee_id" readonly="1"/>
+                                    <field name="user_id" readonly="1" domain="[('share', '=', False)]"/>
                                 </group>
                                 <group>
                                     <field name="phone"/>

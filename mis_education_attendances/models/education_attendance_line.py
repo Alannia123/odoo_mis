@@ -10,7 +10,7 @@ class EducationAttendanceLine(models.Model):
 
     name = fields.Char(string='Name', help="Name of Attendance")
     attendance_id = fields.Many2one('education.attendance',
-                                    string='Attendance Id',
+                                    string='Attendance Id', ondelete='cascade',
                                     help="Connected Attendance")
     student_id = fields.Many2one('education.student',
                                  string='Student',

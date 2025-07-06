@@ -21,7 +21,7 @@ class EducationAttendance(models.Model):
                        help="Attendance date", readonly=True)
     attendance_line_ids = fields.One2many('education.attendance.line',
                                           'attendance_id',
-                                          string='Attendance Line',
+                                          string='Attendance Line', ondelete='cascade',
                                           help="Student attendance line")
     attendance_created = fields.Boolean(string='Attendance Created',
                                         help="Enable if attendance is created")
@@ -32,7 +32,7 @@ class EducationAttendance(models.Model):
                                           help='Enable if all students are '
                                                'present in the afternoon')
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')],
-                             default='draft', string="State",
+                             default='draft', string="State", tracking=True,
                              help="Stages of attendance")
     academic_year_id = fields.Many2one('education.academic.year',
                                        string='Academic Year',
@@ -143,3 +143,9 @@ class EducationAttendance(models.Model):
         for records in self.attendance_line_ids:
             records.state = 'draft'
         self.state = 'draft'
+
+    def unlink(self):
+        for record in self:
+            if record.state == 'done':
+                raise UserError("You cannot delete a record that is marked as Done.")
+        return super(EducationAttendance, self).unlink()

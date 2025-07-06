@@ -47,6 +47,7 @@ class HomeWorkWizard(models.TransientModel):
                     'work_id': homework_id.id,
                     'subject_id': self.subject_id.id,
                     'homework': self.homework,
+                    'uploaded_by': self.env.user.id,
                 })
         else:
             homework_id = self.env['student.homework'].create({
@@ -58,6 +59,7 @@ class HomeWorkWizard(models.TransientModel):
                 'work_id': homework_id.id,
                 'subject_id': self.subject_id.id,
                 'homework': self.homework,
+                'uploaded_by': self.env.user.id
             })
         if self.file_upload:
             exist_attach = self.env['ir.attachment'].search([('res_model', '=', 'student.homework.line'), ('res_id', '=', work_line_id.id)])

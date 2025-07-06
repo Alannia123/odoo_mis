@@ -27,14 +27,13 @@ class WebsiteAttendance(http.Controller):
 
         # Get attendance records
         records = request.env['education.attendance.line'].sudo().search([
+            # ('attendance_id', '!=', False),
             ('state', '=', 'done'),
             ('student_id', '=', student_id.id),
             ('date', '>=', date(year, month, 1)),
             ('date', '<=', date(year, month, total_days))
         ])
 
-
-        print('eeeeeeeeeeeee',records)
 
         # Map attendance status by day
         status_by_day = {}
@@ -53,8 +52,6 @@ class WebsiteAttendance(http.Controller):
         # status_by_day = {r.date.day: r.status for r in records}
 
         # Prepare weeks (each week = 7 days, with None where no day exists)
-        print('DDDDDDDDDDDDDDD',status_by_day)
-        print('DDDDDDDDDDDDDDD',first_weekday, total_days)
 
         return request.render('mis_student_portal.template_attendance_calendar', {
             'month': calendar.month_name[month],
