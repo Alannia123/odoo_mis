@@ -45,6 +45,7 @@
                             <field name="class_div_id" options="{'no_create':True,'no_open':True}"
                                    groups="mis_education_core.group_education_faculty"/>
                             <field name="homework_date"/>
+                            <field name="user_ids" widget="many2many_tags" readonly="1"/>
                         </group>
                     </group>
                     <notebook>

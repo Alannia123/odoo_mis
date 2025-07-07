@@ -24,6 +24,8 @@ class EducationClass(models.Model):
     open_addmission = fields.Boolean('Open For Addmission?')
     seats_available = fields.Integer('Available Seats')
     filled_seats = fields.Integer('Filled Seats')
+    # faculty_id = fields.Many2one('education.faculty', string='Faculty')
+    faculty_ids = fields.Many2many('res.users', 'education_user_rel', 'education_users_id', 'user_id', 'Faculties')
 
 
     @api.onchange('seats_available')

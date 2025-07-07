@@ -48,7 +48,10 @@ class HomeWorkWizard(models.TransientModel):
                     'subject_id': self.subject_id.id,
                     'homework': self.homework,
                     'uploaded_by': self.env.user.id,
+                    # 'user_ids': [(4, self.env.user.id)] i,
                 })
+                homework_id.user_ids = [(4, self.env.user.id)]
+                print('tttttttttttttttt',homework_id.user_ids)
         else:
             homework_id = self.env['student.homework'].create({
                                 'homework_date': today,
@@ -59,8 +62,9 @@ class HomeWorkWizard(models.TransientModel):
                 'work_id': homework_id.id,
                 'subject_id': self.subject_id.id,
                 'homework': self.homework,
-                'uploaded_by': self.env.user.id
+                'uploaded_by': self.env.user.id,
             })
+            homework_id.user_ids = self.class_div_id.class_id.faculty_ids.ids
         if self.file_upload:
             exist_attach = self.env['ir.attachment'].search([('res_model', '=', 'student.homework.line'), ('res_id', '=', work_line_id.id)])
             if exist_attach:

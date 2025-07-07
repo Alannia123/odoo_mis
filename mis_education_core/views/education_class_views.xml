@@ -29,6 +29,7 @@
                     <group>
                         <field name="type" />
                         <field name="open_addmission" readonly="1" force_save="1"/>
+                        <field name="faculty_ids" readonly="0" force_save="1" widget="many2many_tags"/>
                     </group>
                 </group>
                 <notebook>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="ir_rule_homework_multi_faculty" model="ir.rule">
+            <field name="name">Homework: Multi Faculty</field>
+            <field name="model_id" ref="model_student_homework"/>
+<!--            <field name="domain_force">['|', (1, '=', 1), ('user', 'in', user_ids)]</field>-->
+            <field name="domain_force">[('user_ids', 'in', user.id)]</field>
+        </record>
+
+<!--        <record id="ir_rule_homework_admin_faculty" model="ir.rule">-->
+<!--            <field name="name">Homework: All Homework</field>-->
+<!--            <field name="model_id" ref="model_student_homework"/>-->
+<!--&lt;!&ndash;            <field name="domain_force">['|', (1, '=', 1), ('user', 'in', user_ids)]</field>&ndash;&gt;-->
+<!--            <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--            <field name="groups" eval="[(4, ref('base.group_user'))]"/>-->
+<!--        </record>-->
+
+
+    </data>
+</odoo>

@@ -17,6 +17,9 @@ class StudentHomework(models.Model):
     work_line_ids = fields.One2many('student.homework.line', 'work_id', string="Home Work")
     state = fields.Selection([('draft', 'Draft'), ('post', 'Posted')], 'State', default='draft', tracking=True)
     # homework_desc = fields.Html('Homeworks', readonly=True)
+    # faculty_id = fields.Many2one('education.faculty', string='Faculty')
+    user_ids = fields.Many2many('res.users', 'homework_user_rel', 'homework_user_id', 'user_id',
+                                   'Faculties')
 
     # @api.model
     # def create(self, vals):

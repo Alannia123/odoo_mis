@@ -16,15 +16,29 @@
                 <table class="table table-sm table-striped table-responsive">
                     <thead>
                         <tr>
-                            <th>Title #</th>
-                            <th >Date</th>
+                            <th>Subject</th>
+                            <th >Homework Desc</th>
+                            <th >File</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="today_homework" t-as="work">
+                        <t t-foreach="today_homework.work_line_ids" t-as="line">
                             <tr>
-                                <td><a t-attf-href="/homework/get_homework/#{work.id}" ><t t-out="work.name"/></a></td>
-                                <td t-esc="work.homework_date"/>
+                                <td><span  t-field="line.subject_id.name"/></td>
+                                <td >
+                                    <span t-att-id="'speechText_' + str(line.id)"
+                                        t-att-data-speak="'Subject: %s. Homework: %s' % (line.subject_id.name, line.homework)"
+                                        style="background-color:#ffe6ff;">
+                                    <span t-field="line.homework"/>
+                                    </span>
+                                    <button class="btn btn-info"
+                                            t-att-onclick="'speakText(%s)' % line.id">
+                                        🔊
+                                    </button>
+                                </td>
+                                <td >
+                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
+                                </td>
                             </tr>
                         </t>
                     </tbody>
@@ -39,18 +53,18 @@
                 <table class="table table-sm table-striped table-responsive">
                     <thead>
                         <tr >
-                            <th>
-                                <span >Title #</span>
-                            </th>
-                            <th class="text-center">Date</th>
+<!--                            <th>-->
+<!--                                <span >Title #</span>-->
+<!--                            </th>-->
+                            <th class="text-start">Date</th>
                         </tr>
                     </thead>
                     <t t-foreach="homeworks" t-as="homework">
                         <tr>
-                            <td><a t-attf-href="/homework/get_homework/#{homework.id}" ><t t-out="homework.name"/></a></td>
-                            <td class="text-end">
-                                <span t-field="homework.homework_date" />
-                            </td>
+                            <td ><a t-attf-href="/homework/get_homework/#{homework.id}" ><span style="color:blue;" t-out="homework.homework_date.strftime('%d/%m/%y')"/></a></td>
+<!--                            <td class="text-end">-->
+<!--                                <span t-field="homework.homework_date" />-->
+<!--                            </td>-->
                         </tr>
                     </t>
                 </table>
@@ -94,7 +108,7 @@
                                     </button>
                                 </td>
                                 <td >
-                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" >Download<i class="fa fa-download"/> </a>
+                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
                                 </td>
                             </tr>
                         </t>

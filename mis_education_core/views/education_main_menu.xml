@@ -4,7 +4,8 @@
     <menuitem id="menu_education_root" name="MIS"
               web_icon="mis_education_core,static/description/icon.png"
               sequence="2" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
-    <menuitem id="menu_education_main_menu" name="Configuration" groups="mis_education_core.group_education_principal, mis_education_core.group_education_office_admin"
+    <menuitem id="menu_education_main_menu" name="Configuration"
+              groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
               parent="menu_education_root"/>
     <menuitem id="menu_education_class_conf" name="Class"
               parent="menu_education_main_menu" sequence="0"/>
