@@ -42,8 +42,9 @@
                         </group>
                         <group>
                             <field name="faculty_ids" invisible="1"/>
-                            <field name="faculty_id" options="{'no_create':True,'no_open':True}" required="1"
+                            <field name="faculty_id" options="{'no_create':True,'no_open':True}" required="0" invisible="1"
                                    domain="[('id', 'in', faculty_ids)]" readonly="state != 'draft'"/>
+                            <field name="user_id" options="{'no_create':True,'no_open':True}"/>
                         </group>
                     </group>
                     <group>

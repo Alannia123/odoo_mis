@@ -35,16 +35,35 @@
                     <div class="d-flex justify-content-around mb-3">
                         <span class="badge bg-success">Present</span>
                         <span class="badge bg-danger">Absent</span>
-                        <span class="badge bg-primary">Half day</span>
-                        <span class="badge bg-warning">Leave</span>
+<!--                        <span class="badge bg-primary">Half day</span>-->
+<!--                        <span class="badge bg-warning">Leave</span>-->
                     </div>
 
-                    <table class="table table-borderless text-center border attendance-table">
+                    <table class="table table-borderless text-center" width="100%">
                         <thead>
                             <tr>
                                 <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
                             </tr>
                         </thead>
+                        <style>
+    .badge-present {
+        background-color: green;  /* soft green */
+<!--        color: #155724;-->
+<!--        font-size: 16px;-->
+        padding: 6px 6px;
+        border-radius: 20px;
+<!--        display: inline-block;-->
+    }
+    .badge-absent {
+        background-color: red;  /* soft red */
+<!--        color: #721c24;-->
+<!--        font-size: 16px;-->
+        padding: 6px 6px;
+        border-radius: 20px;
+<!--        display: inline-block;-->
+    }
+</style>
+
                         <tbody>
                             <t t-foreach="weeks" t-as="week">
                                 <tr>
@@ -52,13 +71,13 @@
                                         <t t-if="day">
                                             <t t-set="status" t-value="status_by_day.get(day)"/>
                                             <t t-if="status == 'present'">
-                                                <td>
-                                                    <span class="badge bg-success rounded-pill px-3 py-2" t-esc="day"/>
+                                                <td >
+                                                    <span class="badge-present" t-esc="day"/>
                                                 </td>
                                             </t>
                                             <t t-elif="status == 'absent'">
                                                 <td>
-                                                    <span class="badge bg-danger rounded-pill px-3 py-2"  t-esc="day" />
+                                                    <span class="badge-absent"  t-esc="day" />
                                                 </td>
                                             </t>
                                             <t t-else="">

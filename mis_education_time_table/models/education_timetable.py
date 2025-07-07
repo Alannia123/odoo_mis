@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from email.policy import default
 
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
@@ -85,12 +86,14 @@ class EducationTimetable(models.Model):
     file_name = fields.Char('File Name')
     preview_image = fields.Binary(string="PDF Preview", readonly=True)
     facebook_photo_url = fields.Char("Facebook Photo URL")
+    state = fields.Selection([('draft', 'Draft'), ('done', 'Done')], 'State', default='draft', tracking=True)
 
-    def post_student_photo(self):
+    def set_to_post(self):
         if self.pdf_file:
-            url = self.upload_photo_to_facebook(self.pdf_file, caption="Test Photo")
-            if url:
-                self.facebook_photo_url = url
+            self.state = 'done'
+
+    def reste_to_draft(self):
+        self.state = 'draft'
 
 
 

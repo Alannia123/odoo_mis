@@ -7,7 +7,9 @@
         <field name="arch" type="xml">
             <form string="Education Timetable">
                 <header>
-                    <button name="post_student_photo" class="oe_highlight" type="object" string="Facebook"></button>
+                    <button name="set_to_post" class="oe_highlight" type="object" string="Post" invisible="state != 'draft'"></button>
+                    <button name="reste_to_draft" class="oe_highlight" type="object" string="Reset" invisible="state != 'done'"></button>
+                    <field name="state" widget="statusbar"  statusbar_visible="draft,done"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -29,7 +31,7 @@
                             <field name="academic_year_id" options="{'no_open': True, 'no_create': True}"/>
                         </group>
                         <group>
-                            <field name="facebook_photo_url" />
+                            <field name="facebook_photo_url" invisible="1"/>
                             <field name="file_name" invisible="1"/>
                             <field name="pdf_file" filename="file_name" groups="mis_education_core.group_education_principal"/>
                             <field name="company_id"

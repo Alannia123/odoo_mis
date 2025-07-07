@@ -90,10 +90,10 @@
                             <li class="list-group-item">
                                 <strong><t t-esc="message.author_id.name"/></strong>:
                                 <t t-esc="message.body"/>
-                                <t t-set="formatted_date" t-value="format_datetime(message.date, 'dd MMM yyyy')" />
-                                <span t-esc="format_datetime(message.date, 'dd-MM-yyyy')" />
-
-                                <small><t t-esc="formatted_date"/></small>
+<!--                                <t t-set="formatted_date" t-value="format_datetime(message.date, 'dd MMM yyyy')" />-->
+<!--                                <span t-esc="format_datetime(message.date, 'dd-MM-yyyy')" />-->
+<!---->
+<!--                                <small><t t-esc="formatted_date"/></small>-->
                             </li>
                         </t>
                     </ul>

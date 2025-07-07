@@ -13,7 +13,8 @@ class TeacherParentClass(models.Model):
     name = fields.Char('Name', required=False, readonly=True, tracking=True)
     create_date = fields.Date('Date', default=lambda self: fields.Datetime.now(), tracking=True, readonly=True)
     class_div_id = fields.Many2one('education.class.division', 'Division', tracking=True, required=True)
-    faculty_id = fields.Many2one('education.faculty', 'Faculty', tracking=True, required=True)
+    faculty_id = fields.Many2one('education.faculty', 'Faculty', tracking=True, required=False)
+    user_id = fields.Many2one('res.users', 'Faculty', tracking=True, readonly=True, default=lambda self: self.env.user)
     desc = fields.Text('Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')],
                                         default='draft', string="State", help="Stages of attendance" , tracking=True)
@@ -31,7 +32,7 @@ class TeacherParentClass(models.Model):
     def create(self, vals_list):
         for vals in vals_list:
             if 'name' not in vals or vals['name'] == 'New':
-                vals['name'] = self.env['ir.sequence'].next_by_code('teacher.class.parent') or _('New')
+                vals['name'] = self.env.user.name or _('New')
         return super().create(vals_list)
 
 

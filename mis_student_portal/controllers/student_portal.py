@@ -106,7 +106,7 @@ class CustomerPortalCustom(CustomerPortal):
         partner = request.env.user.partner_id
         student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
         print('ghhgh33333333------======all_homeworks====', student_id)
-        timetable_id = request.env['education.timetable'].sudo().search([('class_division_id', '=', student_id.class_division_id.id),
+        timetable_id = request.env['education.timetable'].sudo().search([('class_division_id', '=', student_id.class_division_id.id), ('state', '=', 'done'),
                                                                        ('academic_year_id.enable', '=', True)])
 
         return request.render("mis_student_portal.portal_student_timetable", {'timetable_id': timetable_id})
@@ -192,10 +192,10 @@ class CustomerPortalCustom(CustomerPortal):
         partner = request.env.user.partner_id
         student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
         print('ghhgh33333333------======all_homeworks====', student_id)
-        teacher_comm_ids = request.env['teacher.class.parent'].sudo().search(
-            [('class_div_id', '=', student_id.class_division_id.id)])
+        teacher_comm_ids = request.env['teacher.student.parent'].sudo().search(
+            [('class_div_id', '=', student_id.class_division_id.id),('student_id', '=', student_id.id)])
         today_teacher_comm_ids = request.env['teacher.student.parent'].sudo().search(
-            [('class_div_id', '=', student_id.class_division_id.id), ('create_date', '=', today_date)])
+            [('class_div_id', '=', student_id.class_division_id.id), ('create_date', '=', today_date),('student_id', '=', student_id.id)])
         print('ghhgh33333333------======all_homeworks====', teacher_comm_ids)
 
         return request.render("mis_student_portal.portal_stu_teacher_class_comms", {'teacher_comm_ids': teacher_comm_ids,
