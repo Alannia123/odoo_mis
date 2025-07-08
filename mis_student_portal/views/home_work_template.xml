@@ -31,7 +31,7 @@
                                         style="background-color:#ffe6ff;">
                                     <span t-field="line.homework"/>
                                     </span>
-                                    <button class="btn btn-info"
+                                    <button class="btn btn-info btn-sm"
                                             t-att-onclick="'speakText(%s)' % line.id">
                                         🔊
                                     </button>

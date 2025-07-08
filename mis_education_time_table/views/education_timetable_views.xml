@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <form string="Education Timetable">
                 <header>
-                    <button name="set_to_post" class="oe_highlight" type="object" string="Post" invisible="state != 'draft'"></button>
-                    <button name="reste_to_draft" class="oe_highlight" type="object" string="Reset" invisible="state != 'done'"></button>
+                    <button name="set_to_post" class="oe_highlight" type="object" string="Post" invisible="state != 'draft'" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"></button>
+                    <button name="reste_to_draft" class="oe_highlight" type="object" string="Reset" invisible="state != 'done'" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"></button>
                     <field name="state" widget="statusbar"  statusbar_visible="draft,done"/>
                 </header>
                 <sheet>
@@ -27,13 +27,13 @@
                     </div>
                     <group>
                         <group>
-                            <field name="class_division_id" options="{'no_open': True, 'no_create': True}" groups="mis_education_core.group_education_principal"/>
+                            <field name="class_division_id" options="{'no_open': True, 'no_create': True}" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
                             <field name="academic_year_id" options="{'no_open': True, 'no_create': True}"/>
                         </group>
                         <group>
                             <field name="facebook_photo_url" invisible="1"/>
                             <field name="file_name" invisible="1"/>
-                            <field name="pdf_file" filename="file_name" groups="mis_education_core.group_education_principal"/>
+                            <field name="pdf_file" filename="file_name" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
                             <field name="company_id"
                                    groups="base.group_multi_company"/>
                         </group>
@@ -41,7 +41,9 @@
                     <notebook>
                         <page string="Time Table">
                             <group>
-                                <field name="preview_image" widget="image"/>
+                                <field name="pre_file_name" invisible="1" />
+                                <field name="preview_image" invisible="0" filename="pre_file_name" readonly="1" force_save="1" />
+                                <field name="preview_image" widget="image" style="height: 600px; width: 600px;" string="" options="{'preview_image': 'preview_image'}" />
                             </group>
 
                         </page>

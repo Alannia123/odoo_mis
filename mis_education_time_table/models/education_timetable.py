@@ -85,6 +85,7 @@ class EducationTimetable(models.Model):
     pdf_file = fields.Binary(string="Upload TimeTable", attachment=True)
     file_name = fields.Char('File Name')
     preview_image = fields.Binary(string="PDF Preview", readonly=True)
+    pre_file_name = fields.Char('File Name')
     facebook_photo_url = fields.Char("Facebook Photo URL")
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done')], 'State', default='draft', tracking=True)
 
@@ -133,6 +134,7 @@ class EducationTimetable(models.Model):
     def _generate_preview(self):
         if self.pdf_file:
             self.preview_image = self.pdf_file
+            self.pre_file_name = self.file_name
         else:
             self.preview_image = False
 

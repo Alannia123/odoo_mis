@@ -173,9 +173,9 @@
                               animation: glitch 2s infinite alternate;
                             }
                         @keyframes typing {
-  from { width: 0; }
-  to { width: 50%; }
-}
+                          from { width: 0; }
+                          to { width: 50%; }
+                        }
 
 @keyframes blink-caret {
   50% { border-color: transparent; }
@@ -186,7 +186,7 @@
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid black;
-  width: 0;
+  width: 10 ch;
   animation: typing 3s infinite, blink-caret 0.75s step-end infinite;
 
                         @keyframes scaleUp {
@@ -341,12 +341,42 @@
                             font-size: 12px;
                             font-weight: bold;
                             border-radius: 20%;
-                            width: 20px;
+                            width: 45px;
                             height: 20px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                         }
+                        .tile-badge-absent {
+                            position: absolute;
+                            top: -7px;
+                            right: 2px;
+                            background: red;
+                            color: white;
+                            font-size: 12px;
+                            font-weight: bold;
+                            border-radius: 20%;
+                            width: 45px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+<!--                        .tile-badge-na {-->
+<!--                            position: absolute;-->
+<!--                            top: -7px;-->
+<!--                            right: 2px;-->
+<!--                            background: #FA8072;-->
+<!--                            color: white;-->
+<!--                            font-size: 12px;-->
+<!--                            font-weight: bold;-->
+<!--                            border-radius: 20%;-->
+<!--                            width: 20px;-->
+<!--                            height: 20px;-->
+<!--                            display: flex;-->
+<!--                            align-items: center;-->
+<!--                            justify-content: center;-->
+<!--                        }-->
 
                         @media (max-width: 768px) {
                             .portal-small-tile {
@@ -371,93 +401,6 @@
                             }
                         }
                         .tile-badge-att {
-                                width: 40px;
-                                height: 20px;
-                                font-size: 10px;
-                            }
-                        }
-.tile-badge-att-ab {
-                            position: absolute;
-                            top: -7px;
-                            right: 2px;
-                            background: red;
-                            color: white;
-                            font-size: 12px;
-                            font-weight: bold;
-                            border-radius: 20%;
-                            width: 20px;
-                            height: 20px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
-
-                        @media (max-width: 768px) {
-                            .portal-small-tile {
-                                width: 70px;
-                                height: 70px;
-                                font-size: 12px;
-                            }
-
-                            .portal-small-tile i {
-                                font-size: 35px;
-                            }
-
-                            .tile-badge {
-                                width: 25px;
-                                height: 25px;
-                                font-size: 10px;
-                            }
-                        .tile-badge-left {
-                                width: 40px;
-                                height: 20px;
-                                font-size: 10px;
-                            }
-                        }
-                        .tile-badge-att-ab {
-                                width: 40px;
-                                height: 20px;
-                                font-size: 10px;
-                            }
-                        }.tile-badge-att-na {
-                            position: absolute;
-                            top: -7px;
-                            right: 2px;
-                            background: yellow;
-                            color: white;
-                            font-size: 12px;
-                            font-weight: bold;
-                            border-radius: 20%;
-                            width: 20px;
-                            height: 20px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
-
-                        @media (max-width: 768px) {
-                            .portal-small-tile {
-                                width: 70px;
-                                height: 70px;
-                                font-size: 12px;
-                            }
-
-                            .portal-small-tile i {
-                                font-size: 35px;
-                            }
-
-                            .tile-badge {
-                                width: 25px;
-                                height: 25px;
-                                font-size: 10px;
-                            }
-                        .tile-badge-left {
-                                width: 40px;
-                                height: 20px;
-                                font-size: 10px;
-                            }
-                        }
-                        .tile-badge-att-na {
                                 width: 40px;
                                 height: 20px;
                                 font-size: 10px;
@@ -530,6 +473,24 @@
 .wave-text span:nth-child(2) { animation-delay: 0.1s; }
 .wave-text span:nth-child(3) { animation-delay: 0.2s; }
 .wave-text span:nth-child(4) { animation-delay: 0.3s; }
+
+
+                        @keyframes fadeBadge {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.badge-fade {
+  animation: fadeBadge 1.8s infinite ease-in-out;
+}
+
+
+
+
                     </style>
 <!--                    Student Info-->
                     <div class="container glow-background">
@@ -568,9 +529,9 @@
                         <div class="row text-center mt-3">
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/student_attendance" class="portal-small-tile portal-tile-color-att">
-                                    <t t-if="attendance == 'Present'"> <div class="tile-badge-att typing-text"><t t-esc="attendance"/></div></t>
-                                    <t t-if="attendance == 'Absent'"><div class="tile-badge-att-ab typing-text" > <t t-esc="attendance"/> </div></t>
-                                    <t t-else=""><div class="tile-badge-att-na typing-text" > <t t-esc="attendance"/> </div></t>
+                                    <t t-if="attendance == 'Present'"> <span class="tile-badge-att typing-text"><t t-esc="attendance"/></span></t>
+                                    <t t-if="attendance == 'Absent'"><span class="tile-badge-absent typing-text" > <t t-esc="attendance"/> </span></t>
+<!--                                    <t t-else=""><div class="tile-badge-na typing-text" > <t t-esc="attendance"/> </div></t>-->
                                     <i class="fa fa-calendar"></i>
                                 </a>
                                 <p><b>Attendance</b></p>
@@ -596,6 +557,13 @@
                                     <i class="fa fa-wpforms"></i>
                                 </a>
                                 <p><b>Fees &amp; Payments</b></p>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-2">
+                                <a href="/my/invoices" class="portal-small-tile portal-tile-color-fees">
+<!--                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>-->
+                                    <i class="fa fa-wpforms"></i>
+                                </a>
+                                <p><b>Exams</b></p>
                             </div>
                             </div>
                     </div>

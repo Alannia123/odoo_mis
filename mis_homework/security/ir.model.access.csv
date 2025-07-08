@@ -6,4 +6,5 @@ access_student_homework,access.student.homework,model_student_homework,mis_educa
 access_student_homework,access.student.homework,model_student_homework,base.group_user,1,1,1,1
 access_student_homework_line,access.student.homework.line,model_student_homework_line,base.group_user,1,1,1,1
 access_homework_entry,access.entry.homework,model_homework_entry,base.group_user,1,1,1,1
-
+access_student_homework_admin,access.student.homework.admin,model_student_homework,base.group_system,1,1,1,1,,,"",,,,,1,,,,,,1,,,,,,,0
+,,,,,,,
