@@ -77,10 +77,15 @@ class CustomerPortalCustom(CustomerPortal):
         partner = request.env.user.partner_id
         student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
         home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id)])
-        today_home_work_ids = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id),
-                                                                             ('homework_date', '=', today_date)])
+        today_home_work_id = request.env['student.homework'].sudo().search([('class_div_id', '=', student_id.class_division_id.id),
+                                                                          ('homework_date', '=', today_date)],limit=1)
+        today_count = 0
+        if today_home_work_id:
+            today_count = len(today_home_work_id.work_line_ids)
         return request.render("mis_student_portal.portal_all_homeworks", {'homeworks': home_work_ids,
-                                                                          'today_homework': today_home_work_ids})
+                                                                          'today_homework': today_home_work_id,
+                                                                          'today_count': today_count,
+                                                                          })
 
 
     @route(['/homework/get_homework/<int:work_id>'],  type='http', auth="user", website=True)
@@ -192,3 +197,10 @@ class CustomerPortalCustom(CustomerPortal):
             if record.exists():
                 record.message_post(body=message, message_type='comment', subtype_xmlid="mail.mt_comment")
         return request.redirect('/teacher_comm/get_comm/%s' % res_id)
+
+    # Fees Template
+    @route(['/my/fees'], type='http', auth="user", website=True)
+    def get_school_student_info(self, **kw):
+        partner = request.env.user.partner_id
+        student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
+        return request.render("mis_student_portal.portal_monthly_payment_tiles", {'student': student_id})

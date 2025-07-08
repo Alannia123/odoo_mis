@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+                <template id="portal_monthly_payment_tiles" name="Monthly Payment Tiles" >
+                    <t t-call="portal.portal_layout">
+                    <div class="container mt-4">
+                        <h3 class="mb-3">School Payments</h3>
+                        <div class="row text-center">
+                            <t t-foreach="[
+                                ('admission', 'Admission'),
+                                ('re_admission', 'Re-Admission'),
+                                ('apr', 'April'),
+                                ('may', 'May'),
+                                ('jun', 'June'),
+                                ('jul', 'July'),
+                                ('aug', 'August'),
+                                ('sep', 'September'),
+                                ('oct', 'October'),
+                                ('nov', 'November'),
+                                ('dec', 'December'),
+                                ('jan', 'January'),
+                                ('feb', 'February'),
+                                ('mar', 'March'),
+                            ]" t-as="month">
+                                <div class="col-6 col-md-3 mb-4" >
+                                    <a t-att-href="'/my/payments/%s' % month[0]" class="text-decoration-none">
+                                        <div class="card shadow-sm" style="background-color:#ff99c2;">
+                                            <div class="card-body">
+                                                <h5 class="card-title" t-esc="month[1]"/>
+                                                <p class="card-text" style="background-color:#cc2900; border-radius: 10px;margin-left:25px;margin-right:25px;">Unpaid</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    </t>
+            </template>
+
+
+
+</odoo>

@@ -271,6 +271,9 @@
                         .portal-tile-color-fees{
                                 background:#99b280;
                         }
+                        .portal-tile-color-exam{
+                                background:#003300;
+                        }
 
                         .portal-small-tile {
                             position: relative;
@@ -506,14 +509,14 @@
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/announcements" class="portal-small-tile portal-tile-color-annoce">
 <!--                                    <div class="tile-badge-left typing-text" t-if="all_announce_count"> New </div>-->
-                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>
+                                    <div class="tile-badge" t-if="today_announce_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-bullhorn"></i>
                                 </a>
                                 <p><b>Announcements</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
                                 <a href="/school/all_homeworks" class="portal-small-tile portal-tile-color-home">
-<!--                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>-->
+                                    <div  class="tile-badge" t-if="today_home_work_count"> <t t-esc="all_announce_count"/> </div>
                                     <i class="fa fa-book"></i>
                                 </a>
                                 <p><b>Homeworks</b></p>
@@ -552,14 +555,14 @@
                                 <p><b>Teacher <span t-out="div_name"/></b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/my/invoices" class="portal-small-tile portal-tile-color-fees">
+                                <a href="/my/fees" class="portal-small-tile portal-tile-color-fees">
 <!--                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>-->
                                     <i class="fa fa-wpforms"></i>
                                 </a>
                                 <p><b>Fees &amp; Payments</b></p>
                             </div>
                             <div class="col-6 col-sm-4 col-md-2">
-                                <a href="/my/invoices" class="portal-small-tile portal-tile-color-fees">
+                                <a href="" class="portal-small-tile portal-tile-color-exam">
 <!--                                    <div class="tile-badge" t-if="all_announce_count"> <t t-esc="all_announce_count"/> </div>-->
                                     <i class="fa fa-wpforms"></i>
                                 </a>
