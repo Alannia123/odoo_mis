@@ -33,6 +33,7 @@
     # },
     'assets': {
         'web.assets_frontend': [
+                'https://cdn.jsdelivr.net/npm/chart.js',
             # '/mis_student_portal/static/src/css/dashboard.css',
             # '/mis_website/static/src/css/sample.css',
         ],

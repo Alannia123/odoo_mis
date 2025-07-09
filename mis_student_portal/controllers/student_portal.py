@@ -202,5 +202,12 @@ class CustomerPortalCustom(CustomerPortal):
     @route(['/my/fees'], type='http', auth="user", website=True)
     def get_school_student_info(self, **kw):
         partner = request.env.user.partner_id
+        total_fees = 1000
+        paid_fees = 600
+        balance_fees = 400
         student_id = request.env['education.student'].sudo().search([('partner_id', '=', partner.id)])
-        return request.render("mis_student_portal.portal_monthly_payment_tiles", {'student': student_id})
+        return request.render("mis_student_portal.portal_monthly_payment_tiles", {'student': student_id,
+                                                                                  'total_fees': total_fees,
+                                                                                  'paid_fees': paid_fees,
+                                                                                  'balance_fees': balance_fees
+                                                                                  })

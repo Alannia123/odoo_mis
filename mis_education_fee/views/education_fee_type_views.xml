@@ -28,11 +28,12 @@
         <field name="name">education.fee.type.view.tree</field>
         <field name="model">education.fee.type</field>
         <field name="arch" type="xml">
-            <tree string="Fee Types">
+            <tree string="Fee Types" editable="top">
                 <field name="name"/>
                 <field name="lst_price" widget="monetary"/>
-                <field name="payment_type"/>
-                <field name="interval"/>
+                <field name="description_sale" placeholder="Details about the fee" string="Description"/>
+                <field name="payment_type" column_invisible="1"/>
+                <field name="interval" column_invisible="1"/>
             </tree>
         </field>
     </record>

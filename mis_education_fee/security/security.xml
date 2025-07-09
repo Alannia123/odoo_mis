@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Education Faculty group user-->
+    <record id="group_create_invoices_students" model="res.groups">
+        <field name="name">Invoice Creation</field>
+        <field name="category_id" ref="mis_education_core.module_category_education"/>
+    </record>
+
+</odoo>

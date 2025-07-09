@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="budget_amount_change_wizard" model="ir.ui.view">
+        <field name="name">Budget Amount Change</field>
+        <field name="model">budget.amount.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Budget Amount Change">
+                <group>
+                    <field name="pre_amount" required="1"/>
+                    <field name="current_amount" required="0"/>
+                    <field name="reason" required="1"/>
+                </group>
+                <footer>
+                    <button  name="update_budget_amount" string="Change Budget" type="object" class="btn-warning"/>
+                    <button special="cancel" string="Cancel" class="oe_link" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

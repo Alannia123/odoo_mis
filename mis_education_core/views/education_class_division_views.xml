@@ -55,6 +55,7 @@
                 <field name="academic_year_id"/>
                 <field name="actual_strength"/>
                 <field name="faculty_id"/>
+                <field name="inv_generated" groups="mis_education_core.group_create_invoices_divisions"/>
             </tree>
         </field>
     </record>

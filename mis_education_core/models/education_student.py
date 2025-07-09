@@ -148,7 +148,7 @@ class EducationStudent(models.Model):
     no_of_discipline_history = fields.Integer('Disp History', compute='_compute_no_of_discipline_history')
     aadhar_no = fields.Char('Aadhar Number', required=False)
     user_id = fields.Many2one('res.users')
-    ch_password = fields.Char('Password Sample', readonly=True)
+    ch_password = fields.Char('Password Sample', readonly=False)
     login = fields.Char('Login', readonly=True)
 
     def _compute_no_of_discipline_history(self):
@@ -171,3 +171,9 @@ class EducationStudent(models.Model):
             if rec.class_division_id.actual_strength<len(rec.class_division_id.student_ids):
                 raise ValidationError("The number of students exceeds the "
                                       "maximum strength of the class division.")
+
+    def update_password(self):
+        if not self.user_id:
+            raise ValidationError("User Not Found . Please Assign user")
+        else:
+            self.user_id.password = self.ch_password

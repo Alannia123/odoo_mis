@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo >
+
+
+    <record id="program_gallery_sequence" model="ir.sequence">
+        <field name="name">Program Gallery</field>
+        <field name="code">program.gallery</field>
+        <field name="prefix">PG</field>
+        <field name="padding">5</field>
+    </record>
+
+    <record id="web_video_sequence" model="ir.sequence">
+        <field name="name">Web Video</field>
+        <field name="code">web.video</field>
+        <field name="prefix">WV</field>
+        <field name="padding">5</field>
+    </record>
+
+
+</odoo>

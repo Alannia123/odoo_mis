@@ -14,10 +14,11 @@
                             <field name="fee_structure_name"
                                    placeholder="Eg:LKG and UKG"/>
                             <field name="expire" invisible="1"/>
-                            <field name="category_id"/>
+                            <field name="journal_id"/>
                         </group>
                         <group>
                             <field name="academic_year_id"/>
+                            <field name="payment_type"/>
                         </group>
                     </group>
                     <notebook colspan="4">
@@ -54,7 +55,7 @@
             <tree string="Fee Structure">
                 <field name="fee_structure_name"/>
                 <field name="academic_year_id"/>
-                <field name="category_id"/>
+                <field name="category_id" column_invisible="1"/>
                 <field name="amount_total" widget="monetary"/>
             </tree>
         </field>

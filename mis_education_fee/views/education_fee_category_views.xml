@@ -40,8 +40,8 @@
         <field name="view_mode">tree,form</field>
     </record>
     <!--    Menu item for the model-->
-    <menuitem id="education_fee_category_menu"
-              action="education_fee_category_action"
-              parent="education_fee_structure_menu_root"
-              sequence="3"/>
+<!--    <menuitem id="education_fee_category_menu"-->
+<!--              action="education_fee_category_action"-->
+<!--              parent="education_fee_structure_menu_root"-->
+<!--              sequence="3"/>-->
 </odoo>

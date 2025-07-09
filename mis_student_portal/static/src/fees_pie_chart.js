@@ -290,3 +290,39 @@ export class EducationalDashboard extends Component {
 EducationalDashboard.template = "EducationalDashboard"
 registry.category("actions").add("erp_dashboard_tag", EducationalDashboard)
 
+
+document.addEventListener("DOMContentLoaded", function () {
+                var ctx = document.getElementById("feesChart").getContext("2d");
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Paid Fees", "Balance Fees"],
+                        datasets: [{
+                            label: "Fees Overview",
+                            data: [paid_fees, balance_fees],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.7)',
+                                'rgba(255, 99, 132, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Fees Distribution'
+                            }
+                        }
+                    }
+                });
+            });
+

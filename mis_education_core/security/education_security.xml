@@ -33,4 +33,9 @@
         <field name="name">Student Or Parent</field>
         <field name="category_id" ref="module_category_education"/>
     </record>
+
+    <record id="group_create_invoices_divisions" model="res.groups">
+        <field name="name">Invoice Creation Divisions</field>
+        <field name="category_id" ref="mis_education_core.module_category_education"/>
+    </record>
 </odoo>

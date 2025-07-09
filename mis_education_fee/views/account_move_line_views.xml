@@ -860,9 +860,8 @@
                                    options='{"always_reload": True, "no_quick_create": True}'/>
                         </group>
                         <group>
-                            <field name="fee_category_id" required="1"/>
-                            <field name="fee_structure_id"
-                                   invisible="is_fee_structure == False"/>
+                            <field name="fee_category_id" required="1" invisible="1"/>
+                            <field name="fee_structure_id" />
                         </group>
                         <group id="header_left_group">
                             <div class="o_td_label">
@@ -1322,13 +1321,13 @@
                             </field>
                         </page>
                         <page string="Payments Done" name="payments_done">
-                            <group>
-                                <group>
-                                    <field name="payed_from_date"/>
-                                    <field name="payed_to_date"/>
-                                </group>
+<!--                            <group>-->
+<!--                                <group>-->
+<!--                                    <field name="payed_from_date"/>-->
+<!--                                    <field name="payed_to_date"/>-->
+<!--                                </group>-->
 
-                            </group>
+<!--                            </group>-->
                             <field name="payed_line_ids">
                                 <tree string="Payments" create="0">
                                     <field name="date" string="Date"/>

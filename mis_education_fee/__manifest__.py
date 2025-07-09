@@ -14,6 +14,7 @@
     'maintainer': 'Alanniainfotechz',
     "depends": ['account', 'mis_education_core'],
     "data": [
+        'data/inv_generate.xml',
         'security/ir.model.access.csv',
         'views/education_fee_structure_menu_views.xml',
         'views/account_move_line_views.xml',

@@ -43,3 +43,53 @@ class EducationFeeStructure(models.Model):
                                                                        limit=1),
                                   domain=[('fee_structure', '=', True)],
                                   help='Fees category.')
+    journal_id = fields.Many2one('account.journal',
+                                 string='Journal', required=True,
+                                 help='Setting up of unique journal for each '
+                                      'category help to distinguish '
+                                      'account entries of each category ')
+    payment_type = fields.Selection([
+        ('onetime', 'One Time'),
+        ('permonth', 'Per Month'),
+        ('peryear', 'Per Year'),
+        ], string='Payment Type', default='permonth',
+        help='Payment type describe how much a payment effective.'
+             ' Like, bus fee per month is 30 dollar, sports fee per '
+             'year is 40 dollar, etc')
+
+
+    def generate_inv_division_students(self):
+        non_generate_div_ids = self.env['education.class.division'].search([('inv_generated', '=', False)])
+        structure_id = self.env['education.fee.structure'].search([('payment_type', '=', 'peryear')], limit=1)
+        for student in non_generate_div_ids[0].student_ids[:-3]:
+
+            lines = []
+            vals = {}
+            for line in structure_id.fee_type_ids:
+                name = line.fee_type_id.product_variant_id.description_sale
+                if not name:
+                    name = line.fee_type_id.product_variant_id.name
+                fee_line = {
+                    'price_unit': line.fee_amount,
+                    'quantity': 1.00,
+                    'product_id': line.fee_type_id.product_variant_id.id,
+                    'name': name,
+                    'account_id': structure_id.journal_id.default_account_id.id
+                }
+                lines.append((0, 0, fee_line))
+
+            vals = {
+                'student': student.id,  # Customer ID
+                'class_division_id': student.class_division_id.id,  # Customer ID
+                'register_no': student.register_no,  # Customer ID
+                'partner_id': student.partner_id.id,  # Customer ID
+                'fee_structure_id': structure_id.id,  # Customer ID
+                'move_type': 'out_invoice',  # 'out_invoice' = customer invoice
+                'invoice_date': fields.Date.today(),
+                'journal_id': structure_id.journal_id.id,  # Typically "Customer Invoices" journal
+                'invoice_line_ids': lines,
+                }
+            print('VALSSSSSSSSSSSSSSSS',vals)
+            invoice = self.env['account.move'].create(vals)
+
+

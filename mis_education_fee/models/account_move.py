@@ -27,8 +27,7 @@ class AccountMove(models.Model):
                 lines.append((0, 0, fee_line))
             item.invoice_line_ids = lines
 
-    @api.onchange('student_id', 'fee_category_id', 'payed_from_date',
-                  'payed_to_date')
+    @api.onchange('student_id', 'fee_structure_id')
     def _onchange_student_id(self):
         """Student_id is inherited from res_partner. Set partner_id from
          student_id """
@@ -41,19 +40,20 @@ class AccountMove(models.Model):
             item.class_division_id = item.student_id.class_division_id
             date_today = datetime.date.today()
             company = self.env.user.company_id
-            from_date = item.payed_from_date
-            to_date = item.payed_to_date
+            from_date = item.fee_structure_id.academic_year_id.ay_start_date
+            to_date = date_today
             if not from_date:
                 from_date = company.compute_fiscalyear_dates(date_today)[
                     'date_from']
             if not to_date:
                 to_date = date_today
-            if item.partner_id and item.fee_category_id:
+            if item.partner_id:
                 invoice_ids = self.env['account.move'].search([
                     ('partner_id', '=', item.partner_id.id),
                     ('invoice_date', '>=', from_date),
                     ('invoice_date', '<=', to_date),
-                    ('fee_category_id', '=', item.fee_category_id.id)])
+                    # ('fee_category_id', '=', item.fee_category_id.id)
+                ])
                 for invoice in invoice_ids:
                     for line in invoice.invoice_line_ids:
                         fee_line = {
@@ -69,24 +69,24 @@ class AccountMove(models.Model):
                         lines.append((0, 0, fee_line))
                 item.payed_line_ids = lines
 
-    @api.onchange('fee_category_id')
-    def _onchange_fee_category_id(self):
-        """ Set domain for fee structure based on category"""
-        self.invoice_line_ids = None
-        return {
-            'domain': {
-                'fee_structure_id': [
-                    ('category_id', '=', self.fee_category_id.id)]
+    # @api.onchange('fee_category_id')
+    # def _onchange_fee_category_id(self):
+    #     """ Set domain for fee structure based on category"""
+    #     self.invoice_line_ids = None
+    #     return {
+    #         'domain': {
+    #             'fee_structure_id': [
+    #                 ('category_id', '=', self.fee_category_id.id)]
+    #
+    #         }
+    #     }
 
-            }
-        }
-
-    @api.onchange('fee_category_id')
+    @api.onchange('fee_structure_id')
     def _onchange_fee_category_id(self):
         """Function to get category details"""
         for item in self:
-            if item.fee_category_id:
-                line = self.fee_category_id.journal_id
+            if item.fee_structure_id:
+                line = self.fee_structure_id.journal_id
                 item.journal_id = line
 
     journal_id = fields.Many2one('account.journal', string='Journal',
@@ -138,7 +138,7 @@ class AccountMove(models.Model):
         """ Adding two field to invoice. is_fee use to display fee items only
         in fee tree view"""
         partner = self.env['res.partner'].browse(vals.get('partner_id'))
-        if vals.get('fee_category_id'):
+        if vals.get('fee_structure_id'):
             vals.update({
                 'is_fee': True,
                 'student_name': partner.name

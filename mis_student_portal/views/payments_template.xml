@@ -33,6 +33,61 @@
                                 </div>
                             </t>
                         </div>
+
+
+                        <t t-set="title">My Fees Summary</t>
+        <div class="container my-5">
+            <h2 class="mb-4">Fees Overview</h2>
+            <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <canvas id="feesChart" width="400" height="400"></canvas>
+        </div>
+                        <div id="fee-data"
+                             t-att-data-paid="paid_fees"
+                             t-att-data-balance="balance_fees">
+                        </div>
+<!--        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var el = document.getElementById("fee-data");
+                var paid = parseFloat(el.dataset.paid);
+                var balance = parseFloat(el.dataset.balance);
+                console.log('222222222111111112222222',paid, balance);
+                var ctx = document.getElementById("feesChart").getContext("2d");
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Paid Fees", "Balance Fees"],
+                        datasets: [{
+                            label: "Fees Overview",
+                            data: [paid, balance],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.7)',
+                                'rgba(255, 99, 132, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Fees Distribution'
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
                     </div>
                     </t>
             </template>

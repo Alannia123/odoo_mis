@@ -74,6 +74,7 @@ class EducationClassDivision(models.Model):
                                    help="Count of the students in the "
                                         "division",
                                    compute='_compute_student_count')
+    inv_generated = fields.Boolean('INV Generated?')
 
     @api.constrains('actual_strength')
     def validate_strength(self):
