@@ -200,7 +200,7 @@ class CustomerPortalCustom(CustomerPortal):
 
     # Fees Template
     @route(['/my/fees'], type='http', auth="user", website=True)
-    def get_school_student_info(self, **kw):
+    def get_school_student_fees(self, **kw):
         partner = request.env.user.partner_id
         total_fees = 1000
         paid_fees = 600
