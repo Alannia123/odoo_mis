@@ -103,7 +103,7 @@
                                     <span t-field="line.homework"/>
                                     </span>
                                     <button class="btn btn-info"
-                                            t-att-onclick="'speakText(%s)' % line.id">
+                                            t-att-onclick="'AndroidTTS.speakText(%s)' % line.id">
                                         🔊
                                     </button>
                                 </td>
