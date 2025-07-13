@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--    Privacy Policye-->
+    <template id="mis_school_privacy_policy" name="Student Performance MIS">
+        <t t-call="website.layout">
+            <section
+                    class="s_title parallax s_parallax_is_fixed bg-black-50 pt24 pb24"
+                    data-vcss="001" data-snippet="s_title"
+                    data-scroll-background-ratio="1">
+                <span class="s_parallax_bg oe_img_bg"
+                      style="background-position: 50% 0;">
+                    <img src="/mis_website/static/src/img/school_web.jpg"/>
+                </span>
+                <div class="o_we_bg_filter bg-black-50"/>
+                <div class="container">
+                    <h1>Privacy Policy | Mary Immaculate English School</h1>
+                </div>
+          </section>
+
+              <style>
+                    body {
+                      font-family: Arial, sans-serif;
+                      margin: 20px;
+                      color: #333;
+                      line-height: 1.6;
+                    }
+                    h1 {
+                      color: #004080;
+                    }
+                    a {
+                      color: #0077cc;
+                    }
+                  </style>
+              <div style="max-width: 1000px; margin: 40px auto; padding: 24px; font-family: Arial, sans-serif; line-height: 1.8; color: #333; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+  <h2 style="color: #004080; border-bottom: 2px solid #004080; padding-bottom: 8px;">Privacy Policy</h2>
+
+  <p><strong>Effective Date:</strong> July 13, 2025</p>
+
+  <p>Mary Immaculate English School ("we", "our", or "us") operates the Android mobile application and the website <a href="https://misbasirhat.com" style="color:#0077cc;">https://misbasirhat.com</a> (the "Services").</p>
+
+  <p>This page is used to inform visitors and app users regarding our policies with the collection, use, and disclosure of Personal Information.</p>
+
+  <h4 style="margin-top: 24px;">Information Collection and Use</h4>
+  <p>We do not collect personal data from users of the mobile app or website unless explicitly provided by the user for educational purposes (e.g., login information for student portals).</p>
+  <p>Any information shared is only used to facilitate school services such as viewing assignments, attendance, notices, or receiving push notifications.</p>
+
+  <h4 style="margin-top: 24px;">Cookies and Log Data</h4>
+  <p>Our website may use cookies to improve functionality. Log data (such as IP address, browser version) may be collected automatically to ensure the website works properly and securely.</p>
+
+  <h4 style="margin-top: 24px;">Third-party Services</h4>
+  <p>We may use trusted third-party services like Firebase Cloud Messaging for push notifications. These services may collect limited data necessary for functionality but do not share it with unauthorized parties.</p>
+
+  <h4 style="margin-top: 24px;">Security</h4>
+  <p>We value your trust in providing us your personal information, and we strive to use commercially acceptable means of protecting it.</p>
+
+  <h4 style="margin-top: 24px;">Children's Privacy</h4>
+  <p>Our services are intended for school students. We do not knowingly collect personal data from children without the involvement of their parents or guardians.</p>
+
+  <h4 style="margin-top: 24px;">Changes to This Privacy Policy</h4>
+  <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page with the updated effective date.</p>
+
+  <h4 style="margin-top: 24px;">Contact Us</h4>
+  <p>If you have any questions about our Privacy Policy, please contact us at:</p>
+  <p>
+    Mary Immaculate English School<br/>
+    Basirhat, West Bengal, India<br/>
+    Email: <a href="mailto:info@misbasirhat.com" style="color:#0077cc;">info@misbasirhat.com</a>
+  </p>
+</div>
+
+
+        </t>
+    </template>
+
+
+</odoo>

@@ -23,6 +23,7 @@
         'views/online_application_templates.xml',
         'views/e_magazine_view.xml',
         'views/app_release_temp.xml',
+        'views/privacy_policy.xml',
         # 'views/nav_bar_template.xml',
         'views/website_header.xml',
         'views/login_logo.xml',

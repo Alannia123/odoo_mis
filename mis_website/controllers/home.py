@@ -78,3 +78,9 @@ class home_controller(http.Controller):
             }
         print('UTTTTTTTTTTTTTTTTT',vals)
         return request.render('mis_website.mis_home_page', vals)
+
+    @http.route('/privacy_policy', type='http', auth='public', website=True)
+    def mis_school_privacy_policy(self):
+        """To redirect to contact page."""
+        magazines = request.env['school.magazine'].sudo().search([('state', '=', 'post')])
+        return request.render('mis_website.mis_school_privacy_policy')
