@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="all_homework_parent_comm_admin" model="ir.rule">
+            <field name="name">All Class Comm</field>
+            <field ref="model_teacher_class_parent" name="model_id"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('mis_education_core.group_education_principal'))]"/>
+        </record>
+
+
+        <record id="teachers_clas_comm" model="ir.rule">
+            <field name="name">Teachers Class Comm</field>
+            <field ref="model_teacher_class_parent" name="model_id"/>
+            <field name="domain_force">[('user_id', 'in', user.id)]</field>
+            <field name="groups" eval="[(4, ref('mis_education_core.group_education_faculty'))]"/>
+        </record>
+
+        <record id="all_homework_student_comm_admin" model="ir.rule">
+            <field name="name">All Student Comm</field>
+            <field ref="model_teacher_student_parent" name="model_id"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('mis_education_core.group_education_principal'))]"/>
+        </record>
+
+
+        <record id="teachers_student_comm" model="ir.rule">
+            <field name="name">Teachers Student Comm</field>
+            <field ref="model_teacher_student_parent" name="model_id"/>
+            <field name="domain_force">[('user_id', 'in', user.id)]</field>
+            <field name="groups" eval="[(4, ref('mis_education_core.group_education_faculty'))]"/>
+        </record>
+
+    </data>
+</odoo>

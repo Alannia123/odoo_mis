@@ -12,6 +12,7 @@
     'depends': ['base','hr', 'mis_education_core'],
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'data/sequence.xml',
         'views/teacher_class_view.xml',
         'views/teacher_parent_view.xml',

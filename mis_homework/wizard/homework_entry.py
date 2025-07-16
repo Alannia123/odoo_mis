@@ -43,7 +43,7 @@ class HomeWorkWizard(models.TransientModel):
             if work_line_id and self.erase_exist:
                 work_line_id.homework = self.homework
             else:
-                work_line_id = self.env['student.homework.line'].create({
+                work_line_id = self.env['student.homework.line'].sudo().create({
                     'work_id': homework_id.id,
                     'subject_id': self.subject_id.id,
                     'homework': self.homework,
@@ -53,12 +53,12 @@ class HomeWorkWizard(models.TransientModel):
                 homework_id.user_ids = [(4, self.env.user.id)]
                 print('tttttttttttttttt',homework_id.user_ids)
         else:
-            homework_id = self.env['student.homework'].create({
+            homework_id = self.env['student.homework'].sudo().create({
                                 'homework_date': today,
                                 'class_div_id': self.class_div_id.id,
                                 'name': str(self.class_div_id.name) + ' - (' + str(today.strftime("%d-%m-%Y")) + ')',
                             })
-            work_line_id = self.env['student.homework.line'].create({
+            work_line_id = self.env['student.homework.line'].sudo().create({
                 'work_id': homework_id.id,
                 'subject_id': self.subject_id.id,
                 'homework': self.homework,
