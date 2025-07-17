@@ -58,7 +58,7 @@
                             <field name="create_date" readonly="state != 'draft'"/>
                         </group>
                         <group>
-                            <field name="user_id" options="{'no_create':True,'no_open':True}" required="1" readonly="state != 'draft'"/>
+                            <field name="user_id" options="{'no_create':True,'no_open':True}" required="1" readonly="state != 'draft'" domain="[('groups_id', 'in', [ref('base.group_user')])]"/>
                             <field name="scheduled_date" required="1" readonly="state != 'draft'"/>
                             <field name="completion_date"  readonly="1" invisible="state != 'done'"/>
                         </group>
