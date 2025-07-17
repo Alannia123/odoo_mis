@@ -14,7 +14,7 @@ class MisTask(models.Model):
     create_date = fields.Date('Date', default=lambda self: fields.Datetime.now(), tracking=True, readonly=True)
     scheduled_date = fields.Date('Scheduled Date', default=lambda self: fields.Datetime.now(), tracking=True)
     completion_date = fields.Date('Completion Date',  tracking=True)
-    user_id = fields.Many2one('res.users', 'Assigned To', tracking=True)
+    user_id = fields.Many2one('res.users', 'Assigned To', tracking=True, domain=lambda self: [('groups_id', 'in', [self.env.ref('base.group_user').id])])
     task_desc = fields.Text('Task Desc', copy=False, tracking=True)
     state = fields.Selection([('draft', 'Draft'), ('assigned', 'Assigned'), ('in_progress', 'In Progress'), ('done', 'Completed')],
                                         default='draft', string="State", help="Stages of attendance" , tracking=True)
