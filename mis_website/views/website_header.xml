@@ -283,6 +283,12 @@
                                     </a>
                                 </li>
                                 <li role="presentation" class="nav-item">
+                                    <a role="menuitem" href="/school/calendar" class="nav-link ">
+                                        <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"
+                                               data-oe-expression="submenu.name">School Calender</span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
                                     <a role="menuitem" href="/e_magazine" class="nav-link ">
                                         <span data-oe-model="website.menu" data-oe-id="25" data-oe-field="name" data-oe-type="char"  class="header-button-pay"
                                                data-oe-expression="submenu.name">E-Magazine</span>

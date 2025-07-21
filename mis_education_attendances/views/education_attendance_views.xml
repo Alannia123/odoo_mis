@@ -111,12 +111,15 @@
             </tree>
         </field>
     </record>
+
     <!--Search view of the Education attendance-->
     <record id="education_attendance_view_search" model="ir.ui.view">
         <field name="name">education.attendance.view.search</field>
         <field name="model">education.attendance</field>
         <field name="arch" type="xml">
             <search string="Students Attendants">
+                <field name="faculty_id"/>
+                <field name="division_id"/>
                 <filter string="Today" name="today"
                         domain="[('date','=',time.strftime('%%Y-%%m-%%d'))]"/>
                 <separator/>
@@ -133,6 +136,8 @@
                     <filter string="Division" name="group_division_id"
                             context="{'group_by':'division_id'}"/>
                 </group>
+                <filter name="group_by_faculty" string="Faculty" context="{'group_by': 'faculty_id'}"/>
+
             </search>
         </field>
     </record>
@@ -146,6 +151,7 @@
             'search_default_group_class_id': 1}
         </field>
     </record>
+
     <menuitem id="education_attendance_root_menu" name="MIS Attendance"
               sequence="12"
               web_icon="mis_education_attendances,static/description/attendance_list.png"/>

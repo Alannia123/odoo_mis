@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="template_school_event_wall_calendar" name="School Event Wall Calendar" >
+            <t t-call="website.layout">
+<!--                <t t-set="today" t-value="datetime.date.today()"/>-->
+<!--                <t t-set="month" t-value="request.params.get('month') or today.strftime('%m')"/>-->
+<!--                <t t-set="year" t-value="request.params.get('year') or today.strftime('%Y')"/>-->
+
+                <div class="container my-5">
+                    <t t-set="prev_month" t-value="(month - 1) if month > 1 else 12"/>
+                    <t t-set="prev_year" t-value="year - 1 if month == 1 else year"/>
+                    <t t-set="next_month" t-value="(month % 12) + 1"/>
+                    <t t-set="next_year" t-value="year + 1 if month == 12 else year"/>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <a t-attf-href="/school/calendar?month={{ prev_month }}&amp;year={{ prev_year }}" class="btn btn-outline-primary">
+                            ←
+                        </a>
+                        <h2 class="text-center m-0">
+                            School Calendar - <t t-esc="month_name"/> <t t-esc="year"/>
+                        </h2>
+                        <a t-attf-href="/school/calendar?month={{ next_month }}&amp;year={{ next_year }}" class="btn btn-outline-primary">
+                             →
+                        </a>
+                    </div>
+
+                    <!-- Calendar Grid -->
+                    <div class="calendar-grid border">
+                        <!-- Weekday headers -->
+                        <div class="calendar-cell calendar-header">Sun</div>
+                        <div class="calendar-cell calendar-header">Mon</div>
+                        <div class="calendar-cell calendar-header">Tue</div>
+                        <div class="calendar-cell calendar-header">Wed</div>
+                        <div class="calendar-cell calendar-header">Thu</div>
+                        <div class="calendar-cell calendar-header">Fri</div>
+                        <div class="calendar-cell calendar-header">Sat</div>
+
+                        <!-- Day cells -->
+                        <t t-foreach="calendar_data" t-as="cell">
+                            <div class="calendar-cell">
+                                <div class="date-num"><t t-esc="cell['day']"/></div>
+                                <t t-if="cell['event']">
+                                    <img t-if="cell['event'].cover_image" t-att-src="'/web/image/school.event/%s/cover_image' % cell['event'].id" class="event-img"/>
+                                    <div class="event-title"><t t-esc="cell['event'].name"/></div>
+                                </t>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+
+                <style>
+                .calendar-grid {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                    gap: 1px;
+                    background-color: #ddd;
+                }
+                .calendar-cell {
+                    background-color: #fff;
+                    min-height: 70px;
+                    padding: 5px;
+                    position: relative;
+                    border: 1px solid #ccc;
+                }
+                .calendar-header {
+                    background-color: #f1f1f1;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                .date-num {
+                    position: absolute;
+                    top: 4px;
+                    right: 6px;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+                .event-img {
+                    max-width: 100%;
+                    max-height: 60px;
+                    margin-top: 20px;
+                }
+                .event-title {
+                    font-size: 12px;
+                    margin-top: 5px;
+                }
+                </style>
+            </t>
+        </template>
+
+    </data>
+
+</odoo>

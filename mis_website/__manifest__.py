@@ -9,7 +9,7 @@
     'author': 'Alannia',
     'company': 'alanniainfotechz',
     'maintainer': 'Alanniainfotechz',
-    'depends': ['web','website','mis_website_backend'],
+    'depends': ['web','website','mis_website_backend', 'mis_school_calender'],
     'data': [
         # 'security/ir.model.access.csv',
         'data/web_menu.xml',
@@ -23,6 +23,7 @@
         'views/online_application_templates.xml',
         'views/e_magazine_view.xml',
         'views/app_release_temp.xml',
+        'views/school_calender_template.xml',
         'views/privacy_policy.xml',
         # 'views/nav_bar_template.xml',
         'views/website_header.xml',

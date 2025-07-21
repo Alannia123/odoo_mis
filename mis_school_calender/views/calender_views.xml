@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--        Timetable period form view-->
+<!--    <record id="school_calender_view_form" model="ir.ui.view">-->
+<!--        <field name="name">school.event.view.form</field>-->
+<!--        <field name="model">school.event</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="School Calender">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="name"/>-->
+<!--                            <label for="time_from" string="Period Time"/>-->
+<!--                            <div>-->
+<!--                                <field name="time_from" widget="float_time"-->
+<!--                                       class="oe_inline"/>-->
+<!--                                - -->
+<!--                                <field name="time_to" widget="float_time"-->
+<!--                                       class="oe_inline"/>-->
+<!--                            </div>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="company_id"-->
+<!--                                   groups="base.group_multi_company"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+    <!--    Timetable period tree view-->
+    <record id="school_calender_view_tree" model="ir.ui.view">
+        <field name="name">school.event.view.tree</field>
+        <field name="model">school.event</field>
+        <field name="arch" type="xml">
+            <tree string="School Calender" editable="top">
+                <field name="name"/>
+<!--                <field name="description" />-->
+                <field name="event_date" />
+                <field name="is_published" widget="boolean_toggle"/>
+                <field name="cover_image" widget="image" options="{'size': [100, 100]}"/>
+            </tree>
+        </field>
+    </record>
+    <!--        Timetable period action-->
+    <record id="school_calender_action" model="ir.actions.act_window">
+        <field name="name">School Calender</field>
+        <field name="res_model">school.event</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                You haven't created any Schedules yet.
+            </p>
+        </field>
+    </record>
+    <!--    Configuration menu-->
+    <menuitem
+            id="education_school_calender_root"
+            name="Calender"
+            />
+    <!--    Periods menu-->
+    <menuitem
+            id="education_school_calender_menu"
+            name="School Calender"
+            parent="education_school_calender_root"
+            action="school_calender_action"/>
+</odoo>
