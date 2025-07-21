@@ -18,28 +18,30 @@
                         <tr>
                             <th>Subject</th>
                             <th >Homework Desc</th>
-                            <th >File</th>
+<!--                            <th >File</th>-->
                         </tr>
                     </thead>
                     <tbody>
                         <t t-foreach="today_homework.work_line_ids" t-as="line">
-                            <tr>
-                                <td><span  t-field="line.subject_id.name"/></td>
-                                <td >
-                                    <span t-att-id="'speechText_' + str(line.id)"
-                                        t-att-data-speak="'Subject: %s. Homework: %s' % (line.subject_id.name, line.homework)"
-                                        style="background-color:#ffe6ff;">
-                                    <span t-field="line.homework"/>
-                                    </span>
-                                    <button class="btn btn-info btn-sm"
-                                            t-att-onclick="'speakText(%s)' % line.id">
-                                        🔊
-                                    </button>
-                                </td>
-                                <td >
-                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
-                                </td>
-                            </tr>
+                            <t t-if="line.state == 'post'">
+                                <tr>
+                                    <td><span  t-field="line.subject_id.name"/></td>
+                                    <td >
+                                        <span t-att-id="'speechText_' + str(line.id)"
+                                            t-att-data-speak="'Subject: %s. Homework: %s' % (line.subject_id.name, line.homework)"
+                                            style="background-color:#ffe6ff;">
+                                        <span t-field="line.homework"/>
+                                        </span>
+    <!--                                    <button class="btn btn-info btn-sm"-->
+    <!--                                            t-att-onclick="'speakText(%s)' % line.id">-->
+    <!--                                        🔊-->
+    <!--                                    </button>-->
+                                    </td>
+    <!--                                <td >-->
+    <!--                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>-->
+    <!--                                </td>-->
+                                </tr>
+                            </t>
                         </t>
                     </tbody>
                 </table>
@@ -89,28 +91,30 @@
                         <tr>
                             <th>Subject</th>
                             <th >Homework Desc</th>
-                            <th >File</th>
+<!--                            <th >File</th>-->
                         </tr>
                     </thead>
                     <tbody>
                         <t t-foreach="home_work_id.work_line_ids" t-as="line">
-                            <tr>
-                                <td><span  t-field="line.subject_id.name"/></td>
-                                <td >
-                                    <span t-att-id="'speechText_' + str(line.id)"
-                                        t-att-data-speak="'Subject: %s. Homework: %s' % (line.subject_id.name, line.homework)"
-                                        style="background-color:#ffe6ff;">
-                                    <span t-field="line.homework"/>
-                                    </span>
-                                    <button class="btn btn-info"
-                                            t-att-onclick="'AndroidTTS.speakText(%s)' % line.id">
-                                        🔊
-                                    </button>
-                                </td>
-                                <td >
-                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>
-                                </td>
-                            </tr>
+                            <t t-if="line.state == 'post'">
+                                <tr>
+                                    <td><span  t-field="line.subject_id.name"/></td>
+                                    <td >
+                                        <span t-att-id="'speechText_' + str(line.id)"
+                                            t-att-data-speak="'Subject: %s. Homework: %s' % (line.subject_id.name, line.homework)"
+                                            style="background-color:#ffe6ff;">
+                                        <span t-field="line.homework"/>
+                                        </span>
+    <!--                                    <button class="btn btn-info"-->
+    <!--                                            t-att-onclick="'AndroidTTS.speakText(%s)' % line.id">-->
+    <!--                                        🔊-->
+    <!--                                    </button>-->
+                                    </td>
+    <!--                                <td >-->
+    <!--                                    <a t-att-href="'/web/content/%s?download=true' % line.attachment_id.id" ><i class="fa fa-download"/> </a>-->
+    <!--                                </td>-->
+                                </tr>
+                            </t>
                         </t>
                     </tbody>
                 </table>

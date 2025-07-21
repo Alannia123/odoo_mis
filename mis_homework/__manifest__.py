@@ -14,8 +14,9 @@
         'security/ir.model.access.csv',
         'security/security.xml',
         # 'data/sequence.xml',
+        'views/homework_lines.xml',
         'views/home_work_view.xml',
-        'wizard/home_entry_wizard_view.xml',
+        # 'wizard/home_entry_wizard_view.xml',
     ],
     #  'assets': {
     #     'web.assets_backend': [

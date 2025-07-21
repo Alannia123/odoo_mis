@@ -148,7 +148,7 @@
     </record>
     <menuitem id="education_attendance_root_menu" name="MIS Attendance"
               sequence="12"
-              web_icon="mis_education_attendances,static/description/icon.png"/>
+              web_icon="mis_education_attendances,static/description/attendance_list.png"/>
     <menuitem id="education_attendance_main_menu"
               parent="mis_education_attendances.education_attendance_root_menu"
               name="Attendance"

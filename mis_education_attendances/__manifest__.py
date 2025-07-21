@@ -14,6 +14,7 @@
     'maintainer': 'Alanniainfotechz',
     'depends': ['mis_education_core'],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         # 'report/monthly_attendance_report_view.xml',
         'reports/report_monthly_attendance.xml',

@@ -71,7 +71,10 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_parent_student_teacher_communication" name="Teacher To Parent" parent="menu_parent_student_comm_root"
+     <menuitem id="menu_teacher_student_comm_root" name="Teacher Communication" sequence="100"
+        web_icon="mis_teacher_stu_comm,static/src/img/tech_stu.png" groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin,mis_education_core.group_education_faculty"/>
+
+    <menuitem id="menu_parent_student_teacher_communication" name="Teacher To Parent" parent="menu_teacher_student_comm_root"
               action="action_parent_student_teacher_communication"/>
 
 

@@ -1,0 +1,91 @@
+<odoo>
+
+
+    <record id="view_student_homework_line_tree" model="ir.ui.view">
+        <field name="name">student.homework.line.tree</field>
+        <field name="model">student.homework.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" class="o_field_text o_list_small_column"/>
+                <field name="class_div_id"/>
+                <field name="subject_id"/>
+                <field name="homework_date"/>
+<!--                <field name="homework"/>-->
+                <field name="uploaded_by"/>
+                <field name="work_id" column_invisible="0"/>
+                <field name="state" decoration-warning="state == 'draft'" decoration-success="state == 'post' " widget="badge"/>
+                <button name="view_home_work" type="object" class="btn-secondry" string="View HW" invisible="work_id == False"
+                                    groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record id="view_student_homework_line_form" model="ir.ui.view">
+        <field name="name">student.homework.line.form</field>
+        <field name="model">student.homework.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_post" string="Publish"
+                            type="object" invisible="state != 'draft'"
+                            groups="mis_education_core.group_education_faculty"
+                            class="btn-primary" />
+                    <button name="reset_to_draft" string="Reset"
+                            type="object"
+                            groups="mis_education_core.group_education_faculty"
+                            invisible="state != 'post'"
+                            class="btn-secondary"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+
+<!--                            <div class="text-warning" invisible="not show_name_warning">The current highest number is <field class="oe_inline" name="highest_name"/>. You might want to put a higher number here.</div>-->
+
+                            <h1>
+                                <field name="name"  readonly="1" placeholder="Draft"/>
+                            </h1>
+                        </div>
+                    <group>
+                        <group>
+                            <field name="class_div_id" options='{"no_open": True, "no_create": True}' readonly="state != 'draft'"/>
+                            <field name="subject_id" options='{"no_open": True, "no_create": True}' domain="[('id', 'in', domain_subjects)]" readonly="state != 'draft'"/>
+                            <field name="domain_subjects" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="homework_date" readonly="1" />
+                            <field name="uploaded_by" readonly="1" options='{"no_open": True, "no_create": True}'/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="homework" required="1" readonly="state != 'draft'"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_student_homework_line" model="ir.actions.act_window">
+        <field name="name">Homework</field>
+        <field name="res_model">student.homework.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+<!--<menuitem id="menu_student_homework_root" name="Homework" sequence="10"/>-->
+
+<menuitem id="menu_student_homework_lines"
+          name="Teacher Homeworks"
+          parent="menu_student_homework_root"
+          action="action_student_homework_line"
+          sequence="10"/>
+
+</odoo>

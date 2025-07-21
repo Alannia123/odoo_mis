@@ -66,11 +66,11 @@
         <field name="arch" type="xml">
             <form string="Class Division">
                 <header>
-<!--                    <button name="generate_portal_user" type="object"-->
-<!--                            class="oe_highlight"-->
-<!--                            string="Create Portal User" groups="base.group_user"-->
-<!--                            help="Click to create employee for this faculty"-->
-<!--                    />-->
+                    <button name="generate_portal_user" type="object"
+                            class="oe_highlight"
+                            string="Create Portal User" groups="mis_education_core.group_create_invoices_divisions"
+                            help="Click to create employee for this faculty"
+                    />
                 </header>
                 <sheet string="Class">
                     <div class="oe_button_box" name="button_box">

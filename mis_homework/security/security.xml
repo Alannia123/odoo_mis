@@ -13,18 +13,34 @@
 <!--            </record>-->
 
 
-        <record id="all_homework_to_admin" model="ir.rule">
-            <field name="name">All Homeworks</field>
-            <field ref="model_student_homework" name="model_id"/>
+<!--        <record id="all_homework_to_admin" model="ir.rule">-->
+<!--            <field name="name">All Homeworks</field>-->
+<!--            <field ref="model_student_homework" name="model_id"/>-->
+<!--            <field name="domain_force">[(1,'=',1)]</field>-->
+<!--            <field name="groups" eval="[(4, ref('mis_education_core.group_education_principal'))]"/>-->
+<!--        </record>-->
+
+
+<!--        <record id="teachers_homeworks" model="ir.rule">-->
+<!--            <field name="name">Teachers Homeworks</field>-->
+<!--            <field ref="model_student_homework" name="model_id"/>-->
+<!--            <field name="domain_force">[('user_ids', 'in', user.id)]</field>-->
+<!--            <field name="groups" eval="[(4, ref('mis_education_core.group_education_faculty'))]"/>-->
+<!--        </record>-->
+
+
+         <record id="all_homework_to_admin" model="ir.rule">
+            <field name="name">All Homeworks Attendance Admin</field>
+            <field ref="model_student_homework_line" name="model_id"/>
             <field name="domain_force">[(1,'=',1)]</field>
             <field name="groups" eval="[(4, ref('mis_education_core.group_education_principal'))]"/>
         </record>
 
 
-        <record id="teachers_homeworks" model="ir.rule">
-            <field name="name">Teachers Homeworks</field>
-            <field ref="model_student_homework" name="model_id"/>
-            <field name="domain_force">[('user_ids', 'in', user.id)]</field>
+        <record id="teachers_clas_homeworks" model="ir.rule">
+            <field name="name">Teachers Class Homeworks </field>
+            <field ref="model_student_homework_line" name="model_id"/>
+            <field name="domain_force">[('uploaded_by', '=', user.id)]</field>
             <field name="groups" eval="[(4, ref('mis_education_core.group_education_faculty'))]"/>
         </record>
 

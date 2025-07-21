@@ -35,10 +35,10 @@
     </record>
 
     <!-- Menu item to access the form -->
-    <menuitem id="menu_push_notification_root" name="Push Notifications" sequence="1000"/>
+    <menuitem id="menu_push_notification_root" name="Push Notifications" sequence="1000" groups="mis_education_core.group_create_invoices_divisions"/>
 
     <menuitem id="menu_push_notification"
               name="Manage Registrations"
               parent="menu_push_notification_root"
-              action="action_push_notification" groups="base.group_system"/>
+              action="action_push_notification" />
 </odoo>
