@@ -7,12 +7,12 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="send_notify_to_teachers" type="object"
-                            invisible="state != 'draft'"
-                            confirm="After sending notify to teachers , you can't do any changes. Make sure the exam dates and subjects everything is correct. Do you want to proceed?"
-                            class="oe_highlight" string="Notify to Teachers"/>
+<!--                    <button name="send_notify_to_teachers" type="object"-->
+<!--                            invisible="state != 'draft'"-->
+<!--                            confirm="After sending notify to teachers , you can't do any changes. Make sure the exam dates and subjects everything is correct. Do you want to proceed?"-->
+<!--                            class="oe_highlight" string="Notify to Teachers"/>-->
                     <button name="action_confirm_exam" type="object"
-                            invisible="state != 'waiting_syllabus'"
+                            invisible="state != 'draft'"
                             class="oe_highlight" string="Confirm"/>
                     <button name="action_close_exam" type="object"
                             string="Close" invisible="state != 'ongoing'"
@@ -69,17 +69,17 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Syllabus">
-                            <field name="sylabus_line_ids"
-                                   >
-                                <tree editable="bottom" create="0">
-                                    <field name="subject_id" force_save="1" readonly="1"/>
-                                    <field name="file_name" column_invisible="True"/>
-                                    <field name="attachment" filename="file_name" widget="binary"/>
-                                    <field name="exam_id" column_invisible="1"/>
-                                </tree>
-                            </field>
-                        </page>
+<!--                        <page string="Syllabus">-->
+<!--                            <field name="sylabus_line_ids"-->
+<!--                                   >-->
+<!--                                <tree editable="bottom" create="0">-->
+<!--                                    <field name="subject_id" force_save="1" readonly="1"/>-->
+<!--                                    <field name="file_name" column_invisible="True"/>-->
+<!--                                    <field name="attachment" filename="file_name" widget="binary"/>-->
+<!--                                    <field name="exam_id" column_invisible="1"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
@@ -162,12 +162,15 @@
               sequence="3"/>
     <menuitem id="examination_sub_menu"
               parent="mis_education_exam.examination_main_menu"
+              groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
               action="education_exam_action"
               name="Exam" sequence="12"/>
     <menuitem id="examination_reporting_menu"
+              groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
               parent="mis_education_exam.examination_root_menu"
               name="Reporting" sequence="30"/>
     <menuitem id="examination_configuration_menu"
+              groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin"
               parent="mis_education_exam.examination_root_menu"
               name="Configuration" sequence="35"/>
     <menuitem id="examination_type_menu"

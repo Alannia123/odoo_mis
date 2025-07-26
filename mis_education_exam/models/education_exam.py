@@ -52,7 +52,7 @@ class EducationExam(models.Model):
         'exam.syllabus', 'exam_id', tracking=True,
         string='Syllabus', help='Syllabus associated with the exam.')
     state = fields.Selection(
-        [('draft', 'Draft'), ('waiting_syllabus', 'Waiting For Syllabus'), ('ongoing', 'Ongoing'),
+        [('draft', 'Draft'), ('ongoing', 'Ongoing'),
          ('close', 'Closed'), ('cancel', 'Canceled')], tracking=True,
         default='draft', help='Current state of the education exam.')
     academic_year_id = fields.Many2one(
@@ -69,8 +69,25 @@ class EducationExam(models.Model):
         string='Pass Mark', required=True,
         help='Passing mark for the exam.')
 
-    @api.onchange('exam_type_id')
+    @api.onchange('exam_type_id', 'class_id')
     def _onchange_exam_type(self):
+        if self.exam_type_id and self.class_id and self.academic_year_id:
+            domain = [
+                ('exam_type_id', '=', self.exam_type_id.id),
+                ('class_id', '=', self.class_id.id),
+                ('academic_year_id', '=', self.academic_year_id.id)
+            ]
+            exist_exam = self.env['education.exam'].search(domain)
+            if exist_exam:
+                self.class_id = False
+                # Show a warning, don't raise Exception in onchange!
+                return {
+                    'warning': {
+                        'title': "Duplicate Exam",
+                        'message': "An exam with this type, class, and academic year already exists.",
+                    }
+                }
+
         if self.exam_type_id:
             self.mark = self.exam_type_id.mark
             self.pass_mark = self.exam_type_id.pass_mark
@@ -106,15 +123,15 @@ class EducationExam(models.Model):
                 self.sylabus_line_ids = syllabus_line_data
 
 
-    # @api.model
-    # def create(self, vals):
-    #     """
-    #         Create method for Education Exam.
-    #     """
-    #     res = super(EducationExam, self).create(vals)
-    #     if res.division_id:
-    #         res.class_id = res.division_id.class_id.id
-    #     return res
+    @api.model
+    def create(self, vals):
+        """
+            Create method for Education Exam.
+        """
+        res = super(EducationExam, self).create(vals)
+        if res.division_id:
+            res.class_id = res.division_id.class_id.id
+        return res
 
     @api.onchange('class_division_hider')
     def _onchange_class_division_hider(self):
@@ -140,33 +157,26 @@ class EducationExam(models.Model):
         self.state = 'cancel'
 
     def action_confirm_exam(self):
-        """
-            Confirm the exam.
-
-            Validates the exam, sets the name based on exam type, start date, and division/class,
-            and sets the state to 'ongoing'.
-
-            :raises: UserError if no subjects are added.
-        """
-        for syl in self.sylabus_line_ids:
-            if not syl.attachment:
-                raise ValidationError(_('Syllabus not yet added on %s', syl.subject_id.name))
+        self.name = self.exam_type_id.name + ' ' + self.class_id.name + '-' + self.academic_year_id.name
+        for sub in self.subject_line_ids:
+            if not sub.date:
+                raise ValidationError(_('Date not yet added on %s', sub.subject_id.name))
         self.state = 'ongoing'
 
 
-    def send_notify_to_teachers(self):
-        print('gfghfgfg')
-        class_divisions = self.env['education.class.division'].search([('class_id', '=', self.class_id.id)])
-        print('CDLLLLLLLLLLLLLL',class_divisions)
-        self.name = self.exam_type_id.name + '-' + self.academic_year_id.name
-        for cl in class_divisions:
-            teacher_id = cl.faculty_id.employee_id.user_id
-            self.activity_schedule('mis_education_exam.syllabus_entry_teachers_notification',
-                                             user_id=teacher_id.id,
-                                             note=f'{self.name} Exam Announced and please enter your Syllabus')
-        message_string = ''
-        message_string = 'hello odoo whatsapp'
-        self.state = 'waiting_syllabus'
+    # def send_notify_to_teachers(self):
+    #     print('gfghfgfg')
+    #     class_divisions = self.env['education.class.division'].search([('class_id', '=', self.class_id.id)])
+    #     print('CDLLLLLLLLLLLLLL',class_divisions)
+    #     self.name = self.exam_type_id.name + '-' + self.academic_year_id.name
+    #     for cl in class_divisions:
+    #         teacher_id = cl.faculty_id.employee_id.user_id
+    #         self.activity_schedule('mis_education_exam.syllabus_entry_teachers_notification',
+    #                                          user_id=teacher_id.id,
+    #                                          note=f'{self.name} Exam Announced and please enter your Syllabus')
+    #     message_string = ''
+    #     message_string = 'hello odoo whatsapp'
+    #     self.state = 'waiting_syllabus'
 
         # user = self.env.user
         # return {

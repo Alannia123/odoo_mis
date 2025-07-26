@@ -28,6 +28,6 @@
     </record>
 
     <menuitem id="menu_open_rank_wizard" name="Generate Rank Card" parent="mis_education_exam.examination_root_menu"
-              action="action_open_rank_pdf_wizard" sequence="40"/>
+              groups="mis_education_core.group_education_principal,mis_education_core.group_education_office_admin" action="action_open_rank_pdf_wizard" sequence="40"/>
 
 </odoo>
