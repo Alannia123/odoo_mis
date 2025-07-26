@@ -13,6 +13,7 @@
     'depends': ['mis_education_core'],
     'data': [
         'data/activity.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
         'reports/ir_actions_report.xml',
         'reports/admit_card_template.xml',
