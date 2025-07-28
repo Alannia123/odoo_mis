@@ -158,9 +158,9 @@ class EducationExam(models.Model):
 
     def action_confirm_exam(self):
         self.name = self.exam_type_id.name + ' ' + self.class_id.name + '-' + self.academic_year_id.name
-        for sub in self.subject_line_ids:
-            if not sub.date:
-                raise ValidationError(_('Date not yet added on %s', sub.subject_id.name))
+        # for sub in self.subject_line_ids:
+        #     if not sub.date:
+        #         raise ValidationError(_('Date not yet added on %s', sub.subject_id.name))
         self.state = 'ongoing'
 
 
