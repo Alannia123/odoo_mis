@@ -67,8 +67,8 @@
                                     <field name="roll_no"  readonly="1"/>
                                     <field name="exam_mark"/>
                                     <field name="assign_mark"/>
-                                    <field name="mark_scored"/>
-                                    <field name="pass_or_fail" readonly="1"
+                                    <field name="mark_scored" decoration-danger="pass_or_fail != True" decoration-success="pass_or_fail == True" widget="badge" optional="show"/>
+                                    <field name="pass_or_fail" column_invisible="1"
                                            widget="boolean_toggle"/>
                                     <field name="valuation_id"
                                            column_invisible="1"/>

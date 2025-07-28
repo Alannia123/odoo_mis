@@ -107,7 +107,7 @@
                 <field name="division_id"/>
                 <field name="class_id"/>
                 <field name="date"/>
-                <field name="state"/>
+                <field name="state" decoration-warning="state == 'draft'" decoration-success="state == 'done'" widget="badge" optional="show"/>
             </tree>
         </field>
     </record>
